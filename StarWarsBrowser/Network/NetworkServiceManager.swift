@@ -35,7 +35,7 @@ class NetworkServiceManager {
         case GET
     }
     
-    func requestAPI<T: Decodable>(url: String, httpMethod: HTTPMethod, parameters: [String: AnyObject]? = nil) -> AnyPublisher<T, StarWarsAPIError> {
+    func requestAPI<T: Decodable>(_ url: String, httpMethod: HTTPMethod, parameters: [String: AnyObject]? = nil) -> AnyPublisher<T, StarWarsAPIError> {
         
         guard let url = URL(string: url) else {
             return Fail(error: StarWarsAPIError.invalidURL).eraseToAnyPublisher()

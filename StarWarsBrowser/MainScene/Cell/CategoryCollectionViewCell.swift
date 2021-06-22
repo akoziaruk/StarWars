@@ -1,5 +1,5 @@
 //
-//  StarWarsInfoCollectionViewCell.swift
+//  CategoryCollectionViewCell.swift
 //  StarWarsBrowser
 //
 //  Created by Alexander Koziaruk on 09.06.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StarWarsInfoCollectionViewCell: UICollectionViewCell {
+class CategoryCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     

@@ -10,12 +10,20 @@ import Combine
 
 struct StarWarsNetworkService {
     
-    func loadPeopeList() -> AnyPublisher<[Person], StarWarsAPIError> {
-        let url = NetworkServiceConstants.baseURL + NetworkServiceConstants.people
-        let responcePublisher: AnyPublisher<PeopleResponse, StarWarsAPIError> = NetworkServiceManager.shared.requestAPI(url: url, httpMethod: .GET)
+    func loadCategories() -> AnyPublisher<[Category], StarWarsAPIError> {
+        let url = NetworkServiceConstants.baseURL
+        let responsePublisher: AnyPublisher<CategoryResponse, StarWarsAPIError> = NetworkServiceManager.shared.requestAPI(url, httpMethod: .GET)
            
-        return responcePublisher
-            .map { $0.people }
+        return responsePublisher
+            .map { $0.categories }
+            .eraseToAnyPublisher()
+    }
+    
+    func loadDetailsFor(_ url: String) -> AnyPublisher<Details, StarWarsAPIError> {
+        let responsePublisher: AnyPublisher<DetailsResponse, StarWarsAPIError> = NetworkServiceManager.shared.requestAPI(url, httpMethod: .GET)
+           
+        return responsePublisher
+            .map { $0.value }
             .eraseToAnyPublisher()
     }
     

@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A092C2926709FF0007077C0 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A092C2826709FF0007077C0 /* Person.swift */; };
-		8A092C342670A41B007077C0 /* StarWarsInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A092C322670A41B007077C0 /* StarWarsInfoCollectionViewCell.swift */; };
+		8A092C342670A41B007077C0 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A092C322670A41B007077C0 /* CategoryCollectionViewCell.swift */; };
 		8A092C3D2670D9A0007077C0 /* StarWarsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A092C3C2670D9A0007077C0 /* StarWarsNetworkService.swift */; };
 		8AB647BF265D0A0D00B2F498 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB647BE265D0A0D00B2F498 /* AppDelegate.swift */; };
 		8AB647C1265D0A0D00B2F498 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB647C0265D0A0D00B2F498 /* SceneDelegate.swift */; };
@@ -16,13 +15,17 @@
 		8AB647C6265D0A0D00B2F498 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AB647C4265D0A0D00B2F498 /* Main.storyboard */; };
 		8AB647C8265D0A1100B2F498 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AB647C7265D0A1100B2F498 /* Assets.xcassets */; };
 		8AB647CB265D0A1100B2F498 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AB647C9265D0A1100B2F498 /* LaunchScreen.storyboard */; };
+		8ABB296C26828A6B009963FF /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB296B26828A6A009963FF /* Film.swift */; };
+		8ABB296F26828BA3009963FF /* Displayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB296E26828BA3009963FF /* Displayable.swift */; };
+		8ABDA0C72680E44600477D3D /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABDA0C52680E44600477D3D /* Details.swift */; };
+		8ABDA0C82680E44600477D3D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABDA0C62680E44600477D3D /* Category.swift */; };
+		8ABDA0CC2680EF0300477D3D /* InfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABDA0CB2680EF0300477D3D /* InfoCollectionViewCell.swift */; };
 		8AE0C9552671FD370006B95E /* MainSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE0C9542671FD370006B95E /* MainSceneViewModel.swift */; };
 		8AE0C9592672153D0006B95E /* NetworkServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE0C9582672153D0006B95E /* NetworkServiceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8A092C2826709FF0007077C0 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		8A092C322670A41B007077C0 /* StarWarsInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		8A092C322670A41B007077C0 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		8A092C3C2670D9A0007077C0 /* StarWarsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsNetworkService.swift; sourceTree = "<group>"; };
 		8AB647BB265D0A0D00B2F498 /* StarWarsBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AB647BE265D0A0D00B2F498 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +35,11 @@
 		8AB647C7265D0A1100B2F498 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AB647CA265D0A1100B2F498 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AB647CC265D0A1100B2F498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8ABB296B26828A6A009963FF /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
+		8ABB296E26828BA3009963FF /* Displayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Displayable.swift; sourceTree = "<group>"; };
+		8ABDA0C52680E44600477D3D /* Details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		8ABDA0C62680E44600477D3D /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		8ABDA0CB2680EF0300477D3D /* InfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		8AE0C9542671FD370006B95E /* MainSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewModel.swift; sourceTree = "<group>"; };
 		8AE0C9582672153D0006B95E /* NetworkServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,7 +77,7 @@
 				8AB647BE265D0A0D00B2F498 /* AppDelegate.swift */,
 				8AB647C0265D0A0D00B2F498 /* SceneDelegate.swift */,
 				8AE0C95B267215480006B95E /* Network */,
-				8AE0C9512671FCF70006B95E /* Models */,
+				8ABDA0C42680E44600477D3D /* Models */,
 				8AF18696265D48C10067AE1A /* MainScene */,
 				8AB647C4265D0A0D00B2F498 /* Main.storyboard */,
 				8AB647C7265D0A1100B2F498 /* Assets.xcassets */,
@@ -79,18 +87,22 @@
 			path = StarWarsBrowser;
 			sourceTree = "<group>";
 		};
-		8AE0C9512671FCF70006B95E /* Models */ = {
+		8ABDA0C42680E44600477D3D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8A092C2826709FF0007077C0 /* Person.swift */,
+				8ABDA0C62680E44600477D3D /* Category.swift */,
+				8ABDA0C52680E44600477D3D /* Details.swift */,
+				8ABB296B26828A6A009963FF /* Film.swift */,
+				8ABB296E26828BA3009963FF /* Displayable.swift */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		8AE0C9522671FD110006B95E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				8A092C322670A41B007077C0 /* StarWarsInfoCollectionViewCell.swift */,
+				8A092C322670A41B007077C0 /* CategoryCollectionViewCell.swift */,
+				8ABDA0CB2680EF0300477D3D /* InfoCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -108,10 +120,18 @@
 			isa = PBXGroup;
 			children = (
 				8AB647C2265D0A0D00B2F498 /* MainSceneViewController.swift */,
-				8AE0C9542671FD370006B95E /* MainSceneViewModel.swift */,
+				8AF7148626823C2900D9C8C5 /* ViewModels */,
 				8AE0C9522671FD110006B95E /* Cell */,
 			);
 			path = MainScene;
+			sourceTree = "<group>";
+		};
+		8AF7148626823C2900D9C8C5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8AE0C9542671FD370006B95E /* MainSceneViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,13 +204,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ABDA0CC2680EF0300477D3D /* InfoCollectionViewCell.swift in Sources */,
 				8AE0C9552671FD370006B95E /* MainSceneViewModel.swift in Sources */,
 				8AB647C3265D0A0D00B2F498 /* MainSceneViewController.swift in Sources */,
 				8A092C3D2670D9A0007077C0 /* StarWarsNetworkService.swift in Sources */,
-				8A092C342670A41B007077C0 /* StarWarsInfoCollectionViewCell.swift in Sources */,
+				8A092C342670A41B007077C0 /* CategoryCollectionViewCell.swift in Sources */,
 				8AE0C9592672153D0006B95E /* NetworkServiceManager.swift in Sources */,
+				8ABB296C26828A6B009963FF /* Film.swift in Sources */,
+				8ABDA0C82680E44600477D3D /* Category.swift in Sources */,
 				8AB647BF265D0A0D00B2F498 /* AppDelegate.swift in Sources */,
-				8A092C2926709FF0007077C0 /* Person.swift in Sources */,
+				8ABDA0C72680E44600477D3D /* Details.swift in Sources */,
+				8ABB296F26828BA3009963FF /* Displayable.swift in Sources */,
 				8AB647C1265D0A0D00B2F498 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
