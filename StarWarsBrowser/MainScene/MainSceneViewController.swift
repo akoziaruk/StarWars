@@ -41,7 +41,7 @@ class MainSceneViewController: UIViewController {
         viewModel.attachViewEventListener(loadCategoriesData: loadCategoriesSubject.eraseToAnyPublisher())
         viewModel.reloadCategories
             .sink{ [weak self] categories in
-                self?.updateWith(categories, animated: true)
+                self?.updateWith(categories)
                 self?.loadInfoSubject.send(0)
             }
             .store(in: &subscriptions)
@@ -49,21 +49,9 @@ class MainSceneViewController: UIViewController {
         viewModel.attachViewEventListener(loadInfoData: loadInfoSubject.eraseToAnyPublisher())
         viewModel.reloadDetails
             .sink{ [weak self] details in
-                self?.updateWith(details, animated: true)
+                self?.updateWith(details)
             }
             .store(in: &subscriptions)
-    }
-    
-    private func updateWith(_ categories: [Category], animated: Bool) {
-        var snapshot = Snapshot()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(categories)
-        dataSource.apply(snapshot, animatingDifferences: animated)
-    }
-        
-    private func updateWith(_ details: Details, animated: Bool) {
-        
-        // Cast and display?        
     }
     
     private func makeDataSource() -> DataSource {
@@ -81,5 +69,26 @@ class MainSceneViewController: UIViewController {
       return dataSource
     }
     
+    //MARK: Updating with data
+    
+    private func updateWith(_ categories: [Category]) {
+        var snapshot = Snapshot()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(categories)
+        dataSource.apply(snapshot, animatingDifferences: true)
+    }
+        
+    private func updateWith(_ details: [DetailViewModelType]) {
+        switch details.first {
+        case is FilmViewModel:
+            updateWith(films: details as! [FilmViewModel])
+        default:
+            break
+        }
+    }
+    
+    private func updateWith(films: [FilmViewModel]) {
+        
+    }
 }
 

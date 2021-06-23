@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-struct StarWarsNetworkService {
+struct NetworkService {
     
     func loadCategories() -> AnyPublisher<[Category], StarWarsAPIError> {
         let url = NetworkServiceConstants.baseURL
@@ -19,12 +19,11 @@ struct StarWarsNetworkService {
             .eraseToAnyPublisher()
     }
     
-    func loadDetailsFor(_ url: String) -> AnyPublisher<Details, StarWarsAPIError> {
-        let responsePublisher: AnyPublisher<DetailsResponse, StarWarsAPIError> = NetworkServiceManager.shared.requestAPI(url, httpMethod: .GET)
+    func loadFilms(with url: String) -> AnyPublisher<[DetailType], StarWarsAPIError> {
+        let responsePublisher: AnyPublisher<FilmsResponse, StarWarsAPIError> = NetworkServiceManager.shared.requestAPI(url, httpMethod: .GET)
            
         return responsePublisher
-            .map { $0.value }
+            .map { $0.values }
             .eraseToAnyPublisher()
     }
-    
 }
