@@ -8,11 +8,10 @@
 import Foundation
 
 struct ViewModelBuilder {
-    
-    static func viewModel(from detail: DetailType?) -> DetailViewModelType? {
+    static func viewModel(from detail: DetailType?) -> DetailsViewModel? {
         switch detail {
         case let film as Film:
-            return FilmViewModel(name: film.title)
+            return FilmViewModel(film)
         default:
             return nil
         }

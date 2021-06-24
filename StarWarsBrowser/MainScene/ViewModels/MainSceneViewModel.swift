@@ -16,20 +16,20 @@ class MainSceneViewModel {
     private var loadInfoData = PassthroughSubject<Int, Never>().eraseToAnyPublisher()
 
     // MARK: Output
-    private var reloadCategoriesSubject = PassthroughSubject<[Category], Never>()
-    private var reloadDetailsSubject = PassthroughSubject<[DetailViewModelType], Never>()
+    private var reloadCategoriesSubject = PassthroughSubject<[CategoryViewModel], Never>()
+    private var reloadDetailsSubject = PassthroughSubject<[DetailsViewModel], Never>()
 
-    var reloadCategories: AnyPublisher<[Category], Never> {
+    var reloadCategories: AnyPublisher<[CategoryViewModel], Never> {
         reloadCategoriesSubject.eraseToAnyPublisher()
     }
     
-    var reloadDetails: AnyPublisher<[DetailViewModelType], Never> {
+    var reloadDetails: AnyPublisher<[DetailsViewModel], Never> {
         reloadDetailsSubject.eraseToAnyPublisher()
     }
     
     // MARK: Display data
-    private var categories = [Category]()
-    private var details = [DetailViewModelType]()
+    private var categories = [CategoryViewModel]()
+    private var details = [DetailsViewModel]()
 
     func attachViewEventListener(loadCategoriesData: AnyPublisher<Void, Never>) {
         self.loadCategoriesData = loadCategoriesData
@@ -39,6 +39,7 @@ class MainSceneViewModel {
                 let service = NetworkService()
                 return service.loadCategories()
             }
+            .map { self.categoryViewModels(from: $0) }
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion:{ _ in },
                   receiveValue: { [weak self] categories in
@@ -48,14 +49,13 @@ class MainSceneViewModel {
             .store(in: &subscriptions)        
     }
     
-    func attachViewEventListener(loadInfoData: AnyPublisher<Int, Never>) {
-        self.loadInfoData = loadInfoData
-        loadInfoData
+    func attachViewEventListener(loadDetailsData: AnyPublisher<Int, Never>) {
+        self.loadInfoData = loadDetailsData
+        loadDetailsData
             .setFailureType(to: StarWarsAPIError.self)
             .compactMap { self.categories[$0].url }
             .flatMap { url -> AnyPublisher<[DetailType], StarWarsAPIError> in
                 let service = NetworkService()
-                
                 switch url.dataType {
                 case .film:
                     return service.loadFilms(with: url)
@@ -63,7 +63,7 @@ class MainSceneViewModel {
                     return Fail(error: StarWarsAPIError.invalidURL).eraseToAnyPublisher()
                 }
             }
-            .map { self.viewModels(from: $0) }
+            .map { self.detailViewModels(from: $0) }
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion:{ _ in },
                   receiveValue: { [weak self] details in
@@ -73,7 +73,11 @@ class MainSceneViewModel {
             .store(in: &subscriptions)
     }
     
-    private func viewModels(from details: [DetailType]) -> [DetailViewModelType] {
+    private func categoryViewModels(from categories: [Category]) -> [CategoryViewModel] {
+        return categories.compactMap { CategoryViewModel($0) }
+    }
+    
+    private func detailViewModels(from details: [DetailType]) -> [DetailsViewModel] {
         return details.compactMap { ViewModelBuilder.viewModel(from: $0) }
     }
 }

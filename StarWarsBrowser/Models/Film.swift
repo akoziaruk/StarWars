@@ -9,6 +9,14 @@ import Foundation
 
 struct Film: DetailType {
     var title: String!
+    var director: String!
+    var openingCrawl: String!
+    
+    enum CodingKeys: String, CodingKey {
+        case title
+        case director
+        case openingCrawl = "opening_crawl"
+    }
 }
 
 struct FilmsResponse: Decodable {

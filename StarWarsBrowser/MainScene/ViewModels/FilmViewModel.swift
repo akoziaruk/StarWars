@@ -7,17 +7,15 @@
 
 import Foundation
 
-struct FilmViewModel: DetailViewModelType {
-    var name: String!
-}
-
-extension FilmViewModel: Hashable {
-    static func == (lhs: FilmViewModel, rhs: FilmViewModel) -> Bool {
-        return lhs.name == rhs.name
-    }
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
+class FilmViewModel: DetailsViewModel {
+    let title: String!
+    let director: String!
+    let openingCrawl: String!
+    init(_ film: Film) {
+        title = film.title
+        director = film.director
+        openingCrawl = film.openingCrawl
     }
 }
+
 

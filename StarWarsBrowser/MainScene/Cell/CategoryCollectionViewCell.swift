@@ -8,12 +8,9 @@
 import UIKit
 
 class CategoryCollectionViewCell: UICollectionViewCell {
-
     @IBOutlet weak var titleLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func updateWith(_ viewModel: CategoryViewModel) {
+        titleLabel.text = viewModel.name
     }
-
 }

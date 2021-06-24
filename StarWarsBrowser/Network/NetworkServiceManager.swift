@@ -10,7 +10,6 @@ import Combine
 
 struct NetworkServiceConstants {
     static let baseURL = "https://swapi.dev/api/"
-    static let people = "people/"
 }
 
 enum StarWarsAPIError: LocalizedError {

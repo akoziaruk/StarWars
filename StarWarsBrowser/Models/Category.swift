@@ -7,18 +7,9 @@
 
 import Foundation
 
-struct Category: Hashable, Decodable {
+struct Category: Decodable {
     var name: String!
     var url: String!
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
-    }
-    
-    static func == (lhs: Category, rhs: Category) -> Bool {
-        lhs.name == rhs.name
-    }
-    
 }
 
 struct CategoryResponse: Decodable {
