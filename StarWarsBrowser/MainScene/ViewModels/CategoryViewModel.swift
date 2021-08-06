@@ -2,7 +2,7 @@
 //  CategoryViewModel.swift
 //  StarWarsBrowser
 //
-//  Created by Olexander Koziaruk on 6/24/21.
+//  Created by Alexander Koziaruk on 6/24/21.
 //
 
 import Foundation
