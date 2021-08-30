@@ -39,11 +39,19 @@ class MainSceneViewController: UIViewController {
     
     private func setupBindings() {
         viewModel.attachViewEventListener(loadCategoriesData: loadCategoriesSubject.eraseToAnyPublisher())
-        viewModel.reloadCategories
-            .sink{ [weak self] categories in
+        viewModel.reloadCategories.sink(receiveCompletion: { state in
+            
+                switch state {
+                case .finished:
+                    print("Done!")
+                default:
+                    self.presentErrorWith(message: "Error occured")
+                }
+                
+            }, receiveValue: { [weak self] categories in
                 self?.categoriesDataSource.updateWith(categories)
                 self?.loadDetailsSubject.send(0)
-            }
+            })
             .store(in: &subscriptions)
         
         viewModel.attachViewEventListener(loadDetailsData: loadDetailsSubject.eraseToAnyPublisher())

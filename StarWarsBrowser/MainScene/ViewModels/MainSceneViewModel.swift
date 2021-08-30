@@ -8,6 +8,17 @@
 import Foundation
 import Combine
 
+enum MainSceneError: LocalizedError {
+    case failedToLoadData
+    
+    var displayMessage: String {
+        switch self {
+        case .failedToLoadData:
+            return "Network error, try again later."
+        }
+    }
+}
+
 class MainSceneViewModel {
     private var subscriptions = Set<AnyCancellable>()
         
@@ -16,10 +27,10 @@ class MainSceneViewModel {
     private var loadInfoData = PassthroughSubject<Int, Never>().eraseToAnyPublisher()
 
     // MARK: Output
-    private var reloadCategoriesSubject = PassthroughSubject<[CategoryViewModel], Never>()
+    private var reloadCategoriesSubject = PassthroughSubject<[CategoryViewModel], MainSceneError>()
     private var reloadDetailsSubject = PassthroughSubject<[DetailsViewModel], Never>()
 
-    var reloadCategories: AnyPublisher<[CategoryViewModel], Never> {
+    var reloadCategories: AnyPublisher<[CategoryViewModel], MainSceneError> {
         reloadCategoriesSubject.eraseToAnyPublisher()
     }
     
@@ -28,7 +39,7 @@ class MainSceneViewModel {
     }
     
     // MARK: Display data
-    private var categories = [CategoryViewModel]()
+    var categories = [CategoryViewModel]()
     private var details = [DetailsViewModel]()
 
     func attachViewEventListener(loadCategoriesData: AnyPublisher<Void, Never>) {
@@ -41,10 +52,18 @@ class MainSceneViewModel {
             }
             .map { self.categoryViewModels(from: $0) }
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion:{ _ in },
-                  receiveValue: { [weak self] categories in
-                    self?.categories = categories
-                    self?.reloadCategoriesSubject.send(categories)
+            .sink(receiveCompletion:{ [weak self] completion in
+                
+                switch completion {
+                case .finished:
+                    print("Done!")
+                default:
+                    self?.reloadCategoriesSubject.send(completion: .failure(.failedToLoadData))
+                }
+                
+            }, receiveValue: { [weak self] categories in
+                self?.categories = categories
+                self?.reloadCategoriesSubject.send(categories)
             })
             .store(in: &subscriptions)        
     }

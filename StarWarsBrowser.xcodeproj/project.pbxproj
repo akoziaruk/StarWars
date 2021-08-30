@@ -27,6 +27,7 @@
 		FA7B9BC82684CC7700BDB31C /* CategoriesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B9BC72684CC7700BDB31C /* CategoriesDataSource.swift */; };
 		FA7B9BCA2684CFA600BDB31C /* DetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B9BC92684CFA600BDB31C /* DetailsDataSource.swift */; };
 		FA7B9BCC2684D49300BDB31C /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B9BCB2684D49300BDB31C /* CategoryViewModel.swift */; };
+		FADF79FA26BE558700D8F126 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF79F926BE558700D8F126 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		FA7B9BC72684CC7700BDB31C /* CategoriesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesDataSource.swift; sourceTree = "<group>"; };
 		FA7B9BC92684CFA600BDB31C /* DetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDataSource.swift; sourceTree = "<group>"; };
 		FA7B9BCB2684D49300BDB31C /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		FADF79F926BE558700D8F126 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			children = (
 				8AB647BE265D0A0D00B2F498 /* AppDelegate.swift */,
 				8AB647C0265D0A0D00B2F498 /* SceneDelegate.swift */,
+				FADF79FB26BE559100D8F126 /* Other */,
 				8AF18696265D48C10067AE1A /* MainScene */,
 				8AE0C95B267215480006B95E /* Network */,
 				8ABDA0C42680E44600477D3D /* Models */,
@@ -129,9 +132,9 @@
 			isa = PBXGroup;
 			children = (
 				8AB647C2265D0A0D00B2F498 /* MainSceneViewController.swift */,
+				FA7B9BCD2684E11E00BDB31C /* DataSource */,
 				8AF7148626823C2900D9C8C5 /* ViewModels */,
 				8AE0C9522671FD110006B95E /* Cell */,
-				FA7B9BCD2684E11E00BDB31C /* DataSource */,
 			);
 			path = MainScene;
 			sourceTree = "<group>";
@@ -155,6 +158,14 @@
 				FA7B9BC92684CFA600BDB31C /* DetailsDataSource.swift */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		FADF79FB26BE559100D8F126 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				FADF79F926BE558700D8F126 /* Alert.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +249,7 @@
 				8AC290A6268364340067B13C /* FilmViewModel.swift in Sources */,
 				FA7B9BCC2684D49300BDB31C /* CategoryViewModel.swift in Sources */,
 				8ABB296C26828A6B009963FF /* Film.swift in Sources */,
+				FADF79FA26BE558700D8F126 /* Alert.swift in Sources */,
 				8AC290A3268363330067B13C /* DetailsViewModel.swift in Sources */,
 				8ABDA0C82680E44600477D3D /* Category.swift in Sources */,
 				8AB647BF265D0A0D00B2F498 /* AppDelegate.swift in Sources */,
