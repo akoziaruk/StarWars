@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FRf-eX-UPX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -135,9 +135,6 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="delegate" destination="FRf-eX-UPX" id="28K-Xi-Kyi"/>
-                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="b5o-Kv-nkx"/>
@@ -152,10 +149,6 @@
                             <constraint firstItem="oQP-3L-Gl8" firstAttribute="leading" secondItem="b5o-Kv-nkx" secondAttribute="leading" id="t8y-Cm-Ncr"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="categoriesCollectionView" destination="J4f-BU-FqE" id="ddi-YI-03g"/>
-                        <outlet property="detailsCollectionView" destination="oQP-3L-Gl8" id="dob-Tc-wVg"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQL-UI-lu7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -1,24 +1,18 @@
 //
-//  Category.swift
+//  Categories.swift
 //  StarWarsBrowser
 //
-//  Created by Alexander Koziaruk on 21.06.2021.
+//  Created by Olexander Koziaruk on 8/31/21.
 //
 
 import Foundation
 
-struct Category: Decodable {
-    var name: String!
-    var url: String!
-}
-
-struct CategoryResponse: Decodable {
-    let categories: [Category]
+struct Categories: Decodable {
+    let items: [Category]
     
     init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        
-        categories = try CodingKeys.allCases.map {
+        let container = try decoder.container(keyedBy: CodingKeys.self)        
+        items = try CodingKeys.allCases.map {
             let name = $0.rawValue
             let url = try container.decode(String.self, forKey: $0)
             return Category(name: name, url: url)
@@ -34,4 +28,3 @@ struct CategoryResponse: Decodable {
         case vehicles = "vehicles"
     }
 }
-
