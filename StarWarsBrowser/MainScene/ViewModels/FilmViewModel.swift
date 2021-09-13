@@ -7,15 +7,15 @@
 
 import Foundation
 
-class FilmViewModel: DetailsViewModel {
-    let title: String!
-    let director: String!
-    let openingCrawl: String!
-    init(_ film: Film) {
-        title = film.title
-        director = film.director
-        openingCrawl = film.openingCrawl
-    }
-}
-
-
+//class FilmViewModel: DetailsViewModel {
+//    let title: String!
+//    let director: String!
+//    let openingCrawl: String!
+//    init(_ film: Film) {
+//        title = film.title
+//        director = film.director
+//        openingCrawl = film.openingCrawl
+//    }
+//}
+//
+//

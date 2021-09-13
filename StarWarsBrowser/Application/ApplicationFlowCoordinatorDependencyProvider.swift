@@ -7,9 +7,9 @@
 
 import UIKit
 
-protocol ApplicationFlowCoordinatorDependencyProvider: CategoriesFlowCoordinatorDependencyProvider {}
+protocol ApplicationFlowCoordinatorDependencyProvider: MainFlowCoordinatorDependencyProvider {}
 
-protocol CategoriesFlowCoordinatorDependencyProvider: class {
-    func categoriesNavigationController(navigator: CategoriesNavigator) -> UINavigationController
+protocol MainFlowCoordinatorDependencyProvider: class {
+    func mainNavigationController(navigator: MainNavigator) -> UINavigationController
 }
  

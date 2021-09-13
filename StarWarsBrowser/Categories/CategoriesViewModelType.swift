@@ -24,7 +24,7 @@ extension CategoriesLoadingState: Equatable {
         switch (lhs, rhs) {
         case (.idle, .idle): return true
         case (.loading, .loading): return true
-        case (.success(let lhsMovies), .success(let rhsMovies)): return lhsMovies == rhsMovies
+        case (.success(let lhs), .success(let rhs)): return lhs == rhs
         case (.noResult, .noResult): return true
         case (.failure, .failure): return true
         default: return false

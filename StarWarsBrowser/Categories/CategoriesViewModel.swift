@@ -8,12 +8,11 @@
 import Combine
 
 class CategoriesViewModel: CategoriesViewModelType {
-    
-    private let useCase: CategoriesUseCaseType
-    private weak var navigator: CategoriesNavigator?
+    private let useCase: MainUseCaseType
+    private weak var navigator: MainNavigator? // TODO: Add action to navigator
     private var subscriptions = Set<AnyCancellable>()
     
-    init(useCase: CategoriesUseCaseType, navigator: CategoriesNavigator) {
+    init(useCase: MainUseCaseType, navigator: MainNavigator) {
         self.useCase = useCase
         self.navigator = navigator
     }

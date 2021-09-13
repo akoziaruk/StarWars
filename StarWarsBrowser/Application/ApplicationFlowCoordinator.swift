@@ -21,11 +21,9 @@ class ApplicationFlowCoordinator: FlowCoordinator {
     }
     
     func start() {
-        //TODO: Add MainFlowCoordinator
-        
-        let categoriesFlowCoordinator = CategoriesFlowCoordinator(window: window, dependencyProvider: self.dependencyProvider)
-        childCoordinators = [categoriesFlowCoordinator]
-        categoriesFlowCoordinator.start()
+        let flowCoordinator = MainFlowCoordinator(window: window, dependencyProvider: self.dependencyProvider)
+        childCoordinators = [flowCoordinator]
+        flowCoordinator.start()
     }
     
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 final class ApplicationComponentsFactory {
-    fileprivate lazy var useCase: CategoriesUseCaseType = CategoriesUseCase(networkService: servicesProvider.network)
+    fileprivate lazy var useCase: MainUseCaseType = MainUseCase(networkService: servicesProvider.network)
 
     private let servicesProvider: ServicesProvider
 
@@ -18,10 +18,20 @@ final class ApplicationComponentsFactory {
 }
 
 extension ApplicationComponentsFactory: ApplicationFlowCoordinatorDependencyProvider {
-    func categoriesNavigationController(navigator: CategoriesNavigator) -> UINavigationController {
-        let viewModel = CategoriesViewModel(useCase: useCase, navigator: navigator)
-        let categoriesViewController = CategoriesViewController(viewModel: viewModel)
-        let categoriesNavigationController = UINavigationController(rootViewController: categoriesViewController)
-        return categoriesNavigationController
+    func mainNavigationController(navigator: MainNavigator) -> UINavigationController {
+        let categoriesViewModel = CategoriesViewModel(useCase: useCase, navigator: navigator)
+        let categoriesViewController = CategoriesViewController(viewModel: categoriesViewModel)
+        
+        let detailsViewController = detailsViewController(categoryId: nil)
+        
+        let mainViewController = MainViewController(categoriesViewController, detailsViewController)
+        let mainNavigationController = UINavigationController(rootViewController: mainViewController)
+        
+        return mainNavigationController
+    }
+    
+    func detailsViewController(categoryId: String?) -> DetailsViewController {
+        let viewModel = DetailsViewModel(useCase: useCase)
+        return DetailsViewController(viewModel: viewModel)
     }
 }

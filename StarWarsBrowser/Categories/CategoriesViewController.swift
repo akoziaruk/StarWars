@@ -35,6 +35,7 @@ class CategoriesViewController: UIViewController {
     private func bind(to: CategoriesViewModelType) {
         subscriptions.forEach { $0.cancel() }
         subscriptions.removeAll()
+        
         let input = CategoriesViewModelInput(load: load.eraseToAnyPublisher())
         let output = viewModel.transform(input: input)
         

@@ -12,3 +12,14 @@ struct Category: Decodable {
     var url: String!
 }
 
+extension Category {
+    var type: DetailDataType? {
+        switch name {
+        case "Film":
+            return .film
+        default:
+            return nil
+        }
+        
+    }
+}

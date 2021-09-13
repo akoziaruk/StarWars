@@ -8,5 +8,5 @@
 import Foundation
 
 protocol CategoriesNavigator: AnyObject {
-    
+    func showDetails(forCategory id: String)
 }
