@@ -2,20 +2,22 @@
 //  DetailsViewController.swift
 //  StarWarsBrowser
 //
-//  Created by Olexander Koziaruk on 9/13/21.
+//  Created by Olexander Koziaruk on 9/14/21.
 //
 
-import Combine
 import UIKit
+import Combine
+
+private let reuseIdentifier = "Cell"
 
 class DetailsViewController: UIViewController {
-    
+    @IBOutlet weak var collectionView: UICollectionView!
     private let viewModel: DetailsViewModelType!
     private let selection = PassthroughSubject<(DetailDataType, URL), Never>()
 
     init(viewModel: DetailsViewModel) {
         self.viewModel = viewModel
-        super.init()
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -24,8 +26,24 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Register cell classes
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+
         selection.send((.film, URL(fileURLWithPath: "")))
-        // selection load type
+
+        collectionView.backgroundColor = .red
+                
+        // Do any additional setup after loading the view.
     }
+    
 }
+
+//extension DetailsViewController: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: view.bounds.size.width,
+//                      height: view.bounds.size.height)
+//    }
+//}

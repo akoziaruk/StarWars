@@ -29,7 +29,7 @@ class CategoriesViewController: UIViewController {
     }
     
     private func configureUI() {
-        view.backgroundColor = .yellow
+
     }
     
     private func bind(to: CategoriesViewModelType) {

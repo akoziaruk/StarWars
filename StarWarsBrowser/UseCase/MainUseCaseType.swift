@@ -25,6 +25,8 @@ final class MainUseCase: MainUseCaseType {
             .load(Resource<Categories>.categories())
             .map { .success($0) }
             .catch { error -> AnyPublisher<Result<Categories, Error>, Never> in .just(.failure(error)) }
+            .subscribe(on: Scheduler.backgroundWorkScheduler)
+            .receive(on: Scheduler.mainScheduler)
             .eraseToAnyPublisher()
     }
     
@@ -40,6 +42,8 @@ final class MainUseCase: MainUseCaseType {
             .load(Resource<Film>.films(with: url))
             .map { .success($0 as! DetailsType) }
             .catch { error -> AnyPublisher<Result<DetailsType, Error>, Never> in .just(.failure(error)) }
+            .subscribe(on: Scheduler.backgroundWorkScheduler)
+            .receive(on: Scheduler.mainScheduler)
             .eraseToAnyPublisher()
     }
 }
