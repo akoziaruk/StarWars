@@ -10,9 +10,12 @@ import Combine
 
 class CategoriesViewController: UIViewController {
     private let viewModel: CategoriesViewModelType
-    private var subscriptions: [AnyCancellable] = []
     private let load = PassthroughSubject<Void, Never>()
+    private var subscriptions: [AnyCancellable] = []
+    private lazy var dataManager = { CategoriesDisplayDataManager(collectionView) }()
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     init(viewModel: CategoriesViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -24,6 +27,7 @@ class CategoriesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureUI()
         bind(to: viewModel)
     }
@@ -46,18 +50,16 @@ class CategoriesViewController: UIViewController {
     
     private func render(state: CategoriesLoadingState) {
         switch state {
-        case .idle: break
-           // App just started loading
-        default:
-            break
+        case .idle:
+            break  // App just started loading
+        case .loading:
+            break  // TODO: Show loader
+        case .success(let categories):
+            dataManager.update(with: categories)
+        case .failure(let error):
+            break  // TODO: Show failure
+        case .noResult:
+            break  // TODO: Show no result state
         }
-        //TODO
-        
-        /*
-         case loading
-         case success([CategoryViewModel])
-         case failure(Error)
-         case noResult
-         */
     }
 }

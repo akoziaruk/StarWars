@@ -29,20 +29,18 @@ class MainViewController: UIViewController {
         
         add(viewController: categoriesViewController)
         add(viewController: detailsViewController)
-
         addConstraints()
     }
     
     private func addConstraints() {
         categoriesViewController.view.translatesAutoresizingMaskIntoConstraints = false
         detailsViewController.view.translatesAutoresizingMaskIntoConstraints = false
-
+        
         NSLayoutConstraint.activate([
             categoriesViewController.view.heightAnchor.constraint(equalToConstant: 200),
             categoriesViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
             categoriesViewController.view.leftAnchor.constraint(equalTo: view.leftAnchor),
             categoriesViewController.view.rightAnchor.constraint(equalTo: view.rightAnchor),
-
             detailsViewController.view.topAnchor.constraint(equalTo: categoriesViewController.view.bottomAnchor),
             detailsViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             detailsViewController.view.leftAnchor.constraint(equalTo: view.leftAnchor),

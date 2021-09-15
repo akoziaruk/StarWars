@@ -2,7 +2,7 @@
 //  CategoryCollectionViewCell.swift
 //  StarWarsBrowser
 //
-//  Created by Alexander Koziaruk on 09.06.2021.
+//  Created by Olexander Koziaruk on 9/15/21.
 //
 
 import UIKit
@@ -14,3 +14,4 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         titleLabel.text = viewModel.name
     }
 }
+

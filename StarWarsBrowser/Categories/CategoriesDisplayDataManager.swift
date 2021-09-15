@@ -1,5 +1,5 @@
 //
-//  CategoriesDataSource.swift
+//  CategoriesDisplayDataManager.swift
 //  StarWarsBrowser
 //
 //  Created by Alexander Koziaruk on 6/24/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategoriesDataSource {
+class CategoriesDisplayDataManager {
     enum Section {
       case main
     }
@@ -21,6 +21,12 @@ class CategoriesDataSource {
     
     init(_ collectionView: UICollectionView) {
         self.collectionView = collectionView
+        setupCell()
+    }
+    
+    private func setupCell() {
+        let nibName = UINib(nibName: "StarInfoCollectionViewCell", bundle:nil)
+        collectionView.register(nibName, forCellWithReuseIdentifier: "StarInfoCollectionViewCell")
     }
     
     func setupDataSource() -> CategoryDataSource {
@@ -37,7 +43,7 @@ class CategoriesDataSource {
       return dataSource
     }
         
-    func updateWith(_ categories: [CategoryViewModel]) {
+    func update(with categories: [CategoryViewModel]) {
         var snapshot = CategorySnapshot()
         snapshot.appendSections([.main])
         snapshot.appendItems(categories)
