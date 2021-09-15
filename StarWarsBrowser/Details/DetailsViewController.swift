@@ -12,7 +12,7 @@ private let reuseIdentifier = "Cell"
 
 class DetailsViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
-    private let viewModel: DetailsViewModelType!
+    private var viewModel: DetailsViewModelType!
     private let selection = PassthroughSubject<(DetailDataType, URL), Never>()
 
     init(viewModel: DetailsViewModel) {
@@ -22,6 +22,10 @@ class DetailsViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func updateWith(_ viewModel: DetailsViewModelType) {
+        self.viewModel = viewModel
     }
     
     override func viewDidLoad() {

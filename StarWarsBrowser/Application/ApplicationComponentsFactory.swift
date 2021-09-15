@@ -22,7 +22,8 @@ extension ApplicationComponentsFactory: ApplicationFlowCoordinatorDependencyProv
         let categoriesViewModel = CategoriesViewModel(useCase: useCase, navigator: navigator)
         let categoriesViewController = CategoriesViewController(viewModel: categoriesViewModel)
         
-        let detailsViewController = detailsViewController(categoryId: nil)
+        let detailsViewModel = DetailsViewModel(useCase: useCase)
+        let detailsViewController = DetailsViewController(viewModel: detailsViewModel)
         
         let mainViewController = MainViewController(categoriesViewController, detailsViewController)
         let mainNavigationController = UINavigationController(rootViewController: mainViewController)
@@ -30,8 +31,7 @@ extension ApplicationComponentsFactory: ApplicationFlowCoordinatorDependencyProv
         return mainNavigationController
     }
     
-    func detailsViewController(categoryId: String?) -> DetailsViewController {
-        let viewModel = DetailsViewModel(useCase: useCase)
-        return DetailsViewController(viewModel: viewModel)
+    func detailsViewModel(for urlString: String) -> DetailsViewModel {
+        return DetailsViewModel(urlString: urlString, useCase: useCase)
     }
 }

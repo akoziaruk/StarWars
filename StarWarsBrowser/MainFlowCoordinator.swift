@@ -24,9 +24,9 @@ class MainFlowCoordinator: FlowCoordinator {
 }
 
 extension MainFlowCoordinator: MainNavigator {
-    func showCategory(for id: String) {
-        
+    func showCategory(for urlString: String) {
+        let mainViewController = navigationController?.viewControllers.first as! MainViewController
+        let viewModel = dependencyProvider.detailsViewModel(for: urlString)
+        mainViewController.detailsViewController.updateWith(viewModel)
     }
-    
-    //TODO: Add navigaton here
 }

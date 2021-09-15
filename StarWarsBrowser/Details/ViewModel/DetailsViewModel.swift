@@ -9,10 +9,12 @@ import Combine
 
 class DetailsViewModel: DetailsViewModelType {
         
+    private let urlString: String?
     private let useCase: MainUseCaseType
     private var subscriptions = Set<AnyCancellable>()
     
-    init(useCase: MainUseCaseType) {
+    init(urlString: String? = nil, useCase: MainUseCaseType) {
+        self.urlString = urlString
         self.useCase = useCase
     }
 
