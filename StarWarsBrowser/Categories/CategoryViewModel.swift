@@ -9,10 +9,10 @@ import Foundation
 
 class CategoryViewModel {
     var name: String!
-    let url: String!
+    let urlString: String!
     init(_ category: Category) {
         name = category.name
-        url = category.url
+        urlString = category.url
     }
 }
 

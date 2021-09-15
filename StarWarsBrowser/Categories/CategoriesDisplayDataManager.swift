@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategoriesDisplayDataManager {
+class CategoriesDisplayDataManager: NSObject {
     enum Section {
       case main
     }
@@ -17,14 +17,21 @@ class CategoriesDisplayDataManager {
     typealias CategorySnapshot = NSDiffableDataSourceSnapshot<Section, CategoryViewModel>
 
     weak var collectionView: UICollectionView!
+    weak var delegate: CategoriesDisplayDataManagerDelegate?
     lazy var dataSource = setupDataSource()
     
-    init(_ collectionView: UICollectionView) {
+    init(_ collectionView: UICollectionView, delegate: CategoriesDisplayDataManagerDelegate) {
+        super.init()
+        
         self.collectionView = collectionView
-        setupCell()
+        self.delegate = delegate
+        
+        setupCollectionView()
     }
     
-    private func setupCell() {
+    private func setupCollectionView() {
+        collectionView.delegate = self
+
         let nibName = UINib(nibName: "CategoryCollectionViewCell", bundle:nil)
         collectionView.register(nibName, forCellWithReuseIdentifier: "categoryCell")
     }
@@ -50,4 +57,16 @@ class CategoriesDisplayDataManager {
         dataSource.apply(snapshot, animatingDifferences: true)
     }
     
+}
+
+extension CategoriesDisplayDataManager: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let snapshot = dataSource.snapshot()
+        let item = snapshot.itemIdentifiers[indexPath.row]
+        delegate?.didSelectedCategory(for: item.urlString)
+    }
+}
+
+protocol CategoriesDisplayDataManagerDelegate: NSObjectProtocol {
+    func didSelectedCategory(for urlString: String)
 }

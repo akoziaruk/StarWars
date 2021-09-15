@@ -24,5 +24,9 @@ class MainFlowCoordinator: FlowCoordinator {
 }
 
 extension MainFlowCoordinator: MainNavigator {
+    func showCategory(for id: String) {
+        
+    }
+    
     //TODO: Add navigaton here
 }

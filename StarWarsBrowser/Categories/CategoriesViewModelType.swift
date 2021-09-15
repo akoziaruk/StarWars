@@ -9,6 +9,7 @@ import Combine
 
 struct CategoriesViewModelInput {
     let load: AnyPublisher<Void, Never>
+    let select: AnyPublisher<String, Never>
 }
 
 enum CategoriesLoadingState {

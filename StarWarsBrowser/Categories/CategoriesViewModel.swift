@@ -21,6 +21,10 @@ class CategoriesViewModel: CategoriesViewModelType {
         subscriptions.forEach { $0.cancel() }
         subscriptions.removeAll()
         
+        input.select
+            .sink(receiveValue: { [unowned self] urlString in self.navigator?.showCategory(for: urlString) })
+            .store(in: &subscriptions)
+        
         let categories = input.load
             .flatMapLatest({ [unowned self] in self.useCase.loadCategories() })
             .map({ result -> CategoriesLoadingState in
