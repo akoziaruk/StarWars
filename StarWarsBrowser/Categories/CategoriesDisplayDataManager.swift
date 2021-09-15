@@ -25,8 +25,8 @@ class CategoriesDisplayDataManager {
     }
     
     private func setupCell() {
-        let nibName = UINib(nibName: "StarInfoCollectionViewCell", bundle:nil)
-        collectionView.register(nibName, forCellWithReuseIdentifier: "StarInfoCollectionViewCell")
+        let nibName = UINib(nibName: "CategoryCollectionViewCell", bundle:nil)
+        collectionView.register(nibName, forCellWithReuseIdentifier: "categoryCell")
     }
     
     func setupDataSource() -> CategoryDataSource {
@@ -35,7 +35,7 @@ class CategoriesDisplayDataManager {
         cellProvider: { (collectionView, indexPath, viewModel) ->
           UICollectionViewCell? in
           let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: "StarInfoCollectionViewCell",
+            withReuseIdentifier: "categoryCell",
             for: indexPath) as? CategoryCollectionViewCell
             cell?.updateWith(viewModel)
           return cell

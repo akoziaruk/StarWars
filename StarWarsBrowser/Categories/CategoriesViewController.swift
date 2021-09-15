@@ -32,6 +32,11 @@ class CategoriesViewController: UIViewController {
         bind(to: viewModel)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        load.send()
+    }
+    
     private func configureUI() {
 
     }

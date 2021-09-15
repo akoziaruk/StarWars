@@ -13,5 +13,11 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     func updateWith(_ viewModel: CategoryViewModel) {
         titleLabel.text = viewModel.name
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        backgroundColor = .purple
+        titleLabel.textColor = .white
+    }
 }
 

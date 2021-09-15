@@ -288,9 +288,6 @@
 		FAB114C726DE165200ECE682 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				FA7B9BC72684CC7700BDB31C /* CategoriesDisplayDataManager.swift */,
-				FA46ABC726F1D48E00F5DC58 /* CategoryCollectionViewCell.swift */,
-				FA46ABC826F1D48E00F5DC58 /* CategoryCollectionViewCell.xib */,
 				FAB114E426DE578F00ECE682 /* CategoriesViewController.swift */,
 				FAB114EA26DE6C3200ECE682 /* CategoriesViewController.xib */,
 				FAB114C826DE166500ECE682 /* CategoriesNavigator.swift */,
@@ -299,6 +296,9 @@
 				FAB114BE26DE129100ECE682 /* CategoriesCoordinator.swift */,
 				FAB114C226DE147C00ECE682 /* CategoriesFlowCoordinator.swift */,
 				FA7B9BCB2684D49300BDB31C /* CategoryViewModel.swift */,
+				FA7B9BC72684CC7700BDB31C /* CategoriesDisplayDataManager.swift */,
+				FA46ABC726F1D48E00F5DC58 /* CategoryCollectionViewCell.swift */,
+				FA46ABC826F1D48E00F5DC58 /* CategoryCollectionViewCell.xib */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
