@@ -14,7 +14,7 @@ struct Categories: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)        
         items = try CodingKeys.allCases.map {
             let name = $0.rawValue
-            let url = try container.decode(String.self, forKey: $0)
+            let url = try container.decode(URL.self, forKey: $0)
             return Category(name: name, url: url)
         }
     }

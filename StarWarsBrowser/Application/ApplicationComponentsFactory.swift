@@ -31,7 +31,7 @@ extension ApplicationComponentsFactory: ApplicationFlowCoordinatorDependencyProv
         return mainNavigationController
     }
     
-    func detailsViewModel(for urlString: String) -> DetailsViewModel {
-        return DetailsViewModel(urlString: urlString, useCase: useCase)
+    func detailsViewModel(for url: URL) -> DetailsViewModel {
+        return DetailsViewModel(url: url, useCase: useCase)
     }
 }

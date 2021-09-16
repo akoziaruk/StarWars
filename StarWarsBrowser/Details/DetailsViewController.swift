@@ -8,12 +8,12 @@
 import UIKit
 import Combine
 
-private let reuseIdentifier = "Cell"
-
 class DetailsViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     private var viewModel: DetailsViewModelType!
-    private let selection = PassthroughSubject<(DetailDataType, URL), Never>()
+    private let load = PassthroughSubject<Void, Never>()
+    private var subscriptions: [AnyCancellable] = []
+    private lazy var dataManager = { DetailsDisplayDataManager(collectionView) }()
 
     init(viewModel: DetailsViewModel) {
         self.viewModel = viewModel
@@ -26,28 +26,43 @@ class DetailsViewController: UIViewController {
     
     public func updateWith(_ viewModel: DetailsViewModelType) {
         self.viewModel = viewModel
+        bind(to: viewModel)
+        load.send()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Register cell classes
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        selection.send((.film, URL(fileURLWithPath: "")))
+        updateWith(viewModel)
 
         collectionView.backgroundColor = .red
-                
-        // Do any additional setup after loading the view.
+    }
+    
+    private func bind(to: DetailsViewModelType) {
+        subscriptions.forEach { $0.cancel() }
+        subscriptions.removeAll()
+        
+        let input = DetailsViewModelInput(load: load.eraseToAnyPublisher())
+        let output = viewModel.transform(input: input)
+        
+        output.sink { [unowned self] in
+            self.render(state: $0)
+        }.store(in: &subscriptions)
+    }
+    
+    private func render(state: DetailsLoadingState) {
+        switch state {
+        case .idle:
+            break  // Started loading
+        case .loading:
+            break  // TODO: Show loader
+        case .success(let details):
+            dataManager.update(with: details)
+        case .failure(let error):
+            break  // TODO: Show failure
+        case .noResult:
+            break  // TODO: Show no result state
+        }
     }
     
 }
-
-//extension DetailsViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: view.bounds.size.width,
-//                      height: view.bounds.size.height)
-//    }
-//}

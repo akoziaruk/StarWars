@@ -11,6 +11,7 @@ protocol DetailType: Decodable { }
 
 enum DetailDataType {
     case film
+    case unknown
 }
 
 extension String {

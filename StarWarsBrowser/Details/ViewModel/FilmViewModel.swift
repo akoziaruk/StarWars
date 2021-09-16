@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct FilmViewModelType: DetailViewModelType {
+struct FilmViewModel: DetailViewModelType {
+    let uuid = UUID()
     var title: String!
     var director: String!
     var openingCrawl: String!
@@ -19,8 +20,11 @@ struct FilmViewModelType: DetailViewModelType {
     }
 }
 
-extension FilmViewModelType: Equatable {
-    static func == (lhs: FilmViewModelType, rhs: FilmViewModelType) -> Bool {
-        return lhs.title > rhs.title
+extension FilmViewModel: Hashable {
+    static func == (lhs: FilmViewModel, rhs: FilmViewModel) -> Bool {
+        return lhs.uuid == rhs.uuid
+    }
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(uuid)
     }
 }

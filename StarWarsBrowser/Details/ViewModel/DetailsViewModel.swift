@@ -6,15 +6,16 @@
 //
 
 import Combine
+import UIKit
 
 class DetailsViewModel: DetailsViewModelType {
         
-    private let urlString: String?
+    private let url: URL?
     private let useCase: MainUseCaseType
     private var subscriptions = Set<AnyCancellable>()
     
-    init(urlString: String? = nil, useCase: MainUseCaseType) {
-        self.urlString = urlString
+    init(url: URL? = nil, useCase: MainUseCaseType) {
+        self.url = url
         self.useCase = useCase
     }
 
@@ -22,8 +23,9 @@ class DetailsViewModel: DetailsViewModelType {
         subscriptions.forEach { $0.cancel() }
         subscriptions.removeAll()
 
-        let details = input.selection
-            .flatMapLatest({ [unowned self] in self.useCase.loadDetails(type: $0, url: $1) })
+        let details = input.load
+            .compactMap { [unowned self] _ in self.url }
+            .flatMapLatest({ [unowned self] in self.useCase.loadDetails(url: $0) })
             .map({ result -> DetailsLoadingState in
                 switch result {
                 case .success(let details) where details.items.isEmpty: return .noResult

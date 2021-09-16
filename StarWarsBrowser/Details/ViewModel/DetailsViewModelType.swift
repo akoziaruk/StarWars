@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 struct DetailsViewModelInput {
-    let selection: AnyPublisher<(DetailDataType, URL), Never>
+    let load: AnyPublisher<Void, Never>
 }
 
 enum DetailsLoadingState {

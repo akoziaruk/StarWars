@@ -8,7 +8,7 @@
 import Foundation
 
 extension Resource {    
-    static func films(with url: URL) -> Resource<Film> {
-        return Resource<Film>(url: url)
+    static func films(with url: URL) -> Resource<Films> {
+        return Resource<Films>(url: url)
     }
 }

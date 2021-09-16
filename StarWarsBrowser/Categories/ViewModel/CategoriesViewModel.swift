@@ -6,10 +6,11 @@
 //
 
 import Combine
+import Foundation
 
 class CategoriesViewModel: CategoriesViewModelType {
     private let useCase: MainUseCaseType
-    private weak var navigator: MainNavigator? // TODO: Add action to navigator
+    private weak var navigator: MainNavigator?
     private var subscriptions = Set<AnyCancellable>()
     
     init(useCase: MainUseCaseType, navigator: MainNavigator) {
@@ -21,10 +22,6 @@ class CategoriesViewModel: CategoriesViewModelType {
         subscriptions.forEach { $0.cancel() }
         subscriptions.removeAll()
         
-        input.select
-            .sink(receiveValue: { [unowned self] urlString in self.navigator?.showCategory(for: urlString) })
-            .store(in: &subscriptions)
-        
         let categories = input.load
             .flatMapLatest({ [unowned self] in self.useCase.loadCategories() })
             .map({ result -> CategoriesLoadingState in
@@ -35,6 +32,22 @@ class CategoriesViewModel: CategoriesViewModelType {
                 }
             })
             .eraseToAnyPublisher()
+            
+        categories
+            .first()
+            .sink(receiveValue: { [unowned self] state in
+                if case .success(let items) = state,
+                   let url = items.first?.url {
+                    self.navigator?.showCategory(for: url)
+                }
+            })
+            .store(in: &subscriptions)
+            
+        input.select
+            .sink(receiveValue: { [unowned self] url in
+                    self.navigator?.showCategory(for: url)
+            })
+            .store(in: &subscriptions)
         
         let initialState: CategoriesViewModelOutput = .just(.idle)
         

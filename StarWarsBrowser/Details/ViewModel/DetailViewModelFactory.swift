@@ -12,7 +12,7 @@ class DetailViewModelFactory {
        return items.compactMap {
         switch $0 {
         case let item as Film:
-            return FilmViewModelType(model: item)
+            return FilmViewModel(model: item)
         default:
             return nil
         }

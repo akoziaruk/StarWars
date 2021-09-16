@@ -9,10 +9,9 @@ import UIKit
 import Combine
 
 class CategoriesViewController: UIViewController {
-    
     private let viewModel: CategoriesViewModelType
     private let load = PassthroughSubject<Void, Never>()
-    private let select = PassthroughSubject<String, Never>()
+    private let select = PassthroughSubject<URL, Never>()
     private var subscriptions: [AnyCancellable] = []
     private lazy var dataManager = { CategoriesDisplayDataManager(collectionView,
                                                                   delegate: self) }()
@@ -43,7 +42,7 @@ class CategoriesViewController: UIViewController {
     private func configureUI() {
 
     }
-    
+
     private func bind(to: CategoriesViewModelType) {
         subscriptions.forEach { $0.cancel() }
         subscriptions.removeAll()
@@ -74,7 +73,7 @@ class CategoriesViewController: UIViewController {
 }
 
 extension CategoriesViewController: CategoriesDisplayDataManagerDelegate {
-    func didSelectedCategory(for urlString: String) {
-        select.send(urlString)
+    func didSelectedCategory(for url: URL) {
+        select.send(url)
     }
 }

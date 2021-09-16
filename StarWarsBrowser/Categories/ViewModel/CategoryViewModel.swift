@@ -8,19 +8,20 @@
 import Foundation
 
 class CategoryViewModel {
+    let uuid = UUID()
     var name: String!
-    let urlString: String!
+    let url: URL!
     init(_ category: Category) {
         name = category.name
-        urlString = category.url
+        url = category.url
     }
 }
 
 extension CategoryViewModel: Hashable {
     static func == (lhs: CategoryViewModel, rhs: CategoryViewModel) -> Bool {
-        lhs.name == rhs.name
+        lhs.uuid == rhs.uuid
     }
     func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
+        hasher.combine(uuid)
     }
 }

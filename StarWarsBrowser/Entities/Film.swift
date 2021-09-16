@@ -19,12 +19,12 @@ struct Film: DetailType {
     }
 }
 
-struct FilmsResponse: Decodable {
-    let values: [Film]
-    
+struct Films: DetailsType, Decodable {
+    var items: [DetailType]
+        
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        values = try container.decode([Film].self, forKey: CodingKeys.results)
+        items = try container.decode([Film].self, forKey: CodingKeys.results)
     }
     
     enum CodingKeys: String, CodingKey, CaseIterable {
