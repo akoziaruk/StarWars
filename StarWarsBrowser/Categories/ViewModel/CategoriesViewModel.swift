@@ -37,15 +37,15 @@ class CategoriesViewModel: CategoriesViewModelType {
             .first()
             .sink(receiveValue: { [unowned self] state in
                 if case .success(let items) = state,
-                   let url = items.first?.url {
-                    self.navigator?.showCategory(for: url)
+                   let item = items.first {
+                    self.navigator?.showCategory(for: item.type, url: item.url)
                 }
             })
             .store(in: &subscriptions)
             
         input.select
-            .sink(receiveValue: { [unowned self] url in
-                    self.navigator?.showCategory(for: url)
+            .sink(receiveValue: { [unowned self] item in
+                self.navigator?.showCategory(for: item.type, url: item.url)
             })
             .store(in: &subscriptions)
         

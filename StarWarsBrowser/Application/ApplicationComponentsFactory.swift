@@ -22,7 +22,7 @@ extension ApplicationComponentsFactory: ApplicationFlowCoordinatorDependencyProv
         let categoriesViewModel = CategoriesViewModel(useCase: useCase, navigator: navigator)
         let categoriesViewController = CategoriesViewController(viewModel: categoriesViewModel)
         
-        let detailsViewModel = DetailsViewModel(useCase: useCase)
+        let detailsViewModel = DetailsViewModel(type: .unknown, useCase: useCase)
         let detailsViewController = DetailsViewController(viewModel: detailsViewModel)
         
         let mainViewController = MainViewController(categoriesViewController, detailsViewController)
@@ -31,7 +31,7 @@ extension ApplicationComponentsFactory: ApplicationFlowCoordinatorDependencyProv
         return mainNavigationController
     }
     
-    func detailsViewModel(for url: URL) -> DetailsViewModel {
-        return DetailsViewModel(url: url, useCase: useCase)
+    func detailsViewModel(for type: ItemType, url: URL) -> DetailsViewModel {
+        return DetailsViewModel(type: type, url: url, useCase: useCase)
     }
 }

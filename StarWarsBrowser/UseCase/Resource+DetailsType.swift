@@ -7,8 +7,11 @@
 
 import Foundation
 
-extension Resource {    
-    static func films(with url: URL) -> Resource<Films> {
-        return Resource<Films>(url: url)
+extension Resource {
+    static func films(with url: URL) -> Resource<FilmCollection> {
+        return Resource<FilmCollection>(url: url)
+    }
+    static func people(with url: URL) -> Resource<PeopleCollection> {
+        return Resource<PeopleCollection>(url: url)
     }
 }

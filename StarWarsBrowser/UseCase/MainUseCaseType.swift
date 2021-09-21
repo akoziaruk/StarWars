@@ -10,21 +10,11 @@ import Foundation
 
 protocol MainUseCaseType {
     func loadCategories() -> AnyPublisher<Result<Categories, Error>, Never>
-    func loadDetails(url: URL) -> AnyPublisher<Result<DetailsType, Error>, Never>
-}
-
-enum UseCaseError: LocalizedError {
-    case invalidType
-    
-    var description: String? {
-        switch self {
-        case .invalidType:            return "Invalid type"
-        }
-    }
+    func loadDetails(with type: ItemType, url: URL) -> AnyPublisher<Result<DetailCollection, Error>, Never>
 }
 
 final class MainUseCase: MainUseCaseType {
-    private let networkService: NetworkServiceType
+    let networkService: NetworkServiceType
     
     init(networkService: NetworkServiceType) {
         self.networkService = networkService
@@ -40,31 +30,22 @@ final class MainUseCase: MainUseCaseType {
             .eraseToAnyPublisher()
     }
     
-    func loadDetails(url: URL) -> AnyPublisher<Result<DetailsType, Error>, Never>  {
-        switch url.type {
+    func loadDetails(with type: ItemType, url: URL) -> AnyPublisher<Result<DetailCollection, Error>, Never>  {
+        switch type {
         case .film:
-            return self.loadFilms(url)
+            return loadFilms(with: url)
+        case .people:
+            return loadPeople(with: url)
         case .unknown:
-            return .just(.failure(UseCaseError.invalidType))
+            return .just(.failure(UseCaseError.unknownType))
+        case .planet:
+            return .just(.failure(UseCaseError.unknownType))
+        case .species:
+            return .just(.failure(UseCaseError.unknownType))
+        case .starship:
+            return .just(.failure(UseCaseError.unknownType))
+        case .vehicle:
+            return .just(.failure(UseCaseError.unknownType))
         }
-    }
-    
-    private func loadFilms(_ url: URL) -> AnyPublisher<Result<DetailsType, Error>, Never> {
-        return networkService
-            .load(Resource<Films>.films(with: url))
-            .map { .success($0) }
-            .catch { error -> AnyPublisher<Result<DetailsType, Error>, Never> in .just(.failure(error)) }
-            .subscribe(on: Scheduler.backgroundWorkScheduler)
-            .receive(on: Scheduler.mainScheduler)
-            .eraseToAnyPublisher()
-    }
-}
-
-fileprivate extension URL {
-    var type: DetailDataType {
-        if self.absoluteString.contains("film") {
-            return .film
-        }
-        return .unknown
     }
 }

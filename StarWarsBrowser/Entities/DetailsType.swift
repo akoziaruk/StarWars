@@ -7,6 +7,7 @@
 
 import Foundation
 
-protocol DetailsType: Decodable {
-    var items: [DetailType] { get }
+protocol DetailCollection: Decodable {
+    var items: [Detail] { get }
 }
+

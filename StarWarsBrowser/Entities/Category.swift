@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Category: Decodable {
+struct Category {
     var name: String!
     var url: URL!
+    var type: ItemType!
 }

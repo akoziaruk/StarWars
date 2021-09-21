@@ -30,25 +30,32 @@ class DetailsDisplayDataManager: NSObject {
         collectionView.delegate = self
         let nibName = UINib(nibName: "FilmCollectionViewCell", bundle:nil)
         collectionView.register(nibName, forCellWithReuseIdentifier: "filmCell")
+
+        let nib2Name = UINib(nibName: "PeopleCollectionViewCell", bundle:nil)
+        collectionView.register(nib2Name, forCellWithReuseIdentifier: "peopleCell")
     }
 
     private func setupDataSource() -> DetailsDiffableDataSource {
       let dataSource = DetailsDiffableDataSource(
         collectionView: collectionView,
-        cellProvider: { (collectionView, indexPath, viewModel) ->
-          UICollectionViewCell? in
-
-            // TODO: Add other DetailsViewModels
-            if let viewModel = viewModel as? FilmViewModel {
-                let cell = collectionView.dequeueReusableCell(
-                  withReuseIdentifier: "filmCell",
-                  for: indexPath) as? FilmCollectionViewCell
+        cellProvider: { (collectionView, indexPath, viewModel) -> UICollectionViewCell? in
+            switch viewModel {
+            case let viewModel as FilmViewModel:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "filmCell",
+                                                              for: indexPath) as? FilmCollectionViewCell
                 cell?.updateWith(viewModel)
                 return cell
+                
+            case let viewModel as PeopleViewModel:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "peopleCell",
+                                                              for: indexPath) as? PeopleCollectionViewCell
+                cell?.updateWith(viewModel)
+                return cell
+    
+            default:
+                fatalError()
             }
-
-          fatalError()
-      })
+        })
       return dataSource
     }
 

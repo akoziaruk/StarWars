@@ -8,13 +8,15 @@
 import Foundation
 
 class DetailViewModelFactory {
-    public static func viewModels(for items: [DetailType]) -> [DetailViewModelType] {
+    public static func viewModels(for items: [Detail]) -> [DetailViewModelType] {
        return items.compactMap {
         switch $0 {
         case let item as Film:
             return FilmViewModel(model: item)
+        case let item as People:
+            return PeopleViewModel(model: item)
         default:
-            return nil
+            fatalError("Unknown item for ViewModel")
         }
        }
     }

@@ -9,11 +9,13 @@ import Foundation
 
 class CategoryViewModel {
     let uuid = UUID()
-    var name: String!
-    let url: URL!
+    var name: String
+    let url: URL
+    let type: ItemType
     init(_ category: Category) {
         name = category.name
         url = category.url
+        type = category.type
     }
 }
 

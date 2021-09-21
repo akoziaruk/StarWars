@@ -63,10 +63,15 @@ extension CategoriesDisplayDataManager: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let snapshot = dataSource.snapshot()
         let item = snapshot.itemIdentifiers[indexPath.row]
-        delegate?.didSelectedCategory(for: item.url)
+        delegate?.didSelectedCategory(with: SelectedItem(type: item.type, url: item.url))
     }
 }
 
 protocol CategoriesDisplayDataManagerDelegate: NSObjectProtocol {
-    func didSelectedCategory(for url: URL)
+    func didSelectedCategory(with item: SelectedItem)
+}
+
+struct SelectedItem {
+    let type: ItemType!
+    let url: URL!
 }

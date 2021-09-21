@@ -10,7 +10,7 @@ import Foundation
 
 struct CategoriesViewModelInput {
     let load: AnyPublisher<Void, Never>
-    let select: AnyPublisher<URL, Never>
+    let select: AnyPublisher<SelectedItem, Never>
 }
 
 enum CategoriesLoadingState {
