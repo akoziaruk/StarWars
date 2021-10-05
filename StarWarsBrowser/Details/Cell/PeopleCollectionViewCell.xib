@@ -16,9 +16,33 @@
                 <rect key="frame" x="0.0" y="0.0" width="315" height="401"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dix-WE-UP5">
-                        <rect key="frame" x="128" y="30" width="59" height="30"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luke Skywalker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dix-WE-UP5">
+                        <rect key="frame" x="74" y="30" width="167" height="30"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="172 cm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EM4-BF-g4h">
+                        <rect key="frame" x="130" y="66" width="55" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="brown" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAJ-XN-E8g">
+                        <rect key="frame" x="133.5" y="108" width="48" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="H123D" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O29-UN-6xw">
+                        <rect key="frame" x="131.5" y="129" width="52" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="blonde" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynf-zt-Sce">
+                        <rect key="frame" x="131" y="87" width="53" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -26,11 +50,23 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="YAJ-XN-E8g" firstAttribute="top" secondItem="ynf-zt-Sce" secondAttribute="bottom" id="53u-bh-L1A"/>
+                <constraint firstItem="O29-UN-6xw" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="7lY-Hb-kPf"/>
+                <constraint firstItem="ynf-zt-Sce" firstAttribute="top" secondItem="EM4-BF-g4h" secondAttribute="bottom" id="Cfp-LL-ciF"/>
+                <constraint firstItem="O29-UN-6xw" firstAttribute="top" secondItem="YAJ-XN-E8g" secondAttribute="bottom" id="EGh-yI-6jN"/>
+                <constraint firstItem="EM4-BF-g4h" firstAttribute="top" secondItem="Dix-WE-UP5" secondAttribute="bottom" constant="6" id="O5e-E1-MqY"/>
                 <constraint firstItem="Dix-WE-UP5" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="h0M-vZ-a6q"/>
+                <constraint firstItem="YAJ-XN-E8g" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ikb-he-3TD"/>
+                <constraint firstItem="EM4-BF-g4h" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="jb8-ve-UWo"/>
                 <constraint firstItem="Dix-WE-UP5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="30" id="rj7-wu-xkR"/>
+                <constraint firstItem="ynf-zt-Sce" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="zst-rd-PDj"/>
             </constraints>
             <size key="customSize" width="315" height="401"/>
             <connections>
+                <outlet property="birthYearLabel" destination="O29-UN-6xw" id="zXC-VC-HW9"/>
+                <outlet property="eyeColorLabel" destination="YAJ-XN-E8g" id="twd-iv-HE8"/>
+                <outlet property="hairColorLabel" destination="ynf-zt-Sce" id="zDX-6f-m5T"/>
+                <outlet property="heightLabel" destination="EM4-BF-g4h" id="2Zh-T3-Gvh"/>
                 <outlet property="nameLabel" destination="Dix-WE-UP5" id="smD-Cu-ZbW"/>
             </connections>
             <point key="canvasLocation" x="245.6521739130435" y="138.95089285714286"/>

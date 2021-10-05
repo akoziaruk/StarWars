@@ -10,21 +10,27 @@ import Foundation
 struct People: Detail {
     var type: ItemType { .people }
     let name: String
+    let height: String
+    let hairColor: String
+    let eyeColor: String
+    let birthYear: String
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case height
+        case hairColor = "hair_color"
+        case eyeColor = "eye_color"
+        case birthYear = "birth_year"
+    }
 //    let mass: Int
-//    let hairColor: String
 //    let skinColor: String
-//    let eyeColor: String
-//    let birthYear: String
 //    let gender: Gender
     
 //    enum CodingKeys: String, CodingKey {
 //        case name
 ////        case mass
 ////        case gender
-////        case hairColor = "hair_color"
 ////        case skinColor = "skin_color"
-////        case eyeColor = "eye_color"
-////        case birthYear = "birth_year"
 //    }
     
 //    enum Gender: String, Codable {

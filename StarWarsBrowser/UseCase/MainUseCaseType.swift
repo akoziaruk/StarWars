@@ -36,8 +36,6 @@ final class MainUseCase: MainUseCaseType {
             return loadFilms(with: url)
         case .people:
             return loadPeople(with: url)
-        case .unknown:
-            return .just(.failure(UseCaseError.unknownType))
         case .planet:
             return .just(.failure(UseCaseError.unknownType))
         case .species:
@@ -45,6 +43,8 @@ final class MainUseCase: MainUseCaseType {
         case .starship:
             return .just(.failure(UseCaseError.unknownType))
         case .vehicle:
+            return .just(.failure(UseCaseError.unknownType))
+        case .unknown:
             return .just(.failure(UseCaseError.unknownType))
         }
     }

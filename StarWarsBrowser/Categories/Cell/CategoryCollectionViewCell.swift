@@ -16,8 +16,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundColor = .purple
-        titleLabel.textColor = .white
+        
     }
 }
 

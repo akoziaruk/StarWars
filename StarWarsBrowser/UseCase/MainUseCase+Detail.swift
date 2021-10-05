@@ -28,5 +28,4 @@ extension MainUseCase {
             .receive(on: Scheduler.mainScheduler)
             .eraseToAnyPublisher()
     }
-
 }
