@@ -8,9 +8,10 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    
-    let categoriesViewController: CategoriesViewController!
-    let detailsViewController: DetailsViewController!
+    var categoriesViewController: CategoriesViewController!
+    var detailsViewController: DetailsViewController!
+    @IBOutlet weak var paralaxView: StarsParalaxView!
+    @IBOutlet weak var logoView: UIView!
 
     init(_ categoriesViewController: CategoriesViewController,
          _ detailsViewController: DetailsViewController) {
@@ -21,12 +22,13 @@ class MainViewController: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupView()
         add(viewController: categoriesViewController)
         add(viewController: detailsViewController)
         addConstraints()
@@ -37,8 +39,8 @@ class MainViewController: UIViewController {
         detailsViewController.view.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            categoriesViewController.view.heightAnchor.constraint(equalToConstant: 200),
-            categoriesViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
+            categoriesViewController.view.heightAnchor.constraint(equalToConstant: 130),
+            categoriesViewController.view.topAnchor.constraint(equalTo: logoView.bottomAnchor),
             categoriesViewController.view.leftAnchor.constraint(equalTo: view.leftAnchor),
             categoriesViewController.view.rightAnchor.constraint(equalTo: view.rightAnchor),
             detailsViewController.view.topAnchor.constraint(equalTo: categoriesViewController.view.bottomAnchor),
@@ -46,8 +48,9 @@ class MainViewController: UIViewController {
             detailsViewController.view.leftAnchor.constraint(equalTo: view.leftAnchor),
             detailsViewController.view.rightAnchor.constraint(equalTo: view.rightAnchor),
         ])
-        
-        view.backgroundColor = .purple
+    }
+    
+    private func setupView() {
     }
     
 }

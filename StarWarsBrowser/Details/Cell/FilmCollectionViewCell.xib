@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,54 +19,34 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ST-Oj-N13">
                         <rect key="frame" x="166" y="32" width="46.5" height="30"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Director" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrS-i0-RY0">
                         <rect key="frame" x="155" y="70" width="68" height="23"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vFB-YH-a4Y">
                         <rect key="frame" x="16" y="101" width="346" height="496"/>
-                        <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="0.4014668367" colorSpace="custom" customColorSpace="sRGB"/>
-                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                        <color key="textColor" systemColor="labelColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s9T-eB-euk" userLabel="separator L">
-                        <rect key="frame" x="0.0" y="0.0" width="1" height="613"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="1" id="3Eo-xU-ynh"/>
-                        </constraints>
-                    </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHU-1e-dK8" userLabel="separator R">
-                        <rect key="frame" x="377" y="0.0" width="1" height="613"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="1" id="fHO-01-EK3"/>
-                        </constraints>
-                    </view>
                 </subviews>
-                <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="0.4014668367" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="vFB-YH-a4Y" firstAttribute="top" secondItem="hrS-i0-RY0" secondAttribute="bottom" constant="8" id="0Pc-4K-flI"/>
                     <constraint firstAttribute="trailing" secondItem="vFB-YH-a4Y" secondAttribute="trailing" constant="16" id="96g-Z7-6rT"/>
-                    <constraint firstAttribute="bottom" secondItem="s9T-eB-euk" secondAttribute="bottom" id="9ft-zk-rHe"/>
-                    <constraint firstItem="s9T-eB-euk" firstAttribute="top" secondItem="ako-iy-gGY" secondAttribute="top" id="Phf-5l-0uj"/>
                     <constraint firstItem="3ST-Oj-N13" firstAttribute="top" secondItem="ako-iy-gGY" secondAttribute="top" constant="32" id="PxW-Iq-rEW"/>
                     <constraint firstItem="hrS-i0-RY0" firstAttribute="centerX" secondItem="ako-iy-gGY" secondAttribute="centerX" id="Q7N-4s-d9n"/>
-                    <constraint firstItem="s9T-eB-euk" firstAttribute="leading" secondItem="ako-iy-gGY" secondAttribute="leading" id="aHn-0s-QhQ"/>
                     <constraint firstItem="hrS-i0-RY0" firstAttribute="top" secondItem="3ST-Oj-N13" secondAttribute="bottom" constant="8" id="dUB-RM-irk"/>
-                    <constraint firstAttribute="bottom" secondItem="vHU-1e-dK8" secondAttribute="bottom" id="eBh-ua-S2X"/>
                     <constraint firstItem="vFB-YH-a4Y" firstAttribute="leading" secondItem="ako-iy-gGY" secondAttribute="leading" constant="16" id="lK7-xB-BMQ"/>
                     <constraint firstAttribute="bottom" secondItem="vFB-YH-a4Y" secondAttribute="bottom" constant="16" id="mPs-t8-YOa"/>
                     <constraint firstItem="3ST-Oj-N13" firstAttribute="centerX" secondItem="ako-iy-gGY" secondAttribute="centerX" id="nM4-Xe-F3K"/>
-                    <constraint firstAttribute="trailing" secondItem="vHU-1e-dK8" secondAttribute="trailing" id="p8o-GJ-Ch7"/>
-                    <constraint firstItem="vHU-1e-dK8" firstAttribute="top" secondItem="ako-iy-gGY" secondAttribute="top" id="pZ2-1f-Z5C"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="378" height="613"/>
@@ -79,12 +58,4 @@
             <point key="canvasLocation" x="494" y="71"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

@@ -34,8 +34,6 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
 
         updateWith(viewModel)
-
-        collectionView.backgroundColor = .red
     }
     
     private func bind(to: DetailsViewModelType) {
