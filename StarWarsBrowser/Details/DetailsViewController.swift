@@ -8,13 +8,18 @@
 import UIKit
 import Combine
 
+protocol DetailsViewControllerDelegate: NSObjectProtocol {
+    func scrollViewDidScroll(_ scrollView: UIScrollView)
+}
+
 class DetailsViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     private var viewModel: DetailsViewModelType!
     private let load = PassthroughSubject<Void, Never>()
     private var subscriptions: [AnyCancellable] = []
-    private lazy var dataManager = { DetailsDisplayDataManager(collectionView) }()
-
+    private lazy var dataManager = { DetailsDisplayDataManager(collectionView, delegate: self) }()
+    public weak var delegate: DetailsViewControllerDelegate?
+    
     init(viewModel: DetailsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -63,4 +68,10 @@ class DetailsViewController: UIViewController {
         }
     }
     
+}
+
+extension DetailsViewController: DetailsDisplayDataManagerDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        delegate?.scrollViewDidScroll(scrollView)
+    }
 }

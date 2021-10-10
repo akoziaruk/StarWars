@@ -44,6 +44,7 @@
 		FAAABB5427103D2F0029C6CE /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAABB5327103D2F0029C6CE /* MainViewController.xib */; };
 		FAAABB58271049140029C6CE /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAABB57271049140029C6CE /* StarsView.swift */; };
 		FAAABB5B271062BC0029C6CE /* StarsParalaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAABB5A271062BC0029C6CE /* StarsParalaxView.swift */; };
+		FAAABB5D27108C130029C6CE /* UIViewController+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAABB5C27108C130029C6CE /* UIViewController+Extentions.swift */; };
 		FAB114BA26DE0FAA00ECE682 /* MainUseCaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB114B926DE0FAA00ECE682 /* MainUseCaseType.swift */; };
 		FAB114BC26DE123700ECE682 /* ApplicationFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB114BB26DE123700ECE682 /* ApplicationFlowCoordinator.swift */; };
 		FAB114C126DE135000ECE682 /* ApplicationFlowCoordinatorDependencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB114C026DE135000ECE682 /* ApplicationFlowCoordinatorDependencyProvider.swift */; };
@@ -104,6 +105,7 @@
 		FAAABB5327103D2F0029C6CE /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		FAAABB57271049140029C6CE /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
 		FAAABB5A271062BC0029C6CE /* StarsParalaxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsParalaxView.swift; sourceTree = "<group>"; };
+		FAAABB5C27108C130029C6CE /* UIViewController+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extentions.swift"; sourceTree = "<group>"; };
 		FAB114B926DE0FAA00ECE682 /* MainUseCaseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUseCaseType.swift; sourceTree = "<group>"; };
 		FAB114BB26DE123700ECE682 /* ApplicationFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFlowCoordinator.swift; sourceTree = "<group>"; };
 		FAB114C026DE135000ECE682 /* ApplicationFlowCoordinatorDependencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFlowCoordinatorDependencyProvider.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 			children = (
 				FAB114E626DE632C00ECE682 /* Publisher+Utils.swift */,
 				FA9E49A326EF8C5A00D20BA0 /* Scheduler.swift */,
+				FAAABB5C27108C130029C6CE /* UIViewController+Extentions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				FAB114D426DE178D00ECE682 /* NetworkService.swift in Sources */,
 				FA9E49AB26F0DD0200D20BA0 /* DetailsViewController.swift in Sources */,
 				FAB114BC26DE123700ECE682 /* ApplicationFlowCoordinator.swift in Sources */,
+				FAAABB5D27108C130029C6CE /* UIViewController+Extentions.swift in Sources */,
 				FA7B9BCC2684D49300BDB31C /* CategoryViewModel.swift in Sources */,
 				FA9E499B26EF669A00D20BA0 /* DetailType.swift in Sources */,
 				FABA4D8726DD28C6000866B7 /* CategoriesViewModel.swift in Sources */,

@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol DetailsDisplayDataManagerDelegate: NSObjectProtocol {
+    func scrollViewDidScroll(_ scrollView: UIScrollView)
+}
+
 class DetailsDisplayDataManager: NSObject {
     enum Section {
       case main
@@ -16,13 +20,15 @@ class DetailsDisplayDataManager: NSObject {
     typealias DetailsDiffableDataSource = UICollectionViewDiffableDataSource<Section, AnyHashable>
     typealias DetailsDiffableSnapshot = NSDiffableDataSourceSnapshot<Section, AnyHashable>
 
-    weak var collectionView: UICollectionView!
-    lazy var dataSource = setupDataSource()
-
-    init(_ collectionView: UICollectionView) {
+    private weak var collectionView: UICollectionView!
+    private weak var delegate: DetailsDisplayDataManagerDelegate?
+    private lazy var dataSource = setupDataSource()
+    
+    init(_ collectionView: UICollectionView, delegate: DetailsDisplayDataManagerDelegate) {
         super.init()
         
         self.collectionView = collectionView
+        self.delegate = delegate
         setupCollectionView()
     }
     
@@ -73,6 +79,12 @@ extension DetailsDisplayDataManager: UICollectionViewDelegateFlowLayout {
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.size.width,
                       height: collectionView.bounds.size.height)
+    }
+}
+
+extension DetailsDisplayDataManager: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        delegate?.scrollViewDidScroll(scrollView)
     }
 }
 

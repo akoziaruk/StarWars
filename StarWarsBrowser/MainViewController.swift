@@ -28,10 +28,10 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupView()
         add(viewController: categoriesViewController)
         add(viewController: detailsViewController)
         addConstraints()
+        detailsViewController.delegate = self
     }
     
     private func addConstraints() {
@@ -50,15 +50,10 @@ class MainViewController: UIViewController {
         ])
     }
     
-    private func setupView() {
-    }
-    
 }
 
-fileprivate extension MainViewController {
-    func add(viewController: UIViewController) {
-        addChild(viewController)
-        view.addSubview(viewController.view)
-        viewController.didMove(toParent: self)
+extension MainViewController: DetailsViewControllerDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        paralaxView.doParalax(with: scrollView.contentOffset.x)
     }
 }

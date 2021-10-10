@@ -8,31 +8,52 @@
 import UIKit
 
 class StarsParalaxView: UIView {
-    private let subviewsNumber = 3
+    private let layersCount = 3
+    private let widthCompensation = 600.0
+    private let baseLayerStarsCount = 200
+    
+    var paralaxConstraints = [NSLayoutConstraint]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
-                
-        for i in 1...subviewsNumber {
-            let subview = StarsView(diameterRange: i...i+1)
+              
+        setupLayers()
+    }
+    
+    private func setupLayers() {
+        for i in 1...layersCount {
+            let f = CGFloat(i-1)
+            let subview = StarsView(diameterRange: f...f+0.5,
+                                    starsCount: baseLayerStarsCount*i)
             addSubview(subview)
-            addConstrains(to: subview)
+            setupConstrains(to: subview)
         }
     }
-    
-    private func addConstrains(to subview: UIView) {
+
+    private func setupConstrains(to subview: UIView) {
         subview.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            subview.topAnchor.constraint(equalTo: topAnchor),
-            subview.bottomAnchor.constraint(equalTo: bottomAnchor),
-            subview.leftAnchor.constraint(equalTo: leftAnchor),
-            subview.rightAnchor.constraint(equalTo: rightAnchor)
-        ])
+        
+        let centerConstraint = subview.centerXAnchor.constraint(equalTo: centerXAnchor)
+        paralaxConstraints.append(centerConstraint)
+        
+        let constraints = [centerConstraint,
+                           subview.topAnchor.constraint(equalTo: topAnchor),
+                           subview.bottomAnchor.constraint(equalTo: bottomAnchor),
+                           subview.widthAnchor.constraint(equalTo: widthAnchor, constant: widthCompensation)]
+        
+        NSLayoutConstraint.activate(constraints)
     }
     
-//    /* Value should be in 0.0 - 1.0 range*/
-//    public func doParalax(value: CGFloat) {
-//
-//    }
+    var lastOffset = 0.0
+    let velocity = 20.0
+    
+    public func doParalax(with offset: CGFloat) {
+        for (index, constraint) in paralaxConstraints.enumerated() {
+            let k = CGFloat(paralaxConstraints.count-index)
+            let delta = (offset - lastOffset) / (velocity * k)
+            constraint.constant = constraint.constant + delta
+        }
+        lastOffset = offset
+    }
     
 }

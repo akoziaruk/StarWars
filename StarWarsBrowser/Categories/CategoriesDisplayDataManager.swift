@@ -16,9 +16,9 @@ class CategoriesDisplayDataManager: NSObject {
     typealias CategoryDataSource = UICollectionViewDiffableDataSource<Section,CategoryViewModel>
     typealias CategorySnapshot = NSDiffableDataSourceSnapshot<Section, CategoryViewModel>
 
-    weak var collectionView: UICollectionView!
-    weak var delegate: CategoriesDisplayDataManagerDelegate?
-    lazy var dataSource = setupDataSource()
+    private weak var collectionView: UICollectionView!
+    private weak var delegate: CategoriesDisplayDataManagerDelegate?
+    private lazy var dataSource = setupDataSource()
     
     init(_ collectionView: UICollectionView, delegate: CategoriesDisplayDataManagerDelegate) {
         super.init()

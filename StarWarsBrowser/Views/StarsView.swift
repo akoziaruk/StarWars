@@ -8,11 +8,12 @@
 import UIKit
 
 class StarsView: UIView {
-    private let starsCount = 100
-    public let diameterRange: ClosedRange<Int>!
+    private let starsCount: Int
+    private let diameterRange: ClosedRange<CGFloat>
     
-    init(diameterRange: ClosedRange<Int>) {
+    init(diameterRange: ClosedRange<CGFloat>, starsCount: Int) {
         self.diameterRange = diameterRange
+        self.starsCount = starsCount
         super.init(frame: CGRect())
         self.isOpaque = false
     }
@@ -29,7 +30,7 @@ class StarsView: UIView {
         context.setFillColor(UIColor.white.withAlphaComponent(0.4).cgColor)
         
         for _ in 0...starsCount {
-            let diameter = CGFloat.random(in: 0...2.5)
+            let diameter = CGFloat.random(in: diameterRange)
             let starRect = CGRect(x: CGFloat.random(in: 0...rect.size.width),
                                   y: CGFloat.random(in: 0...rect.size.height),
                                   width: diameter,
