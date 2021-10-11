@@ -39,7 +39,6 @@ class StarsView: UIView {
             context.setShadow(offset: CGSize(width: 0,height: 0), blur: 3, color: UIColor.white.cgColor)
             context.fillEllipse(in: starRect)
         }
-    
     }
     
 }

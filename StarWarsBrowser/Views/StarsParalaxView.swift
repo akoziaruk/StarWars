@@ -11,8 +11,10 @@ class StarsParalaxView: UIView {
     private let layersCount = 3
     private let widthCompensation = 600.0
     private let baseLayerStarsCount = 200
+    private let velocity = 20.0
+    private var lastOffset = 0.0
     
-    var paralaxConstraints = [NSLayoutConstraint]()
+    private var paralaxConstraints = [NSLayoutConstraint]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,19 +41,17 @@ class StarsParalaxView: UIView {
         let constraints = [centerConstraint,
                            subview.topAnchor.constraint(equalTo: topAnchor),
                            subview.bottomAnchor.constraint(equalTo: bottomAnchor),
-                           subview.widthAnchor.constraint(equalTo: widthAnchor, constant: widthCompensation)]
+                           subview.widthAnchor.constraint(equalTo: widthAnchor,
+                                                          constant: widthCompensation)]
         
         NSLayoutConstraint.activate(constraints)
     }
     
-    var lastOffset = 0.0
-    let velocity = 20.0
-    
     public func doParalax(with offset: CGFloat) {
         for (index, constraint) in paralaxConstraints.enumerated() {
             let k = CGFloat(paralaxConstraints.count-index)
-            let delta = (offset - lastOffset) / (velocity * k)
-            constraint.constant = constraint.constant + delta
+            let delta = (offset-lastOffset)/(velocity*k)
+            constraint.constant = constraint.constant+delta
         }
         lastOffset = offset
     }
