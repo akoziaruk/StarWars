@@ -6,16 +6,20 @@
 //
 
 import Foundation
+import UIKit
 
 class CategoryViewModel {
     let uuid = UUID()
     var name: String
     let url: URL
     let type: ItemType
+    let image: UIImage!
+    
     init(_ category: Category) {
         name = category.name
         url = category.url
         type = category.type
+        image = category.image
     }
 }
 

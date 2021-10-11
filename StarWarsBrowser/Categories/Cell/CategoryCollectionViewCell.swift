@@ -9,14 +9,11 @@ import UIKit
 
 class CategoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var logoImageView: UIImageView!
     
     func updateWith(_ viewModel: CategoryViewModel) {
         titleLabel.text = viewModel.name
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
+        logoImageView.image = viewModel.image
     }
 }
 
