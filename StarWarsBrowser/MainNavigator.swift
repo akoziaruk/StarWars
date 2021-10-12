@@ -8,6 +8,6 @@
 import UIKit
 
 protocol MainNavigator: AnyObject {
-    func showCategory(for type: ItemType, url: URL)
+    func showCategory(for type: CategoryType, url: URL)
 }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ItemType {
+enum CategoryType {
     case film
     case people
     case planet

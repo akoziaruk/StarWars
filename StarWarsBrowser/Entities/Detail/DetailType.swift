@@ -8,7 +8,7 @@
 import Foundation
 
 protocol Detail: Decodable {
-    var type: ItemType { get }
+    var type: CategoryType { get }
 }
 
 enum DetailCodingKeys: String, CodingKey, CaseIterable {

@@ -10,7 +10,7 @@ import Foundation
 
 protocol MainUseCaseType {
     func loadCategories() -> AnyPublisher<Result<Categories, Error>, Never>
-    func loadDetails(with type: ItemType, url: URL) -> AnyPublisher<Result<DetailCollection, Error>, Never>
+    func loadDetails(with type: CategoryType, url: URL) -> AnyPublisher<Result<DetailCollection, Error>, Never>
 }
 
 final class MainUseCase: MainUseCaseType {
@@ -30,7 +30,7 @@ final class MainUseCase: MainUseCaseType {
             .eraseToAnyPublisher()
     }
     
-    func loadDetails(with type: ItemType, url: URL) -> AnyPublisher<Result<DetailCollection, Error>, Never>  {
+    func loadDetails(with type: CategoryType, url: URL) -> AnyPublisher<Result<DetailCollection, Error>, Never>  {
         switch type {
         case .film:
             return loadFilms(with: url)

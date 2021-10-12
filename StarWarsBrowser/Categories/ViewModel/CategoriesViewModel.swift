@@ -12,6 +12,7 @@ class CategoriesViewModel: CategoriesViewModelType {
     private let useCase: MainUseCaseType
     private weak var navigator: MainNavigator?
     private var subscriptions = Set<AnyCancellable>()
+    private var selectedCategory = CategoryType.film
     
     init(useCase: MainUseCaseType, navigator: MainNavigator) {
         self.useCase = useCase
@@ -45,6 +46,7 @@ class CategoriesViewModel: CategoriesViewModelType {
             
         input.select
             .sink(receiveValue: { [unowned self] item in
+                self.selectedCategory = item.type
                 self.navigator?.showCategory(for: item.type, url: item.url)
             })
             .store(in: &subscriptions)
@@ -55,6 +57,6 @@ class CategoriesViewModel: CategoriesViewModelType {
     }
     
     private func viewModels(from categories: [Category]) -> [CategoryViewModel] {
-        return categories.compactMap { CategoryViewModel($0) }
+        return categories.compactMap { CategoryViewModel($0, selected: selectedCategory == $0.type) }
     }
 }

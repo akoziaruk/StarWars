@@ -72,6 +72,6 @@ protocol CategoriesDisplayDataManagerDelegate: NSObjectProtocol {
 }
 
 struct SelectedItem {
-    let type: ItemType!
+    let type: CategoryType!
     let url: URL!
 }

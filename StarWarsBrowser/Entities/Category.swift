@@ -10,5 +10,5 @@ import Foundation
 struct Category {
     var name: String!
     var url: URL!
-    var type: ItemType!
+    var type: CategoryType!
 }

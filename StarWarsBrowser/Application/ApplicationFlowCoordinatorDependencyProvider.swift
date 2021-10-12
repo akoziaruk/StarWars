@@ -11,6 +11,6 @@ protocol ApplicationFlowCoordinatorDependencyProvider: MainFlowCoordinatorDepend
 
 protocol MainFlowCoordinatorDependencyProvider: class {
     func mainNavigationController(navigator: MainNavigator) -> UINavigationController
-    func detailsViewModel(for type: ItemType, url: URL) -> DetailsViewModel
+    func detailsViewModel(for type: CategoryType, url: URL) -> DetailsViewModel
 }
  

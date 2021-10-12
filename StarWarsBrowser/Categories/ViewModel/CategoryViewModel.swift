@@ -12,14 +12,16 @@ class CategoryViewModel {
     let uuid = UUID()
     var name: String
     let url: URL
-    let type: ItemType
-    let image: UIImage!
+    let type: CategoryType
+    let image: UIImage
+    let isSelected: Bool
     
-    init(_ category: Category) {
-        name = category.name
+    init(_ category: Category, selected: Bool) {
+        name = category.name.capitalized
         url = category.url
         type = category.type
         image = category.image
+        isSelected = selected
     }
 }
 

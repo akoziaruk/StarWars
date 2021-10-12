@@ -9,12 +9,12 @@ import Combine
 import UIKit
 
 class DetailsViewModel: DetailsViewModelType {
-    private let type: ItemType
+    private let type: CategoryType
     private let url: URL?
     private let useCase: MainUseCaseType
     private var subscriptions = Set<AnyCancellable>()
     
-    init(type: ItemType, url: URL? = nil, useCase: MainUseCaseType) {
+    init(type: CategoryType, url: URL? = nil, useCase: MainUseCaseType) {
         self.type = type
         self.url = url
         self.useCase = useCase
