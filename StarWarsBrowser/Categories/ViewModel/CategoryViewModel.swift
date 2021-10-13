@@ -14,7 +14,7 @@ class CategoryViewModel {
     let url: URL
     let type: CategoryType
     let image: UIImage
-    let isSelected: Bool
+    var isSelected: Bool
     
     init(_ category: Category, selected: Bool) {
         name = category.name.capitalized

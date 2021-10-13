@@ -8,7 +8,7 @@
 import UIKit
 
 class CategoryCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: CategoryLabel!
     @IBOutlet weak var logoImageView: CategoryImageView!
     @IBOutlet weak var gradientView: CategoryGradientView!
     
@@ -17,6 +17,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         logoImageView.image = viewModel.image
         logoImageView.set(selected: viewModel.isSelected)
         gradientView.set(selected: viewModel.isSelected)
+        titleLabel.set(selected: viewModel.isSelected)
     }
 }
 

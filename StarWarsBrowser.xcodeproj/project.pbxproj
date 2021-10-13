@@ -17,6 +17,8 @@
 		FA11622B271566EB004A3D2D /* CategoryGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11622A271566EB004A3D2D /* CategoryGradientView.swift */; };
 		FA11622D27158DB3004A3D2D /* UIImageView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11622C27158DB3004A3D2D /* UIImageView+Extentions.swift */; };
 		FA1162312715907E004A3D2D /* CategoryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1162302715907E004A3D2D /* CategoryImageView.swift */; };
+		FA1162332716D5FD004A3D2D /* CategoryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1162322716D5FD004A3D2D /* CategoryLabel.swift */; };
+		FA11623527172357004A3D2D /* SelectedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11623427172357004A3D2D /* SelectedItem.swift */; };
 		FA3CB5BE26F2049E009F8148 /* DetailsDisplayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CB5BD26F2049E009F8148 /* DetailsDisplayDataManager.swift */; };
 		FA3CB5C926F20DDD009F8148 /* FilmCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CB5C626F20DDD009F8148 /* FilmCollectionViewCell.swift */; };
 		FA3CB5CB26F20DDD009F8148 /* FilmCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA3CB5C826F20DDD009F8148 /* FilmCollectionViewCell.xib */; };
@@ -82,6 +84,8 @@
 		FA11622A271566EB004A3D2D /* CategoryGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGradientView.swift; sourceTree = "<group>"; };
 		FA11622C27158DB3004A3D2D /* UIImageView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extentions.swift"; sourceTree = "<group>"; };
 		FA1162302715907E004A3D2D /* CategoryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryImageView.swift; sourceTree = "<group>"; };
+		FA1162322716D5FD004A3D2D /* CategoryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryLabel.swift; sourceTree = "<group>"; };
+		FA11623427172357004A3D2D /* SelectedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedItem.swift; sourceTree = "<group>"; };
 		FA3CB5BD26F2049E009F8148 /* DetailsDisplayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDisplayDataManager.swift; sourceTree = "<group>"; };
 		FA3CB5C626F20DDD009F8148 /* FilmCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA3CB5C826F20DDD009F8148 /* FilmCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilmCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 				8ABDA0C62680E44600477D3D /* Category.swift */,
 				8ABB296E26828BA3009963FF /* DetailsType.swift */,
 				FA84F8D826F9B383000DB2F1 /* Detail */,
+				FA11623427172357004A3D2D /* SelectedItem.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 			children = (
 				FA11622A271566EB004A3D2D /* CategoryGradientView.swift */,
 				FA1162302715907E004A3D2D /* CategoryImageView.swift */,
+				FA1162322716D5FD004A3D2D /* CategoryLabel.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -479,6 +485,7 @@
 				FA11622B271566EB004A3D2D /* CategoryGradientView.swift in Sources */,
 				FAB114D426DE178D00ECE682 /* NetworkService.swift in Sources */,
 				FA9E49AB26F0DD0200D20BA0 /* DetailsViewController.swift in Sources */,
+				FA11623527172357004A3D2D /* SelectedItem.swift in Sources */,
 				FAB114BC26DE123700ECE682 /* ApplicationFlowCoordinator.swift in Sources */,
 				FAAABB5D27108C130029C6CE /* UIViewController+Extentions.swift in Sources */,
 				FA7B9BCC2684D49300BDB31C /* CategoryViewModel.swift in Sources */,
@@ -492,6 +499,7 @@
 				8ABB296C26828A6B009963FF /* Film.swift in Sources */,
 				FAB114E726DE632C00ECE682 /* Publisher+Utils.swift in Sources */,
 				FAB114E326DE571400ECE682 /* Categories.swift in Sources */,
+				FA1162332716D5FD004A3D2D /* CategoryLabel.swift in Sources */,
 				FADF79FA26BE558700D8F126 /* Alert.swift in Sources */,
 				FA3CB5BE26F2049E009F8148 /* DetailsDisplayDataManager.swift in Sources */,
 				FA9E499F26EF748200D20BA0 /* DetailViewModelFactory.swift in Sources */,

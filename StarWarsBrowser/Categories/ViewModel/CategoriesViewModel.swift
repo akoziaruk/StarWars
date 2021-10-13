@@ -33,30 +33,35 @@ class CategoriesViewModel: CategoriesViewModelType {
                 }
             })
             .eraseToAnyPublisher()
-            
+        
         categories
             .first()
             .sink(receiveValue: { [unowned self] state in
                 if case .success(let items) = state,
                    let item = items.first {
-                    self.navigator?.showCategory(for: item.type, url: item.url)
+                    self.didSelectedItem(with: item.type, url: item.url)
                 }
             })
             .store(in: &subscriptions)
             
         input.select
             .sink(receiveValue: { [unowned self] item in
-                self.selectedCategory = item.type
-                self.navigator?.showCategory(for: item.type, url: item.url)
+                self.didSelectedItem(with: item.type, url: item.url)
             })
             .store(in: &subscriptions)
         
         let initialState: CategoriesViewModelOutput = .just(.idle)
-        
+
         return Publishers.Merge(initialState, categories).removeDuplicates().eraseToAnyPublisher()
+    }
+    
+    private func didSelectedItem(with type: CategoryType, url: URL) {
+        self.selectedCategory = type
+        self.navigator?.showCategory(for: type, url: url)
     }
     
     private func viewModels(from categories: [Category]) -> [CategoryViewModel] {
         return categories.compactMap { CategoryViewModel($0, selected: selectedCategory == $0.type) }
     }
+    
 }
