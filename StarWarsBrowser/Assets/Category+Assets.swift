@@ -18,7 +18,7 @@ extension Category {
         case .planet:
             return #imageLiteral(resourceName: "planets")
         case .species:
-            return #imageLiteral(resourceName: "films")
+            return #imageLiteral(resourceName: "species")
         case .starship:
             return #imageLiteral(resourceName: "starships")
         case .vehicle:

@@ -71,7 +71,7 @@
                 <outlet property="logoImageView" destination="c0e-pV-Wz3" id="RX9-UD-Kpz"/>
                 <outlet property="titleLabel" destination="Dyd-1B-LXY" id="J7d-5h-JVc"/>
             </connections>
-            <point key="canvasLocation" x="98.550724637681171" y="132.58928571428572"/>
+            <point key="canvasLocation" x="97" y="112"/>
         </collectionViewCell>
     </objects>
     <resources>
