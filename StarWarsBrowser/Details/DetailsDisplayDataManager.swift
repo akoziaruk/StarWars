@@ -33,7 +33,6 @@ class DetailsDisplayDataManager: NSObject {
     }
     
     private func setupCollectionView() {
-        collectionView.delegate = self
         let nibName = UINib(nibName: "FilmCollectionViewCell", bundle:nil)
         collectionView.register(nibName, forCellWithReuseIdentifier: "filmCell")
 
@@ -70,15 +69,6 @@ class DetailsDisplayDataManager: NSObject {
         snapshot.appendSections([.main])
         snapshot.appendItems(details as! [AnyHashable])
         dataSource.apply(snapshot, animatingDifferences: true)
-    }
-}
-
-extension DetailsDisplayDataManager: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.size.width,
-                      height: collectionView.bounds.size.height)
     }
 }
 

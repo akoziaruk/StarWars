@@ -8,13 +8,15 @@
 import UIKit
 
 class FilmCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var directorLabel: UILabel!
-    @IBOutlet weak var descriptionTextView: UITextView!
-
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
     func updateWith(_ viewModel: FilmViewModel) {
         titleLabel.text = viewModel.title
         directorLabel.text = viewModel.director
-        descriptionTextView.text = viewModel.openingCrawl
+        descriptionLabel.text = viewModel.openingCrawl
+        imageView.image = viewModel.image
     }
 }

@@ -6,17 +6,20 @@
 //
 
 import Foundation
+import UIKit
 
 struct FilmViewModel: DetailViewModelType {
     let uuid = UUID()
     var title: String!
     var director: String!
     var openingCrawl: String!
+    var image: UIImage?
     
     init(model: Film) {
         self.title = model.title
         self.director = model.director
-        self.openingCrawl = model.openingCrawl
+        self.openingCrawl = model.openingCrawl.removeNewLineSymbols()
+        self.image = model.image
     }
 }
 

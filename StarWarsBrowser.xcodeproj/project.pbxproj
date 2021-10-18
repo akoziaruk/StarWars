@@ -68,6 +68,10 @@
 		FAB114EB26DE6C3200ECE682 /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB114EA26DE6C3200ECE682 /* CategoriesViewController.xib */; };
 		FABA4D8526DD241F000866B7 /* CategoriesViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA4D8426DD241F000866B7 /* CategoriesViewModelType.swift */; };
 		FABA4D8726DD28C6000866B7 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA4D8626DD28C6000866B7 /* CategoriesViewModel.swift */; };
+		FABCD171271D7316002BFEFC /* PagingCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCD170271D7316002BFEFC /* PagingCollectionViewLayout.swift */; };
+		FABCD174271DB594002BFEFC /* DetailsBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCD173271DB594002BFEFC /* DetailsBackgroundView.swift */; };
+		FABCD176271DC241002BFEFC /* Film+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCD175271DC241002BFEFC /* Film+Assets.swift */; };
+		FABCD178271DC955002BFEFC /* String+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCD177271DC955002BFEFC /* String+Extentions.swift */; };
 		FADF79FA26BE558700D8F126 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF79F926BE558700D8F126 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +139,10 @@
 		FAB114EA26DE6C3200ECE682 /* CategoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesViewController.xib; sourceTree = "<group>"; };
 		FABA4D8426DD241F000866B7 /* CategoriesViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModelType.swift; sourceTree = "<group>"; };
 		FABA4D8626DD28C6000866B7 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
+		FABCD170271D7316002BFEFC /* PagingCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingCollectionViewLayout.swift; sourceTree = "<group>"; };
+		FABCD173271DB594002BFEFC /* DetailsBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsBackgroundView.swift; sourceTree = "<group>"; };
+		FABCD175271DC241002BFEFC /* Film+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Film+Assets.swift"; sourceTree = "<group>"; };
+		FABCD177271DC955002BFEFC /* String+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extentions.swift"; sourceTree = "<group>"; };
 		FADF79F926BE558700D8F126 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				8AB647BE265D0A0D00B2F498 /* AppDelegate.swift */,
-				8AB647C0265D0A0D00B2F498 /* SceneDelegate.swift */,
 				FAB114DD26DE51C400ECE682 /* UseCase */,
 				FAB114DC26DE503300ECE682 /* Utils */,
 				FAB114CE26DE171E00ECE682 /* Services */,
@@ -242,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				FA4742872714619B00C700BD /* Category+Assets.swift */,
+				FABCD175271DC241002BFEFC /* Film+Assets.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -298,6 +306,7 @@
 			children = (
 				FA11622E27159062004A3D2D /* Background */,
 				FA11622F2715906D004A3D2D /* Category */,
+				FABCD172271D7329002BFEFC /* Details */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -361,6 +370,7 @@
 				FA9E49A326EF8C5A00D20BA0 /* Scheduler.swift */,
 				FAAABB5C27108C130029C6CE /* UIViewController+Extentions.swift */,
 				FA11622C27158DB3004A3D2D /* UIImageView+Extentions.swift */,
+				FABCD177271DC955002BFEFC /* String+Extentions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -368,6 +378,7 @@
 		FAB114DD26DE51C400ECE682 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				8AB647C0265D0A0D00B2F498 /* SceneDelegate.swift */,
 				FAB114E026DE537100ECE682 /* APIConstants.swift */,
 				FAB114B926DE0FAA00ECE682 /* MainUseCaseType.swift */,
 				FA84F8D026F8EB9B000DB2F1 /* MainUseCase+Detail.swift */,
@@ -376,6 +387,15 @@
 				FA84F8D226F8EF28000DB2F1 /* UseCaseError.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		FABCD172271D7329002BFEFC /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				FABCD170271D7316002BFEFC /* PagingCollectionViewLayout.swift */,
+				FABCD173271DB594002BFEFC /* DetailsBackgroundView.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		FAD56C4526F37DA700845D88 /* Cell */ = {
@@ -481,6 +501,7 @@
 				FA84F8DA26F9D374000DB2F1 /* PeopleViewModel.swift in Sources */,
 				FA9E499D26EF708D00D20BA0 /* DetailViewModelType.swift in Sources */,
 				FA9E498F26EF4FE100D20BA0 /* DetailsViewModel.swift in Sources */,
+				FABCD178271DC955002BFEFC /* String+Extentions.swift in Sources */,
 				FAB114D726DE189E00ECE682 /* Resource.swift in Sources */,
 				FA11622B271566EB004A3D2D /* CategoryGradientView.swift in Sources */,
 				FAB114D426DE178D00ECE682 /* NetworkService.swift in Sources */,
@@ -508,14 +529,17 @@
 				FA4742882714619B00C700BD /* Category+Assets.swift in Sources */,
 				FA1162312715907E004A3D2D /* CategoryImageView.swift in Sources */,
 				8ABDA0C82680E44600477D3D /* Category.swift in Sources */,
+				FABCD171271D7316002BFEFC /* PagingCollectionViewLayout.swift in Sources */,
 				FABA4D8526DD241F000866B7 /* CategoriesViewModelType.swift in Sources */,
 				8AB647BF265D0A0D00B2F498 /* AppDelegate.swift in Sources */,
 				8ABB296F26828BA3009963FF /* DetailsType.swift in Sources */,
 				8AB647C1265D0A0D00B2F498 /* SceneDelegate.swift in Sources */,
+				FABCD176271DC241002BFEFC /* Film+Assets.swift in Sources */,
 				FA84F8D126F8EB9B000DB2F1 /* MainUseCase+Detail.swift in Sources */,
 				FA11622D27158DB3004A3D2D /* UIImageView+Extentions.swift in Sources */,
 				FA9E499126EF501400D20BA0 /* DetailsViewModelType.swift in Sources */,
 				FAB114D226DE175E00ECE682 /* NetworkServiceType.swift in Sources */,
+				FABCD174271DB594002BFEFC /* DetailsBackgroundView.swift in Sources */,
 				FAAABB5B271062BC0029C6CE /* StarsParalaxView.swift in Sources */,
 				FA9E498226EF40D300D20BA0 /* MainFlowCoordinator.swift in Sources */,
 				FA7B9BC82684CC7700BDB31C /* CategoriesDisplayDataManager.swift in Sources */,

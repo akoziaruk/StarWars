@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -12,50 +12,75 @@
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="filmCell" id="XIC-mm-LBa" customClass="FilmCollectionViewCell" customModule="StarWarsBrowser" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="378" height="613"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ako-iy-gGY">
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ako-iy-gGY" customClass="DetailsBackgroundView" customModule="StarWarsBrowser" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="378" height="613"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ST-Oj-N13">
-                        <rect key="frame" x="166" y="32" width="46.5" height="30"/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A New Hope" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3ST-Oj-N13">
+                        <rect key="frame" x="15" y="228" width="348" height="42"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Director" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrS-i0-RY0">
-                        <rect key="frame" x="155" y="70" width="68" height="23"/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="George Lucas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrS-i0-RY0">
+                        <rect key="frame" x="15" y="278" width="348" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vFB-YH-a4Y">
-                        <rect key="frame" x="16" y="101" width="346" height="496"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mOU-JT-8cZ">
+                        <rect key="frame" x="0.0" y="0.0" width="378" height="220"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="220" id="4B8-8W-lMh"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgH-tJ-qlE" userLabel="Description label constainer">
+                        <rect key="frame" x="15" y="314.5" width="348" height="283.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pT6-7B-Ilj">
+                                <rect key="frame" x="0.0" y="0.0" width="348" height="161.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire. During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet. Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="pT6-7B-Ilj" secondAttribute="trailing" id="8P8-mi-k2i"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="pT6-7B-Ilj" secondAttribute="bottom" id="dP7-cZ-c1r"/>
+                            <constraint firstItem="pT6-7B-Ilj" firstAttribute="top" secondItem="kgH-tJ-qlE" secondAttribute="top" id="tZn-eM-OhF"/>
+                            <constraint firstItem="pT6-7B-Ilj" firstAttribute="leading" secondItem="kgH-tJ-qlE" secondAttribute="leading" id="w8y-aV-QFs"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="vFB-YH-a4Y" firstAttribute="top" secondItem="hrS-i0-RY0" secondAttribute="bottom" constant="8" id="0Pc-4K-flI"/>
-                    <constraint firstAttribute="trailing" secondItem="vFB-YH-a4Y" secondAttribute="trailing" constant="16" id="96g-Z7-6rT"/>
-                    <constraint firstItem="3ST-Oj-N13" firstAttribute="top" secondItem="ako-iy-gGY" secondAttribute="top" constant="32" id="PxW-Iq-rEW"/>
-                    <constraint firstItem="hrS-i0-RY0" firstAttribute="centerX" secondItem="ako-iy-gGY" secondAttribute="centerX" id="Q7N-4s-d9n"/>
+                    <constraint firstAttribute="trailing" secondItem="hrS-i0-RY0" secondAttribute="trailing" constant="15" id="0GZ-bw-f6v"/>
+                    <constraint firstItem="kgH-tJ-qlE" firstAttribute="top" secondItem="hrS-i0-RY0" secondAttribute="bottom" constant="15" id="2HU-T2-Sap"/>
+                    <constraint firstItem="3ST-Oj-N13" firstAttribute="top" secondItem="mOU-JT-8cZ" secondAttribute="bottom" constant="8" id="G0H-dU-TMa"/>
+                    <constraint firstItem="kgH-tJ-qlE" firstAttribute="leading" secondItem="ako-iy-gGY" secondAttribute="leading" constant="15" id="Jjf-J1-MJF"/>
+                    <constraint firstAttribute="trailing" secondItem="3ST-Oj-N13" secondAttribute="trailing" constant="15" id="Jsb-KR-vcg"/>
+                    <constraint firstItem="mOU-JT-8cZ" firstAttribute="leading" secondItem="ako-iy-gGY" secondAttribute="leading" id="bfe-GW-6N7"/>
+                    <constraint firstItem="hrS-i0-RY0" firstAttribute="leading" secondItem="ako-iy-gGY" secondAttribute="leading" constant="15" id="d2P-Ks-3DB"/>
                     <constraint firstItem="hrS-i0-RY0" firstAttribute="top" secondItem="3ST-Oj-N13" secondAttribute="bottom" constant="8" id="dUB-RM-irk"/>
-                    <constraint firstItem="vFB-YH-a4Y" firstAttribute="leading" secondItem="ako-iy-gGY" secondAttribute="leading" constant="16" id="lK7-xB-BMQ"/>
-                    <constraint firstAttribute="bottom" secondItem="vFB-YH-a4Y" secondAttribute="bottom" constant="16" id="mPs-t8-YOa"/>
-                    <constraint firstItem="3ST-Oj-N13" firstAttribute="centerX" secondItem="ako-iy-gGY" secondAttribute="centerX" id="nM4-Xe-F3K"/>
+                    <constraint firstAttribute="bottom" secondItem="kgH-tJ-qlE" secondAttribute="bottom" constant="15" id="iCZ-SS-Eqa"/>
+                    <constraint firstItem="3ST-Oj-N13" firstAttribute="leading" secondItem="ako-iy-gGY" secondAttribute="leading" constant="15" id="rUg-KI-8KB"/>
+                    <constraint firstAttribute="trailing" secondItem="mOU-JT-8cZ" secondAttribute="trailing" id="uIw-6N-5Cl"/>
+                    <constraint firstAttribute="trailing" secondItem="kgH-tJ-qlE" secondAttribute="trailing" constant="15" id="vNe-4m-L2R"/>
+                    <constraint firstItem="mOU-JT-8cZ" firstAttribute="top" secondItem="ako-iy-gGY" secondAttribute="top" id="yhq-WM-ZK5"/>
                 </constraints>
             </collectionViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <size key="customSize" width="378" height="613"/>
             <connections>
-                <outlet property="descriptionTextView" destination="vFB-YH-a4Y" id="of0-lz-J1u"/>
+                <outlet property="descriptionLabel" destination="pT6-7B-Ilj" id="9kd-ON-LOM"/>
                 <outlet property="directorLabel" destination="hrS-i0-RY0" id="bUK-tI-sZW"/>
+                <outlet property="imageView" destination="mOU-JT-8cZ" id="Ur2-Gm-Y9D"/>
                 <outlet property="titleLabel" destination="3ST-Oj-N13" id="9L4-vj-SHl"/>
             </connections>
-            <point key="canvasLocation" x="494" y="71"/>
+            <point key="canvasLocation" x="492.75362318840581" y="70.647321428571431"/>
         </collectionViewCell>
     </objects>
 </document>
