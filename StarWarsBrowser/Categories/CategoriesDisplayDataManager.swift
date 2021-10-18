@@ -60,28 +60,34 @@ class CategoriesDisplayDataManager: NSObject {
         dataSource.apply(snapshot, animatingDifferences: true)
     }
     
-    private func updateSelection(with index: Int) {
+    private func updateSelectionWith(newIndex: Int, currentIndex: Int) {
         var snapshot = dataSource.snapshot()
-        let old = snapshot.selectedItem
-        let new = snapshot.itemIdentifiers[index]
-        old.isSelected = false
+        let current = snapshot.itemIdentifiers[currentIndex]
+        let new = snapshot.itemIdentifiers[newIndex]
+        current.isSelected = false
         new.isSelected = true
-        snapshot.reloadItems([old, new])
+        snapshot.reloadItems([current, new])
         dataSource.apply(snapshot, animatingDifferences: true)
     }
 }
 
 extension CategoriesDisplayDataManager: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        updateSelection(with: indexPath.row)
         let snapshot = dataSource.snapshot()
-        let item = snapshot.itemIdentifiers[indexPath.row]
+        let currentIndex = snapshot.selectedItemIndex
+        let newIndex = indexPath.row
+        
+        guard currentIndex != newIndex else { return }
+        
+        updateSelectionWith(newIndex: newIndex, currentIndex: currentIndex)
+        
+        let item = snapshot.itemIdentifiers[newIndex]
         delegate?.didSelectedCategory(with: SelectedItem(type: item.type, url: item.url))
     }
 }
 
 private extension CategorySnapshot {
-    var selectedItem: CategoryViewModel {
-        return itemIdentifiers.filter({ $0.isSelected }).first!
+    var selectedItemIndex: Int {
+        return itemIdentifiers.firstIndex(where: { $0.isSelected })!
     }
 }
