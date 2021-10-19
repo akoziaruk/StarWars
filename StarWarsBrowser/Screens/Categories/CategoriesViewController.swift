@@ -64,11 +64,15 @@ class CategoriesViewController: UIViewController {
             break  // TODO: Show loader
         case .success(let categories):
             dataManager.update(with: categories)
-        case .failure(let error):
-            break  // TODO: Show failure
+        case .failure(_):
+            presentErrorWith(message: Constants.loadingErrorTitle)
         case .noResult:
             break  // TODO: Show no result state
         }
+    }
+    
+    struct Constants {
+        static let loadingErrorTitle = "Failed to load data"
     }
 }
 

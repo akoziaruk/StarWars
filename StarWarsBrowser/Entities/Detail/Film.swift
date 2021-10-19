@@ -8,7 +8,7 @@
 import Foundation
 
 struct Film: Detail {
-    var type: CategoryType { .film }
+    var type: CategoryType { .films }
     let title: String!
     let director: String!
     let openingCrawl: String!

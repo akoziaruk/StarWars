@@ -17,7 +17,7 @@ class DetailsViewController: UIViewController {
     private var viewModel: DetailsViewModelType!
     private let load = PassthroughSubject<Void, Never>()
     private var subscriptions: [AnyCancellable] = []
-    private lazy var dataManager = { DetailsDisplayDataManager(collectionView, delegate: self) }()
+    private lazy var dataManager = { DetailsDisplayDataManager(collectionView) }()
     public weak var delegate: DetailsViewControllerDelegate?
     
     init(viewModel: DetailsViewModel) {
@@ -38,6 +38,7 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        collectionView.delegate = self
         updateWith(viewModel)
     }
     
@@ -70,7 +71,7 @@ class DetailsViewController: UIViewController {
     
 }
 
-extension DetailsViewController: DetailsDisplayDataManagerDelegate {
+extension DetailsViewController: UICollectionViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         delegate?.scrollViewDidScroll(scrollView)
     }

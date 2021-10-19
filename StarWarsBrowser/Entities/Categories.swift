@@ -35,17 +35,17 @@ fileprivate extension CategoryType {
     init(name: String) {
         switch name {
         case Categories.CodingKeys.films.rawValue:
-            self = .film
+            self = .films
         case Categories.CodingKeys.people.rawValue:
             self = .people
         case Categories.CodingKeys.planets.rawValue:
-            self = .planet
+            self = .planets
         case Categories.CodingKeys.species.rawValue:
             self = .species
         case Categories.CodingKeys.starships.rawValue:
-            self = .starship
+            self = .starships
         case Categories.CodingKeys.vehicles.rawValue:
-            self = .vehicle
+            self = .vehicles
         default:
             self = .unknown
         }

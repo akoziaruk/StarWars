@@ -13,4 +13,11 @@ extension UIViewController {
         view.addSubview(viewController.view)
         viewController.didMove(toParent: self)
     }
+    
+    func presentErrorWith(message: String) {
+        let alertController = AlertController.createWith(title: "Error",
+                                                         message: message,
+                                                         closeButtonTitle: "Ok")
+        self.present(alertController, animated: true)
+    }
 }

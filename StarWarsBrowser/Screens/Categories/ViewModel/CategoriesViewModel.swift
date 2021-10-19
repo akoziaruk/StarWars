@@ -12,7 +12,7 @@ class CategoriesViewModel: CategoriesViewModelType {
     private let useCase: MainUseCaseType
     private weak var navigator: MainNavigator?
     private var subscriptions = Set<AnyCancellable>()
-    private var selectedCategory = CategoryType.film
+    private var selectedCategory = CategoryType.films
     
     init(useCase: MainUseCaseType, navigator: MainNavigator) {
         self.useCase = useCase

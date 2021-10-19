@@ -7,9 +7,9 @@
 
 import UIKit
 
-protocol DetailsDisplayDataManagerDelegate: NSObjectProtocol {
-    func scrollViewDidScroll(_ scrollView: UIScrollView)
-}
+//protocol DetailsDisplayDataManagerDelegate: NSObjectProtocol {
+//    func scrollViewDidScroll(_ scrollView: UIScrollView)
+//}
 
 class DetailsDisplayDataManager: NSObject {
     enum Section {
@@ -21,20 +21,16 @@ class DetailsDisplayDataManager: NSObject {
     typealias DetailsDiffableSnapshot = NSDiffableDataSourceSnapshot<Section, AnyHashable>
 
     private weak var collectionView: UICollectionView!
-    private weak var delegate: DetailsDisplayDataManagerDelegate?
     private lazy var dataSource = setupDataSource()
     
-    init(_ collectionView: UICollectionView, delegate: DetailsDisplayDataManagerDelegate) {
+    init(_ collectionView: UICollectionView) {
         super.init()
         
         self.collectionView = collectionView
-        self.delegate = delegate
         setupCollectionView()
     }
     
     private func setupCollectionView() {
-        collectionView.delegate = self
-        
         let nibName = UINib(nibName: "FilmCollectionViewCell", bundle:nil)
         collectionView.register(nibName, forCellWithReuseIdentifier: "filmCell")
 
@@ -71,12 +67,6 @@ class DetailsDisplayDataManager: NSObject {
         snapshot.appendSections([.main])
         snapshot.appendItems(details as! [AnyHashable])
         dataSource.apply(snapshot, animatingDifferences: true)
-    }
-}
-
-extension DetailsDisplayDataManager: UICollectionViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        delegate?.scrollViewDidScroll(scrollView)
     }
 }
 
