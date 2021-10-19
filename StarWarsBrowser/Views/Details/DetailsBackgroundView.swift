@@ -27,5 +27,5 @@ class DetailsBackgroundView: UIView {
         static let cornerRadius = 13.0
         static let borderWidth = 1.0
     }
-                                        
+        
 }

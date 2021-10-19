@@ -33,6 +33,8 @@ class DetailsDisplayDataManager: NSObject {
     }
     
     private func setupCollectionView() {
+        collectionView.delegate = self
+        
         let nibName = UINib(nibName: "FilmCollectionViewCell", bundle:nil)
         collectionView.register(nibName, forCellWithReuseIdentifier: "filmCell")
 
@@ -72,7 +74,7 @@ class DetailsDisplayDataManager: NSObject {
     }
 }
 
-extension DetailsDisplayDataManager: UIScrollViewDelegate {
+extension DetailsDisplayDataManager: UICollectionViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         delegate?.scrollViewDidScroll(scrollView)
     }
