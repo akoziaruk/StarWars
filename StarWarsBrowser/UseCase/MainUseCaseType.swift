@@ -32,17 +32,17 @@ final class MainUseCase: MainUseCaseType {
     
     func loadDetails(with type: CategoryType, url: URL) -> AnyPublisher<Result<DetailCollection, Error>, Never>  {
         switch type {
-        case .films:
+        case .film:
             return loadFilms(with: url)
         case .people:
             return loadPeople(with: url)
-        case .planets:
-            return .just(.failure(UseCaseError.unknownType))
+        case .planet:
+            return loadPlanets(with: url)
         case .species:
             return .just(.failure(UseCaseError.unknownType))
-        case .starships:
+        case .starship:
             return .just(.failure(UseCaseError.unknownType))
-        case .vehicles:
+        case .vehicle:
             return .just(.failure(UseCaseError.unknownType))
         case .unknown:
             return .just(.failure(UseCaseError.unknownType))

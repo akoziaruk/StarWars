@@ -1,5 +1,5 @@
 //
-//  DetailTypeProtocol.swift
+//  DetailCollection.swift
 //  StarWarsBrowser
 //
 //  Created by Alexander Koziaruk on 22.06.2021.

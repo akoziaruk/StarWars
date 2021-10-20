@@ -11,17 +11,17 @@ import UIKit
 extension Category {
     var image: UIImage {
         switch type {
-        case .films:
+        case .film:
             return #imageLiteral(resourceName: "films")
         case .people:
             return #imageLiteral(resourceName: "people")
-        case .planets:
+        case .planet:
             return #imageLiteral(resourceName: "planets")
         case .species:
             return #imageLiteral(resourceName: "species")
-        case .starships:
+        case .starship:
             return #imageLiteral(resourceName: "starships")
-        case .vehicles:
+        case .vehicle:
             return #imageLiteral(resourceName: "films")
         case .unknown, .none:
             return #imageLiteral(resourceName: "films")

@@ -14,4 +14,7 @@ extension Resource {
     static func people(with url: URL) -> Resource<PeopleCollection> {
         return Resource<PeopleCollection>(url: url)
     }
+    static func platents(with url: URL) -> Resource<PlanetCollection> {
+        return Resource<PlanetCollection>(url: url)
+    }
 }

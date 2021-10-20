@@ -8,7 +8,7 @@
 import Foundation
 
 struct Film: Detail {
-    var type: CategoryType { .films }
+    var type: CategoryType { .film }
     let title: String!
     let director: String!
     let openingCrawl: String!
@@ -19,13 +19,3 @@ struct Film: Detail {
         case openingCrawl = "opening_crawl"
     }
 }
-
-struct FilmCollection: DetailCollection, Decodable {
-    var items: [Detail]
-        
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: DetailCodingKeys.self)
-        items = try container.decode([Film].self, forKey: DetailCodingKeys.results)
-    }
-}
-

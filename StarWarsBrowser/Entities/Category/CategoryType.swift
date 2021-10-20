@@ -8,11 +8,11 @@
 import Foundation
 
 enum CategoryType {
-    case films
+    case film
     case people
-    case planets
+    case planet
     case species
-    case starships
-    case vehicles
+    case starship
+    case vehicle
     case unknown
 }
