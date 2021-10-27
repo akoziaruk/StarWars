@@ -7,12 +7,3 @@
 
 import Foundation
 
-enum CategoryType {
-    case film
-    case people
-    case planet
-    case species
-    case starship
-    case vehicle
-    case unknown
-}

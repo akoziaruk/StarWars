@@ -12,7 +12,7 @@ class CategoryViewModel {
     let uuid = UUID()
     var name: String
     let url: URL
-    let type: CategoryType
+    let type: Category.T
     let image: UIImage
     var isSelected: Bool
     

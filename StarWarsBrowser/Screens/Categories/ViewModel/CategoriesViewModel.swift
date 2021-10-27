@@ -12,7 +12,7 @@ class CategoriesViewModel: CategoriesViewModelType {
     private let useCase: MainUseCaseType
     private weak var navigator: MainNavigator?
     private var subscriptions = Set<AnyCancellable>()
-    private var selectedCategory = CategoryType.film
+    private var selectedCategory = Category.T.film
     
     init(useCase: MainUseCaseType, navigator: MainNavigator) {
         self.useCase = useCase
@@ -55,7 +55,7 @@ class CategoriesViewModel: CategoriesViewModelType {
         return Publishers.Merge(initialState, categories).removeDuplicates().eraseToAnyPublisher()
     }
     
-    private func didSelectedItem(with type: CategoryType, url: URL) {
+    private func didSelectedItem(with type: Category.T, url: URL) {
         self.selectedCategory = type
         self.navigator?.showCategory(for: type, url: url)
     }

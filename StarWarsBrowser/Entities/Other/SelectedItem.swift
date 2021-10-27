@@ -8,6 +8,6 @@
 import Foundation
 
 struct SelectedItem {
-    let type: CategoryType!
+    let type: Category.T!
     let url: URL!
 }

@@ -9,12 +9,12 @@ import Combine
 import UIKit
 
 class DetailsViewModel: DetailsViewModelType {
-    private let type: CategoryType
+    private let type: Category.T
     private let url: URL?
     private let useCase: MainUseCaseType
     private var subscriptions = Set<AnyCancellable>()
     
-    init(type: CategoryType, url: URL? = nil, useCase: MainUseCaseType) {
+    init(type: Category.T, url: URL? = nil, useCase: MainUseCaseType) {
         self.type = type
         self.url = url
         self.useCase = useCase
@@ -25,8 +25,7 @@ class DetailsViewModel: DetailsViewModelType {
         subscriptions.removeAll()
 
         let details = input.load
-            .compactMap { [unowned self] in self.url }
-            .flatMapLatest({ [unowned self] in self.useCase.loadDetails(with: self.type, url: $0) })
+            .flatMapLatest({ [unowned self] in self.loadDetails() })
             .map({ result -> DetailsLoadingState in
                 switch result {
                 case .success(let details) where details.items.isEmpty: return .noResult
@@ -39,5 +38,26 @@ class DetailsViewModel: DetailsViewModelType {
         let initialState: DetailsViewModelOutput = .just(.idle)
         
         return Publishers.Merge(initialState, details).removeDuplicates().eraseToAnyPublisher()
+    }
+    
+    private func loadDetails() -> AnyPublisher<Result<DetailCollectionResult, Error>, Never> {
+        guard let url = self.url else { return .just(.failure(UseCaseError.unknownType)) }
+        
+        switch type {
+        case .film:
+            return useCase.loadDetails(url: url, type: Film.self)
+        case .people:
+            return useCase.loadDetails(url: url, type: People.self)
+        case .planet:
+            return useCase.loadDetails(url: url, type: Planet.self)
+        case .species:
+            return .just(.failure(UseCaseError.unknownType))
+        case .starship:
+            return .just(.failure(UseCaseError.unknownType))
+        case .vehicle:
+            return .just(.failure(UseCaseError.unknownType))
+        case .unknown:
+            return .just(.failure(UseCaseError.unknownType))
+        }
     }
 }

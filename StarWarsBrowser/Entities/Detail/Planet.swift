@@ -8,6 +8,6 @@
 import Foundation
 
 struct Planet: Detail {
-    var type: CategoryType { .planet }
+    var type: Category.T { .planet }
     let name: String
 }

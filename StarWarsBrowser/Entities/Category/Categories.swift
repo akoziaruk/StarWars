@@ -17,7 +17,7 @@ struct Categories: Decodable {
             let url = try container.decode(URL.self, forKey: $0)
             return Category(name: name,
                             url: url,
-                            type: CategoryType(name: name))
+                            type: Category.T(name: name))
         }
     }
     
@@ -31,7 +31,7 @@ struct Categories: Decodable {
     }
 }
 
-fileprivate extension CategoryType {
+fileprivate extension Category.T {
     init(name: String) {
         switch name {
         case Categories.CodingKeys.films.rawValue:

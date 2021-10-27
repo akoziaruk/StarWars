@@ -8,5 +8,5 @@
 import Foundation
 
 protocol Detail: Decodable {
-    var type: CategoryType { get }
+    var type: Category.T { get }
 }

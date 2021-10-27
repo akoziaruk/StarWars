@@ -10,5 +10,16 @@ import Foundation
 struct Category {
     var name: String!
     var url: URL!
-    var type: CategoryType!
+    var type: T!
+    
+    enum T {
+        case film
+        case people
+        case planet
+        case species
+        case starship
+        case vehicle
+        case unknown
+    }
+
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 struct People: Detail {
-    var type: CategoryType { .people }
+    var type: Category.T { .people }
     let name: String
     let height: String
     let hairColor: String
