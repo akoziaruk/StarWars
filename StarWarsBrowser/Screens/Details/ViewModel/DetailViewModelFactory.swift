@@ -15,8 +15,8 @@ class DetailViewModelFactory {
             return FilmViewModel(model: item)
         case let item as People:
             return PeopleViewModel(model: item)
-//        case let item as Planet:
-//            return PlanetViewModel(model: item)
+        case let item as Planet:
+            return PlanetViewModel(model: item)
         default:
             fatalError("Unknown item for ViewModel")
         }

@@ -10,7 +10,7 @@ import Foundation
 
 protocol MainUseCaseType {
     func loadCategories() -> AnyPublisher<Result<Categories, Error>, Never>
-    func loadDetails(with type: CategoryType, url: URL) -> AnyPublisher<Result<DetailCollection, Error>, Never>
+    func loadDetails(with type: CategoryType, url: URL) -> AnyPublisher<Result<DetailCollectionResult, Error>, Never>
 }
 
 final class MainUseCase: MainUseCaseType {
@@ -21,7 +21,7 @@ final class MainUseCase: MainUseCaseType {
     }
     
     func loadCategories() -> AnyPublisher<Result<Categories, Error>, Never> {
-        return networkService
+        networkService
             .load(Resource<Categories>.categories())
             .map { .success($0) }
             .catch { error -> AnyPublisher<Result<Categories, Error>, Never> in .just(.failure(error)) }
@@ -30,14 +30,14 @@ final class MainUseCase: MainUseCaseType {
             .eraseToAnyPublisher()
     }
     
-    func loadDetails(with type: CategoryType, url: URL) -> AnyPublisher<Result<DetailCollection, Error>, Never>  {
+    func loadDetails(with type: CategoryType, url: URL) -> AnyPublisher<Result<DetailCollectionResult, Error>, Never> {
         switch type {
         case .film:
             return loadFilms(with: url)
         case .people:
             return loadPeople(with: url)
         case .planet:
-            return loadPlanets(with: url)
+            return .just(.failure(UseCaseError.unknownType))//loadPlanets(with: url)
         case .species:
             return .just(.failure(UseCaseError.unknownType))
         case .starship:
