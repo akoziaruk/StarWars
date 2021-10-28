@@ -14,13 +14,8 @@ class DetailsViewModel: DetailsViewModelType {
     private let useCase: MainUseCaseType
     private var subscriptions = Set<AnyCancellable>()
     private var page = 1
-    private var state = DetailsLoadingState.idle
     
-    @Published var detailsViewModels = [DetailViewModel]() {
-        didSet {
-            let i = oldValue
-        }
-    }
+    @Published var detailsViewModels = [DetailViewModel]()
     
     @Published var error: Error?
     @Published var details = [DetailViewModel]()
@@ -37,10 +32,13 @@ class DetailsViewModel: DetailsViewModelType {
 
         input.loadNextPage
             .compactMap({ [unowned self] in self.url })
-            .flatMapLatest({ [unowned self] in self.useCase.loadDetails(url: $0, page: 1, type: self.type) })
+            .flatMap(maxPublishers: .max(1), { [unowned self] in self.useCase.loadDetails(url: $0, page: self.page, type: self.type) })
             .sink(receiveValue: { [unowned self] result in
                 switch result {
-                case .success(let details): self.details = DetailViewModelFactory.viewModels(from: details.items)
+                case .success(let details): let viewModels = DetailViewModelFactory.viewModels(from: details)
+                                            self.details.append(contentsOf: viewModels)
+                                            page = page + 1
+                    
                 case .failure(let error):   self.error = error
                 }
             }).store(in: &subscriptions)

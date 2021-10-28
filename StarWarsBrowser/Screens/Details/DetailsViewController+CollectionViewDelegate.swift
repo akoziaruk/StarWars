@@ -17,7 +17,6 @@ extension DetailsViewController: UICollectionViewDelegate {
         // if last cell load next page
         let numberOfItems = collectionView.numberOfItems(inSection: indexPath.section)
         if indexPath.row + 1 >= numberOfItems {
-            print("loadNextPageData")
             loadNextPageData()
         }
     }

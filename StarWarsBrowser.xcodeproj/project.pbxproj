@@ -77,7 +77,6 @@
 		FAD99EB72729358200297AC7 /* DetailsViewController+CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD99EB62729358200297AC7 /* DetailsViewController+CollectionViewDelegate.swift */; };
 		FADF79FA26BE558700D8F126 /* AlertController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF79F926BE558700D8F126 /* AlertController+Utils.swift */; };
 		FAECFBF3272003F7001BA223 /* PlanetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECFBF2272003F7001BA223 /* PlanetViewModel.swift */; };
-		FAECFBF527202919001BA223 /* DetailCollectionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECFBF427202919001BA223 /* DetailCollectionResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,7 +152,6 @@
 		FAD99EB62729358200297AC7 /* DetailsViewController+CollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsViewController+CollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		FADF79F926BE558700D8F126 /* AlertController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertController+Utils.swift"; sourceTree = "<group>"; };
 		FAECFBF2272003F7001BA223 /* PlanetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetViewModel.swift; sourceTree = "<group>"; };
-		FAECFBF427202919001BA223 /* DetailCollectionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,7 +379,6 @@
 			isa = PBXGroup;
 			children = (
 				8ABB296E26828BA3009963FF /* DetailCollection.swift */,
-				FAECFBF427202919001BA223 /* DetailCollectionResult.swift */,
 				FA9E499A26EF669A00D20BA0 /* Detail.swift */,
 				8ABB296B26828A6A009963FF /* Film.swift */,
 				FA84F8D426F8F5C8000DB2F1 /* People.swift */,
@@ -525,7 +522,6 @@
 				FA527B0D271F11A300C56600 /* Planet.swift in Sources */,
 				FA84F8D726F9B369000DB2F1 /* CategoryType.swift in Sources */,
 				FA527AE7271ED57F00C56600 /* DetailViewModelFactory.swift in Sources */,
-				FAECFBF527202919001BA223 /* DetailCollectionResult.swift in Sources */,
 				FA527AF8271ED57F00C56600 /* CategoriesViewModelType.swift in Sources */,
 				FA9E49A426EF8C5A00D20BA0 /* Scheduler.swift in Sources */,
 				FA527AED271ED57F00C56600 /* PeopleCollectionViewCell.swift in Sources */,

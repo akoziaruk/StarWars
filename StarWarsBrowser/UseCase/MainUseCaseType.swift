@@ -10,7 +10,7 @@ import Foundation
 
 protocol MainUseCaseType {
     func loadCategories() -> AnyPublisher<Result<Categories, Error>, Never>
-    func loadDetails(url: URL, page: Int, type: Category.T) -> AnyPublisher<Result<DetailCollectionResult, Error>, Never>
+    func loadDetails(url: URL, page: Int, type: Category.T) -> AnyPublisher<Result<[Detail], Error>, Never>
 }
 
 final class MainUseCase: MainUseCaseType {
@@ -21,8 +21,7 @@ final class MainUseCase: MainUseCaseType {
     }
     
     func loadCategories() -> AnyPublisher<Result<Categories, Error>, Never> {
-        print("loadCategories")
-        return networkService
+        networkService
             .load(Resource<Categories>.categories())
             .map { .success($0) }
             .catch { error -> AnyPublisher<Result<Categories, Error>, Never> in .just(.failure(error)) }
@@ -31,8 +30,7 @@ final class MainUseCase: MainUseCaseType {
             .eraseToAnyPublisher()
     }
     
-    func loadDetails(url: URL, page: Int, type: Category.T) -> AnyPublisher<Result<DetailCollectionResult, Error>, Never> {
-        print("loadDetails")
+    func loadDetails(url: URL, page: Int, type: Category.T) -> AnyPublisher<Result<[Detail], Error>, Never> {
         switch type {
         case .film:
             return loadDetails(url: url, page: page, type: Film.self)
@@ -51,11 +49,11 @@ final class MainUseCase: MainUseCaseType {
         }
     }
     
-    private func loadDetails<T: Detail>(url: URL, page: Int, type: T.Type) -> AnyPublisher<Result<DetailCollectionResult, Error>, Never> {
+    private func loadDetails<T: Detail>(url: URL, page: Int, type: T.Type) -> AnyPublisher<Result<[Detail], Error>, Never> {
         networkService
-            .load(Resource<DetailCollection<T>>(url: url))//, parameters: ["page" : page]))
-            .map { .success($0.result) }
-            .catch { error -> AnyPublisher<Result<DetailCollectionResult, Error>, Never> in .just(.failure(error)) }
+            .load(Resource<DetailCollection<T>>(url: url, parameters: ["page": page]))
+            .map { .success($0.items) }
+            .catch { error -> AnyPublisher<Result<[Detail], Error>, Never> in .just(.failure(error)) }
             .subscribe(on: Scheduler.backgroundWorkScheduler)
             .receive(on: Scheduler.mainScheduler)
             .eraseToAnyPublisher()
