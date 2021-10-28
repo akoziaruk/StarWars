@@ -10,13 +10,11 @@ import Foundation
 struct DetailCollectionResult {
     var items: [Detail]
     var count: Int
-    var nextPageURL: URL?
 }
 
 extension DetailCollection {
     var result: DetailCollectionResult {
        return DetailCollectionResult(items: items,
-                                     count: count,
-                                     nextPageURL: nextPageURL)
+                                     count: count)
     }
 }

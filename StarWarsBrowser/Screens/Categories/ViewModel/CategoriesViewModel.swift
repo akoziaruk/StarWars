@@ -14,8 +14,8 @@ class CategoriesViewModel: CategoriesViewModelType {
     private var subscriptions = Set<AnyCancellable>()
     private var selectedCategory = Category.T.film
     
-    @Published var error: Error?
-    @Published var categories = [CategoryViewModel]() {
+    @Published private var error: Error?
+    @Published private var categories = [CategoryViewModel]() {
         didSet {
             // load details data first time
             if oldValue.isEmpty, let first = categories.first {

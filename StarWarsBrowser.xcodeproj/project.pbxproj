@@ -264,13 +264,13 @@
 		FA527AC6271ED57F00C56600 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FA527ACA271ED57F00C56600 /* DetailsViewModel.swift */,
+				FA527ACB271ED57F00C56600 /* DetailsViewModelType.swift */,
+				FA527ACC271ED57F00C56600 /* DetailViewModelType.swift */,
 				FA527AC7271ED57F00C56600 /* PeopleViewModel.swift */,
 				FA527AC8271ED57F00C56600 /* FilmViewModel.swift */,
 				FAECFBF2272003F7001BA223 /* PlanetViewModel.swift */,
 				FA527AC9271ED57F00C56600 /* DetailViewModelFactory.swift */,
-				FA527ACA271ED57F00C56600 /* DetailsViewModel.swift */,
-				FA527ACB271ED57F00C56600 /* DetailsViewModelType.swift */,
-				FA527ACC271ED57F00C56600 /* DetailViewModelType.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";

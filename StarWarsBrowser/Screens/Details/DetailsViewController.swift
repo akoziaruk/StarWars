@@ -62,10 +62,10 @@ class DetailsViewController: UIViewController {
             break  // TODO: Show loader
         case .success(let details):
             dataManager.update(with: details)
-        case .failure(let error):
-            break  // TODO: Show failure
+        case .failure(_):
+            break
         case .noResult:
-            break  // TODO: Show no result state
+            break
         }
     }
     

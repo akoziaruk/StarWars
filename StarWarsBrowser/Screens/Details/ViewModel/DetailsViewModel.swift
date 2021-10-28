@@ -14,6 +14,9 @@ class DetailsViewModel: DetailsViewModelType {
     private let useCase: MainUseCaseType
     private var subscriptions = Set<AnyCancellable>()
     
+    @Published var error: Error?
+    @Published var details = [DetailViewModelType]()
+    
     init(type: Category.T, url: URL? = nil, useCase: MainUseCaseType) {
         self.type = type
         self.url = url
@@ -24,40 +27,28 @@ class DetailsViewModel: DetailsViewModelType {
         subscriptions.forEach { $0.cancel() }
         subscriptions.removeAll()
 
-        let details = input.load
-            .flatMapLatest({ [unowned self] in self.loadDetails() })
-            .map({ result -> DetailsLoadingState in
+        input.load
+            .compactMap({ [unowned self] in self.url })
+            .flatMapLatest({ [unowned self] in self.useCase.loadDetails(url: $0, type: self.type) })
+            .sink(receiveValue: { [unowned self] result in
                 switch result {
-                case .success(let details) where details.items.isEmpty: return .noResult
-                case .success(let details): return .success(DetailViewModelFactory.viewModels(for: details.items))
-                case .failure(let error): return .failure(error)
+                case .success(let details): self.details = DetailViewModelFactory.viewModels(from: details.items)
+                case .failure(let error):   self.error = error
                 }
-            })
-            .eraseToAnyPublisher()
+            }).store(in: &subscriptions)
         
+        let detailsData: DetailsViewModelOutput = $details.map { values in
+            .success(values)
+        }.eraseToAnyPublisher()
+        
+        let error: DetailsViewModelOutput = $error.compactMap { $0 }
+            .map { error in .failure(error) }
+            .eraseToAnyPublisher()
+
+        let output: DetailsViewModelOutput = Publishers.Merge(detailsData, error).eraseToAnyPublisher()
         let initialState: DetailsViewModelOutput = .just(.idle)
         
-        return Publishers.Merge(initialState, details).removeDuplicates().eraseToAnyPublisher()
+        return Publishers.Merge(initialState, output).eraseToAnyPublisher()
     }
     
-    private func loadDetails() -> AnyPublisher<Result<DetailCollectionResult, Error>, Never> {
-        guard let url = self.url else { return .just(.failure(UseCaseError.unknownType)) }
-        
-        switch type {
-        case .film:
-            return useCase.loadDetails(url: url, type: Film.self)
-        case .people:
-            return useCase.loadDetails(url: url, type: People.self)
-        case .planet:
-            return useCase.loadDetails(url: url, type: Planet.self)
-        case .species:
-            return .just(.failure(UseCaseError.unknownType))
-        case .starship:
-            return .just(.failure(UseCaseError.unknownType))
-        case .vehicle:
-            return .just(.failure(UseCaseError.unknownType))
-        case .unknown:
-            return .just(.failure(UseCaseError.unknownType))
-        }
-    }
 }
