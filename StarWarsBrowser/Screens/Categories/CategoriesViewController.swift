@@ -15,7 +15,7 @@ class CategoriesViewController: UIViewController {
     private var subscriptions: [AnyCancellable] = []
     private lazy var dataManager = { CategoriesDisplayDataManager(collectionView,
                                                                   delegate: self) }()
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     init(viewModel: CategoriesViewModelType) {

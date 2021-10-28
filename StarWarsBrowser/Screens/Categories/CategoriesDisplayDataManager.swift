@@ -22,7 +22,7 @@ class CategoriesDisplayDataManager: NSObject {
     private weak var collectionView: UICollectionView!
     private weak var delegate: CategoriesDisplayDataManagerDelegate?
     private lazy var dataSource = setupDataSource()
-    
+
     init(_ collectionView: UICollectionView, delegate: CategoriesDisplayDataManagerDelegate) {
         super.init()
         
