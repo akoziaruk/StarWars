@@ -74,6 +74,7 @@
 		FABCD174271DB594002BFEFC /* DetailsBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCD173271DB594002BFEFC /* DetailsBackgroundView.swift */; };
 		FABCD176271DC241002BFEFC /* Film+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCD175271DC241002BFEFC /* Film+Assets.swift */; };
 		FABCD178271DC955002BFEFC /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCD177271DC955002BFEFC /* String+Utils.swift */; };
+		FAD99EB72729358200297AC7 /* DetailsViewController+CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD99EB62729358200297AC7 /* DetailsViewController+CollectionViewDelegate.swift */; };
 		FADF79FA26BE558700D8F126 /* AlertController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF79F926BE558700D8F126 /* AlertController+Utils.swift */; };
 		FAECFBF3272003F7001BA223 /* PlanetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECFBF2272003F7001BA223 /* PlanetViewModel.swift */; };
 		FAECFBF527202919001BA223 /* DetailCollectionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECFBF427202919001BA223 /* DetailCollectionResult.swift */; };
@@ -149,6 +150,7 @@
 		FABCD173271DB594002BFEFC /* DetailsBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsBackgroundView.swift; sourceTree = "<group>"; };
 		FABCD175271DC241002BFEFC /* Film+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Film+Assets.swift"; sourceTree = "<group>"; };
 		FABCD177271DC955002BFEFC /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
+		FAD99EB62729358200297AC7 /* DetailsViewController+CollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsViewController+CollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		FADF79F926BE558700D8F126 /* AlertController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertController+Utils.swift"; sourceTree = "<group>"; };
 		FAECFBF2272003F7001BA223 /* PlanetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetViewModel.swift; sourceTree = "<group>"; };
 		FAECFBF427202919001BA223 /* DetailCollectionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionResult.swift; sourceTree = "<group>"; };
@@ -253,8 +255,9 @@
 			isa = PBXGroup;
 			children = (
 				FA527ACD271ED57F00C56600 /* DetailsViewController.xib */,
-				FA527AD3271ED57F00C56600 /* DetailsDisplayDataManager.swift */,
 				FA527AD4271ED57F00C56600 /* DetailsViewController.swift */,
+				FAD99EB62729358200297AC7 /* DetailsViewController+CollectionViewDelegate.swift */,
+				FA527AD3271ED57F00C56600 /* DetailsDisplayDataManager.swift */,
 				FA527AC6271ED57F00C56600 /* ViewModel */,
 				FA527ACE271ED57F00C56600 /* Cell */,
 			);
@@ -570,6 +573,7 @@
 				FAAABB5B271062BC0029C6CE /* StarsParalaxView.swift in Sources */,
 				FA84F8D526F8F5C8000DB2F1 /* People.swift in Sources */,
 				FA527AF7271ED57F00C56600 /* CategoryViewModel.swift in Sources */,
+				FAD99EB72729358200297AC7 /* DetailsViewController+CollectionViewDelegate.swift in Sources */,
 				FA527AFA271ED57F00C56600 /* CategoriesViewController.swift in Sources */,
 				FAB114C126DE135000ECE682 /* ApplicationFlowCoordinatorDependencyProvider.swift in Sources */,
 			);

@@ -12,3 +12,4 @@ extension Resource {
         return Resource<Categories>(url: APIConstants.baseURL)
     }
 }
+
