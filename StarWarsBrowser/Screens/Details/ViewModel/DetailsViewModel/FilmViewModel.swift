@@ -8,26 +8,17 @@
 import Foundation
 import UIKit
 
-struct FilmViewModel: DetailViewModelType {
-    let uuid = UUID()
+class FilmViewModel: DetailViewModel {
     var title: String!
     var director: String!
     var openingCrawl: String!
     var image: UIImage?
     
     init(model: Film) {
+        super.init()
         self.title = model.title
         self.director = model.director
         self.openingCrawl = model.openingCrawl.removeNewLineSymbols()
         self.image = model.image
-    }
-}
-
-extension FilmViewModel: Hashable {
-    static func == (lhs: FilmViewModel, rhs: FilmViewModel) -> Bool {
-        return lhs.uuid == rhs.uuid
-    }
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(uuid)
     }
 }

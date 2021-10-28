@@ -8,13 +8,12 @@
 import Foundation
 import UIKit
 
-struct PeopleViewModel: DetailViewModelType {
-    let uuid = UUID()
-    let name: String
-    let height: String
-    let hairColor: String
-    let eyeColor: String
-    let birthYear: String
+class PeopleViewModel: DetailViewModel {
+    let name: String!
+    let height: String!
+    let hairColor: String!
+    let eyeColor: String!
+    let birthYear: String!
     let image: UIImage?
     
     init(model: People) {
@@ -24,14 +23,6 @@ struct PeopleViewModel: DetailViewModelType {
         self.eyeColor = model.eyeColor
         self.birthYear = model.birthYear
         self.image = model.image
-    }
-}
-
-extension PeopleViewModel: Hashable {
-    static func == (lhs: PeopleViewModel, rhs: PeopleViewModel) -> Bool {
-        return lhs.uuid == rhs.uuid
-    }
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(uuid)
+        super.init()
     }
 }

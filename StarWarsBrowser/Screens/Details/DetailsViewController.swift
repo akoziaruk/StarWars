@@ -15,7 +15,7 @@ protocol DetailsViewControllerDelegate: NSObjectProtocol {
 class DetailsViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     private var viewModel: DetailsViewModelType!
-    private let load = PassthroughSubject<Void, Never>()
+    private let loadNextPage = PassthroughSubject<Void, Never>()
     private var subscriptions: [AnyCancellable] = []
     private lazy var dataManager = { DetailsDisplayDataManager(collectionView) }()
     public weak var delegate: DetailsViewControllerDelegate?
@@ -32,21 +32,24 @@ class DetailsViewController: UIViewController {
     public func updateWith(_ viewModel: DetailsViewModelType) {
         self.viewModel = viewModel
         bind(to: viewModel)
-        load.send()
+        loadNextPage.send()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView.delegate = self
         updateWith(viewModel)
+    }
+    
+    func loadNextPageData() {
+        loadNextPage.send()
     }
     
     private func bind(to: DetailsViewModelType) {
         subscriptions.forEach { $0.cancel() }
         subscriptions.removeAll()
         
-        let input = DetailsViewModelInput(load: load.eraseToAnyPublisher())
+        let input = DetailsViewModelInput(loadNextPage: loadNextPage.eraseToAnyPublisher())
         let output = viewModel.transform(input: input)
         
         output.sink { [unowned self] in
@@ -69,10 +72,4 @@ class DetailsViewController: UIViewController {
         }
     }
     
-}
-
-extension DetailsViewController: UICollectionViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        delegate?.scrollViewDidScroll(scrollView)
-    }
 }

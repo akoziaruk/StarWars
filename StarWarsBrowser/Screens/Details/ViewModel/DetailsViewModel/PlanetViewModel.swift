@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct PlanetViewModel: DetailViewModelType {
-    let name: String
+class PlanetViewModel: DetailViewModel {
+    let name: String!
     init(model: Planet) {
         self.name = model.name
+        super.init()
     }
 }

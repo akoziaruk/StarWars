@@ -9,13 +9,13 @@ import Combine
 import Foundation
 
 struct DetailsViewModelInput {
-    let load: AnyPublisher<Void, Never>
+    let loadNextPage: AnyPublisher<Void, Never>
 }
 
 enum DetailsLoadingState {
     case idle
     case loading
-    case success([DetailViewModelType])
+    case success([DetailViewModel])
     case failure(Error)
     case noResult
 }
@@ -25,7 +25,7 @@ extension DetailsLoadingState: Equatable {
         switch (lhs, rhs) {
         case (.idle, .idle): return true
         case (.loading, .loading): return true
-        case (.success(_), .success(_)): return lhs == rhs
+        case (.success(let lhs), .success(let rhs)): return lhs == rhs
         case (.noResult, .noResult): return true
         case (.failure, .failure): return true
         default: return false

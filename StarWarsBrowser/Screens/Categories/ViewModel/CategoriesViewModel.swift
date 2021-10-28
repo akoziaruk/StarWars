@@ -55,7 +55,7 @@ class CategoriesViewModel: CategoriesViewModelType {
             .map { error in .failure(error) }
             .eraseToAnyPublisher()
         
-        let output: CategoriesViewModelOutput = Publishers.Merge(error, categoriesData).eraseToAnyPublisher()
+        let output: CategoriesViewModelOutput = Publishers.Merge(categoriesData, error).eraseToAnyPublisher()
         let initialState: CategoriesViewModelOutput = .just(.idle)
 
         return Publishers.Merge(initialState, output).removeDuplicates().eraseToAnyPublisher()

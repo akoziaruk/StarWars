@@ -7,10 +7,6 @@
 
 import UIKit
 
-//protocol DetailsDisplayDataManagerDelegate: NSObjectProtocol {
-//    func scrollViewDidScroll(_ scrollView: UIScrollView)
-//}
-
 class DetailsDisplayDataManager: NSObject {
     enum Section {
       case main
@@ -62,14 +58,10 @@ class DetailsDisplayDataManager: NSObject {
       return dataSource
     }
 
-    public func update(with details: [DetailViewModelType]) {
+    public func update(with details: [DetailViewModel]) {
         var snapshot = DetailsDiffableSnapshot()
         snapshot.appendSections([.main])
         snapshot.appendItems(details as! [AnyHashable])
         dataSource.apply(snapshot, animatingDifferences: true)
     }
-}
-
-enum Wrapper: Hashable {
-  case films(FilmViewModel)
 }

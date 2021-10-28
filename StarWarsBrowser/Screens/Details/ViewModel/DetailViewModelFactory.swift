@@ -8,7 +8,7 @@
 import Foundation
 
 class DetailViewModelFactory {
-    public static func viewModels(from items: [Detail]) -> [DetailViewModelType] {
+    public static func viewModels(from items: [Detail]) -> [DetailViewModel] {
        return items.compactMap {
         switch $0 {
         case let item as Film:
