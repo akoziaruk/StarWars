@@ -10,8 +10,8 @@ import Combine
 import UIKit.UIImage
 
 class DetailViewModel: Hashable {
-    var uuid = UUID()
-    var image: AnyPublisher<UIImage?, Never>
+    let uuid = UUID()
+    let image: AnyPublisher<UIImage?, Never>
     
     init(image: AnyPublisher<UIImage?, Never>) {
         self.image = image

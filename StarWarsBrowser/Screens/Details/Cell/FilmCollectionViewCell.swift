@@ -13,21 +13,31 @@ class FilmCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var directorLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    
     private var cancellable: AnyCancellable?
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        cancelImageLoading()
+    }
+    
     func updateWith(_ viewModel: FilmViewModel) {
         titleLabel.text = viewModel.title
         directorLabel.text = viewModel.director
         descriptionLabel.text = viewModel.openingCrawl
-        cancellable = viewModel.image.sink { [unowned self] image in self.showImage(image: image) }
-        
-        // TODO: Add default image or loader
-        imageView.image = nil
+                
+        cancellable = viewModel.image.sink { [unowned self] image in
+            self.showImage(image: image)
+        }
     }
     
     private func showImage(image: UIImage?) {
         //TODO: Stop loader
         imageView.image = image
     }
+    
+    private func cancelImageLoading() {
+        imageView.image = nil
+        cancellable?.cancel()
+    }
+
 }

@@ -55,6 +55,7 @@
 		FA7E8902272BD33800220980 /* ImageLoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E8901272BD33800220980 /* ImageLoaderService.swift */; };
 		FA7E8904272BD3BD00220980 /* ImageLoaderServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E8903272BD3BC00220980 /* ImageLoaderServiceType.swift */; };
 		FA7E8907272BE1CF00220980 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA7E8906272BE1CF00220980 /* GoogleService-Info.plist */; };
+		FA7E8909272BEFC500220980 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E8908272BEFC500220980 /* ImageCache.swift */; };
 		FA84F8D126F8EB9B000DB2F1 /* MainUseCase+Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84F8D026F8EB9B000DB2F1 /* MainUseCase+Detail.swift */; };
 		FA84F8D326F8EF28000DB2F1 /* UseCaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84F8D226F8EF28000DB2F1 /* UseCaseError.swift */; };
 		FA84F8D526F8F5C8000DB2F1 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84F8D426F8F5C8000DB2F1 /* People.swift */; };
@@ -132,6 +133,7 @@
 		FA7E8901272BD33800220980 /* ImageLoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderService.swift; sourceTree = "<group>"; };
 		FA7E8903272BD3BC00220980 /* ImageLoaderServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderServiceType.swift; sourceTree = "<group>"; };
 		FA7E8906272BE1CF00220980 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA7E8908272BEFC500220980 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		FA84F8D026F8EB9B000DB2F1 /* MainUseCase+Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainUseCase+Detail.swift"; sourceTree = "<group>"; };
 		FA84F8D226F8EF28000DB2F1 /* UseCaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseError.swift; sourceTree = "<group>"; };
 		FA84F8D426F8F5C8000DB2F1 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 			children = (
 				FA7E8901272BD33800220980 /* ImageLoaderService.swift */,
 				FA7E8903272BD3BC00220980 /* ImageLoaderServiceType.swift */,
+				FA7E8908272BEFC500220980 /* ImageCache.swift */,
 			);
 			path = "Image Loader Service";
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				FAB114E126DE537100ECE682 /* APIConstants.swift in Sources */,
 				FA527AE6271ED57F00C56600 /* FilmViewModel.swift in Sources */,
 				FAB114E926DE65C900ECE682 /* FlowCoordinator.swift in Sources */,
+				FA7E8909272BEFC500220980 /* ImageCache.swift in Sources */,
 				FA527B06271ED5B800C56600 /* NetworkServiceType.swift in Sources */,
 				FA527AFD271ED57F00C56600 /* CategoriesDisplayDataManager.swift in Sources */,
 				FA527B07271ED5B800C56600 /* NetworkService.swift in Sources */,
