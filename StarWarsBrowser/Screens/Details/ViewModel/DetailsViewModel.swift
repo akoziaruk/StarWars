@@ -15,9 +15,6 @@ class DetailsViewModel: DetailsViewModelType {
     private var subscriptions = Set<AnyCancellable>()
     private var page = 1
         
-    @Published var error: Error?
-    @Published var details = [AnyHashable]()
-    
     init(type: Category.T, url: URL? = nil, useCase: MainUseCaseType) {
         self.type = type
         self.url = url
@@ -28,29 +25,26 @@ class DetailsViewModel: DetailsViewModelType {
         subscriptions.forEach { $0.cancel() }
         subscriptions.removeAll()
 
-        input.loadNextPage
+        let details = input.loadNextPage
             .compactMap({ [unowned self] in self.url })
             .flatMap(maxPublishers: .max(1), { [unowned self] in self.useCase.loadDetails(url: $0, page: self.page, type: self.type) })
-            .sink(receiveValue: { [unowned self] result in
+            .map({ result -> DetailsLoadingState in
                 switch result {
-                case .success(let details): let viewModels = self.viewModels(from: details)
-                                            self.details.append(contentsOf: viewModels)
-                                            page = page + 1
-                    
-                case .failure(let error):   self.error = error
+                case .success(let details) where details.isEmpty: return .noResult
+                case .success(let details): return .success(self.viewModels(from: details))
+                case .failure(let error): return .failure(error)
                 }
-            }).store(in: &subscriptions)
-        
-        let detailsData: DetailsViewModelOutput = $details.map { values in .success(values) }.eraseToAnyPublisher()
-        
-        let error: DetailsViewModelOutput = $error.compactMap { $0 }
-            .map { error in .failure(error) }
+            })
+            .handleEvents(receiveOutput: { state in
+                if case .success(_) = state {
+                    self.page = self.page + 1
+                }
+            })
             .eraseToAnyPublisher()
 
-        let output: DetailsViewModelOutput = Publishers.Merge(detailsData, error).eraseToAnyPublisher()
         let initialState: DetailsViewModelOutput = .just(.idle)
         
-        return Publishers.Merge(initialState, output).removeDuplicates().eraseToAnyPublisher()
+        return Publishers.Merge(initialState, details).removeDuplicates().eraseToAnyPublisher()
     }
 
     private func viewModels(from details: [Detail]) -> [AnyHashable] {

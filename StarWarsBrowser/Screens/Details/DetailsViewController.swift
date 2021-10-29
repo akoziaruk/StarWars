@@ -31,14 +31,9 @@ class DetailsViewController: UIViewController {
     
     public func updateWith(_ viewModel: DetailsViewModelType) {
         self.viewModel = viewModel
+        dataManager.prepareForReuse()
         bind(to: viewModel)
         loadNextPage.send()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        updateWith(viewModel)
     }
     
     func loadNextPageData() {
@@ -64,7 +59,7 @@ class DetailsViewController: UIViewController {
         case .loading:
             break  // TODO: Show loader
         case .success(let details):
-            dataManager.update(with: details)
+            dataManager.append(new: details)
         case .failure(_):
             break
         case .noResult:

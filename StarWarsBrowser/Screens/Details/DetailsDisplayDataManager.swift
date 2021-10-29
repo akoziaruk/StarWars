@@ -58,10 +58,15 @@ class DetailsDisplayDataManager: NSObject {
       return dataSource
     }
 
-    public func update(with details: [AnyHashable]) {
+    public func append(new details: [AnyHashable]) {
+        var snapshot = dataSource.snapshot()
+        snapshot.appendItems(details)
+        dataSource.apply(snapshot, animatingDifferences: true)
+    }
+
+    public func prepareForReuse() {
         var snapshot = DetailsDiffableSnapshot()
         snapshot.appendSections([.main])
-        snapshot.appendItems(details)
         dataSource.apply(snapshot, animatingDifferences: true)
     }
 }
