@@ -14,16 +14,6 @@ class CategoriesViewModel: CategoriesViewModelType {
     private var subscriptions = Set<AnyCancellable>()
     private var selectedCategory = Category.T.film
     
-    @Published private var error: Error?
-    @Published private var categories = [CategoryViewModel]() {
-        didSet {
-            // load details data first time
-            if oldValue.isEmpty, let first = categories.first {
-                selectedCategory(with: first.type, url: first.url)
-            }
-        }
-    }
-    
     init(useCase: MainUseCaseType, navigator: MainNavigator) {
         self.useCase = useCase
         self.navigator = navigator
@@ -33,32 +23,34 @@ class CategoriesViewModel: CategoriesViewModelType {
         subscriptions.forEach { $0.cancel() }
         subscriptions.removeAll()
         
-        input.load
+        let categories = input.load
             .flatMapLatest({ [unowned self] in self.useCase.loadCategories() })
-            .sink(receiveValue: { [unowned self] result in
+            .map({ result -> CategoriesLoadingState in
                 switch result {
-                case .success(let categories): self.categories = viewModels(from: categories.items)
-                case .failure(let error):      self.error = error
+                case .success(let categories) where categories.items.isEmpty: return .noResult
+                case .success(let categories): return .success(self.viewModels(from: categories.items))
+                case .failure(let error): return .failure(error)
                 }
-            }).store(in: &subscriptions)
-            
+            })
+            .first()
+            .handleEvents(receiveOutput: { state in
+                // on start show first category details
+                if case .success(let categories) = state,
+                   let first = categories.first {
+                    self.selectedCategory(with: first.type, url: first.url)
+                }
+            })
+            .eraseToAnyPublisher()
+
         input.select
             .sink(receiveValue: { [unowned self] item in
                 self.selectedCategory(with: item.type, url: item.url)
             })
             .store(in: &subscriptions)
-                
-        let categoriesData: CategoriesViewModelOutput = $categories.map { values in .success(values) }
-            .eraseToAnyPublisher()
-        
-        let error: CategoriesViewModelOutput = $error.compactMap { $0 }
-            .map { error in .failure(error) }
-            .eraseToAnyPublisher()
-        
-        let output: CategoriesViewModelOutput = Publishers.Merge(categoriesData, error).eraseToAnyPublisher()
+
         let initialState: CategoriesViewModelOutput = .just(.idle)
 
-        return Publishers.Merge(initialState, output).removeDuplicates().eraseToAnyPublisher()
+        return Publishers.Merge(initialState, categories).removeDuplicates().eraseToAnyPublisher()
     }
 
     private func selectedCategory(with type: Category.T, url: URL) {
