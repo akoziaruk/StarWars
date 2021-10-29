@@ -15,7 +15,7 @@ struct DetailsViewModelInput {
 enum DetailsLoadingState {
     case idle
     case loading
-    case success([DetailViewModel])
+    case success([AnyHashable])
     case failure(Error)
     case noResult
 }

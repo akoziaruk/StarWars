@@ -14,11 +14,9 @@ class DetailsViewModel: DetailsViewModelType {
     private let useCase: MainUseCaseType
     private var subscriptions = Set<AnyCancellable>()
     private var page = 1
-    
-    @Published var detailsViewModels = [DetailViewModel]()
-    
+        
     @Published var error: Error?
-    @Published var details = [DetailViewModel]()
+    @Published var details = [AnyHashable]()
     
     init(type: Category.T, url: URL? = nil, useCase: MainUseCaseType) {
         self.type = type
@@ -55,7 +53,7 @@ class DetailsViewModel: DetailsViewModelType {
         return Publishers.Merge(initialState, output).removeDuplicates().eraseToAnyPublisher()
     }
 
-    private func viewModels(from details: [Detail]) -> [DetailViewModel] {
+    private func viewModels(from details: [Detail]) -> [AnyHashable] {
         details.map {[unowned self] detail in
             DetailViewModelFactory.viewModel(from: detail, imageLoader: {[unowned self] detail in self.useCase.loadImage(for: detail)})
         }

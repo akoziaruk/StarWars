@@ -25,7 +25,6 @@
 		FA527AE7271ED57F00C56600 /* DetailViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527AC9271ED57F00C56600 /* DetailViewModelFactory.swift */; };
 		FA527AE8271ED57F00C56600 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527ACA271ED57F00C56600 /* DetailsViewModel.swift */; };
 		FA527AE9271ED57F00C56600 /* DetailsViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527ACB271ED57F00C56600 /* DetailsViewModelType.swift */; };
-		FA527AEA271ED57F00C56600 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527ACC271ED57F00C56600 /* DetailViewModel.swift */; };
 		FA527AEB271ED57F00C56600 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA527ACD271ED57F00C56600 /* DetailsViewController.xib */; };
 		FA527AEC271ED57F00C56600 /* FilmCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527ACF271ED57F00C56600 /* FilmCollectionViewCell.swift */; };
 		FA527AED271ED57F00C56600 /* PeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527AD0271ED57F00C56600 /* PeopleCollectionViewCell.swift */; };
@@ -104,7 +103,6 @@
 		FA527AC9271ED57F00C56600 /* DetailViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModelFactory.swift; sourceTree = "<group>"; };
 		FA527ACA271ED57F00C56600 /* DetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		FA527ACB271ED57F00C56600 /* DetailsViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewModelType.swift; sourceTree = "<group>"; };
-		FA527ACC271ED57F00C56600 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		FA527ACD271ED57F00C56600 /* DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 		FA527ACF271ED57F00C56600 /* FilmCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA527AD0271ED57F00C56600 /* PeopleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -376,7 +374,6 @@
 		FA7E88FB272AC6FE00220980 /* DetailsViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				FA527ACC271ED57F00C56600 /* DetailViewModel.swift */,
 				FA527AC8271ED57F00C56600 /* FilmViewModel.swift */,
 				FA527AC7271ED57F00C56600 /* PeopleViewModel.swift */,
 				FAECFBF2272003F7001BA223 /* PlanetViewModel.swift */,
@@ -566,7 +563,6 @@
 				FAAABB5D27108C130029C6CE /* UIViewController+Utils.swift in Sources */,
 				FA9E499B26EF669A00D20BA0 /* Detail.swift in Sources */,
 				FA84F8D326F8EF28000DB2F1 /* UseCaseError.swift in Sources */,
-				FA527AEA271ED57F00C56600 /* DetailViewModel.swift in Sources */,
 				FA527B09271ED5B800C56600 /* ServicesProvider.swift in Sources */,
 				FAB114CB26DE16AA00ECE682 /* ApplicationComponentsFactory.swift in Sources */,
 				8ABB296C26828A6B009963FF /* Film.swift in Sources */,

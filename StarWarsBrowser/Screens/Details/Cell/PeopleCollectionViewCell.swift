@@ -21,7 +21,7 @@ class PeopleCollectionViewCell: UICollectionViewCell {
     
     func updateWith(_ viewModel: PeopleViewModel) {
         nameLabel.text = viewModel.name
-        cancellable = viewModel.image.sink { [unowned self] image in self.showImage(image: image) }
+//        cancellable = viewModel.image.sink { [unowned self] image in self.showImage(image: image) }
         
         // TODO: Add default image or loader
         imageView.image = nil

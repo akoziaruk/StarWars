@@ -9,16 +9,26 @@ import Foundation
 import UIKit.UIImage
 import Combine
 
-class FilmViewModel: DetailViewModel {
+struct FilmViewModel {
+    let uuid = UUID()
     let title: String!
     let director: String!
     let openingCrawl: String!
-    
+    let image: AnyPublisher<UIImage?, Never>
+
     init(title: String, director: String, openingCrawl: String, image: AnyPublisher<UIImage?, Never>) {
         self.title = title
         self.director = director
         self.openingCrawl = openingCrawl.removeNewLineSymbols()
-        
-        super.init(image: image)
+        self.image = image
+    }
+}
+
+extension FilmViewModel: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(uuid)
+    }
+    static func == (lhs: FilmViewModel, rhs: FilmViewModel) -> Bool {
+        lhs.uuid == rhs.uuid
     }
 }
