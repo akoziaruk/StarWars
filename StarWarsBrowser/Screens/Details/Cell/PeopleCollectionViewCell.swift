@@ -6,17 +6,14 @@
 //
 
 import UIKit
+import Combine
 
 class PeopleCollectionViewCell: UICollectionViewCell {
-
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
-    //    @IBOutlet weak var heightLabel: UILabel!
-//    @IBOutlet weak var hairColorLabel: UILabel!
-//    @IBOutlet weak var eyeColorLabel: UILabel!
-//    @IBOutlet weak var birthYearLabel: UILabel!
-    
+    private var cancellable: AnyCancellable?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,11 +21,14 @@ class PeopleCollectionViewCell: UICollectionViewCell {
     
     func updateWith(_ viewModel: PeopleViewModel) {
         nameLabel.text = viewModel.name
-        imageView.image = viewModel.image
-//        heightLabel.text = viewModel.height
-//        hairColorLabel.text = viewModel.hairColor
-//        eyeColorLabel.text = viewModel.eyeColor
-//        birthYearLabel.text = viewModel.birthYear
+        cancellable = viewModel.image.sink { [unowned self] image in self.showImage(image: image) }
+        
+        // TODO: Add default image or loader
+        imageView.image = nil
     }
 
+    private func showImage(image: UIImage?) {
+        //TODO: Stop loader
+        imageView.image = image
+    }
 }

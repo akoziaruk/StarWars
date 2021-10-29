@@ -8,7 +8,8 @@
 import UIKit
 
 final class ApplicationComponentsFactory {
-    fileprivate lazy var useCase: MainUseCaseType = MainUseCase(networkService: servicesProvider.network)
+    fileprivate lazy var useCase: MainUseCaseType = MainUseCase(networkService: servicesProvider.network,
+                                                                imageLoaderService: servicesProvider.imageLoader)
 
     private let servicesProvider: ServicesProvider
 

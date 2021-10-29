@@ -6,23 +6,15 @@
 //
 
 import Foundation
-import UIKit
+import UIKit.UIImage
+import Combine
 
 class PeopleViewModel: DetailViewModel {
     let name: String!
-    let height: String!
-    let hairColor: String!
-    let eyeColor: String!
-    let birthYear: String!
-    let image: UIImage?
     
-    init(model: People) {
-        self.name = model.name
-        self.height = model.height + "cm"
-        self.hairColor = model.hairColor
-        self.eyeColor = model.eyeColor
-        self.birthYear = model.birthYear
-        self.image = model.image
-        super.init()
+    init(name: String, image: AnyPublisher<UIImage?, Never>) {
+        self.name = name
+        
+        super.init(image: image)
     }
 }

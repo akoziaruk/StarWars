@@ -35,7 +35,7 @@ class DetailsViewModel: DetailsViewModelType {
             .flatMap(maxPublishers: .max(1), { [unowned self] in self.useCase.loadDetails(url: $0, page: self.page, type: self.type) })
             .sink(receiveValue: { [unowned self] result in
                 switch result {
-                case .success(let details): let viewModels = DetailViewModelFactory.viewModels(from: details)
+                case .success(let details): let viewModels = self.viewModels(from: details)
                                             self.details.append(contentsOf: viewModels)
                                             page = page + 1
                     
@@ -43,9 +43,7 @@ class DetailsViewModel: DetailsViewModelType {
                 }
             }).store(in: &subscriptions)
         
-        let detailsData: DetailsViewModelOutput = $details.map { values in
-            .success(values)
-        }.eraseToAnyPublisher()
+        let detailsData: DetailsViewModelOutput = $details.map { values in .success(values) }.eraseToAnyPublisher()
         
         let error: DetailsViewModelOutput = $error.compactMap { $0 }
             .map { error in .failure(error) }
@@ -57,8 +55,10 @@ class DetailsViewModel: DetailsViewModelType {
         return Publishers.Merge(initialState, output).removeDuplicates().eraseToAnyPublisher()
     }
 
-    private func loadDetails() {
-        
+    private func viewModels(from details: [Detail]) -> [DetailViewModel] {
+        details.map {[unowned self] detail in
+            DetailViewModelFactory.viewModel(from: detail, imageLoader: {[unowned self] detail in self.useCase.loadImage(for: detail)})
+        }
     }
     
 }

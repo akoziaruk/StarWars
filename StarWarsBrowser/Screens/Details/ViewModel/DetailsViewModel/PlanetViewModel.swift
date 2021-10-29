@@ -6,11 +6,14 @@
 //
 
 import Foundation
+import UIKit.UIImage
+import Combine
 
 class PlanetViewModel: DetailViewModel {
     let name: String!
-    init(model: Planet) {
-        self.name = model.name
-        super.init()
+    init(name: String, image: AnyPublisher<UIImage?, Never>) {
+        self.name = name
+
+        super.init(image: image)
     }
 }

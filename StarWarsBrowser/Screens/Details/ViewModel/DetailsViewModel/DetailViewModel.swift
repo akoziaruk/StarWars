@@ -6,9 +6,16 @@
 //
 
 import Foundation
+import Combine
+import UIKit.UIImage
 
 class DetailViewModel: Hashable {
     var uuid = UUID()
+    var image: AnyPublisher<UIImage?, Never>
+    
+    init(image: AnyPublisher<UIImage?, Never>) {
+        self.image = image
+    }
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(uuid)

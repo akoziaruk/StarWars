@@ -7,17 +7,22 @@
 
 import Combine
 import Foundation
+import UIKit
 
 protocol MainUseCaseType {
     func loadCategories() -> AnyPublisher<Result<Categories, Error>, Never>
     func loadDetails(url: URL, page: Int, type: Category.T) -> AnyPublisher<Result<[Detail], Error>, Never>
+    func loadImage(for detail: Detail) -> AnyPublisher<UIImage?, Never>
 }
 
 final class MainUseCase: MainUseCaseType {
-    let networkService: NetworkServiceType
     
-    init(networkService: NetworkServiceType) {
+    let networkService: NetworkServiceType
+    let imageLoaderService: ImageLoaderServiceType
+    
+    init(networkService: NetworkServiceType, imageLoaderService: ImageLoaderServiceType) {
         self.networkService = networkService
+        self.imageLoaderService = imageLoaderService
     }
     
     func loadCategories() -> AnyPublisher<Result<Categories, Error>, Never> {
@@ -56,6 +61,17 @@ final class MainUseCase: MainUseCaseType {
             .catch { error -> AnyPublisher<Result<[Detail], Error>, Never> in .just(.failure(error)) }
             .subscribe(on: Scheduler.backgroundWorkScheduler)
             .receive(on: Scheduler.mainScheduler)
+            .eraseToAnyPublisher()
+    }
+    
+    func loadImage(for detail: Detail) -> AnyPublisher<UIImage?, Never> {
+        return Deferred { return Just(detail.imagePath) }
+            .flatMap({ [unowned self] path in
+                self.imageLoaderService.loadImage(for: path)
+            })
+            .subscribe(on: Scheduler.backgroundWorkScheduler)
+            .receive(on: Scheduler.mainScheduler)
+            .share()
             .eraseToAnyPublisher()
     }
 }

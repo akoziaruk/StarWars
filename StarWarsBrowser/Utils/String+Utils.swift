@@ -11,4 +11,7 @@ extension String {
     func removeNewLineSymbols() -> String {
         return replacingOccurrences(of: "\r\n", with: " ")
     }
+    var snakeCase: String {
+        return lowercased().replacingOccurrences(of: " ", with: "_")
+    }
 }

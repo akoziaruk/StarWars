@@ -9,6 +9,8 @@ import Foundation
 
 struct People: Detail {
     var type: Category.T { .people }
+    var imagePath: String { "people/" + name.snakeCase }
+
     let name: String
     let height: String
     let hairColor: String

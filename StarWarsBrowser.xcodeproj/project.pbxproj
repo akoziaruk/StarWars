@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,13 +45,16 @@
 		FA527AFB271ED57F00C56600 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527AE2271ED57F00C56600 /* CategoryCollectionViewCell.swift */; };
 		FA527AFC271ED57F00C56600 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA527AE3271ED57F00C56600 /* CategoryCollectionViewCell.xib */; };
 		FA527AFD271ED57F00C56600 /* CategoriesDisplayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527AE4271ED57F00C56600 /* CategoriesDisplayDataManager.swift */; };
-		FA527B05271ED5B800C56600 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527AFF271ED5B800C56600 /* Services.swift */; };
 		FA527B06271ED5B800C56600 /* NetworkServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527B01271ED5B800C56600 /* NetworkServiceType.swift */; };
 		FA527B07271ED5B800C56600 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527B02271ED5B800C56600 /* NetworkService.swift */; };
 		FA527B08271ED5B800C56600 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527B03271ED5B800C56600 /* Resource.swift */; };
 		FA527B09271ED5B800C56600 /* ServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527B04271ED5B800C56600 /* ServicesProvider.swift */; };
 		FA527B0B271F09D500C56600 /* People+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527B0A271F09D500C56600 /* People+Assets.swift */; };
 		FA527B0D271F11A300C56600 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527B0C271F11A300C56600 /* Planet.swift */; };
+		FA7E8900272BD2D900220980 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = FA7E88FF272BD2D900220980 /* FirebaseStorageCombine-Community */; };
+		FA7E8902272BD33800220980 /* ImageLoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E8901272BD33800220980 /* ImageLoaderService.swift */; };
+		FA7E8904272BD3BD00220980 /* ImageLoaderServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E8903272BD3BC00220980 /* ImageLoaderServiceType.swift */; };
+		FA7E8907272BE1CF00220980 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA7E8906272BE1CF00220980 /* GoogleService-Info.plist */; };
 		FA84F8D126F8EB9B000DB2F1 /* MainUseCase+Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84F8D026F8EB9B000DB2F1 /* MainUseCase+Detail.swift */; };
 		FA84F8D326F8EF28000DB2F1 /* UseCaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84F8D226F8EF28000DB2F1 /* UseCaseError.swift */; };
 		FA84F8D526F8F5C8000DB2F1 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84F8D426F8F5C8000DB2F1 /* People.swift */; };
@@ -120,13 +123,15 @@
 		FA527AE2271ED57F00C56600 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA527AE3271ED57F00C56600 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		FA527AE4271ED57F00C56600 /* CategoriesDisplayDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesDisplayDataManager.swift; sourceTree = "<group>"; };
-		FA527AFF271ED5B800C56600 /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		FA527B01271ED5B800C56600 /* NetworkServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceType.swift; sourceTree = "<group>"; };
 		FA527B02271ED5B800C56600 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		FA527B03271ED5B800C56600 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		FA527B04271ED5B800C56600 /* ServicesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesProvider.swift; sourceTree = "<group>"; };
 		FA527B0A271F09D500C56600 /* People+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "People+Assets.swift"; sourceTree = "<group>"; };
 		FA527B0C271F11A300C56600 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		FA7E8901272BD33800220980 /* ImageLoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderService.swift; sourceTree = "<group>"; };
+		FA7E8903272BD3BC00220980 /* ImageLoaderServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderServiceType.swift; sourceTree = "<group>"; };
+		FA7E8906272BE1CF00220980 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA84F8D026F8EB9B000DB2F1 /* MainUseCase+Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainUseCase+Detail.swift"; sourceTree = "<group>"; };
 		FA84F8D226F8EF28000DB2F1 /* UseCaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseError.swift; sourceTree = "<group>"; };
 		FA84F8D426F8F5C8000DB2F1 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
@@ -159,6 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA7E8900272BD2D900220980 /* FirebaseStorageCombine-Community in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +202,7 @@
 				8AB647C7265D0A1100B2F498 /* Assets.xcassets */,
 				8AB647C9265D0A1100B2F498 /* LaunchScreen.storyboard */,
 				8AB647CC265D0A1100B2F498 /* Info.plist */,
+				FA7E8906272BE1CF00220980 /* GoogleService-Info.plist */,
 			);
 			path = StarWarsBrowser;
 			sourceTree = "<group>";
@@ -329,9 +336,9 @@
 		FA527AFE271ED5B700C56600 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FA527AFF271ED5B800C56600 /* Services.swift */,
-				FA527B00271ED5B800C56600 /* Network Service */,
 				FA527B04271ED5B800C56600 /* ServicesProvider.swift */,
+				FA527B00271ED5B800C56600 /* Network Service */,
+				FA7E8905272BD3C300220980 /* Image Loader Service */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -373,6 +380,15 @@
 				FAECFBF2272003F7001BA223 /* PlanetViewModel.swift */,
 			);
 			path = DetailsViewModel;
+			sourceTree = "<group>";
+		};
+		FA7E8905272BD3C300220980 /* Image Loader Service */ = {
+			isa = PBXGroup;
+			children = (
+				FA7E8901272BD33800220980 /* ImageLoaderService.swift */,
+				FA7E8903272BD3BC00220980 /* ImageLoaderServiceType.swift */,
+			);
+			path = "Image Loader Service";
 			sourceTree = "<group>";
 		};
 		FA84F8D826F9B383000DB2F1 /* Detail */ = {
@@ -459,6 +475,9 @@
 			dependencies = (
 			);
 			name = StarWarsBrowser;
+			packageProductDependencies = (
+				FA7E88FF272BD2D900220980 /* FirebaseStorageCombine-Community */,
+			);
 			productName = StarWarsBrowser;
 			productReference = 8AB647BB265D0A0D00B2F498 /* StarWarsBrowser.app */;
 			productType = "com.apple.product-type.application";
@@ -486,6 +505,9 @@
 				Base,
 			);
 			mainGroup = 8AB647B2265D0A0D00B2F498;
+			packageReferences = (
+				FA7E88FE272BD2D900220980 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 8AB647BC265D0A0D00B2F498 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -502,6 +524,7 @@
 			files = (
 				8AB647CB265D0A1100B2F498 /* LaunchScreen.storyboard in Resources */,
 				FA527AF3271ED57F00C56600 /* MainViewController.xib in Resources */,
+				FA7E8907272BE1CF00220980 /* GoogleService-Info.plist in Resources */,
 				FA527AF9271ED57F00C56600 /* CategoriesViewController.xib in Resources */,
 				8AB647C8265D0A1100B2F498 /* Assets.xcassets in Resources */,
 				FA527AFC271ED57F00C56600 /* CategoryCollectionViewCell.xib in Resources */,
@@ -546,7 +569,6 @@
 				8ABB296C26828A6B009963FF /* Film.swift in Sources */,
 				FAB114E726DE632C00ECE682 /* Publisher+Utils.swift in Sources */,
 				FAB114E326DE571400ECE682 /* Categories.swift in Sources */,
-				FA527B05271ED5B800C56600 /* Services.swift in Sources */,
 				FA1162332716D5FD004A3D2D /* CategoryLabel.swift in Sources */,
 				FA527AF5271ED57F00C56600 /* MainViewController.swift in Sources */,
 				FADF79FA26BE558700D8F126 /* AlertController+Utils.swift in Sources */,
@@ -559,6 +581,7 @@
 				FA4742882714619B00C700BD /* Category+Assets.swift in Sources */,
 				FA1162312715907E004A3D2D /* CategoryImageView.swift in Sources */,
 				8ABDA0C82680E44600477D3D /* Category.swift in Sources */,
+				FA7E8904272BD3BD00220980 /* ImageLoaderServiceType.swift in Sources */,
 				FABCD171271D7316002BFEFC /* PagingCollectionViewLayout.swift in Sources */,
 				8AB647BF265D0A0D00B2F498 /* AppDelegate.swift in Sources */,
 				8ABB296F26828BA3009963FF /* DetailCollection.swift in Sources */,
@@ -568,6 +591,7 @@
 				FABCD176271DC241002BFEFC /* Film+Assets.swift in Sources */,
 				FA84F8D126F8EB9B000DB2F1 /* MainUseCase+Detail.swift in Sources */,
 				FA527AE5271ED57F00C56600 /* PeopleViewModel.swift in Sources */,
+				FA7E8902272BD33800220980 /* ImageLoaderService.swift in Sources */,
 				FA527AE9271ED57F00C56600 /* DetailsViewModelType.swift in Sources */,
 				FA11622D27158DB3004A3D2D /* UIImageView+Utils.swift in Sources */,
 				FA527AEC271ED57F00C56600 /* FilmCollectionViewCell.swift in Sources */,
@@ -726,7 +750,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.starwars;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lexkoz.starwars;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -776,6 +800,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA7E88FE272BD2D900220980 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA7E88FF272BD2D900220980 /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA7E88FE272BD2D900220980 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8AB647B3265D0A0D00B2F498 /* Project object */;
 }

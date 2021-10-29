@@ -9,4 +9,5 @@ import Foundation
 
 struct APIConstants {
     static let baseURL = URL(string: "https://swapi.dev/api/")!
+    static let firebaseBucketPath = "gs://starwars-f08dd.appspot.com/"
 }

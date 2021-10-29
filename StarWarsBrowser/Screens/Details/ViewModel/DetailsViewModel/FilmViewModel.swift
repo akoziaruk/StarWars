@@ -6,19 +6,19 @@
 //
 
 import Foundation
-import UIKit
+import UIKit.UIImage
+import Combine
 
 class FilmViewModel: DetailViewModel {
-    var title: String!
-    var director: String!
-    var openingCrawl: String!
-    var image: UIImage?
+    let title: String!
+    let director: String!
+    let openingCrawl: String!
     
-    init(model: Film) {
-        super.init()
-        self.title = model.title
-        self.director = model.director
-        self.openingCrawl = model.openingCrawl.removeNewLineSymbols()
-        self.image = model.image
+    init(title: String, director: String, openingCrawl: String, image: AnyPublisher<UIImage?, Never>) {
+        self.title = title
+        self.director = director
+        self.openingCrawl = openingCrawl.removeNewLineSymbols()
+        
+        super.init(image: image)
     }
 }
