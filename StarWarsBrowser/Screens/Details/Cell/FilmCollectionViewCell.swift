@@ -25,7 +25,6 @@ class FilmCollectionViewCell: UICollectionViewCell {
         titleLabel.text = viewModel.title
         directorLabel.text = viewModel.director
         descriptionLabel.text = viewModel.openingCrawl
-                
         cancellable = viewModel.image.sink(receiveValue: { image in
             self.showImage(image: image)
         })

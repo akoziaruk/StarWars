@@ -12,9 +12,11 @@ import Combine
 class PlanetViewModel {
     let uuid = UUID()
     let name: String!
+    let image: AnyPublisher<UIImage?, Never>
     
     init(name: String, image: AnyPublisher<UIImage?, Never>) {
         self.name = name
+        self.image = image
     }
 }
 

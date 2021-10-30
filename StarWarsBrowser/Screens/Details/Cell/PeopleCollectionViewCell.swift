@@ -11,7 +11,6 @@ import Combine
 class PeopleCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    
     private var cancellable: AnyCancellable?
 
     override func awakeFromNib() {
@@ -19,16 +18,27 @@ class PeopleCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func updateWith(_ viewModel: PeopleViewModel) {
-        nameLabel.text = viewModel.name
-//        cancellable = viewModel.image.sink { [unowned self] image in self.showImage(image: image) }
-        
-        // TODO: Add default image or loader
-        imageView.image = nil
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        cancelImageLoading()
     }
-
+    
+    func updateWith(_ viewModel: PeopleViewModel) {
+        cancelImageLoading()
+        nameLabel.text = viewModel.name
+        cancellable = viewModel.image.sink(receiveValue: { image in
+            self.showImage(image: image)
+        })
+    }
+    
     private func showImage(image: UIImage?) {
         //TODO: Stop loader
+        cancelImageLoading()
         imageView.image = image
+    }
+    
+    private func cancelImageLoading() {
+        imageView.image = nil
+        cancellable?.cancel()
     }
 }
