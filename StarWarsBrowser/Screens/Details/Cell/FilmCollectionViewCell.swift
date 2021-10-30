@@ -21,18 +21,21 @@ class FilmCollectionViewCell: UICollectionViewCell {
     }
     
     func updateWith(_ viewModel: FilmViewModel) {
+        cancelImageLoading()
         titleLabel.text = viewModel.title
         directorLabel.text = viewModel.director
         descriptionLabel.text = viewModel.openingCrawl
                 
-        cancellable = viewModel.image.sink { [unowned self] image in
+        cancellable = viewModel.image.sink(receiveValue: { image in
             self.showImage(image: image)
-        }
+        })
     }
     
     private func showImage(image: UIImage?) {
         //TODO: Stop loader
+        cancelImageLoading()
         imageView.image = image
+        print("SET IMAGE")
     }
     
     private func cancelImageLoading() {

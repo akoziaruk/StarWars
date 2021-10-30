@@ -14,6 +14,7 @@
 		8ABB296C26828A6B009963FF /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB296B26828A6A009963FF /* Film.swift */; };
 		8ABB296F26828BA3009963FF /* DetailCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB296E26828BA3009963FF /* DetailCollection.swift */; };
 		8ABDA0C82680E44600477D3D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABDA0C62680E44600477D3D /* Category.swift */; };
+		FA0D5565272D3DDD005CBFDB /* Detail+Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D5564272D3DDD005CBFDB /* Detail+Bucket.swift */; };
 		FA11622B271566EB004A3D2D /* CategoryGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11622A271566EB004A3D2D /* CategoryGradientView.swift */; };
 		FA11622D27158DB3004A3D2D /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11622C27158DB3004A3D2D /* UIImageView+Utils.swift */; };
 		FA1162312715907E004A3D2D /* CategoryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1162302715907E004A3D2D /* CategoryImageView.swift */; };
@@ -92,6 +93,7 @@
 		8ABB296B26828A6A009963FF /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		8ABB296E26828BA3009963FF /* DetailCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollection.swift; sourceTree = "<group>"; };
 		8ABDA0C62680E44600477D3D /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		FA0D5564272D3DDD005CBFDB /* Detail+Bucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detail+Bucket.swift"; sourceTree = "<group>"; };
 		FA11622A271566EB004A3D2D /* CategoryGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGradientView.swift; sourceTree = "<group>"; };
 		FA11622C27158DB3004A3D2D /* UIImageView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utils.swift"; sourceTree = "<group>"; };
 		FA1162302715907E004A3D2D /* CategoryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryImageView.swift; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 				FAB114B926DE0FAA00ECE682 /* MainUseCaseType.swift */,
 				FA84F8D026F8EB9B000DB2F1 /* MainUseCase+Detail.swift */,
 				FAB114DE26DE51E800ECE682 /* Resource+Category.swift */,
+				FA0D5564272D3DDD005CBFDB /* Detail+Bucket.swift */,
 				FA84F8D226F8EF28000DB2F1 /* UseCaseError.swift */,
 			);
 			path = UseCase;
@@ -584,6 +587,7 @@
 				FA7E8904272BD3BD00220980 /* ImageLoaderServiceType.swift in Sources */,
 				FABCD171271D7316002BFEFC /* PagingCollectionViewLayout.swift in Sources */,
 				8AB647BF265D0A0D00B2F498 /* AppDelegate.swift in Sources */,
+				FA0D5565272D3DDD005CBFDB /* Detail+Bucket.swift in Sources */,
 				8ABB296F26828BA3009963FF /* DetailCollection.swift in Sources */,
 				FA527B08271ED5B800C56600 /* Resource.swift in Sources */,
 				8AB647C1265D0A0D00B2F498 /* SceneDelegate.swift in Sources */,

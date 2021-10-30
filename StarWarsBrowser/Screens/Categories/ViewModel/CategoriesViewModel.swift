@@ -59,7 +59,7 @@ class CategoriesViewModel: CategoriesViewModelType {
     }
     
     private func viewModels(from categories: [Category]) -> [CategoryViewModel] {
-        return categories.compactMap { CategoryViewModel($0, selected: selectedCategory == $0.type) }
+        categories.compactMap { CategoryViewModel($0, selected: selectedCategory == $0.type) }
     }
     
 }

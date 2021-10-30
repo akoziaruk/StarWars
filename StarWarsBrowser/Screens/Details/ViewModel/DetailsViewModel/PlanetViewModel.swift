@@ -15,8 +15,6 @@ class PlanetViewModel {
     
     init(name: String, image: AnyPublisher<UIImage?, Never>) {
         self.name = name
-
-//        super.init(image: image)
     }
 }
 

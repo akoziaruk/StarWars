@@ -17,8 +17,8 @@ protocol MainUseCaseType {
 
 final class MainUseCase: MainUseCaseType {
     
-    let networkService: NetworkServiceType
-    let imageLoaderService: ImageLoaderServiceType
+    private let networkService: NetworkServiceType
+    private let imageLoaderService: ImageLoaderServiceType
     
     init(networkService: NetworkServiceType, imageLoaderService: ImageLoaderServiceType) {
         self.networkService = networkService
@@ -65,9 +65,9 @@ final class MainUseCase: MainUseCaseType {
     }
     
     func loadImage(for detail: Detail) -> AnyPublisher<UIImage?, Never> {
-        return Deferred { return Just(detail.imagePath) }
-            .flatMap({ [unowned self] path in
-                self.imageLoaderService.loadImage(for: path)
+        return Deferred { return Just(detail.bucketImagePath) }
+            .flatMap({ [unowned self] path  -> AnyPublisher<UIImage?, Never> in
+                return self.imageLoaderService.loadImage(for: path)
             })
             .subscribe(on: Scheduler.backgroundWorkScheduler)
             .receive(on: Scheduler.mainScheduler)

@@ -12,21 +12,13 @@ import FirebaseStorageCombineSwift
 import UIKit.UIImage
 
 final class ImageLoaderService: ImageLoaderServiceType {
-    struct Constants {
-        static let maxSize = 1 * 1024 * 1024 as Int64
-        static let imageExtention = ".jpg"
-    }
-    
     private let cache: ImageCacheType = ImageCache()
 
     func loadImage(for path: String) -> AnyPublisher<UIImage?, Never> {
-        
         if let image = cache.image(for: path) {
             return .just(image)
         }
-
-        let url = APIConstants.firebaseBucketPath + path + Constants.imageExtention
-        return Storage.storage().reference(forURL: url)
+        return Storage.storage().reference(forURL: path)
             .getData(maxSize: Constants.maxSize)
             .map { (data) -> UIImage? in return UIImage(data: data) }
             .catch { error in return Just(nil) }
@@ -34,8 +26,11 @@ final class ImageLoaderService: ImageLoaderServiceType {
                 guard let image = image else { return }
                 self.cache.insertImage(image, for: path)
             })
-            .print("Image loading \(url):")
+            .print("Image loading \(path):")
             .eraseToAnyPublisher()
-
+    }
+    
+    struct Constants {
+        static let maxSize = 1 * 1024 * 1024 as Int64
     }
 }
