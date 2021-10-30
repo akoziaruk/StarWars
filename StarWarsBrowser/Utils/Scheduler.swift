@@ -16,6 +16,6 @@ final class Scheduler {
         return operationQueue
     }()
 
-    static let mainScheduler = RunLoop.main
+    static let mainScheduler = DispatchQueue.main
 
 }

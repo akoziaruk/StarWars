@@ -35,7 +35,6 @@ class FilmCollectionViewCell: UICollectionViewCell {
         //TODO: Stop loader
         cancelImageLoading()
         imageView.image = image
-        print("SET IMAGE")
     }
     
     private func cancelImageLoading() {

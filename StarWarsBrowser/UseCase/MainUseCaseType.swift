@@ -70,7 +70,7 @@ final class MainUseCase: MainUseCaseType {
                 return self.imageLoaderService.loadImage(for: path)
             })
             .subscribe(on: Scheduler.backgroundWorkScheduler)
-            .receive(on: Scheduler.mainScheduler)
+            .receive(on: Scheduler.mainScheduler) 
             .share()
             .eraseToAnyPublisher()
     }
