@@ -20,7 +20,7 @@ struct Resource<T: Decodable> {
         guard let url = components.url else {
             return nil
         }
-        return URLRequest(url: url)
+        return URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
     }
 
     init(url: URL, parameters: [String: CustomStringConvertible] = [:]) {
