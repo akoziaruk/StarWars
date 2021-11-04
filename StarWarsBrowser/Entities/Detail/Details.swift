@@ -1,5 +1,5 @@
 //
-//  DetailCollection.swift
+//  Details.swift
 //  StarWarsBrowser
 //
 //  Created by Alexander Koziaruk on 22.06.2021.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DetailCollection<T: Detail>: Decodable {
+struct Details<T: Detail>: Decodable {
     var items: [Detail]
     
     init(from decoder: Decoder) throws {

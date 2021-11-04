@@ -8,21 +8,20 @@
 import Foundation
 
 struct People: Detail {
-    var type: Category.T { .people }
     var imagePath: String { "people/" + name.snakeCase }
 
     let name: String
-    let height: String
-    let hairColor: String
-    let eyeColor: String
-    let birthYear: String
+//    let height: String
+//    let hairColor: String
+//    let eyeColor: String
+//    let birthYear: String
     
     enum CodingKeys: String, CodingKey {
         case name
-        case height
-        case hairColor = "hair_color"
-        case eyeColor = "eye_color"
-        case birthYear = "birth_year"
+//        case height
+//        case hairColor = "hair_color"
+//        case eyeColor = "eye_color"
+//        case birthYear = "birth_year"
     }
 //    let mass: Int
 //    let skinColor: String

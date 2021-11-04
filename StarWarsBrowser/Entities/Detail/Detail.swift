@@ -8,6 +8,5 @@
 import Foundation
 
 protocol Detail: Decodable {
-    var type: Category.T { get }
     var imagePath: String { get }
 }

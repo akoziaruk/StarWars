@@ -11,7 +11,7 @@ import UIKit
 
 protocol MainUseCaseType {
     func loadCategories() -> AnyPublisher<Result<Categories, Error>, Never>
-    func loadDetails(url: URL, page: Int, type: Category.T) -> AnyPublisher<Result<[Detail], Error>, Never>
+    func loadDetails(url: URL, page: Int, category: Category.T) -> AnyPublisher<Result<[Detail], Error>, Never>
     func loadImage(for detail: Detail) -> AnyPublisher<UIImage?, Never>
 }
 
@@ -25,7 +25,7 @@ final class MainUseCase: MainUseCaseType {
         self.imageLoaderService = imageLoaderService
     }
     
-    func loadCategories() -> AnyPublisher<Result<Categories, Error>, Never> {
+    public func loadCategories() -> AnyPublisher<Result<Categories, Error>, Never> {
         networkService
             .load(Resource<Categories>.categories())
             .map { .success($0) }
@@ -35,8 +35,8 @@ final class MainUseCase: MainUseCaseType {
             .eraseToAnyPublisher()
     }
     
-    func loadDetails(url: URL, page: Int, type: Category.T) -> AnyPublisher<Result<[Detail], Error>, Never> {
-        switch type {
+    public func loadDetails(url: URL, page: Int, category: Category.T) -> AnyPublisher<Result<[Detail], Error>, Never> {
+        switch category {
         case .film:
             return loadDetails(url: url, page: page, type: Film.self)
         case .people:
@@ -53,10 +53,10 @@ final class MainUseCase: MainUseCaseType {
             return .just(.failure(UseCaseError.unknownType))
         }
     }
-    
+
     private func loadDetails<T: Detail>(url: URL, page: Int, type: T.Type) -> AnyPublisher<Result<[Detail], Error>, Never> {
         networkService
-            .load(Resource<DetailCollection<T>>(url: url, parameters: ["page": page]))
+            .load(Resource<Details<T>>.details(for: url, page: page, type: type))
             .map { .success($0.items) }
             .catch { error -> AnyPublisher<Result<[Detail], Error>, Never> in .just(.failure(error)) }
             .subscribe(on: Scheduler.backgroundWorkScheduler)
@@ -64,7 +64,7 @@ final class MainUseCase: MainUseCaseType {
             .eraseToAnyPublisher()
     }
     
-    func loadImage(for detail: Detail) -> AnyPublisher<UIImage?, Never> {
+    public func loadImage(for detail: Detail) -> AnyPublisher<UIImage?, Never> {
         return Deferred { return Just(detail.bucketImagePath) }
             .flatMap({ [unowned self] path  -> AnyPublisher<UIImage?, Never> in
                 return self.imageLoaderService.loadImage(for: path)

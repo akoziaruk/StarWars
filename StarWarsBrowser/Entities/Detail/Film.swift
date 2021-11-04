@@ -8,7 +8,6 @@
 import Foundation
 
 struct Film: Detail {
-    var type: Category.T { .film }
     var imagePath: String { "films/" + title.snakeCase }
 
     let title: String!
