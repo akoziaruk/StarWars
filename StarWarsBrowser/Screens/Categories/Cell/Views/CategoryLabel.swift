@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class CategoryLabel: UILabel {
-    
     public func set(selected: Bool) {
         textColor = selected ? Constants.selectedColor: Constants.deselectedColor
     }

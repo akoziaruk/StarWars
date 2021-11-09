@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class DetailsBackgroundView: UIView {
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         

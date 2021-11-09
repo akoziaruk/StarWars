@@ -21,5 +21,4 @@ struct Category {
         case vehicle
         case unknown
     }
-
 }

@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
+/* CategoryGradientView creates backgorund view with gradient used in category cell */
 class CategoryGradientView: UIView {
-    
     var selectionLayer: CALayer! = nil
 
     override func awakeFromNib() {

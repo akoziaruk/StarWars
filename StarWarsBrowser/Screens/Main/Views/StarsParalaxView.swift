@@ -7,6 +7,7 @@
 
 import UIKit
 
+/* StarsParalaxView creates view of stars with paralax effect on scrolling */
 class StarsParalaxView: UIView {
     private let layersCount = 3
     private let widthCompensation = 600.0

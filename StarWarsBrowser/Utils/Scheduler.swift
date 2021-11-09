@@ -8,7 +8,6 @@
 import Foundation
 
 final class Scheduler {
-
     static var backgroundWorkScheduler: OperationQueue = {
         let operationQueue = OperationQueue()
         operationQueue.maxConcurrentOperationCount = 5

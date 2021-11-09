@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class CategoryImageView: UIImageView {
-    
     public func set(selected: Bool) {
         let color = selected ? Constants.selectedImageColor: Constants.deselectedImageColor
         setImage(color: color)

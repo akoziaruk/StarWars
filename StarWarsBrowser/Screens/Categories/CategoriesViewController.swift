@@ -30,17 +30,12 @@ class CategoriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureUI()
         bind(to: viewModel)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         load.send()
-    }
-    
-    private func configureUI() {
-
     }
 
     private func bind(to: CategoriesViewModelType) {
@@ -80,5 +75,4 @@ extension CategoriesViewController: CategoriesDisplayDataManagerDelegate {
     func didSelectedCategory(with item: SelectedItem) {
         select.send(item)
     }
-
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 
+/* StarsView class creates view with stars in provided size range and count */
 class StarsView: UIView {
     private let starsCount: Int
     private let diameterRange: ClosedRange<CGFloat>

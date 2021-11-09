@@ -28,10 +28,10 @@ class DetailsDisplayDataManager: NSObject {
     
     private func setupCollectionView() {
         let nibName = UINib(nibName: "FilmCollectionViewCell", bundle:nil)
-        collectionView.register(nibName, forCellWithReuseIdentifier: "filmCell")
+        collectionView.register(nibName, forCellWithReuseIdentifier: Constants.ReuseCellIdentifier.film)
 
         let nib2Name = UINib(nibName: "PeopleCollectionViewCell", bundle:nil)
-        collectionView.register(nib2Name, forCellWithReuseIdentifier: "peopleCell")
+        collectionView.register(nib2Name, forCellWithReuseIdentifier: Constants.ReuseCellIdentifier.people)
     }
 
     private func setupDataSource() -> DetailsDiffableDataSource {
@@ -40,13 +40,13 @@ class DetailsDisplayDataManager: NSObject {
         cellProvider: { (collectionView, indexPath, viewModel) -> UICollectionViewCell? in
             switch viewModel {
             case let viewModel as FilmViewModel:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "filmCell",
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ReuseCellIdentifier.film,
                                                               for: indexPath) as? FilmCollectionViewCell
                 cell?.updateWith(viewModel)
                 return cell
                 
             case let viewModel as PeopleViewModel:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "peopleCell",
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ReuseCellIdentifier.people,
                                                               for: indexPath) as? PeopleCollectionViewCell
                 cell?.updateWith(viewModel)
                 return cell
@@ -68,5 +68,12 @@ class DetailsDisplayDataManager: NSObject {
         var snapshot = DetailsDiffableSnapshot()
         snapshot.appendSections([.main])
         dataSource.apply(snapshot, animatingDifferences: true)
+    }
+    
+    struct Constants {
+        struct ReuseCellIdentifier {
+            static let film = "filmCell"
+            static let people = "peopleCell"
+        }
     }
 }

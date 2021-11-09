@@ -18,7 +18,6 @@ private enum Section {
 }
 
 class CategoriesDisplayDataManager: NSObject {
-
     private weak var collectionView: UICollectionView!
     private weak var delegate: CategoriesDisplayDataManagerDelegate?
     private lazy var dataSource = setupDataSource()
@@ -36,7 +35,7 @@ class CategoriesDisplayDataManager: NSObject {
         collectionView.delegate = self
 
         let nibName = UINib(nibName: "CategoryCollectionViewCell", bundle:nil)
-        collectionView.register(nibName, forCellWithReuseIdentifier: "categoryCell")
+        collectionView.register(nibName, forCellWithReuseIdentifier: Constants.ReuseCellIdentifier.category)
     }
     
     private func setupDataSource() -> CategoryDataSource {
@@ -45,7 +44,7 @@ class CategoriesDisplayDataManager: NSObject {
         cellProvider: { (collectionView, indexPath, viewModel) ->
           UICollectionViewCell? in
           let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: "categoryCell",
+            withReuseIdentifier: Constants.ReuseCellIdentifier.category,
             for: indexPath) as? CategoryCollectionViewCell
             cell?.updateWith(viewModel)
           return cell
@@ -68,6 +67,12 @@ class CategoriesDisplayDataManager: NSObject {
         new.isSelected = true
         snapshot.reloadItems([current, new])
         dataSource.apply(snapshot, animatingDifferences: true)
+    }
+    
+    struct Constants {
+        struct ReuseCellIdentifier {
+            static let category = "categoryCell"
+        }
     }
 }
 
