@@ -23,8 +23,8 @@ class CategoriesViewModelTests: XCTestCase {
         // Given
         let load = PassthroughSubject<Void, Never>()
         let input = CategoriesViewModelInput(load: load.eraseToAnyPublisher(), select: .empty())
-
         var state: CategoriesLoadingState?
+        
         let expectation = self.expectation(description: "categories")
         let categories = Categories.loadFromFile("Categories.json", target: Self.self)
         let expectedViewModels = categories.items.map({ CategoryViewModel($0, selected: viewModel.selectedCategory == $0.type) })
@@ -42,6 +42,28 @@ class CategoriesViewModelTests: XCTestCase {
         // Then
         waitForExpectations(timeout: 1.0, handler: nil)
         XCTAssertEqual(state!, .success(expectedViewModels))
+    }
+    
+    func test_hasErrorState_whenDataLoadingIsFailed() {
+        // Given
+        let load = PassthroughSubject<Void, Never>()
+        let input = CategoriesViewModelInput(load: load.eraseToAnyPublisher(), select: .empty())
+        var state: CategoriesLoadingState?
+
+        let expectation = self.expectation(description: "categories")
+        useCase.loadCategoriesReturnValue = .just(.failure(NetworkError.invalidResponse))
+        viewModel.transform(input: input).sink { value in
+            guard case .failure = value else { return }
+            state = value
+            expectation.fulfill()
+        }.store(in: &cancellables)
+        
+        // When
+        load.send()
+        
+        // Then
+        waitForExpectations(timeout: 1.0, handler: nil)
+        XCTAssertEqual(state!, .failure(NetworkError.invalidResponse))
     }
 
 }
