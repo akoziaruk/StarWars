@@ -10,7 +10,6 @@ import UIKit.UIImage
 import Combine
 
 struct FilmViewModel {
-    let uuid = UUID()
     let title: String!
     let director: String!
     let openingCrawl: String!
@@ -26,9 +25,9 @@ struct FilmViewModel {
 
 extension FilmViewModel: Hashable {
     func hash(into hasher: inout Hasher) {
-        hasher.combine(uuid)
+        hasher.combine(title)
     }
     static func == (lhs: FilmViewModel, rhs: FilmViewModel) -> Bool {
-        lhs.uuid == rhs.uuid
+        lhs.title == rhs.title
     }
 }

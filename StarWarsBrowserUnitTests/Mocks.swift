@@ -43,20 +43,20 @@ class MainUseCaseTypeMock: MainUseCaseType {
     
     // Load Image
     
-    var loadImageForSizeCallsCount = 0
-    var loadImageForSizeCalled: Bool {
-        return loadImageForSizeCallsCount > 0
+    var loadImageCallsCount = 0
+    var loadImageCalled: Bool {
+        return loadImageCallsCount > 0
     }
-    var loadImageForSizeReceivedDetail: Detail?
-    var loadImageForSizeReceivedInvocations: [Detail] = []
-    var loadImageForSizeReturnValue: AnyPublisher<UIImage?, Never>!
-    var loadImageForSizeClosure: ((Detail) -> AnyPublisher<UIImage?, Never>)?
+    var loadImageReceivedDetail: Detail?
+    var loadImageReceivedInvocations: [Detail] = []
+    var loadImageReturnValue: AnyPublisher<UIImage?, Never>!
+    var loadImageClosure: ((Detail) -> AnyPublisher<UIImage?, Never>)?
 
     func loadImage(for detail: Detail) -> AnyPublisher<UIImage?, Never> {
-        loadImageForSizeCallsCount += 1
-        loadImageForSizeReceivedDetail = detail
-        loadImageForSizeReceivedInvocations.append(detail)
-        return loadImageForSizeClosure.map({ $0(detail) }) ?? loadImageForSizeReturnValue
+        loadImageCallsCount += 1
+        loadImageReceivedDetail = detail
+        loadImageReceivedInvocations.append(detail)
+        return loadImageClosure.map({ $0(detail) }) ?? loadImageReturnValue
     }
 }
 

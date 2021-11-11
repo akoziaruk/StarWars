@@ -14,6 +14,8 @@
 		8ABB296C26828A6B009963FF /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB296B26828A6A009963FF /* Film.swift */; };
 		8ABB296F26828BA3009963FF /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB296E26828BA3009963FF /* Details.swift */; };
 		8ABDA0C82680E44600477D3D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABDA0C62680E44600477D3D /* Category.swift */; };
+		FA077AA6273D23A70034634D /* Categories.json in Resources */ = {isa = PBXBuildFile; fileRef = FA077AA4273D23A70034634D /* Categories.json */; };
+		FA077AA7273D23A70034634D /* Films.json in Resources */ = {isa = PBXBuildFile; fileRef = FA077AA5273D23A70034634D /* Films.json */; };
 		FA0D5565272D3DDD005CBFDB /* Detail+Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D5564272D3DDD005CBFDB /* Detail+Bucket.swift */; };
 		FA11622D27158DB3004A3D2D /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11622C27158DB3004A3D2D /* UIImageView+Utils.swift */; };
 		FA1162312715907E004A3D2D /* CategoryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1162302715907E004A3D2D /* CategoryImageView.swift */; };
@@ -76,7 +78,6 @@
 		FAB3450D273BD4BD000EEDC9 /* DetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3450C273BD4BD000EEDC9 /* DetailsViewModelTests.swift */; };
 		FAB3450F273BD922000EEDC9 /* CategoriesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3450E273BD922000EEDC9 /* CategoriesViewModelTests.swift */; };
 		FAB34511273BE003000EEDC9 /* XCTestCase+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB34510273BE003000EEDC9 /* XCTestCase+Utils.swift */; };
-		FAB34514273BE4A3000EEDC9 /* Categories.json in Resources */ = {isa = PBXBuildFile; fileRef = FAB34513273BE1FB000EEDC9 /* Categories.json */; };
 		FAB80C6F273018F900A54148 /* Resource+Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB80C6E273018F900A54148 /* Resource+Detail.swift */; };
 		FABCD171271D7316002BFEFC /* PagingCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCD170271D7316002BFEFC /* PagingCollectionViewLayout.swift */; };
 		FABCD174271DB594002BFEFC /* DetailsBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCD173271DB594002BFEFC /* DetailsBackgroundView.swift */; };
@@ -106,6 +107,8 @@
 		8ABB296B26828A6A009963FF /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		8ABB296E26828BA3009963FF /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 		8ABDA0C62680E44600477D3D /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		FA077AA4273D23A70034634D /* Categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Categories.json; sourceTree = "<group>"; };
+		FA077AA5273D23A70034634D /* Films.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Films.json; sourceTree = "<group>"; };
 		FA0D5564272D3DDD005CBFDB /* Detail+Bucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detail+Bucket.swift"; sourceTree = "<group>"; };
 		FA11622C27158DB3004A3D2D /* UIImageView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utils.swift"; sourceTree = "<group>"; };
 		FA1162302715907E004A3D2D /* CategoryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryImageView.swift; sourceTree = "<group>"; };
@@ -168,7 +171,6 @@
 		FAB3450C273BD4BD000EEDC9 /* DetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModelTests.swift; sourceTree = "<group>"; };
 		FAB3450E273BD922000EEDC9 /* CategoriesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModelTests.swift; sourceTree = "<group>"; };
 		FAB34510273BE003000EEDC9 /* XCTestCase+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Utils.swift"; sourceTree = "<group>"; };
-		FAB34513273BE1FB000EEDC9 /* Categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Categories.json; sourceTree = "<group>"; };
 		FAB80C6E273018F900A54148 /* Resource+Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+Detail.swift"; sourceTree = "<group>"; };
 		FABCD170271D7316002BFEFC /* PagingCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingCollectionViewLayout.swift; sourceTree = "<group>"; };
 		FABCD173271DB594002BFEFC /* DetailsBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsBackgroundView.swift; sourceTree = "<group>"; };
@@ -242,6 +244,15 @@
 				FA527B16271F124500C56600 /* Other */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		FA077AA3273D23A70034634D /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				FA077AA4273D23A70034634D /* Categories.json */,
+				FA077AA5273D23A70034634D /* Films.json */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 		FA11622E27159062004A3D2D /* Views */ = {
@@ -485,7 +496,7 @@
 				FAB34508273BCD39000EEDC9 /* ApplicationFlowCoordinatorTests.swift */,
 				FAB3450A273BCD79000EEDC9 /* Mocks.swift */,
 				FAB34512273BE007000EEDC9 /* Utils */,
-				FAB34513273BE1FB000EEDC9 /* Categories.json */,
+				FA077AA3273D23A70034634D /* Responses */,
 			);
 			path = StarWarsBrowserUnitTests;
 			sourceTree = "<group>";
@@ -600,7 +611,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAB34514273BE4A3000EEDC9 /* Categories.json in Resources */,
+				FA077AA6273D23A70034634D /* Categories.json in Resources */,
+				FA077AA7273D23A70034634D /* Films.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
