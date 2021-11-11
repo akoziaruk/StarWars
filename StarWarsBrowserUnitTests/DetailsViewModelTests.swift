@@ -20,7 +20,7 @@ class DetailsViewModelTests: XCTestCase {
         viewModel = DetailsViewModel(category: Category.T.film, url: url, useCase: useCase)
     }
     
-    func test_loadData_onFilmsSelection() {
+    func test_loadData_onSelection() {
         // Given
         let load = PassthroughSubject<Void, Never>()
         let input = DetailsViewModelInput(loadNextPage: load.eraseToAnyPublisher())
