@@ -223,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				8AB647BE265D0A0D00B2F498 /* AppDelegate.swift */,
+				8AB647C0265D0A0D00B2F498 /* SceneDelegate.swift */,
 				FAB114BD26DE124400ECE682 /* Application */,
 				FAB114DD26DE51C400ECE682 /* UseCase */,
 				FA527AFE271ED5B700C56600 /* Services */,
@@ -255,6 +256,23 @@
 				FA077AA5273D23A70034634D /* Films.json */,
 			);
 			path = Responses;
+			sourceTree = "<group>";
+		};
+		FA077AAE273D4E130034634D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				FAB114DE26DE51E800ECE682 /* Resource+Category.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		FA077AAF273D4E1F0034634D /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				FAB80C6E273018F900A54148 /* Resource+Detail.swift */,
+				FA0D5564272D3DDD005CBFDB /* Detail+Bucket.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		FA11622E27159062004A3D2D /* Views */ = {
@@ -479,12 +497,10 @@
 		FAB114DD26DE51C400ECE682 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				8AB647C0265D0A0D00B2F498 /* SceneDelegate.swift */,
-				FAB114E026DE537100ECE682 /* APIConstants.swift */,
 				FAB114B926DE0FAA00ECE682 /* MainUseCaseType.swift */,
-				FAB114DE26DE51E800ECE682 /* Resource+Category.swift */,
-				FAB80C6E273018F900A54148 /* Resource+Detail.swift */,
-				FA0D5564272D3DDD005CBFDB /* Detail+Bucket.swift */,
+				FA077AAE273D4E130034634D /* Categories */,
+				FA077AAF273D4E1F0034634D /* Details */,
+				FAB114E026DE537100ECE682 /* APIConstants.swift */,
 				FA84F8D226F8EF28000DB2F1 /* UseCaseError.swift */,
 			);
 			path = UseCase;
