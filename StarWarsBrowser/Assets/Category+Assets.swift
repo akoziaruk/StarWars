@@ -22,7 +22,7 @@ extension Category {
         case .starship:
             return #imageLiteral(resourceName: "starships")
         case .vehicle:
-            return #imageLiteral(resourceName: "films")
+            return #imageLiteral(resourceName: "vehicles")
         case .unknown, .none:
             return #imageLiteral(resourceName: "films")
         }

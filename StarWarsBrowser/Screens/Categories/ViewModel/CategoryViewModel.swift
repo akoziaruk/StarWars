@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class CategoryViewModel {
-    let uuid = UUID()
     var name: String
     let url: URL
     let type: Category.T
@@ -27,9 +26,9 @@ class CategoryViewModel {
 
 extension CategoryViewModel: Hashable {
     static func == (lhs: CategoryViewModel, rhs: CategoryViewModel) -> Bool {
-        lhs.uuid == rhs.uuid
+        lhs.name == rhs.name
     }
     func hash(into hasher: inout Hasher) {
-        hasher.combine(uuid)
+        hasher.combine(name)
     }
 }
