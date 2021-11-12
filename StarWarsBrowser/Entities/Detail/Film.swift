@@ -7,9 +7,8 @@
 
 import Foundation
 
-struct Film: Detail {
+struct Film: Detailable {
     var imagePath: String { "films/" + title.snakeCase }
-
     let title: String!
     let director: String!
     let openingCrawl: String!

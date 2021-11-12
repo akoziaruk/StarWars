@@ -67,10 +67,10 @@ class MainUseCaseTypeMock: MainUseCaseType {
     }
     var loadDetailsReceivedArguments: (url: URL, page: Int, category: StarWarsBrowser.Category.T)?
     var loadDetailsReceivedInvocations: [(url: URL, page: Int, category: StarWarsBrowser.Category.T)] = []
-    var loadDetailsReturnValue: AnyPublisher<Result<[Detail], Error>, Never>!
-    var loadDetailsClosure: ((URL, Int, StarWarsBrowser.Category.T) -> AnyPublisher<Result<[Detail], Error>, Never>)?
+    var loadDetailsReturnValue: AnyPublisher<Result<[Detailable], Error>, Never>!
+    var loadDetailsClosure: ((URL, Int, StarWarsBrowser.Category.T) -> AnyPublisher<Result<[Detailable], Error>, Never>)?
     
-    func loadDetails(url: URL, page: Int, category: StarWarsBrowser.Category.T) -> AnyPublisher<Result<[Detail], Error>, Never> {
+    func loadDetails(url: URL, page: Int, category: StarWarsBrowser.Category.T) -> AnyPublisher<Result<[Detailable], Error>, Never> {
         loadDetailsCallsCount += 1
         loadDetailsReceivedArguments = (url: url, page: page, category: category)
         loadDetailsReceivedInvocations.append((url: url, page: page, category: category))
@@ -83,12 +83,12 @@ class MainUseCaseTypeMock: MainUseCaseType {
     var loadImageCalled: Bool {
         return loadImageCallsCount > 0
     }
-    var loadImageReceivedDetail: Detail?
-    var loadImageReceivedInvocations: [Detail] = []
+    var loadImageReceivedDetail: Detailable?
+    var loadImageReceivedInvocations: [Detailable] = []
     var loadImageReturnValue: AnyPublisher<UIImage?, Never>!
-    var loadImageClosure: ((Detail) -> AnyPublisher<UIImage?, Never>)?
+    var loadImageClosure: ((Detailable) -> AnyPublisher<UIImage?, Never>)?
 
-    func loadImage(for detail: Detail) -> AnyPublisher<UIImage?, Never> {
+    func loadImage(for detail: Detailable) -> AnyPublisher<UIImage?, Never> {
         loadImageCallsCount += 1
         loadImageReceivedDetail = detail
         loadImageReceivedInvocations.append(detail)

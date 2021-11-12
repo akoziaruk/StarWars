@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct Planet: Detail {
-//    var type: Category.T { .planet }
+struct Planet: Detailable {
     var imagePath: String { "planets/" + name.snakeCase }
     let name: String
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Detail {
+extension Detailable {
     var bucketImagePath: String {
         return APIConstants.firebaseBucketPath + imagePath + ".jpg"
     }

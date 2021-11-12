@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol Detail: Decodable {
+protocol Detailable: Decodable {
     var imagePath: String { get }
 }

@@ -47,7 +47,7 @@ class DetailsViewModel: DetailsViewModelType {
         return Publishers.Merge(initialState, details).removeDuplicates().eraseToAnyPublisher()
     }
 
-    private func viewModels(from details: [Detail]) -> [AnyHashable] {
+    private func viewModels(from details: [Detailable]) -> [AnyHashable] {
         details.map {[unowned self] detail in
             DetailViewModelFactory.viewModel(from: detail, imageLoader: {[unowned self] detail in self.useCase.loadImage(for: detail)})
         }

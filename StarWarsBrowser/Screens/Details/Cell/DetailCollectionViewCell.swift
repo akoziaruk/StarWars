@@ -1,5 +1,5 @@
 //
-//  PeopleCollectionViewCell.swift
+//  DetailCollectionViewCell.swift
 //  StarWarsBrowser
 //
 //  Created by Olexander Koziaruk on 9/21/21.
@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class PeopleCollectionViewCell: UICollectionViewCell {
+class DetailCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     private var cancellable: AnyCancellable?

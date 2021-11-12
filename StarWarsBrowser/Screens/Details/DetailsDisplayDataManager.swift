@@ -30,8 +30,8 @@ class DetailsDisplayDataManager: NSObject {
         let nibName = UINib(nibName: "FilmCollectionViewCell", bundle:nil)
         collectionView.register(nibName, forCellWithReuseIdentifier: Constants.ReuseCellIdentifier.film)
 
-        let nib2Name = UINib(nibName: "PeopleCollectionViewCell", bundle:nil)
-        collectionView.register(nib2Name, forCellWithReuseIdentifier: Constants.ReuseCellIdentifier.people)
+        let nib2Name = UINib(nibName: "DetailCollectionViewCell", bundle:nil)
+        collectionView.register(nib2Name, forCellWithReuseIdentifier: Constants.ReuseCellIdentifier.detail)
     }
 
     private func setupDataSource() -> DetailsDiffableDataSource {
@@ -46,8 +46,8 @@ class DetailsDisplayDataManager: NSObject {
                 return cell
                 
             case let viewModel as PeopleViewModel:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ReuseCellIdentifier.people,
-                                                              for: indexPath) as? PeopleCollectionViewCell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ReuseCellIdentifier.detail,
+                                                              for: indexPath) as? DetailCollectionViewCell
                 cell?.updateWith(viewModel)
                 return cell
     
@@ -73,7 +73,7 @@ class DetailsDisplayDataManager: NSObject {
     struct Constants {
         struct ReuseCellIdentifier {
             static let film = "filmCell"
-            static let people = "peopleCell"
+            static let detail = "detailCell"
         }
     }
 }

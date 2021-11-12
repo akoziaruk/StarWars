@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Details<T: Detail>: Decodable {
-    var items: [Detail]
+struct Details<T: Detailable>: Decodable {
+    var items: [Detailable]
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: DetailCodingKeys.self)

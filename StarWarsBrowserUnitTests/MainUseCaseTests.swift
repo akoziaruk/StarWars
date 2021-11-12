@@ -23,7 +23,7 @@ class MainUseCaseTests: XCTestCase {
     func test_loadDetailsSucceeds() {
         // Given
         let url = APIConstants.baseURL.appendingPathComponent("films")
-        var result: Result<[Detail], Error>!
+        var result: Result<[Detailable], Error>!
         let expectation = self.expectation(description: "films")
         let films = Details<Film>.loadFromFile("Films.json", target: Self.self)
         networkService.responses["/api/films"] = films
@@ -45,7 +45,7 @@ class MainUseCaseTests: XCTestCase {
     func test_loadDetails_onNetworkError() {
         // Given
         let url = APIConstants.baseURL.appendingPathComponent("films")
-        var result: Result<[Detail], Error>!
+        var result: Result<[Detailable], Error>!
         let expectation = self.expectation(description: "films")
         networkService.responses["/api/films"] = NetworkError.invalidResponse
 
