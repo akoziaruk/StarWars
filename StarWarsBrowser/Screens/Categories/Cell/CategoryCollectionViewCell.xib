@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,19 +20,17 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGh-nX-wjh" customClass="CategoryGradientView" customModule="StarWarsBrowser" customModuleProvider="target">
                         <rect key="frame" x="8" y="8" width="68" height="68"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="people" translatesAutoresizingMaskIntoConstraints="NO" id="c0e-pV-Wz3" customClass="CategoryImageView" customModule="StarWarsBrowser" customModuleProvider="target">
-                                <rect key="frame" x="19" y="18" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="kor-AW-PRT"/>
-                                    <constraint firstAttribute="height" constant="30" id="tjc-9k-G9i"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="people" translatesAutoresizingMaskIntoConstraints="NO" id="c0e-pV-Wz3" customClass="CategoryImageView" customModule="StarWarsBrowser" customModuleProvider="target">
+                                <rect key="frame" x="2" y="2" width="64" height="64"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="68" id="3cS-YE-izd"/>
-                            <constraint firstItem="c0e-pV-Wz3" firstAttribute="centerX" secondItem="aGh-nX-wjh" secondAttribute="centerX" id="cDS-W4-kk6"/>
-                            <constraint firstItem="c0e-pV-Wz3" firstAttribute="top" secondItem="aGh-nX-wjh" secondAttribute="top" constant="18" id="cwA-NU-HXz"/>
+                            <constraint firstItem="c0e-pV-Wz3" firstAttribute="leading" secondItem="aGh-nX-wjh" secondAttribute="leading" constant="2" id="B9g-zm-eCQ"/>
+                            <constraint firstAttribute="bottom" secondItem="c0e-pV-Wz3" secondAttribute="bottom" constant="2" id="JM8-lV-GcB"/>
+                            <constraint firstItem="c0e-pV-Wz3" firstAttribute="top" secondItem="aGh-nX-wjh" secondAttribute="top" constant="2" id="KFS-1n-Yqn"/>
+                            <constraint firstAttribute="trailing" secondItem="c0e-pV-Wz3" secondAttribute="trailing" constant="2" id="LxL-0u-TEc"/>
                             <constraint firstAttribute="height" constant="68" id="weo-Ve-BVP"/>
                         </constraints>
                     </view>
