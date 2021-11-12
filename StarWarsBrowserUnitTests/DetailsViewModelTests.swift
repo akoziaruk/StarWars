@@ -51,8 +51,8 @@ class DetailsViewModelTests: XCTestCase {
         let load = PassthroughSubject<Void, Never>()
         let input = DetailsViewModelInput(loadNextPage: load.eraseToAnyPublisher())
         var state: DetailsLoadingState?
-
         let expectation = self.expectation(description: "films")
+        
         useCase.loadDetailsReturnValue = .just(.failure(NetworkError.invalidResponse))
         viewModel.transform(input: input).sink { value in
             guard case .failure = value else { return }

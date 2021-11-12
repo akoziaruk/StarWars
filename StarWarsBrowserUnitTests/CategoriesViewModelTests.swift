@@ -49,8 +49,8 @@ class CategoriesViewModelTests: XCTestCase {
         let load = PassthroughSubject<Void, Never>()
         let input = CategoriesViewModelInput(load: load.eraseToAnyPublisher(), select: .empty())
         var state: CategoriesLoadingState?
-
         let expectation = self.expectation(description: "categories")
+        
         useCase.loadCategoriesReturnValue = .just(.failure(NetworkError.invalidResponse))
         viewModel.transform(input: input).sink { value in
             guard case .failure = value else { return }
