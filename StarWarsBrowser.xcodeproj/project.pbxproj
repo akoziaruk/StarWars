@@ -14,6 +14,9 @@
 		8ABB296C26828A6B009963FF /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB296B26828A6A009963FF /* Film.swift */; };
 		8ABB296F26828BA3009963FF /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB296E26828BA3009963FF /* Details.swift */; };
 		8ABDA0C82680E44600477D3D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABDA0C62680E44600477D3D /* Category.swift */; };
+		8AF607B627946A38003494BE /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF607B527946A38003494BE /* Species.swift */; };
+		8AF607B827946DE6003494BE /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF607B727946DE6003494BE /* Vehicle.swift */; };
+		8AF607BA27946E36003494BE /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF607B927946E36003494BE /* Starship.swift */; };
 		FA077AA6273D23A70034634D /* Categories.json in Resources */ = {isa = PBXBuildFile; fileRef = FA077AA4273D23A70034634D /* Categories.json */; };
 		FA077AA7273D23A70034634D /* Films.json in Resources */ = {isa = PBXBuildFile; fileRef = FA077AA5273D23A70034634D /* Films.json */; };
 		FA077AA9273D2E3E0034634D /* MainUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA077AA8273D2E3E0034634D /* MainUseCaseTests.swift */; };
@@ -25,7 +28,7 @@
 		FA1162332716D5FD004A3D2D /* CategoryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1162322716D5FD004A3D2D /* CategoryLabel.swift */; };
 		FA11623527172357004A3D2D /* SelectedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11623427172357004A3D2D /* SelectedItem.swift */; };
 		FA4742882714619B00C700BD /* Category+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4742872714619B00C700BD /* Category+Assets.swift */; };
-		FA527AE5271ED57F00C56600 /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527AC7271ED57F00C56600 /* PeopleViewModel.swift */; };
+		FA527AE5271ED57F00C56600 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527AC7271ED57F00C56600 /* DetailViewModel.swift */; };
 		FA527AE6271ED57F00C56600 /* FilmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527AC8271ED57F00C56600 /* FilmViewModel.swift */; };
 		FA527AE7271ED57F00C56600 /* DetailViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527AC9271ED57F00C56600 /* DetailViewModelFactory.swift */; };
 		FA527AE8271ED57F00C56600 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527ACA271ED57F00C56600 /* DetailsViewModel.swift */; };
@@ -109,6 +112,9 @@
 		8ABB296B26828A6A009963FF /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		8ABB296E26828BA3009963FF /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 		8ABDA0C62680E44600477D3D /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		8AF607B527946A38003494BE /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
+		8AF607B727946DE6003494BE /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		8AF607B927946E36003494BE /* Starship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
 		FA077AA4273D23A70034634D /* Categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Categories.json; sourceTree = "<group>"; };
 		FA077AA5273D23A70034634D /* Films.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Films.json; sourceTree = "<group>"; };
 		FA077AA8273D2E3E0034634D /* MainUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUseCaseTests.swift; sourceTree = "<group>"; };
@@ -120,7 +126,7 @@
 		FA1162322716D5FD004A3D2D /* CategoryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryLabel.swift; sourceTree = "<group>"; };
 		FA11623427172357004A3D2D /* SelectedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedItem.swift; sourceTree = "<group>"; };
 		FA4742872714619B00C700BD /* Category+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+Assets.swift"; sourceTree = "<group>"; };
-		FA527AC7271ED57F00C56600 /* PeopleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
+		FA527AC7271ED57F00C56600 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		FA527AC8271ED57F00C56600 /* FilmViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmViewModel.swift; sourceTree = "<group>"; };
 		FA527AC9271ED57F00C56600 /* DetailViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModelFactory.swift; sourceTree = "<group>"; };
 		FA527ACA271ED57F00C56600 /* DetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
@@ -453,7 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				FA527AC8271ED57F00C56600 /* FilmViewModel.swift */,
-				FA527AC7271ED57F00C56600 /* PeopleViewModel.swift */,
+				FA527AC7271ED57F00C56600 /* DetailViewModel.swift */,
 			);
 			path = DetailsViewModel;
 			sourceTree = "<group>";
@@ -476,6 +482,9 @@
 				8ABB296B26828A6A009963FF /* Film.swift */,
 				FA84F8D426F8F5C8000DB2F1 /* Сharacter.swift */,
 				FA527B0C271F11A300C56600 /* Planet.swift */,
+				8AF607B527946A38003494BE /* Species.swift */,
+				8AF607B927946E36003494BE /* Starship.swift */,
+				8AF607B727946DE6003494BE /* Vehicle.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -689,6 +698,7 @@
 				FA527B07271ED5B800C56600 /* NetworkService.swift in Sources */,
 				FA4742882714619B00C700BD /* Category+Assets.swift in Sources */,
 				FA1162312715907E004A3D2D /* CategoryImageView.swift in Sources */,
+				8AF607BA27946E36003494BE /* Starship.swift in Sources */,
 				8ABDA0C82680E44600477D3D /* Category.swift in Sources */,
 				FA7E8904272BD3BD00220980 /* ImageLoaderServiceType.swift in Sources */,
 				FABCD171271D7316002BFEFC /* PagingCollectionViewLayout.swift in Sources */,
@@ -698,7 +708,7 @@
 				FA527B08271ED5B800C56600 /* Resource.swift in Sources */,
 				8AB647C1265D0A0D00B2F498 /* SceneDelegate.swift in Sources */,
 				FA527AF6271ED57F00C56600 /* CategoriesViewModel.swift in Sources */,
-				FA527AE5271ED57F00C56600 /* PeopleViewModel.swift in Sources */,
+				FA527AE5271ED57F00C56600 /* DetailViewModel.swift in Sources */,
 				FA7E8902272BD33800220980 /* ImageLoaderService.swift in Sources */,
 				FA527AE9271ED57F00C56600 /* DetailsViewModelType.swift in Sources */,
 				FA11622D27158DB3004A3D2D /* UIImageView+Utils.swift in Sources */,
@@ -707,11 +717,13 @@
 				FA527AF0271ED57F00C56600 /* DetailsDisplayDataManager.swift in Sources */,
 				FABCD174271DB594002BFEFC /* DetailsBackgroundView.swift in Sources */,
 				FA527AF4271ED57F00C56600 /* MainFlowCoordinator.swift in Sources */,
+				8AF607B827946DE6003494BE /* Vehicle.swift in Sources */,
 				FAAABB5B271062BC0029C6CE /* StarsParalaxView.swift in Sources */,
 				FA84F8D526F8F5C8000DB2F1 /* Сharacter.swift in Sources */,
 				FA527AF7271ED57F00C56600 /* CategoryViewModel.swift in Sources */,
 				FAD99EB72729358200297AC7 /* DetailsViewController+CollectionViewDelegate.swift in Sources */,
 				FA527AFA271ED57F00C56600 /* CategoriesViewController.swift in Sources */,
+				8AF607B627946A38003494BE /* Species.swift in Sources */,
 				FAB114C126DE135000ECE682 /* ApplicationFlowCoordinatorDependencyProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -875,7 +887,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8V2FDR3JP9;
+				DEVELOPMENT_TEAM = 6J2HZER4F3;
 				INFOPLIST_FILE = StarWarsBrowser/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (

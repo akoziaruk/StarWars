@@ -26,7 +26,6 @@ final class ImageLoaderService: ImageLoaderServiceType {
                 guard let image = image else { return }
                 self.cache.insertImage(image, for: path)
             })
-            .print("Image loading \(path):")
             .eraseToAnyPublisher()
     }
     

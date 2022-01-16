@@ -9,4 +9,5 @@ import Foundation
 
 protocol Detailable: Decodable {
     var imagePath: String { get }
+    var name: String { get }
 }
