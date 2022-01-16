@@ -23,7 +23,7 @@ class DetailCollectionViewCell: UICollectionViewCell {
         cancelImageLoading()
     }
     
-    func updateWith(_ viewModel: PeopleViewModel) {
+    func updateWith(_ viewModel: DetailViewModel) {
         cancelImageLoading()
         nameLabel.text = viewModel.name
         cancellable = viewModel.image.sink(receiveValue: { image in

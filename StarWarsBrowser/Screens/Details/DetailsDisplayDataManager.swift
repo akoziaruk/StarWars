@@ -45,7 +45,7 @@ class DetailsDisplayDataManager: NSObject {
                 cell?.updateWith(viewModel)
                 return cell
                 
-            case let viewModel as PeopleViewModel:
+            case let viewModel as DetailViewModel:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ReuseCellIdentifier.detail,
                                                               for: indexPath) as? DetailCollectionViewCell
                 cell?.updateWith(viewModel)

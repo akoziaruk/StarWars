@@ -44,11 +44,11 @@ final class MainUseCase: MainUseCaseType {
         case .planet:
             return loadDetails(url: url, page: page, type: Planet.self)
         case .species:
-            return .just(.failure(UseCaseError.unknownType))
+            return loadDetails(url: url, page: page, type: Species.self)
         case .starship:
-            return .just(.failure(UseCaseError.unknownType))
+            return loadDetails(url: url, page: page, type: Starship.self)
         case .vehicle:
-            return .just(.failure(UseCaseError.unknownType))
+            return loadDetails(url: url, page: page, type: Vehicle.self)
         case .unknown:
             return .just(.failure(UseCaseError.unknownType))
         }
