@@ -1,12 +1,9 @@
 # StarWars
 
 StarWars demo application. 
+Allows to browse movies, characters, planets, species, starships and vehicles data.
 
-Allows to browse movies, characters, planets, species, starships and vehicles.
-
-Written in Swift 5 with MVVM+Combine architecture following SOLID principles.
-
-API used: [SWAPI](https://swapi.dev/)
+Written in Swift 5 with MVVM+Combine architecture, following SOLID principles. API used: [SWAPI](https://swapi.dev/)
 
 Video preview:
 
