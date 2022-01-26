@@ -8,13 +8,14 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    var categoriesViewController: CategoriesViewController!
-    var detailsViewController: DetailsViewController!
+    var categoriesViewController: CategoriesViewControllerType!
+    var detailsViewController: DetailsViewControllerType!
+    
     @IBOutlet weak var paralaxView: StarsParalaxView!
     @IBOutlet weak var logoView: UIView!
 
-    init(_ categoriesViewController: CategoriesViewController,
-         _ detailsViewController: DetailsViewController) {
+    init(_ categoriesViewController: CategoriesViewControllerType,
+         _ detailsViewController: DetailsViewControllerType) {
         self.categoriesViewController = categoriesViewController
         self.detailsViewController = detailsViewController
         

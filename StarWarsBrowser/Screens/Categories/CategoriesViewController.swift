@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class CategoriesViewController: UIViewController {
+class CategoriesViewController: UIViewController, CategoriesViewControllerType {
     private let viewModel: CategoriesViewModelType
     private let load = PassthroughSubject<Void, Never>()
     private let select = PassthroughSubject<SelectedItem, Never>()
