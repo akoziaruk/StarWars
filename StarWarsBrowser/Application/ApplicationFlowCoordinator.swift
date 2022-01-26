@@ -25,5 +25,4 @@ class ApplicationFlowCoordinator: FlowCoordinator {
         childCoordinators = [flowCoordinator]
         flowCoordinator.start()
     }
-    
 }

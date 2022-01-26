@@ -10,8 +10,9 @@ import Foundation
 
 class CategoriesViewModel: CategoriesViewModelType {
     private let useCase: MainUseCaseType
-    private weak var navigator: MainNavigator?
     private var subscriptions = Set<AnyCancellable>()
+    private weak var navigator: MainNavigator?
+
     var selectedCategory = Category.T.film
     
     init(useCase: MainUseCaseType, navigator: MainNavigator) {

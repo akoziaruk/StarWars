@@ -13,6 +13,7 @@ class FilmCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var directorLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    
     private var cancellable: AnyCancellable?
 
     override func prepareForReuse() {

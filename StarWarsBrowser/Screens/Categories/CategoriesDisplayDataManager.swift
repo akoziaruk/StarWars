@@ -91,7 +91,7 @@ extension CategoriesDisplayDataManager: UICollectionViewDelegate {
     }
 }
 
-private extension CategorySnapshot {
+fileprivate extension CategorySnapshot {
     var selectedItemIndex: Int {
         return itemIdentifiers.firstIndex(where: { $0.isSelected })!
     }
