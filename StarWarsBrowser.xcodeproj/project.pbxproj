@@ -11,6 +11,8 @@
 		8AB647C1265D0A0D00B2F498 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB647C0265D0A0D00B2F498 /* SceneDelegate.swift */; };
 		8AB647C8265D0A1100B2F498 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AB647C7265D0A1100B2F498 /* Assets.xcassets */; };
 		8AB647CB265D0A1100B2F498 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AB647C9265D0A1100B2F498 /* LaunchScreen.storyboard */; };
+		8ABA5D3A27A14AAE004D5C6F /* CategoriesViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA5D3927A14AAE004D5C6F /* CategoriesViewControllerType.swift */; };
+		8ABA5D3C27A14AF3004D5C6F /* DetailsViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA5D3B27A14AF3004D5C6F /* DetailsViewControllerType.swift */; };
 		8ABB296C26828A6B009963FF /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB296B26828A6A009963FF /* Film.swift */; };
 		8ABB296F26828BA3009963FF /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB296E26828BA3009963FF /* Details.swift */; };
 		8ABDA0C82680E44600477D3D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABDA0C62680E44600477D3D /* Category.swift */; };
@@ -110,6 +112,8 @@
 		8AB647C7265D0A1100B2F498 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AB647CA265D0A1100B2F498 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AB647CC265D0A1100B2F498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8ABA5D3927A14AAE004D5C6F /* CategoriesViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewControllerType.swift; sourceTree = "<group>"; };
+		8ABA5D3B27A14AF3004D5C6F /* DetailsViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewControllerType.swift; sourceTree = "<group>"; };
 		8ABB296B26828A6A009963FF /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		8ABB296E26828BA3009963FF /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 		8ABDA0C62680E44600477D3D /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -332,9 +336,9 @@
 		FA527AC4271ED57F00C56600 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				FA527AC5271ED57F00C56600 /* Details */,
 				FA527AD5271ED57F00C56600 /* Main */,
 				FA527ADA271ED57F00C56600 /* Categories */,
+				FA527AC5271ED57F00C56600 /* Details */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -344,6 +348,7 @@
 			children = (
 				FA527ACD271ED57F00C56600 /* DetailsViewController.xib */,
 				FA527AD4271ED57F00C56600 /* DetailsViewController.swift */,
+				8ABA5D3B27A14AF3004D5C6F /* DetailsViewControllerType.swift */,
 				FAD99EB62729358200297AC7 /* DetailsViewController+CollectionViewDelegate.swift */,
 				FA527AD3271ED57F00C56600 /* DetailsDisplayDataManager.swift */,
 				FABCD170271D7316002BFEFC /* PagingCollectionViewLayout.swift */,
@@ -394,8 +399,9 @@
 				FA527ADB271ED57F00C56600 /* ViewModel */,
 				FA527ADF271ED57F00C56600 /* CategoriesViewController.xib */,
 				FA527AE0271ED57F00C56600 /* CategoriesViewController.swift */,
-				FA527AE1271ED57F00C56600 /* Cell */,
+				8ABA5D3927A14AAE004D5C6F /* CategoriesViewControllerType.swift */,
 				FA527AE4271ED57F00C56600 /* CategoriesDisplayDataManager.swift */,
+				FA527AE1271ED57F00C56600 /* Cell */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -666,6 +672,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAB114DF26DE51E800ECE682 /* Resource+Category.swift in Sources */,
+				8ABA5D3C27A14AF3004D5C6F /* DetailsViewControllerType.swift in Sources */,
 				FA527B0D271F11A300C56600 /* Planet.swift in Sources */,
 				FA527AE7271ED57F00C56600 /* DetailViewModelFactory.swift in Sources */,
 				FA527AF8271ED57F00C56600 /* CategoriesViewModelType.swift in Sources */,
@@ -706,6 +713,7 @@
 				FA7E8904272BD3BD00220980 /* ImageLoaderServiceType.swift in Sources */,
 				FABCD171271D7316002BFEFC /* PagingCollectionViewLayout.swift in Sources */,
 				8AB647BF265D0A0D00B2F498 /* AppDelegate.swift in Sources */,
+				8ABA5D3A27A14AAE004D5C6F /* CategoriesViewControllerType.swift in Sources */,
 				FA0D5565272D3DDD005CBFDB /* Detail+Bucket.swift in Sources */,
 				8ABB296F26828BA3009963FF /* Details.swift in Sources */,
 				FA527B08271ED5B800C56600 /* Resource.swift in Sources */,

@@ -11,6 +11,7 @@ import Combine
 class DetailCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    
     private var cancellable: AnyCancellable?
 
     override func awakeFromNib() {

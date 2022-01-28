@@ -3,3 +3,4 @@ Builds/iOS/build/*
 *.xcuserstate
 project.xcworkspace/
 xcuserdata/
+.DS_Store

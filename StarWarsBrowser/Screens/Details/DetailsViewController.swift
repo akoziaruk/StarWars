@@ -8,20 +8,19 @@
 import UIKit
 import Combine
 
-protocol DetailsViewControllerDelegate: NSObjectProtocol {
-    func scrollViewDidScroll(_ scrollView: UIScrollView)
-}
-
-class DetailsViewController: UIViewController {
-    @IBOutlet weak var collectionView: UICollectionView!
+class DetailsViewController: UIViewController, DetailsViewControllerType {
     private var viewModel: DetailsViewModelType!
     private let loadNextPage = PassthroughSubject<Void, Never>()
     private var subscriptions: [AnyCancellable] = []
     private lazy var dataManager = { DetailsDisplayDataManager(collectionView) }()
+    
     public weak var delegate: DetailsViewControllerDelegate?
     
+    @IBOutlet weak var collectionView: UICollectionView!
+
     init(viewModel: DetailsViewModel) {
         self.viewModel = viewModel
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -36,7 +35,7 @@ class DetailsViewController: UIViewController {
         loadNextPage.send()
     }
     
-    func loadNextPageData() {
+    public func loadNextPageData() {
         loadNextPage.send()
     }
     

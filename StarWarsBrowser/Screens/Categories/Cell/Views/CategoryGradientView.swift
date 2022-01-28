@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-/* CategoryGradientView creates backgorund view with gradient used in category cell */
+/* CategoryGradientView creates background view with gradient used in Category cell */
 class CategoryGradientView: UIView {
     var selectionLayer: CALayer! = nil
 

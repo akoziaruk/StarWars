@@ -17,5 +17,4 @@ class CategoryLabel: UILabel {
         static let selectedColor = UIColor.white
         static let deselectedColor = UIColor(red: 0.434, green: 0.434, blue: 0.434, alpha: 1)
     }
-    
 }

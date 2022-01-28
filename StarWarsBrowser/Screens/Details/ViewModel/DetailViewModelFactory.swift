@@ -10,8 +10,8 @@ import UIKit.UIImage
 import Combine
 
 class DetailViewModelFactory {
-    public static func viewModel(from detail: Detailable, imageLoader: (Detailable) -> AnyPublisher<UIImage?, Never>) -> AnyHashable {
-        
+    public static func viewModel(from detail: Detailable,
+                                      imageLoader: (Detailable) -> AnyPublisher<UIImage?, Never>) -> AnyHashable {
         if let film = detail as? Film {
             return FilmViewModel(title: film.name,
                                  director: film.director,
