@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,6 +28,9 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_image" translatesAutoresizingMaskIntoConstraints="NO" id="q03-at-Twx" userLabel="Empty Image View">
+                        <rect key="frame" x="165" y="86" width="48" height="48"/>
+                    </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mOU-JT-8cZ">
                         <rect key="frame" x="0.0" y="0.0" width="378" height="220"/>
                         <constraints>
@@ -62,6 +65,8 @@
                     <constraint firstItem="3ST-Oj-N13" firstAttribute="top" secondItem="mOU-JT-8cZ" secondAttribute="bottom" constant="8" id="G0H-dU-TMa"/>
                     <constraint firstItem="kgH-tJ-qlE" firstAttribute="leading" secondItem="ako-iy-gGY" secondAttribute="leading" constant="15" id="Jjf-J1-MJF"/>
                     <constraint firstAttribute="trailing" secondItem="3ST-Oj-N13" secondAttribute="trailing" constant="15" id="Jsb-KR-vcg"/>
+                    <constraint firstItem="q03-at-Twx" firstAttribute="top" secondItem="ako-iy-gGY" secondAttribute="top" constant="86" id="Qtu-hd-UBl"/>
+                    <constraint firstItem="q03-at-Twx" firstAttribute="centerX" secondItem="ako-iy-gGY" secondAttribute="centerX" id="UEJ-SG-AXK"/>
                     <constraint firstItem="mOU-JT-8cZ" firstAttribute="leading" secondItem="ako-iy-gGY" secondAttribute="leading" id="bfe-GW-6N7"/>
                     <constraint firstItem="hrS-i0-RY0" firstAttribute="leading" secondItem="ako-iy-gGY" secondAttribute="leading" constant="15" id="d2P-Ks-3DB"/>
                     <constraint firstItem="hrS-i0-RY0" firstAttribute="top" secondItem="3ST-Oj-N13" secondAttribute="bottom" constant="8" id="dUB-RM-irk"/>
@@ -83,4 +88,7 @@
             <point key="canvasLocation" x="492.75362318840581" y="70.647321428571431"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="empty_image" width="48" height="48"/>
+    </resources>
 </document>

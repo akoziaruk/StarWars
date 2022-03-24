@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,6 +19,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E5P-cj-l72" userLabel="Content View" customClass="DetailsBackgroundView" customModule="StarWarsBrowser" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="335" height="485"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_image" translatesAutoresizingMaskIntoConstraints="NO" id="Md3-wi-zfU" userLabel="Empty Image View">
+                                <rect key="frame" x="143.5" y="218.5" width="48" height="48"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dxw-WT-ilp">
                                 <rect key="frame" x="0.0" y="0.0" width="335" height="485"/>
                             </imageView>
@@ -43,12 +46,14 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Md3-wi-zfU" firstAttribute="centerY" secondItem="E5P-cj-l72" secondAttribute="centerY" id="5Zk-O0-tRJ"/>
                             <constraint firstAttribute="trailing" secondItem="iJY-0H-oYb" secondAttribute="trailing" id="7eh-3l-w5A"/>
                             <constraint firstItem="Dix-WE-UP5" firstAttribute="leading" secondItem="E5P-cj-l72" secondAttribute="leading" constant="16" id="9Nv-Ih-F1e"/>
                             <constraint firstAttribute="bottom" secondItem="Dxw-WT-ilp" secondAttribute="bottom" id="FrK-VL-MSl"/>
                             <constraint firstItem="Dxw-WT-ilp" firstAttribute="leading" secondItem="E5P-cj-l72" secondAttribute="leading" id="IMe-E1-5fO"/>
                             <constraint firstItem="iJY-0H-oYb" firstAttribute="leading" secondItem="E5P-cj-l72" secondAttribute="leading" id="MHR-JU-BHG"/>
                             <constraint firstItem="Dxw-WT-ilp" firstAttribute="top" secondItem="E5P-cj-l72" secondAttribute="top" id="MR0-5i-6do"/>
+                            <constraint firstItem="Md3-wi-zfU" firstAttribute="centerX" secondItem="E5P-cj-l72" secondAttribute="centerX" id="fMc-mx-k31"/>
                             <constraint firstItem="iJY-0H-oYb" firstAttribute="height" secondItem="Dxw-WT-ilp" secondAttribute="height" multiplier="0.6" id="fia-nk-cQa"/>
                             <constraint firstAttribute="bottom" secondItem="iJY-0H-oYb" secondAttribute="bottom" id="nD1-nL-2jA"/>
                             <constraint firstAttribute="bottom" secondItem="Dix-WE-UP5" secondAttribute="bottom" constant="24" id="oBJ-ci-OAW"/>
@@ -71,7 +76,10 @@
                 <outlet property="imageView" destination="Dxw-WT-ilp" id="687-Il-tme"/>
                 <outlet property="nameLabel" destination="Dix-WE-UP5" id="smD-Cu-ZbW"/>
             </connections>
-            <point key="canvasLocation" x="260.14492753623188" y="110.82589285714285"/>
+            <point key="canvasLocation" x="258.69565217391306" y="110.82589285714285"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="empty_image" width="48" height="48"/>
+    </resources>
 </document>
