@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoriesViewController" customModule="StarWarsBrowser" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="oaE-Ho-Bzl" id="zfd-ah-3PF"/>
                 <outlet property="collectionView" destination="Ilh-cg-AHK" id="X1A-2j-xsR"/>
                 <outlet property="view" destination="iN0-l3-epB" id="NTS-2x-74G"/>
             </connections>
@@ -29,6 +30,9 @@
                     </collectionViewFlowLayout>
                     <cells/>
                 </collectionView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="oaE-Ho-Bzl">
+                    <rect key="frame" x="197" y="438" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -36,6 +40,8 @@
                 <constraint firstItem="Ilh-cg-AHK" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="3Dn-Ur-dkV"/>
                 <constraint firstItem="Ilh-cg-AHK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="47S-0Z-qB2"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Ilh-cg-AHK" secondAttribute="bottom" id="UnP-BK-6w4"/>
+                <constraint firstItem="oaE-Ho-Bzl" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Wfp-Ki-lri"/>
+                <constraint firstItem="oaE-Ho-Bzl" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fSg-k0-968"/>
                 <constraint firstItem="Ilh-cg-AHK" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="lcw-qs-g4g"/>
             </constraints>
             <point key="canvasLocation" x="61" y="82"/>

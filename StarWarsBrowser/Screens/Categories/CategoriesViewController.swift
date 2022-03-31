@@ -17,6 +17,7 @@ class CategoriesViewController: UIViewController, CategoriesViewControllerType {
                                                                   delegate: self) }()
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     init(viewModel: CategoriesViewModelType) {
         self.viewModel = viewModel
@@ -50,19 +51,24 @@ class CategoriesViewController: UIViewController, CategoriesViewControllerType {
             self.render(state: $0)
         }.store(in: &subscriptions)
     }
-    
+
     private func render(state: CategoriesLoadingState) {
         switch state {
-        case .idle:
-            break  // App just started loading
-        case .loading:
-            break  // TODO: Show loader
+        case .idle, .loading:
+            activityIndicator.startAnimating()
+            
         case .success(let categories):
+            activityIndicator.stopAnimating()
             dataManager.update(with: categories)
+            
         case .failure(_):
+            activityIndicator.stopAnimating()
             presentErrorWith(message: Constants.loadingErrorTitle)
+            
         case .noResult:
-            break  // TODO: Show no result state
+            activityIndicator.stopAnimating()
+            // TODO: Show no result state
+            
         }
     }
     
