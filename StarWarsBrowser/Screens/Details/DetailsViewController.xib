@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailsViewController" customModule="StarWarsBrowser" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="hFc-hO-H3V" id="MKr-0Z-tyB"/>
                 <outlet property="collectionView" destination="HBr-Bm-IlP" id="rUg-bS-UO9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -31,12 +32,17 @@
                         <outlet property="delegate" destination="-1" id="ZLV-ct-0zS"/>
                     </connections>
                 </collectionView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="hFc-hO-H3V">
+                    <rect key="frame" x="197" y="438" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="HBr-Bm-IlP" secondAttribute="bottom" id="MDx-bU-cEK"/>
                 <constraint firstItem="HBr-Bm-IlP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fRb-HN-nTq"/>
+                <constraint firstItem="hFc-hO-H3V" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="h0i-Jk-i6k"/>
+                <constraint firstItem="hFc-hO-H3V" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="h9n-ez-gOU"/>
                 <constraint firstItem="HBr-Bm-IlP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hpU-nc-d2Y"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HBr-Bm-IlP" secondAttribute="trailing" id="yEC-4O-I6q"/>
             </constraints>

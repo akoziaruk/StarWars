@@ -17,7 +17,8 @@ class DetailsViewController: UIViewController, DetailsViewControllerType {
     public weak var delegate: DetailsViewControllerDelegate?
     
     @IBOutlet weak var collectionView: UICollectionView!
-
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     init(viewModel: DetailsViewModel) {
         self.viewModel = viewModel
         
@@ -53,16 +54,19 @@ class DetailsViewController: UIViewController, DetailsViewControllerType {
     
     private func render(state: DetailsLoadingState) {
         switch state {
-        case .idle:
-            break  // Started loading
-        case .loading:
-            break  // TODO: Show loader
+        case .idle, .loading:
+            activityIndicator.startAnimating()
+            
         case .success(let details):
+            activityIndicator.stopAnimating()
             dataManager.append(new: details)
+            
         case .failure(_):
-            break
+            activityIndicator.stopAnimating()
+            
         case .noResult:
-            break
+            activityIndicator.stopAnimating()
+            
         }
     }
     
