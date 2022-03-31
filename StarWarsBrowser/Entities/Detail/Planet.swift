@@ -8,6 +8,6 @@
 import Foundation
 
 struct Planet: Detailable {
-    var imagePath: String { "planets/" + name.snakeCase }
+    var imagePath: String { "planets/" + name }
     let name: String
 }

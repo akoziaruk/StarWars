@@ -8,6 +8,6 @@
 import Foundation
 
 struct Starship: Detailable {
-    var imagePath: String { "starships/" + name.snakeCase }
+    var imagePath: String { "starships/" + name }
     let name: String
 }

@@ -8,6 +8,6 @@
 import Foundation
 
 struct Сharacter: Detailable {
-    var imagePath: String { "people/" + name.snakeCase }
+    var imagePath: String { "people/" + name }
     let name: String
 }

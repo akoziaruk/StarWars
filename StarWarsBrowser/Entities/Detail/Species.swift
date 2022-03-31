@@ -8,6 +8,6 @@
 import Foundation
 
 struct Species: Detailable {
-    var imagePath: String { "spiecies/" + name.snakeCase }
+    var imagePath: String { "spiecies/" + name }
     let name: String
 }

@@ -9,13 +9,31 @@ import Foundation
 
 extension Detailable {
     var bucketImagePath: String {
-        return APIConstants.firebaseBucketPath + imagePath.normalised + ".jpg"
+        return APIConstants.firebaseBucketPath + imagePath.storageFormatted + ".jpg"
     }
 }
 
-/** Firebase Bucket failed to return file name with "é" symbol (Padmé Amidala) */
+/** Preparing Firebase Bucket filename.
+    Converting to snake case.
+    For some failed to return correct file names:
+    - "é" in "Padmé Amidala"
+    - "/" in "TIE/LN starfighter"
+ 
+    Note: Can be optimized with changing multiple usage of replacingOccurrences function
+*/
+
 fileprivate extension String {
-    var normalised: String {
-        return replacingOccurrences(of: "é", with: "e")
+    var storageFormatted: String {
+        let name = filename
+                    .snakeCase
+                    .replacingOccurrences(of: "é", with: "e")
+                    .replacingOccurrences(of: "/", with: ":")
+                        
+        return String(prefix(count - name.count) + name)
+    }
+    
+    var filename: String {
+        let range = range(of: "/")!
+        return String(self[range.upperBound...])
     }
 }
