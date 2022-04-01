@@ -17,21 +17,17 @@ protocol MainUseCaseType {
 
 final class MainUseCase: MainUseCaseType {
     
-    private let networkService: NetworkServiceType
+    private let dataService: DataProviderServiceType
     private let imageLoaderService: ImageLoaderServiceType
-    private let persistanceDataService: PersistanceDataServiceType
     
-    init(networkService: NetworkServiceType,
-         imageLoaderService: ImageLoaderServiceType,
-         persistanceDataService: PersistanceDataServiceType) {
-        self.networkService = networkService
+    init(dataService: DataProviderServiceType, imageLoaderService: ImageLoaderServiceType) {
+        self.dataService = dataService
         self.imageLoaderService = imageLoaderService
-        self.persistanceDataService = persistanceDataService
     }
     
     public func loadCategories() -> AnyPublisher<Result<Categories, Error>, Never> {
-        networkService
-            .load(Resource<Categories>.categories())
+        dataService
+            .loadCategories() //.load(Resource<Categories>.categories())
             .map { .success($0) }
             .catch { error -> AnyPublisher<Result<Categories, Error>, Never> in .just(.failure(error)) }
             .subscribe(on: Scheduler.backgroundWorkScheduler)
@@ -59,7 +55,7 @@ final class MainUseCase: MainUseCaseType {
     }
 
     private func loadDetails<T: Detailable>(url: URL, page: Int, type: T.Type) -> AnyPublisher<Result<[Detailable], Error>, Never> {
-        networkService
+        dataService
             .load(Resource<Details<T>>.details(for: url, page: page, type: type))
             .map { .success($0.items) }
             .catch { error -> AnyPublisher<Result<[Detailable], Error>, Never> in .just(.failure(error)) }
