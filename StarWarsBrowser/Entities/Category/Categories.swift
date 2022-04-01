@@ -17,7 +17,7 @@ struct Categories: Decodable {
             let url = try container.decode(URL.self, forKey: $0)
             return Category(name: name,
                             url: url,
-                            type: Category.T(name: name))
+                            decoder: decoder)
         }
     }
     
@@ -30,25 +30,3 @@ struct Categories: Decodable {
         case vehicles = "vehicles"
     }
 }
-
-fileprivate extension Category.T {
-    init(name: String) {
-        switch name {
-        case Categories.CodingKeys.films.rawValue:
-            self = .film
-        case Categories.CodingKeys.people.rawValue:
-            self = .people
-        case Categories.CodingKeys.planets.rawValue:
-            self = .planet
-        case Categories.CodingKeys.species.rawValue:
-            self = .species
-        case Categories.CodingKeys.starships.rawValue:
-            self = .starship
-        case Categories.CodingKeys.vehicles.rawValue:
-            self = .vehicle
-        default:
-            self = .unknown
-        }
-    }
-}
-

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Category" representedClassName=".Category" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="URI"/>
+        <relationship name="details" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Detail"/>
+    </entity>
+    <entity name="Detail" representedClassName=".Detail" syncable="YES">
+        <attribute name="director" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="openingCrawl" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Category" positionX="189.77734375" positionY="-142.41015625" width="128" height="74"/>
+        <element name="Detail" positionX="-18" positionY="9" width="128" height="74"/>
+    </elements>
+</model>

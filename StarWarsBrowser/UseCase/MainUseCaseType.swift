@@ -19,10 +19,14 @@ final class MainUseCase: MainUseCaseType {
     
     private let networkService: NetworkServiceType
     private let imageLoaderService: ImageLoaderServiceType
+    private let persistanceDataService: PersistanceDataServiceType
     
-    init(networkService: NetworkServiceType, imageLoaderService: ImageLoaderServiceType) {
+    init(networkService: NetworkServiceType,
+         imageLoaderService: ImageLoaderServiceType,
+         persistanceDataService: PersistanceDataServiceType) {
         self.networkService = networkService
         self.imageLoaderService = imageLoaderService
+        self.persistanceDataService = persistanceDataService
     }
     
     public func loadCategories() -> AnyPublisher<Result<Categories, Error>, Never> {
