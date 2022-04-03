@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8A72C64D27F722DB004C6A4E /* CodingUserInfoKey+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C64C27F722DB004C6A4E /* CodingUserInfoKey+Utils.swift */; };
-		8A72C65527F7340A004C6A4E /* RepositoryServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C65427F7340A004C6A4E /* RepositoryServiceType.swift */; };
-		8A72C65827F73421004C6A4E /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C65727F73421004C6A4E /* RepositoryService.swift */; };
+		8A72C65527F7340A004C6A4E /* RepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C65427F7340A004C6A4E /* RepositoryType.swift */; };
+		8A72C65827F73421004C6A4E /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C65727F73421004C6A4E /* Repository.swift */; };
 		8A72C65A27F74A51004C6A4E /* PersistanceDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C65927F74A51004C6A4E /* PersistanceDataService.swift */; };
 		8A72C65C27F83B00004C6A4E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C65B27F83B00004C6A4E /* Category.swift */; };
 		8A72C66027F83C83004C6A4E /* Category+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C65F27F83C83004C6A4E /* Category+Type.swift */; };
@@ -28,7 +28,7 @@
 		8AC5679527F9C36700B08F92 /* PersistentDetail+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5679127F9C36700B08F92 /* PersistentDetail+CoreDataClass.swift */; };
 		8AC5679627F9C36700B08F92 /* PersistentDetail+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5679227F9C36700B08F92 /* PersistentDetail+CoreDataProperties.swift */; };
 		8ADFA43927F7076700EEC74B /* PersistanceDataServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFA43827F7076700EEC74B /* PersistanceDataServiceType.swift */; };
-		8ADFA45427F7166700EEC74B /* PersistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFA44B27F7166700EEC74B /* PersistanceController.swift */; };
+		8ADFA45427F7166700EEC74B /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFA44B27F7166700EEC74B /* PersistenceController.swift */; };
 		8ADFA45727F7166700EEC74B /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFA44F27F7166700EEC74B /* DataModel.xcdatamodeld */; };
 		8AF607B627946A38003494BE /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF607B527946A38003494BE /* Species.swift */; };
 		8AF607B827946DE6003494BE /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF607B727946DE6003494BE /* Vehicle.swift */; };
@@ -121,8 +121,8 @@
 
 /* Begin PBXFileReference section */
 		8A72C64C27F722DB004C6A4E /* CodingUserInfoKey+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodingUserInfoKey+Utils.swift"; sourceTree = "<group>"; };
-		8A72C65427F7340A004C6A4E /* RepositoryServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryServiceType.swift; sourceTree = "<group>"; };
-		8A72C65727F73421004C6A4E /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
+		8A72C65427F7340A004C6A4E /* RepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryType.swift; sourceTree = "<group>"; };
+		8A72C65727F73421004C6A4E /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		8A72C65927F74A51004C6A4E /* PersistanceDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceDataService.swift; sourceTree = "<group>"; };
 		8A72C65B27F83B00004C6A4E /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		8A72C65F27F83C83004C6A4E /* Category+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+Type.swift"; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 		8AC5679127F9C36700B08F92 /* PersistentDetail+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentDetail+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8AC5679227F9C36700B08F92 /* PersistentDetail+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentDetail+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8ADFA43827F7076700EEC74B /* PersistanceDataServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceDataServiceType.swift; sourceTree = "<group>"; };
-		8ADFA44B27F7166700EEC74B /* PersistanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistanceController.swift; sourceTree = "<group>"; };
+		8ADFA44B27F7166700EEC74B /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		8ADFA45027F7166700EEC74B /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		8AF607B527946A38003494BE /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
 		8AF607B727946DE6003494BE /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
@@ -246,8 +246,8 @@
 		8A72C65627F73410004C6A4E /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				8A72C65427F7340A004C6A4E /* RepositoryServiceType.swift */,
-				8A72C65727F73421004C6A4E /* RepositoryService.swift */,
+				8A72C65427F7340A004C6A4E /* RepositoryType.swift */,
+				8A72C65727F73421004C6A4E /* Repository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -292,7 +292,7 @@
 				FA527AC4271ED57F00C56600 /* Screens */,
 				8ABDA0C42680E44600477D3D /* Entities */,
 				FAB114DC26DE503300ECE682 /* Utils */,
-				8ADFA44827F7166700EEC74B /* Persistance */,
+				8ADFA44827F7166700EEC74B /* Persistence */,
 				FA4742892714955200C700BD /* Assets */,
 				8AB647C7265D0A1100B2F498 /* Assets.xcassets */,
 				8AB647C9265D0A1100B2F498 /* LaunchScreen.storyboard */,
@@ -321,22 +321,22 @@
 			path = "Persistance Data Service";
 			sourceTree = "<group>";
 		};
-		8ADFA44827F7166700EEC74B /* Persistance */ = {
+		8ADFA44827F7166700EEC74B /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
 				8A72C66927F83F7A004C6A4E /* Managed Objects */,
-				8ADFA44927F7166700EEC74B /* Persistance Controller */,
+				8ADFA44927F7166700EEC74B /* Persistence Controller */,
 				8ADFA44C27F7166700EEC74B /* Core Data */,
 			);
-			path = Persistance;
+			path = Persistence;
 			sourceTree = "<group>";
 		};
-		8ADFA44927F7166700EEC74B /* Persistance Controller */ = {
+		8ADFA44927F7166700EEC74B /* Persistence Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8ADFA44B27F7166700EEC74B /* PersistanceController.swift */,
+				8ADFA44B27F7166700EEC74B /* PersistenceController.swift */,
 			);
-			path = "Persistance Controller";
+			path = "Persistence Controller";
 			sourceTree = "<group>";
 		};
 		8ADFA44C27F7166700EEC74B /* Core Data */ = {
@@ -771,7 +771,7 @@
 				8ADFA43927F7076700EEC74B /* PersistanceDataServiceType.swift in Sources */,
 				FA9E49A426EF8C5A00D20BA0 /* Scheduler.swift in Sources */,
 				FA527AED271ED57F00C56600 /* DetailCollectionViewCell.swift in Sources */,
-				8ADFA45427F7166700EEC74B /* PersistanceController.swift in Sources */,
+				8ADFA45427F7166700EEC74B /* PersistenceController.swift in Sources */,
 				FAAABB58271049140029C6CE /* StarsView.swift in Sources */,
 				FAB114BA26DE0FAA00ECE682 /* MainUseCaseType.swift in Sources */,
 				FA527AFB271ED57F00C56600 /* CategoryCollectionViewCell.swift in Sources */,
@@ -787,7 +787,7 @@
 				FA9E499B26EF669A00D20BA0 /* Detailable.swift in Sources */,
 				FA84F8D326F8EF28000DB2F1 /* UseCaseError.swift in Sources */,
 				FAB344CF273A7351000EEDC9 /* CategoryGradientView.swift in Sources */,
-				8A72C65527F7340A004C6A4E /* RepositoryServiceType.swift in Sources */,
+				8A72C65527F7340A004C6A4E /* RepositoryType.swift in Sources */,
 				FA527B09271ED5B800C56600 /* ServicesProvider.swift in Sources */,
 				FAB114CB26DE16AA00ECE682 /* ApplicationComponentsFactory.swift in Sources */,
 				8ABB296C26828A6B009963FF /* Film.swift in Sources */,
@@ -834,7 +834,7 @@
 				8AF607B827946DE6003494BE /* Vehicle.swift in Sources */,
 				FAAABB5B271062BC0029C6CE /* StarsParalaxView.swift in Sources */,
 				FA84F8D526F8F5C8000DB2F1 /* Сharacter.swift in Sources */,
-				8A72C65827F73421004C6A4E /* RepositoryService.swift in Sources */,
+				8A72C65827F73421004C6A4E /* Repository.swift in Sources */,
 				FA527AF7271ED57F00C56600 /* CategoryViewModel.swift in Sources */,
 				FAD99EB72729358200297AC7 /* DetailsViewController+CollectionViewDelegate.swift in Sources */,
 				FA527AFA271ED57F00C56600 /* CategoriesViewController.swift in Sources */,

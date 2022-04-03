@@ -8,9 +8,9 @@
 import Foundation
 import CoreData
 
-class PersistanceController {
+class PersistenceController {
     
-    static let shared = PersistanceController()
+    static let shared = PersistenceController()
     
     lazy var container: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "DataModel")

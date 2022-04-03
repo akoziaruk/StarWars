@@ -15,7 +15,7 @@ enum RepositoryError: Error {
 
 class PersistanceDataService: PersistanceDataServiceType {
     var context: NSManagedObjectContext {
-        return PersistanceController.shared.container.viewContext
+        return PersistenceController.shared.container.viewContext
     }
     
     func fetch<T>(_ type: T.Type) -> AnyPublisher<[T], Error> where T : NSManagedObject {

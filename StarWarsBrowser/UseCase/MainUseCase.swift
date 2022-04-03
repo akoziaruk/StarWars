@@ -9,16 +9,16 @@ import UIKit
 import Combine
 
 final class MainUseCase: MainUseCaseType {
-    private let repositoryService: RepositoryServiceType
+    private let repository: RepositoryType
     private let imageLoaderService: ImageLoaderServiceType
     
-    init(repositoryService: RepositoryServiceType, imageLoaderService: ImageLoaderServiceType) {
-        self.repositoryService = repositoryService
+    init(repositoryService: RepositoryType, imageLoaderService: ImageLoaderServiceType) {
+        self.repository = repositoryService
         self.imageLoaderService = imageLoaderService
     }
     
     public func loadCategories() -> AnyPublisher<Result<[Category], Error>, Never> {
-        repositoryService
+        repository
             .loadCategories()
             .map { .success($0) }
             .catch { error -> AnyPublisher<Result<[Category], Error>, Never> in .just(.failure(error)) }
@@ -47,7 +47,7 @@ final class MainUseCase: MainUseCaseType {
     }
 
     private func loadDetails<T: Detailable>(url: URL, page: Int, type: T.Type) -> AnyPublisher<Result<[Detailable], Error>, Never> {
-        repositoryService
+        repository
         
             .loadCategories()
             .map { _ in return .success([Film]()) }

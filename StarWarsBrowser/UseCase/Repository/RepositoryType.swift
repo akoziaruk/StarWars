@@ -8,6 +8,6 @@
 import Foundation
 import Combine
 
-protocol RepositoryServiceType: AnyObject {
+protocol RepositoryType: AnyObject {
     func loadCategories() -> AnyPublisher<[Category], Error>    
 }

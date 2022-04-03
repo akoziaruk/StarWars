@@ -10,17 +10,17 @@ import CoreData
 
 class ServicesProvider {
     let imageLoader: ImageLoaderServiceType
-    let repositoryService: RepositoryServiceType
+    let repositoryService: RepositoryType
 
     static func defaultProvider() -> ServicesProvider {
-        let repositoryService = RepositoryService(persistance: PersistanceDataService(),
+        let repositoryService = Repository(persistance: PersistanceDataService(),
                                                   network: NetworkService())
         let imageLoader = ImageLoaderService()
         
         return ServicesProvider(repositoryService: repositoryService, imageLoader: imageLoader)
     }
 
-    init(repositoryService: RepositoryServiceType, imageLoader: ImageLoaderServiceType) {
+    init(repositoryService: RepositoryType, imageLoader: ImageLoaderServiceType) {
         self.repositoryService = repositoryService
         self.imageLoader = imageLoader
     }

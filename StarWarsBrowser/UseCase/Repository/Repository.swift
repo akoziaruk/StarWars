@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import CoreData
 
-class RepositoryService: RepositoryServiceType {
+class Repository: RepositoryType {
     let persistance: PersistanceDataServiceType
     let network: NetworkServiceType
     
