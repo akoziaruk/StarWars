@@ -6,7 +6,11 @@
 //
 
 import Foundation
+import Combine
+import CoreData
 
 protocol PersistanceDataServiceType: AnyObject {
-//    func loadImage(for path: String) -> AnyPublisher<UIImage?, Never>
+    func fetch<T: NSManagedObject>(_ type: T.Type) -> AnyPublisher<[T], Error>
+    func add<T: NSManagedObject>(_ type: T.Type, body: @escaping (inout T) -> Void)
+    func save()
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 struct Categories: Decodable {
-    let items: [Category]
+    var items = [Category]()
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)        
@@ -16,8 +16,7 @@ struct Categories: Decodable {
             let name = $0.rawValue
             let url = try container.decode(URL.self, forKey: $0)
             return Category(name: name,
-                            url: url,
-                            decoder: decoder)
+                            url: url)
         }
     }
     
@@ -30,3 +29,4 @@ struct Categories: Decodable {
         case vehicles = "vehicles"
     }
 }
+

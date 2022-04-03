@@ -2,46 +2,28 @@
 //  Category+Type.swift
 //  StarWarsBrowser
 //
-//  Created by Alexander Koziaruk on 01.04.2022.
+//  Created by Alexander Koziaruk on 02.04.2022.
 //
 
 import Foundation
 
 extension Category {
-    
-    enum T {
-        case film
-        case people
-        case planet
-        case species
-        case starship
-        case vehicle
-        case unknown
-    }
-    
     var type: T {
-        return T(name: name)
-    }
-    
-}
-
-fileprivate extension Category.T {
-    init(name: String) {
         switch name {
         case Categories.CodingKeys.films.rawValue:
-            self = .film
+            return .film
         case Categories.CodingKeys.people.rawValue:
-            self = .people
+            return .people
         case Categories.CodingKeys.planets.rawValue:
-            self = .planet
+            return .planet
         case Categories.CodingKeys.species.rawValue:
-            self = .species
+            return .species
         case Categories.CodingKeys.starships.rawValue:
-            self = .starship
+            return .starship
         case Categories.CodingKeys.vehicles.rawValue:
-            self = .vehicle
+            return .vehicle
         default:
-            self = .unknown
+            return .unknown
         }
     }
 }

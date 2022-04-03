@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Category" representedClassName=".Category" syncable="YES">
+    <entity name="PersistentCategory" representedClassName=".PersistentCategory" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="URI"/>
-        <relationship name="details" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Detail"/>
+        <relationship name="details" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PersistentDetail" inverseName="category" inverseEntity="PersistentDetail"/>
     </entity>
-    <entity name="Detail" representedClassName=".Detail" syncable="YES">
+    <entity name="PersistentDetail" representedClassName=".PersistentDetail" syncable="YES">
         <attribute name="director" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="openingCrawl" optional="YES" attributeType="String"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PersistentCategory" inverseName="details" inverseEntity="PersistentCategory"/>
     </entity>
     <elements>
-        <element name="Category" positionX="189.77734375" positionY="-142.41015625" width="128" height="74"/>
-        <element name="Detail" positionX="-18" positionY="9" width="128" height="74"/>
+        <element name="PersistentCategory" positionX="189.77734375" positionY="-142.41015625" width="128" height="74"/>
+        <element name="PersistentDetail" positionX="-18" positionY="9" width="128" height="89"/>
     </elements>
 </model>

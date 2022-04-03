@@ -7,16 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A72C64827F72089004C6A4E /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C64427F72089004C6A4E /* Category+CoreDataClass.swift */; };
-		8A72C64927F72089004C6A4E /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C64527F72089004C6A4E /* Category+CoreDataProperties.swift */; };
-		8A72C64A27F72089004C6A4E /* Detail+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C64627F72089004C6A4E /* Detail+CoreDataClass.swift */; };
-		8A72C64B27F72089004C6A4E /* Detail+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C64727F72089004C6A4E /* Detail+CoreDataProperties.swift */; };
 		8A72C64D27F722DB004C6A4E /* CodingUserInfoKey+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C64C27F722DB004C6A4E /* CodingUserInfoKey+Utils.swift */; };
-		8A72C64F27F723FF004C6A4E /* Category+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C64E27F723FF004C6A4E /* Category+Type.swift */; };
-		8A72C65127F72A47004C6A4E /* PersistanceDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C65027F72A47004C6A4E /* PersistanceDataService.swift */; };
-		8A72C65327F72DA0004C6A4E /* PersistanceDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C65227F72DA0004C6A4E /* PersistanceDecoder.swift */; };
-		8A72C65527F7340A004C6A4E /* DataProviderServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C65427F7340A004C6A4E /* DataProviderServiceType.swift */; };
-		8A72C65827F73421004C6A4E /* DataProviderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C65727F73421004C6A4E /* DataProviderService.swift */; };
+		8A72C65527F7340A004C6A4E /* RepositoryServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C65427F7340A004C6A4E /* RepositoryServiceType.swift */; };
+		8A72C65827F73421004C6A4E /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C65727F73421004C6A4E /* RepositoryService.swift */; };
+		8A72C65A27F74A51004C6A4E /* PersistanceDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C65927F74A51004C6A4E /* PersistanceDataService.swift */; };
+		8A72C65C27F83B00004C6A4E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C65B27F83B00004C6A4E /* Category.swift */; };
+		8A72C66027F83C83004C6A4E /* Category+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C65F27F83C83004C6A4E /* Category+Type.swift */; };
 		8AB647BF265D0A0D00B2F498 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB647BE265D0A0D00B2F498 /* AppDelegate.swift */; };
 		8AB647C1265D0A0D00B2F498 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB647C0265D0A0D00B2F498 /* SceneDelegate.swift */; };
 		8AB647C8265D0A1100B2F498 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AB647C7265D0A1100B2F498 /* Assets.xcassets */; };
@@ -25,8 +21,13 @@
 		8ABA5D3C27A14AF3004D5C6F /* DetailsViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA5D3B27A14AF3004D5C6F /* DetailsViewControllerType.swift */; };
 		8ABB296C26828A6B009963FF /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB296B26828A6A009963FF /* Film.swift */; };
 		8ABB296F26828BA3009963FF /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB296E26828BA3009963FF /* Details.swift */; };
+		8AC5678A27F884AB00B08F92 /* Categories+Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5678927F884AB00B08F92 /* Categories+Persistence.swift */; };
+		8AC5678E27F9C07E00B08F92 /* MainUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5678D27F9C07E00B08F92 /* MainUseCase.swift */; };
+		8AC5679327F9C36700B08F92 /* PersistentCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5678F27F9C36700B08F92 /* PersistentCategory+CoreDataClass.swift */; };
+		8AC5679427F9C36700B08F92 /* PersistentCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5679027F9C36700B08F92 /* PersistentCategory+CoreDataProperties.swift */; };
+		8AC5679527F9C36700B08F92 /* PersistentDetail+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5679127F9C36700B08F92 /* PersistentDetail+CoreDataClass.swift */; };
+		8AC5679627F9C36700B08F92 /* PersistentDetail+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5679227F9C36700B08F92 /* PersistentDetail+CoreDataProperties.swift */; };
 		8ADFA43927F7076700EEC74B /* PersistanceDataServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFA43827F7076700EEC74B /* PersistanceDataServiceType.swift */; };
-		8ADFA45327F7166700EEC74B /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFA44A27F7166700EEC74B /* PersistentContainer.swift */; };
 		8ADFA45427F7166700EEC74B /* PersistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFA44B27F7166700EEC74B /* PersistanceController.swift */; };
 		8ADFA45727F7166700EEC74B /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFA44F27F7166700EEC74B /* DataModel.xcdatamodeld */; };
 		8AF607B627946A38003494BE /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF607B527946A38003494BE /* Species.swift */; };
@@ -119,16 +120,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8A72C64427F72089004C6A4E /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
-		8A72C64527F72089004C6A4E /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		8A72C64627F72089004C6A4E /* Detail+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detail+CoreDataClass.swift"; sourceTree = "<group>"; };
-		8A72C64727F72089004C6A4E /* Detail+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detail+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8A72C64C27F722DB004C6A4E /* CodingUserInfoKey+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodingUserInfoKey+Utils.swift"; sourceTree = "<group>"; };
-		8A72C64E27F723FF004C6A4E /* Category+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+Type.swift"; sourceTree = "<group>"; };
-		8A72C65027F72A47004C6A4E /* PersistanceDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceDataService.swift; sourceTree = "<group>"; };
-		8A72C65227F72DA0004C6A4E /* PersistanceDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceDecoder.swift; sourceTree = "<group>"; };
-		8A72C65427F7340A004C6A4E /* DataProviderServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderServiceType.swift; sourceTree = "<group>"; };
-		8A72C65727F73421004C6A4E /* DataProviderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderService.swift; sourceTree = "<group>"; };
+		8A72C65427F7340A004C6A4E /* RepositoryServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryServiceType.swift; sourceTree = "<group>"; };
+		8A72C65727F73421004C6A4E /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
+		8A72C65927F74A51004C6A4E /* PersistanceDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceDataService.swift; sourceTree = "<group>"; };
+		8A72C65B27F83B00004C6A4E /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		8A72C65F27F83C83004C6A4E /* Category+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+Type.swift"; sourceTree = "<group>"; };
 		8AB647BB265D0A0D00B2F498 /* StarWarsBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AB647BE265D0A0D00B2F498 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AB647C0265D0A0D00B2F498 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,8 +136,13 @@
 		8ABA5D3B27A14AF3004D5C6F /* DetailsViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewControllerType.swift; sourceTree = "<group>"; };
 		8ABB296B26828A6A009963FF /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		8ABB296E26828BA3009963FF /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		8AC5678927F884AB00B08F92 /* Categories+Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Categories+Persistence.swift"; sourceTree = "<group>"; };
+		8AC5678D27F9C07E00B08F92 /* MainUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUseCase.swift; sourceTree = "<group>"; };
+		8AC5678F27F9C36700B08F92 /* PersistentCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8AC5679027F9C36700B08F92 /* PersistentCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8AC5679127F9C36700B08F92 /* PersistentDetail+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentDetail+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8AC5679227F9C36700B08F92 /* PersistentDetail+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentDetail+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8ADFA43827F7076700EEC74B /* PersistanceDataServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceDataServiceType.swift; sourceTree = "<group>"; };
-		8ADFA44A27F7166700EEC74B /* PersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 		8ADFA44B27F7166700EEC74B /* PersistanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistanceController.swift; sourceTree = "<group>"; };
 		8ADFA45027F7166700EEC74B /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		8AF607B527946A38003494BE /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
@@ -241,13 +243,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8A72C65627F73410004C6A4E /* Data Service */ = {
+		8A72C65627F73410004C6A4E /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				8A72C65427F7340A004C6A4E /* DataProviderServiceType.swift */,
-				8A72C65727F73421004C6A4E /* DataProviderService.swift */,
+				8A72C65427F7340A004C6A4E /* RepositoryServiceType.swift */,
+				8A72C65727F73421004C6A4E /* RepositoryService.swift */,
 			);
-			path = "Data Service";
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		8A72C66927F83F7A004C6A4E /* Managed Objects */ = {
+			isa = PBXGroup;
+			children = (
+				8AC5678F27F9C36700B08F92 /* PersistentCategory+CoreDataClass.swift */,
+				8AC5679027F9C36700B08F92 /* PersistentCategory+CoreDataProperties.swift */,
+				8AC5679127F9C36700B08F92 /* PersistentDetail+CoreDataClass.swift */,
+				8AC5679227F9C36700B08F92 /* PersistentDetail+CoreDataProperties.swift */,
+			);
+			path = "Managed Objects";
 			sourceTree = "<group>";
 		};
 		8AB647B2265D0A0D00B2F498 = {
@@ -303,8 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				8ADFA43827F7076700EEC74B /* PersistanceDataServiceType.swift */,
-				8A72C65027F72A47004C6A4E /* PersistanceDataService.swift */,
-				8A72C65227F72DA0004C6A4E /* PersistanceDecoder.swift */,
+				8A72C65927F74A51004C6A4E /* PersistanceDataService.swift */,
 			);
 			path = "Persistance Data Service";
 			sourceTree = "<group>";
@@ -312,6 +324,7 @@
 		8ADFA44827F7166700EEC74B /* Persistance */ = {
 			isa = PBXGroup;
 			children = (
+				8A72C66927F83F7A004C6A4E /* Managed Objects */,
 				8ADFA44927F7166700EEC74B /* Persistance Controller */,
 				8ADFA44C27F7166700EEC74B /* Core Data */,
 			);
@@ -321,7 +334,6 @@
 		8ADFA44927F7166700EEC74B /* Persistance Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8ADFA44A27F7166700EEC74B /* PersistentContainer.swift */,
 				8ADFA44B27F7166700EEC74B /* PersistanceController.swift */,
 			);
 			path = "Persistance Controller";
@@ -502,7 +514,6 @@
 			isa = PBXGroup;
 			children = (
 				FA527B04271ED5B800C56600 /* ServicesProvider.swift */,
-				8A72C65627F73410004C6A4E /* Data Service */,
 				FA7E8905272BD3C300220980 /* Image Loader Service */,
 				FA527B00271ED5B800C56600 /* Network Service */,
 				8ADFA43A27F7077000EEC74B /* Persistance Data Service */,
@@ -523,10 +534,10 @@
 		FA527B15271F123800C56600 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				8A72C64427F72089004C6A4E /* Category+CoreDataClass.swift */,
-				8A72C64527F72089004C6A4E /* Category+CoreDataProperties.swift */,
-				8A72C64E27F723FF004C6A4E /* Category+Type.swift */,
 				FAB114E226DE571400ECE682 /* Categories.swift */,
+				8A72C65B27F83B00004C6A4E /* Category.swift */,
+				8A72C65F27F83C83004C6A4E /* Category+Type.swift */,
+				8AC5678927F884AB00B08F92 /* Categories+Persistence.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -562,8 +573,6 @@
 			isa = PBXGroup;
 			children = (
 				8ABB296E26828BA3009963FF /* Details.swift */,
-				8A72C64627F72089004C6A4E /* Detail+CoreDataClass.swift */,
-				8A72C64727F72089004C6A4E /* Detail+CoreDataProperties.swift */,
 				FA9E499A26EF669A00D20BA0 /* Detailable.swift */,
 				8ABB296B26828A6A009963FF /* Film.swift */,
 				FA84F8D426F8F5C8000DB2F1 /* Сharacter.swift */,
@@ -605,6 +614,8 @@
 			isa = PBXGroup;
 			children = (
 				FAB114B926DE0FAA00ECE682 /* MainUseCaseType.swift */,
+				8AC5678D27F9C07E00B08F92 /* MainUseCase.swift */,
+				8A72C65627F73410004C6A4E /* Repository */,
 				FA077AAE273D4E130034634D /* Categories */,
 				FA077AAF273D4E1F0034634D /* Details */,
 				FAB114E026DE537100ECE682 /* APIConstants.swift */,
@@ -753,8 +764,7 @@
 				FAB114DF26DE51E800ECE682 /* Resource+Category.swift in Sources */,
 				8ABA5D3C27A14AF3004D5C6F /* DetailsViewControllerType.swift in Sources */,
 				8A72C64D27F722DB004C6A4E /* CodingUserInfoKey+Utils.swift in Sources */,
-				8A72C65327F72DA0004C6A4E /* PersistanceDecoder.swift in Sources */,
-				8A72C65127F72A47004C6A4E /* PersistanceDataService.swift in Sources */,
+				8A72C66027F83C83004C6A4E /* Category+Type.swift in Sources */,
 				FA527B0D271F11A300C56600 /* Planet.swift in Sources */,
 				FA527AE7271ED57F00C56600 /* DetailViewModelFactory.swift in Sources */,
 				FA527AF8271ED57F00C56600 /* CategoriesViewModelType.swift in Sources */,
@@ -766,33 +776,32 @@
 				FAB114BA26DE0FAA00ECE682 /* MainUseCaseType.swift in Sources */,
 				FA527AFB271ED57F00C56600 /* CategoryCollectionViewCell.swift in Sources */,
 				FABCD178271DC955002BFEFC /* String+Utils.swift in Sources */,
+				8AC5678A27F884AB00B08F92 /* Categories+Persistence.swift in Sources */,
 				FA527AF1271ED57F00C56600 /* DetailsViewController.swift in Sources */,
 				FA527AF2271ED57F00C56600 /* MainNavigator.swift in Sources */,
 				FA11623527172357004A3D2D /* SelectedItem.swift in Sources */,
+				8AC5679627F9C36700B08F92 /* PersistentDetail+CoreDataProperties.swift in Sources */,
 				FAB114BC26DE123700ECE682 /* ApplicationFlowCoordinator.swift in Sources */,
 				FA527AE8271ED57F00C56600 /* DetailsViewModel.swift in Sources */,
 				FAAABB5D27108C130029C6CE /* UIViewController+Utils.swift in Sources */,
 				FA9E499B26EF669A00D20BA0 /* Detailable.swift in Sources */,
 				FA84F8D326F8EF28000DB2F1 /* UseCaseError.swift in Sources */,
 				FAB344CF273A7351000EEDC9 /* CategoryGradientView.swift in Sources */,
-				8A72C65527F7340A004C6A4E /* DataProviderServiceType.swift in Sources */,
+				8A72C65527F7340A004C6A4E /* RepositoryServiceType.swift in Sources */,
 				FA527B09271ED5B800C56600 /* ServicesProvider.swift in Sources */,
-				8A72C64827F72089004C6A4E /* Category+CoreDataClass.swift in Sources */,
 				FAB114CB26DE16AA00ECE682 /* ApplicationComponentsFactory.swift in Sources */,
 				8ABB296C26828A6B009963FF /* Film.swift in Sources */,
-				8A72C64B27F72089004C6A4E /* Detail+CoreDataProperties.swift in Sources */,
 				FAB114E726DE632C00ECE682 /* Publisher+Utils.swift in Sources */,
 				FAB114E326DE571400ECE682 /* Categories.swift in Sources */,
 				FA1162332716D5FD004A3D2D /* CategoryLabel.swift in Sources */,
+				8AC5679427F9C36700B08F92 /* PersistentCategory+CoreDataProperties.swift in Sources */,
 				FA527AF5271ED57F00C56600 /* MainViewController.swift in Sources */,
 				FADF79FA26BE558700D8F126 /* AlertController+Utils.swift in Sources */,
 				FAB114E126DE537100ECE682 /* APIConstants.swift in Sources */,
 				FA527AE6271ED57F00C56600 /* FilmViewModel.swift in Sources */,
-				8ADFA45327F7166700EEC74B /* PersistentContainer.swift in Sources */,
 				FAB114E926DE65C900ECE682 /* FlowCoordinator.swift in Sources */,
+				8AC5679527F9C36700B08F92 /* PersistentDetail+CoreDataClass.swift in Sources */,
 				FA7E8909272BEFC500220980 /* ImageCache.swift in Sources */,
-				8A72C64A27F72089004C6A4E /* Detail+CoreDataClass.swift in Sources */,
-				8A72C64F27F723FF004C6A4E /* Category+Type.swift in Sources */,
 				FA527B06271ED5B800C56600 /* NetworkServiceType.swift in Sources */,
 				FA527AFD271ED57F00C56600 /* CategoriesDisplayDataManager.swift in Sources */,
 				FA527B07271ED5B800C56600 /* NetworkService.swift in Sources */,
@@ -808,27 +817,30 @@
 				FA527B08271ED5B800C56600 /* Resource.swift in Sources */,
 				8AB647C1265D0A0D00B2F498 /* SceneDelegate.swift in Sources */,
 				FA527AF6271ED57F00C56600 /* CategoriesViewModel.swift in Sources */,
-				8A72C64927F72089004C6A4E /* Category+CoreDataProperties.swift in Sources */,
 				FA527AE5271ED57F00C56600 /* DetailViewModel.swift in Sources */,
 				FA7E8902272BD33800220980 /* ImageLoaderService.swift in Sources */,
 				FA527AE9271ED57F00C56600 /* DetailsViewModelType.swift in Sources */,
 				FA11622D27158DB3004A3D2D /* UIImageView+Utils.swift in Sources */,
 				FA527AEC271ED57F00C56600 /* FilmCollectionViewCell.swift in Sources */,
 				FAB80C6F273018F900A54148 /* Resource+Detail.swift in Sources */,
+				8AC5678E27F9C07E00B08F92 /* MainUseCase.swift in Sources */,
 				FA527AF0271ED57F00C56600 /* DetailsDisplayDataManager.swift in Sources */,
+				8AC5679327F9C36700B08F92 /* PersistentCategory+CoreDataClass.swift in Sources */,
 				FABCD174271DB594002BFEFC /* DetailsBackgroundView.swift in Sources */,
 				8AF607BC279479DD003494BE /* GradientView.swift in Sources */,
 				FA527AF4271ED57F00C56600 /* MainFlowCoordinator.swift in Sources */,
 				8ADFA45727F7166700EEC74B /* DataModel.xcdatamodeld in Sources */,
+				8A72C65A27F74A51004C6A4E /* PersistanceDataService.swift in Sources */,
 				8AF607B827946DE6003494BE /* Vehicle.swift in Sources */,
 				FAAABB5B271062BC0029C6CE /* StarsParalaxView.swift in Sources */,
 				FA84F8D526F8F5C8000DB2F1 /* Сharacter.swift in Sources */,
-				8A72C65827F73421004C6A4E /* DataProviderService.swift in Sources */,
+				8A72C65827F73421004C6A4E /* RepositoryService.swift in Sources */,
 				FA527AF7271ED57F00C56600 /* CategoryViewModel.swift in Sources */,
 				FAD99EB72729358200297AC7 /* DetailsViewController+CollectionViewDelegate.swift in Sources */,
 				FA527AFA271ED57F00C56600 /* CategoriesViewController.swift in Sources */,
 				8AF607B627946A38003494BE /* Species.swift in Sources */,
 				FAB114C126DE135000ECE682 /* ApplicationFlowCoordinatorDependencyProvider.swift in Sources */,
+				8A72C65C27F83B00004C6A4E /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

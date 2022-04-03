@@ -9,7 +9,7 @@ import UIKit
 
 protocol ApplicationFlowCoordinatorDependencyProvider: MainFlowCoordinatorDependencyProvider {}
 
-protocol MainFlowCoordinatorDependencyProvider: class {
+protocol MainFlowCoordinatorDependencyProvider: AnyObject {
     func mainNavigationController(navigator: MainNavigator) -> UINavigationController
     func detailsViewModel(for category: Category.T, url: URL) -> DetailsViewModel
 }

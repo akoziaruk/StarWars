@@ -10,11 +10,9 @@ import Foundation
 
 final class NetworkService: NetworkServiceType {
     private let session: URLSession
-    private let decoder: JSONDecoder
     
-    init(session: URLSession = URLSession(configuration: URLSessionConfiguration.ephemeral), decoder: JSONDecoder) {
+    init(session: URLSession = URLSession(configuration: URLSessionConfiguration.ephemeral)) {
         self.session = session
-        self.decoder = decoder
     }
 
     func load<T>(_ resource: Resource<T>) -> AnyPublisher<T, Error> {
@@ -33,7 +31,7 @@ final class NetworkService: NetworkServiceType {
                 }
                 return .just(data)
             }
-            .decode(type: T.self, decoder: decoder)
+            .decode(type: T.self, decoder: JSONDecoder())
         .eraseToAnyPublisher()
     }
 }
