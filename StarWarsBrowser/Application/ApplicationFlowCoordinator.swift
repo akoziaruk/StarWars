@@ -7,22 +7,19 @@
 
 import UIKit
 
-class ApplicationFlowCoordinator: FlowCoordinator {
-    
-    typealias DependencyProvider = ApplicationFlowCoordinatorDependencyProvider
-    
+class ApplicationFlowCoordinator {
+        
     private let window: UIWindow
-    private let dependencyProvider: DependencyProvider
-    private var childCoordinators = [FlowCoordinator]()
+    private let dependencyProvider: AppDependenciesContainer
     
-    init(window: UIWindow, dependencyProvider: DependencyProvider) {
+    init(window: UIWindow, dependencyProvider: AppDependenciesContainer) {
         self.window = window
         self.dependencyProvider = dependencyProvider
     }
     
     func start() {
-        let flowCoordinator = MainFlowCoordinator(window: window, dependencyProvider: self.dependencyProvider)
-        childCoordinators = [flowCoordinator]
+        let dependenciesContainer = dependencyProvider.mainSceneDependenciesContainer()
+        let flowCoordinator = dependenciesContainer.mainFlowCoordinator(window: window)
         flowCoordinator.start()
     }
 }
