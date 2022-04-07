@@ -8,12 +8,15 @@
 import Foundation
 
 final class AppDependenciesContainer {
-    
     private let networkService: NetworkService = DefaultNetworkService()
     private let imageLoader: ImageLoaderServiceType = ImageLoaderService()
 
     func mainSceneDependenciesContainer() -> MainSceneDependenciesContainer {
-        return MainSceneDependenciesContainer(networkService: networkService, imageLoaderService: imageLoader)
+        let categoriesDependencies = CategoriesDependencies(network: networkService)
+        let detailsDependencies = DetailsDependencies(network: networkService,
+                                                      imageLoader: imageLoader)
+        
+        return MainSceneDependenciesContainer(categoriesDependencies: categoriesDependencies,
+                                              detailsDependencies: detailsDependencies)
     }
-    
 }

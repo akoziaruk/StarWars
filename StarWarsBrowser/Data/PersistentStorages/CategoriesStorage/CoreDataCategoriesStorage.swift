@@ -19,19 +19,39 @@ class CoreDataCategoriesStorage {
     private func fetchRequest() -> NSFetchRequest<PersistentCategory> {
         return PersistentCategory.fetchRequest()
     }
+    
+    private func deleteAll(in context: NSManagedObjectContext) {
+        let request = fetchRequest()
+        do {
+            let result = try context.fetch(request)
+            result.forEach {
+                context.delete($0)
+            }
+        } catch {
+            print(error)
+        }
+    }
 }
 
 extension CoreDataCategoriesStorage: CategoriesStorage {
-    func getCategories() -> AnyPublisher<[Category], Error> {
+    func requestAll() -> AnyPublisher<[Category], Error> {
         coreDataStorage
             .fetch(request: fetchRequest())
             .map { $0.map { $0.toDTO() } }
             .eraseToAnyPublisher()
     }
-}
-
-extension PersistentCategory {
-    func toDTO() -> Category {
-        Category(name: name, url: url)
+    
+    func save(_ categories: [Category]) {
+        coreDataStorage.persistentContainer.performBackgroundTask { context in
+            do {
+                self.deleteAll(in: context)
+                categories.forEach {
+                    let _ = $0.toEntity(in: context)
+                }
+                try context.save()
+            } catch {
+                debugPrint("CoreDataCategoriesStorage Unresolved error \(error), \((error as NSError).userInfo)")
+            }
+        }
     }
 }

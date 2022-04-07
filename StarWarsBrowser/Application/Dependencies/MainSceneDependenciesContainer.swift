@@ -9,43 +9,27 @@ import Foundation
 import UIKit
 
 final class MainSceneDependenciesContainer {
+    let categoriesDependencies: CategoriesDependencies
+    let detailsDependencies: DetailsDependencies
     
-    let networkService: NetworkService
-    let imageLoaderService: ImageLoaderServiceType
-    
-    init(networkService: NetworkService, imageLoaderService: ImageLoaderServiceType) {
-        self.networkService = networkService
-        self.imageLoaderService = imageLoaderService
-    }
-        
-    var categoriesStorage: CategoriesStorage = CoreDataCategoriesStorage()
-        
-    private func categoriesRepository() -> CategoriesRepositoryType {
-        CategoriesRepository(networkService: networkService, storage: categoriesStorage)
-    }
-        
-    private func categoriesUseCase() -> CategoriesUseCaseType {
-        return CategoriesUseCase(categoriesRepository: categoriesRepository())
-    }
-    private func detailsUseCase() -> MainUseCaseType {
-        return MainUseCase()
+    init(categoriesDependencies: CategoriesDependencies, detailsDependencies: DetailsDependencies) {
+        self.categoriesDependencies = categoriesDependencies
+        self.detailsDependencies = detailsDependencies
     }
         
     func mainFlowCoordinator(window: UIWindow) -> MainFlowCoordinator {
         MainFlowCoordinator(window: window, dependencyProvider: self)
     }
-    
 }
 
 extension MainSceneDependenciesContainer: MainFlowCoordinatorDependencyProvider {
     func mainNavigationController(navigator: MainNavigator) -> UINavigationController {
+        let categoriesViewModel = CategoriesViewModel(useCase: categoriesDependencies.useCase, navigator: navigator)
+        let detailsViewModel = DetailsViewModel(category: .unknown, useCase: detailsDependencies.useCase)
 
-        let categoriesViewModel = CategoriesViewModel(useCase: categoriesUseCase(), navigator: navigator)
         let categoriesViewController = CategoriesViewController(viewModel: categoriesViewModel)
-
-        let detailsViewModel = DetailsViewModel(category: .unknown, useCase: detailsUseCase())
         let detailsViewController = DetailsViewController(viewModel: detailsViewModel)
-
+        
         let mainViewController = MainViewController(categoriesViewController, detailsViewController)
         let mainNavigationController = UINavigationController(rootViewController: mainViewController)
 
@@ -53,6 +37,6 @@ extension MainSceneDependenciesContainer: MainFlowCoordinatorDependencyProvider 
     }
     
     func detailsViewModel(for category: Category.T, url: URL) -> DetailsViewModel {
-        return DetailsViewModel(category: category, url: url, useCase: detailsUseCase())
+        return DetailsViewModel(category: category, url: url, useCase: detailsDependencies.useCase)
     }
 }

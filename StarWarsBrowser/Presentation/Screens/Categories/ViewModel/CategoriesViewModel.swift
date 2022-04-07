@@ -25,17 +25,17 @@ class CategoriesViewModel: CategoriesViewModelType {
         subscriptions.removeAll()
         
         let categories = input.load
-            .flatMapLatest({ [unowned self] in self.useCase.loadCategories() })
+            .flatMap({ [unowned self] in self.useCase.loadCategories() })
             .map({ result -> CategoriesLoadingState in
                 switch result {
                 case .success(let categories) where categories.isEmpty: return .noResult
-                case .success(let categories): return .success(self.viewModels(from: categories))
+                case .success(let categories): return .success(self.viewModels(from: categories.sorted()))
                 case .failure(let error): return .failure(error)
                 }
             })
-            .first()
             .handleEvents(receiveOutput: { state in
                 // on start show first category details
+                //TODO: Call Only Once
                 if case .success(let categories) = state,
                    let first = categories.first {
                     self.selectedCategory(with: first.type, url: first.url)

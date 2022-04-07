@@ -8,7 +8,29 @@
 import Foundation
 import Combine
 import CoreData
-//
+
+final class DetailsRepository: DetailsRepositoryType {
+    private let network: NetworkService
+    private let storage: DetailsStorage
+    
+    init(network: NetworkService, storage: DetailsStorage) {
+        self.network = network
+        self.storage = storage
+    }
+    
+    func fetchDetails() -> AnyPublisher<[Detailable], Error> {
+        storage
+            .getDetails()
+            .eraseToAnyPublisher()
+
+            
+        // get from repository
+        // if failed get from network
+        // save to repository
+    }
+}
+
+
 //class Repository: RepositoryType {
 //    let persistance: PersistanceDataServiceType
 //    let network: NetworkServiceType

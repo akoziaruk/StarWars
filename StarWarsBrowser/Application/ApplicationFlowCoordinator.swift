@@ -8,7 +8,6 @@
 import UIKit
 
 class ApplicationFlowCoordinator {
-        
     private let window: UIWindow
     private let dependencyProvider: AppDependenciesContainer
     

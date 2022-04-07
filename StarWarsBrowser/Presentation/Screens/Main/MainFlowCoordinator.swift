@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol MainFlowCoordinatorDependencyProvider: AnyObject {
+    func mainNavigationController(navigator: MainNavigator) -> UINavigationController
+    func detailsViewModel(for category: Category.T, url: URL) -> DetailsViewModel
+}
+ 
 class MainFlowCoordinator {
     fileprivate let window: UIWindow
     fileprivate var navigationController: UINavigationController?

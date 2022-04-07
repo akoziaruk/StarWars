@@ -11,11 +11,11 @@ import Foundation
 class DetailsViewModel: DetailsViewModelType {
     private let category: Category.T
     private let url: URL?
-    private let useCase: MainUseCaseType
+    private let useCase: DetailsUseCaseType
     private var subscriptions = Set<AnyCancellable>()
     private var page = 1
         
-    init(category: Category.T, url: URL? = nil, useCase: MainUseCaseType) {
+    init(category: Category.T, url: URL? = nil, useCase: DetailsUseCaseType) {
         self.category = category
         self.url = url
         self.useCase = useCase
@@ -27,7 +27,7 @@ class DetailsViewModel: DetailsViewModelType {
                 
         let details = input.loadNextPage
             .compactMap({ self.url })
-            .flatMap(maxPublishers: .max(1), { [unowned self] in self.useCase.loadDetails(url: $0, page: self.page, category: self.category) })
+            .flatMap(maxPublishers: .max(1), { [unowned self] in self.useCase.fetchDetails(url: $0, page: self.page, category: self.category) })
             .map({ result -> DetailsLoadingState in
                 switch result {
                 case .success(let details) where details.isEmpty: return .noResult
@@ -49,7 +49,7 @@ class DetailsViewModel: DetailsViewModelType {
 
     private func viewModels(from details: [Detailable]) -> [AnyHashable] {
         details.map {[unowned self] detail in
-            DetailViewModelFactory.viewModel(from: detail, imageLoader: {[unowned self] detail in self.useCase.loadImage(for: detail)})
+            DetailViewModelFactory.viewModel(from: detail, imageLoader: {[unowned self] detail in self.useCase.fetchImage(for: detail)})
         }
     }
     

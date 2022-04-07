@@ -9,5 +9,6 @@ import Foundation
 import Combine
 
 protocol CategoriesStorage {
-    func getCategories() -> AnyPublisher<[Category], Error>
+    func requestAll() -> AnyPublisher<[Category], Error>
+    func save(_ categories: [Category])
 }

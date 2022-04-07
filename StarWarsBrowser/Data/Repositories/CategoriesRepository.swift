@@ -9,23 +9,21 @@ import Foundation
 import Combine
 
 final class CategoriesRepository: CategoriesRepositoryType {
-    private let networkService: NetworkService
+    private let network: NetworkService
     private let storage: CategoriesStorage
     
-    init(networkService: NetworkService, storage: CategoriesStorage) {
-        self.networkService = networkService
+    init(network: NetworkService, storage: CategoriesStorage) {
+        self.network = network
         self.storage = storage
     }
-    
+        
     func fetchCategories() -> AnyPublisher<[Category], Error> {
-        storage.getCategories()
-            .eraseToAnyPublisher()
-//        storage
-//            .getCategories()
-            
-        // get from repository
-        // if failed get from network
-        // save to repository
+        return Publishers.Merge(storage.requestAll(),
+                                network.load(Resource<Categories>.categories())
+                                        .map { $0.items }
+                                        .handleEvents(receiveOutput: { [unowned self] categories in
+                                            storage.save(categories)
+                                        })
+                                ).eraseToAnyPublisher()
     }
 }
-

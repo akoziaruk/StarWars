@@ -11,10 +11,9 @@ final class Scheduler {
     static var backgroundWorkScheduler: OperationQueue = {
         let operationQueue = OperationQueue()
         operationQueue.maxConcurrentOperationCount = 5
-        operationQueue.qualityOfService = QualityOfService.userInitiated
+        operationQueue.qualityOfService = .userInitiated
         return operationQueue
     }()
 
     static let mainScheduler = DispatchQueue.main
-
 }

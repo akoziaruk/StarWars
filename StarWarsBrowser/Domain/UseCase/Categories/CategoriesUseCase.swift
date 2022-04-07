@@ -10,14 +10,14 @@ import Combine
 import CoreData
 
 final class CategoriesUseCase: CategoriesUseCaseType {
-    private let categoriesRepository: CategoriesRepositoryType
+    private let repository: CategoriesRepositoryType
     
-    init(categoriesRepository: CategoriesRepositoryType) {
-        self.categoriesRepository = categoriesRepository
+    init(repository: CategoriesRepositoryType) {
+        self.repository = repository
     }
     
     func loadCategories() -> AnyPublisher<Result<[Category], Error>, Never> {
-        categoriesRepository
+        repository
             .fetchCategories()
             .map { .success($0) }
             .catch { error -> AnyPublisher<Result<[Category], Error>, Never> in .just(.failure(error)) }

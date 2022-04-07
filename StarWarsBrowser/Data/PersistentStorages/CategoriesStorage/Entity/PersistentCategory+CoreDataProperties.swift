@@ -2,7 +2,7 @@
 //  PersistentCategory+CoreDataProperties.swift
 //  StarWarsBrowser
 //
-//  Created by Alexander Koziaruk on 03.04.2022.
+//  Created by Alexander Koziaruk on 06.04.2022.
 //
 //
 

@@ -8,12 +8,6 @@
 import Foundation
 import CoreData
 
-//enum CoreDataStorageError: Error {
-//    case readError(Error)
-//    case saveError(Error)
-//    case deleteError(Error)
-//}
-
 final class CoreDataStorage {
 
     static let shared = CoreDataStorage()
@@ -29,19 +23,8 @@ final class CoreDataStorage {
         }
         return container
     }()
-
-//    func saveContext() {
-//        let context = persistentContainer.viewContext
-//        if context.hasChanges {
-//            do {
-//                try context.save()
-//            } catch {
-//                assertionFailure("CoreDataStorage Unresolved error \(error), \((error as NSError).userInfo)")
-//            }
-//        }
-//    }
-
-//    func performBackgroundTask(_ block: @escaping (NSManagedObjectContext) -> Void) {
-//        persistentContainer.performBackgroundTask(block)
-//    }
+    
+    func performBackgroundTask(_ block: @escaping (NSManagedObjectContext) -> Void) {
+        persistentContainer.performBackgroundTask(block)
+    }
 }
