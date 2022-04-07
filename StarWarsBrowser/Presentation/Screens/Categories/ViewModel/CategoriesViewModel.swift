@@ -9,6 +9,10 @@ import Combine
 import Foundation
 
 class CategoriesViewModel: CategoriesViewModelType {
+    private struct Default {
+        static let category = Category.T.film
+    }
+    
     private let useCase: CategoriesUseCaseType
     private var subscriptions = Set<AnyCancellable>()
     private weak var navigator: MainNavigator?
@@ -36,7 +40,7 @@ class CategoriesViewModel: CategoriesViewModelType {
             .handleEvents(receiveOutput: { state in
                 // on start show first category details
                 guard case .success(let categories) = state,
-                      let first = categories.first,
+                      let first = categories.filter({ $0.type == Default.category }).first,
                       self.selectedCategory == nil else { return }
                     
                 self.selectCategory(with: first.type, url: first.url)
@@ -60,6 +64,6 @@ class CategoriesViewModel: CategoriesViewModelType {
     }
     
     private func viewModels(from categories: [Category]) -> [CategoryViewModel] {
-        categories.map { CategoryViewModel($0, selected: (selectedCategory ?? .film) == $0.type) }
+        categories.map { CategoryViewModel($0, selected: (selectedCategory ?? Default.category) == $0.type) }
     }
 }
