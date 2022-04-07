@@ -13,7 +13,7 @@ class CategoriesViewModel: CategoriesViewModelType {
     private var subscriptions = Set<AnyCancellable>()
     private weak var navigator: MainNavigator?
 
-    var selectedCategory = Category.T.film
+    var selectedCategory: Category.T?
     
     init(useCase: CategoriesUseCaseType, navigator: MainNavigator) {
         self.useCase = useCase
@@ -35,17 +35,17 @@ class CategoriesViewModel: CategoriesViewModelType {
             })
             .handleEvents(receiveOutput: { state in
                 // on start show first category details
-                //TODO: Call Only Once
-                if case .success(let categories) = state,
-                   let first = categories.first {
-                    self.selectedCategory(with: first.type, url: first.url)
-                }
+                guard case .success(let categories) = state,
+                      let first = categories.first,
+                      self.selectedCategory == nil else { return }
+                    
+                self.selectCategory(with: first.type, url: first.url)
             })
             .eraseToAnyPublisher()
 
         input.select
             .sink(receiveValue: { [unowned self] item in
-                self.selectedCategory(with: item.type, url: item.url)
+                self.selectCategory(with: item.type, url: item.url)
             })
             .store(in: &subscriptions)
 
@@ -54,13 +54,13 @@ class CategoriesViewModel: CategoriesViewModelType {
         return Publishers.Merge(initialState, categories).removeDuplicates().eraseToAnyPublisher()
     }
 
-    private func selectedCategory(with type: Category.T, url: URL) {
+    private func selectCategory(with type: Category.T, url: URL) {
         self.selectedCategory = type
         self.navigator?.showCategory(for: type, url: url)
     }
     
     private func viewModels(from categories: [Category]) -> [CategoryViewModel] {
-        categories.compactMap { CategoryViewModel($0, selected: selectedCategory == $0.type) }
+        categories.map { CategoryViewModel($0, selected: (selectedCategory ?? .film) == $0.type) }
     }
     
 }
