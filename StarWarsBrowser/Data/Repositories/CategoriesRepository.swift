@@ -18,12 +18,13 @@ final class CategoriesRepository: CategoriesRepositoryType {
     }
         
     func fetchCategories() -> AnyPublisher<[Category], Error> {
-        return Publishers.Merge(storage.requestAll(),
+        return Publishers.Merge(storage.requestAll()
+                                        .map { $0.toDomain() },
                                 network.load(Resource<CategoriesDTO>.categories())
-                                        .map { $0.toDomain() }
                                         .handleEvents(receiveOutput: { [unowned self] categories in
                                             storage.save(categories)
                                         })
+                                        .map { $0.toDomain() }
                                 ).eraseToAnyPublisher()
     }
 }

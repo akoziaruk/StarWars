@@ -8,13 +8,19 @@
 import Foundation
 import CoreData
 
-extension PersistentCategory {
-    func toDTO() -> Category {
-        Category(name: name, url: url)
+extension Array where Element == PersistentCategory {
+    func toDTO() -> CategoriesDTO {
+        return CategoriesDTO(categories: self)
     }
 }
 
-extension Category {
+extension CategoriesDTO {
+    init(categories: [PersistentCategory]) {
+        self.items = categories.map { CategoryDTO(name: $0.name, url: $0.url) }
+    }
+}
+
+extension CategoryDTO {
     func toEntity(in context: NSManagedObjectContext) -> PersistentCategory {
         let category = PersistentCategory(context: context)
         category.name = name

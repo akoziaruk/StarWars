@@ -34,18 +34,18 @@ class CoreDataCategoriesStorage {
 }
 
 extension CoreDataCategoriesStorage: CategoriesStorage {
-    func requestAll() -> AnyPublisher<[Category], Error> {
+    func requestAll() -> AnyPublisher<CategoriesDTO, Error> {
         coreDataStorage
             .fetch(request: fetchRequest())
-            .map { $0.map { $0.toDTO() } }
+            .map { $0.toDTO() }
             .eraseToAnyPublisher()
     }
     
-    func save(_ categories: [Category]) {
+    func save(_ categories: CategoriesDTO) {
         coreDataStorage.persistentContainer.performBackgroundTask { context in
             do {
                 self.deleteAll(in: context)
-                categories.forEach {
+                categories.items.forEach {
                     let _ = $0.toEntity(in: context)
                 }
                 try context.save()

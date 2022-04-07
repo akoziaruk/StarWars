@@ -16,8 +16,8 @@ extension PersistentCategory {
         return NSFetchRequest<PersistentCategory>(entityName: "PersistentCategory")
     }
 
-    @NSManaged public var name: String?
-    @NSManaged public var url: URL?
+    @NSManaged public var name: String!
+    @NSManaged public var url: URL!
     @NSManaged public var details: NSSet?
 
 }

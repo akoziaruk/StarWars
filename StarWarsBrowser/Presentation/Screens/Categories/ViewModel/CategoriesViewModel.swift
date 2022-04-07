@@ -62,5 +62,4 @@ class CategoriesViewModel: CategoriesViewModelType {
     private func viewModels(from categories: [Category]) -> [CategoryViewModel] {
         categories.map { CategoryViewModel($0, selected: (selectedCategory ?? .film) == $0.type) }
     }
-    
 }
