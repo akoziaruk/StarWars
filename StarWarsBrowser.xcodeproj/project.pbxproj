@@ -17,7 +17,6 @@
 		8A72C65527F7340A004C6A4E /* DetailsRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C65427F7340A004C6A4E /* DetailsRepositoryType.swift */; };
 		8A72C65827F73421004C6A4E /* DetailsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C65727F73421004C6A4E /* DetailsRepository.swift */; };
 		8A72C65C27F83B00004C6A4E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C65B27F83B00004C6A4E /* Category.swift */; };
-		8A72C66027F83C83004C6A4E /* Category+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72C65F27F83C83004C6A4E /* Category+Type.swift */; };
 		8AB647BF265D0A0D00B2F498 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB647BE265D0A0D00B2F498 /* AppDelegate.swift */; };
 		8AB647C1265D0A0D00B2F498 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB647C0265D0A0D00B2F498 /* SceneDelegate.swift */; };
 		8AB647C8265D0A1100B2F498 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AB647C7265D0A1100B2F498 /* Assets.xcassets */; };
@@ -96,9 +95,9 @@
 		FAAABB5D27108C130029C6CE /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAABB5C27108C130029C6CE /* UIViewController+Utils.swift */; };
 		FAB114BA26DE0FAA00ECE682 /* DetailsUseCaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB114B926DE0FAA00ECE682 /* DetailsUseCaseType.swift */; };
 		FAB114BC26DE123700ECE682 /* ApplicationFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB114BB26DE123700ECE682 /* ApplicationFlowCoordinator.swift */; };
-		FAB114DF26DE51E800ECE682 /* Resource+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB114DE26DE51E800ECE682 /* Resource+Category.swift */; };
+		FAB114DF26DE51E800ECE682 /* Resource+CategoryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB114DE26DE51E800ECE682 /* Resource+CategoryDTO.swift */; };
 		FAB114E126DE537100ECE682 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB114E026DE537100ECE682 /* APIConstants.swift */; };
-		FAB114E326DE571400ECE682 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB114E226DE571400ECE682 /* Categories.swift */; };
+		FAB114E326DE571400ECE682 /* CategoriesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB114E226DE571400ECE682 /* CategoriesDTO.swift */; };
 		FAB114E726DE632C00ECE682 /* Publisher+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB114E626DE632C00ECE682 /* Publisher+Utils.swift */; };
 		FAB344CF273A7351000EEDC9 /* CategoryGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB344CE273A7351000EEDC9 /* CategoryGradientView.swift */; };
 		FAB34509273BCD39000EEDC9 /* ApplicationFlowCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB34508273BCD39000EEDC9 /* ApplicationFlowCoordinatorTests.swift */; };
@@ -135,7 +134,6 @@
 		8A72C65427F7340A004C6A4E /* DetailsRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRepositoryType.swift; sourceTree = "<group>"; };
 		8A72C65727F73421004C6A4E /* DetailsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRepository.swift; sourceTree = "<group>"; };
 		8A72C65B27F83B00004C6A4E /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		8A72C65F27F83C83004C6A4E /* Category+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+Type.swift"; sourceTree = "<group>"; };
 		8AB647BB265D0A0D00B2F498 /* StarWarsBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AB647BE265D0A0D00B2F498 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AB647C0265D0A0D00B2F498 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -215,9 +213,9 @@
 		FAAABB5C27108C130029C6CE /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		FAB114B926DE0FAA00ECE682 /* DetailsUseCaseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsUseCaseType.swift; sourceTree = "<group>"; };
 		FAB114BB26DE123700ECE682 /* ApplicationFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFlowCoordinator.swift; sourceTree = "<group>"; };
-		FAB114DE26DE51E800ECE682 /* Resource+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+Category.swift"; sourceTree = "<group>"; };
+		FAB114DE26DE51E800ECE682 /* Resource+CategoryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+CategoryDTO.swift"; sourceTree = "<group>"; };
 		FAB114E026DE537100ECE682 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
-		FAB114E226DE571400ECE682 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		FAB114E226DE571400ECE682 /* CategoriesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesDTO.swift; sourceTree = "<group>"; };
 		FAB114E626DE632C00ECE682 /* Publisher+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Utils.swift"; sourceTree = "<group>"; };
 		FAB344CE273A7351000EEDC9 /* CategoryGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryGradientView.swift; sourceTree = "<group>"; };
 		FAB344FF273BCD25000EEDC9 /* StarWarsBrowserUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarWarsBrowserUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -257,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				FAB114E026DE537100ECE682 /* APIConstants.swift */,
+				8AB5BC1127FED1C1003510A1 /* DataMapping */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -299,6 +298,25 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		8AB5BC1127FED1C1003510A1 /* DataMapping */ = {
+			isa = PBXGroup;
+			children = (
+				8AB5BC1227FED288003510A1 /* Categories */,
+				FAB80C6E273018F900A54148 /* Resource+Detail.swift */,
+				8ABB296E26828BA3009963FF /* Details.swift */,
+			);
+			path = DataMapping;
+			sourceTree = "<group>";
+		};
+		8AB5BC1227FED288003510A1 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				FAB114E226DE571400ECE682 /* CategoriesDTO.swift */,
+				FAB114DE26DE51E800ECE682 /* Resource+CategoryDTO.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		8AB647B2265D0A0D00B2F498 = {
 			isa = PBXGroup;
 			children = (
@@ -335,10 +353,6 @@
 			isa = PBXGroup;
 			children = (
 				FA0D5564272D3DDD005CBFDB /* Detail+Bucket.swift */,
-				FAB80C6E273018F900A54148 /* Resource+Detail.swift */,
-				FAB114DE26DE51E800ECE682 /* Resource+Category.swift */,
-				FAB114E226DE571400ECE682 /* Categories.swift */,
-				8ABB296E26828BA3009963FF /* Details.swift */,
 			);
 			path = DataMapping;
 			sourceTree = "<group>";
@@ -648,7 +662,6 @@
 			isa = PBXGroup;
 			children = (
 				8A72C65B27F83B00004C6A4E /* Category.swift */,
-				8A72C65F27F83C83004C6A4E /* Category+Type.swift */,
 				8A19F69F27FD90C00043669B /* Category+Comparable.swift */,
 			);
 			path = Category;
@@ -856,10 +869,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAB114DF26DE51E800ECE682 /* Resource+Category.swift in Sources */,
+				FAB114DF26DE51E800ECE682 /* Resource+CategoryDTO.swift in Sources */,
 				8ABA5D3C27A14AF3004D5C6F /* DetailsViewControllerType.swift in Sources */,
 				8AF8C9B627FB2E2500FB1994 /* CategoriesRepository.swift in Sources */,
-				8A72C66027F83C83004C6A4E /* Category+Type.swift in Sources */,
 				FA527B0D271F11A300C56600 /* Planet.swift in Sources */,
 				FA527AE7271ED57F00C56600 /* DetailViewModelFactory.swift in Sources */,
 				FA527AF8271ED57F00C56600 /* CategoriesViewModelType.swift in Sources */,
@@ -885,7 +897,7 @@
 				8AF8C9B427FB2E1E00FB1994 /* CategoriesRepositoryType.swift in Sources */,
 				8AC5679827FAE53900B08F92 /* CategoriesUseCaseType.swift in Sources */,
 				8A0F10DB27FC6B6A00F860A0 /* CategoriesDependencies.swift in Sources */,
-				FAB114E326DE571400ECE682 /* Categories.swift in Sources */,
+				FAB114E326DE571400ECE682 /* CategoriesDTO.swift in Sources */,
 				FA1162332716D5FD004A3D2D /* CategoryLabel.swift in Sources */,
 				FA527AF5271ED57F00C56600 /* MainViewController.swift in Sources */,
 				FADF79FA26BE558700D8F126 /* AlertController+Utils.swift in Sources */,

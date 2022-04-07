@@ -19,8 +19,8 @@ final class CategoriesRepository: CategoriesRepositoryType {
         
     func fetchCategories() -> AnyPublisher<[Category], Error> {
         return Publishers.Merge(storage.requestAll(),
-                                network.load(Resource<Categories>.categories())
-                                        .map { $0.items }
+                                network.load(Resource<CategoriesDTO>.categories())
+                                        .map { $0.toDomain() }
                                         .handleEvents(receiveOutput: { [unowned self] categories in
                                             storage.save(categories)
                                         })
