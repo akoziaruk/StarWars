@@ -16,7 +16,7 @@ class DetailViewModelFactory {
             return FilmViewModel(title: film.name,
                                  director: film.director,
                                  openingCrawl: film.openingCrawl,
-                                 image: imageLoader(film))
+                                 image: imageLoader(film as! Detailable))
         } else {
             return DetailViewModel(name: detail.name,
                                    image: imageLoader(detail))

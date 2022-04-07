@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Film: Detailable {
+struct Film {
     var imagePath: String { "films/" + name }
     var name: String
     let openingCrawl: String

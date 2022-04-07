@@ -15,9 +15,9 @@ final class DetailsUseCase: DetailsUseCaseType {
         self.repository = repository
     }
     
-    func fetchDetails(url: URL, page: Int, category: Category.T) -> AnyPublisher<Result<[Detailable], Error>, Never>{
+    func loadDetails(url: URL, page: Int, category: Category.T) -> AnyPublisher<Result<[Detailable], Error>, Never> {
         repository
-            .fetchDetails()
+            .fetchDetails(url: url, page: page, category: category)
             .map { .success($0) }
             .catch { error -> AnyPublisher<Result<[Detailable], Error>, Never> in .just(.failure(error)) }
             .subscribe(on: Scheduler.backgroundWorkScheduler)
@@ -25,7 +25,7 @@ final class DetailsUseCase: DetailsUseCaseType {
             .eraseToAnyPublisher()
     }
     
-    func fetchImage(for detail: Detailable) -> AnyPublisher<UIImage?, Never> {
+    func loadImage(for detail: Detailable) -> AnyPublisher<UIImage?, Never> {
         .just(UIImage(named: "test"))
     }
 }
@@ -75,9 +75,6 @@ final class DetailsUseCase: DetailsUseCaseType {
 //
 //    private func loadDetails<T: Detailable>(url: URL, page: Int, type: T.Type) -> AnyPublisher<Result<[Detailable], Error>, Never> {
 //        repository
-//            .load(Resource<Categories>.categories())
-//            .map { _ in return .success([Film]()) }
-//
 //            //.load(Resource<Details<T>>.details(for: url, page: page, type: type))
 //            //.map { .success($0.items) }
 //            .catch { error -> AnyPublisher<Result<[Detailable], Error>, Never> in .just(.failure(error)) }

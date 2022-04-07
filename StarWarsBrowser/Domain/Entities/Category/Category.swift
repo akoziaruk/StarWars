@@ -12,42 +12,18 @@ struct Category {
     var url: URL!
     
     var type: T {
-        switch name {
-        case Titles.films.rawValue:
-            return .film
-        case Titles.people.rawValue:
-            return .people
-        case Titles.planets.rawValue:
-            return .planet
-        case Titles.species.rawValue:
-            return .species
-        case Titles.starships.rawValue:
-            return .starship
-        case Titles.vehicles.rawValue:
-            return .vehicle
-        default:
-            return .unknown
-        }
+        return T(rawValue: name) ?? .unknown
     }
 }
 
 extension Category {
-    enum T {
-        case film
+    enum T: String {
+        case films
         case people
-        case planet
+        case planets
         case species
-        case starship
-        case vehicle
+        case starships
+        case vehicles
         case unknown
-    }
-    
-    private enum Titles: String {
-        case films = "films"
-        case people = "people"
-        case planets = "planets"
-        case species = "species"
-        case starships = "starships"
-        case vehicles = "vehicles"
     }
 }

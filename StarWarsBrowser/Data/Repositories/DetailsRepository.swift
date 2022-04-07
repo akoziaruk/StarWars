@@ -18,51 +18,54 @@ final class DetailsRepository: DetailsRepositoryType {
         self.storage = storage
     }
     
-    func fetchDetails() -> AnyPublisher<[Detailable], Error> {
-        storage
-            .getDetails()
-            .eraseToAnyPublisher()
+    func fetchDetails(url: URL, page: Int, category: Category.T) -> AnyPublisher<[Detailable], Error> {
+        
+        //Film or Default
+        let requestDTO = DetailsRequestDTO(url: url, page: page, category: category.rawValue)
+        
+//        Resource<FilmsDTO>.defaultDetails(for: url, page: page)
+//        Resource<DefaultDetailsDTO>.films(for: url, page: page)
+
+        return storage
+                    .request(for: requestDTO)
+                    .eraseToAnyPublisher()
+        
+//        return Publishers.Merge(storage.requestAll()
+//                                        .map { $0.toDomain() },
+//                                network.load(Resource<CategoriesDTO>.categories())
+//                                        .handleEvents(receiveOutput: { [unowned self] categories in
+//                                            storage.save(categories)
+//                                        })
+//                                        .map { $0.toDomain() }
+//                                ).eraseToAnyPublisher()
+        
+    }
+    
+//    func fetchDetails() -> AnyPublisher<[Detailable], Error> {
+//        storage
+//            .getDetails()
+//            .eraseToAnyPublisher()
 
             
         // get from repository
         // if failed get from network
         // save to repository
-    }
+//    }
 }
 
-
-//class Repository: RepositoryType {
-//    let persistance: PersistanceDataServiceType
-//    let network: NetworkServiceType
+struct DetailsRequestDTO {
+    let url: URL
+    let page: Int
+    let category: String
+    
+    var type: DetailableDTO.Type {
+        if category == "films" {
+            return DefaultDetailsDTO.self
+        }
+        return FilmDetailsDTO.self
+    }
+}
 //
-//    init(persistance: PersistanceDataServiceType, network: NetworkServiceType) {
-//        self.persistance = persistance
-//        self.network = network
-//    }
-//
-//    func loadCategories() -> AnyPublisher<[Category], Error> {
-//        persistance
-//            .fetch(PersistentCategory.self)
-//            .map { $0.map { Category(name: $0.name, url: $0.url) } }
-//            .catch { [unowned self] _ in
-//                network
-//                    .load(Resource<Categories>.categories())
-//                    .map { $0.items }
-//                    .handleEvents(receiveOutput: { [unowned self] categories in
-//                        saveCategories(categories)
-//                    })
-//            }
-//            .eraseToAnyPublisher()
-//    }
-//
-//    private func saveCategories(_ categories: [Category]) {
-//        for category in categories {
-//            persistance.add(PersistentCategory.self) { persistantCategory in
-//                persistantCategory.name = category.name
-//                persistantCategory.url = category.url
-//            }
-//        }
-//        persistance.save()
-//    }
-//
+//protocol DetailInitable {
+//    init(detail: PersistentDetail)
 //}

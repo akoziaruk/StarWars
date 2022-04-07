@@ -16,8 +16,8 @@ extension PersistentDetail {
         return NSFetchRequest<PersistentDetail>(entityName: "PersistentDetail")
     }
 
+    @NSManaged public var name: String!
     @NSManaged public var director: String?
-    @NSManaged public var name: String?
     @NSManaged public var openingCrawl: String?
 
 }

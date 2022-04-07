@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 protocol DetailsStorage {
-    func getDetails() -> AnyPublisher<[Detailable], Error>
+    func request(for requestDTO: DetailsRequestDTO) -> AnyPublisher<DetailableDTO, Error>
 }

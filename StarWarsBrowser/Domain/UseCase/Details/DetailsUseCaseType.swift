@@ -10,6 +10,6 @@ import Foundation
 import UIKit
 
 protocol DetailsUseCaseType {
-    func fetchDetails(url: URL, page: Int, category: Category.T) -> AnyPublisher<Result<[Detailable], Error>, Never>
-    func fetchImage(for detail: Detailable) -> AnyPublisher<UIImage?, Never>
+    func loadDetails(url: URL, page: Int, category: Category.T) -> AnyPublisher<Result<[Detailable], Error>, Never>
+    func loadImage(for detail: Detailable) -> AnyPublisher<UIImage?, Never>
 }

@@ -31,6 +31,7 @@ class DetailsViewController: UIViewController, DetailsViewControllerType {
     
     public func updateWith(_ viewModel: DetailsViewModelType) {
         self.viewModel = viewModel
+        
         dataManager.prepareForReuse()
         bind(to: viewModel)
         loadNextPage.send()

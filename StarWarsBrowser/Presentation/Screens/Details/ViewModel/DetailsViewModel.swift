@@ -27,7 +27,7 @@ class DetailsViewModel: DetailsViewModelType {
                 
         let details = input.loadNextPage
             .compactMap({ self.url })
-            .flatMap(maxPublishers: .max(1), { [unowned self] in self.useCase.fetchDetails(url: $0, page: self.page, category: self.category) })
+            .flatMap(maxPublishers: .max(1), { [unowned self] in self.useCase.fetchDetails(url: $0, page: page, category: category) })
             .map({ result -> DetailsLoadingState in
                 switch result {
                 case .success(let details) where details.isEmpty: return .noResult
