@@ -27,7 +27,7 @@ class DetailsViewModel: DetailsViewModelType {
                 
         let details = input.loadNextPage
             .compactMap({ self.url })
-            .flatMap(maxPublishers: .max(1), { [unowned self] in self.useCase.fetchDetails(url: $0, page: page, category: category) })
+            .flatMap(maxPublishers: .max(1), { [unowned self] in self.useCase.loadDetails(url: $0, page: page, category: category) })
             .map({ result -> DetailsLoadingState in
                 switch result {
                 case .success(let details) where details.isEmpty: return .noResult
@@ -49,7 +49,7 @@ class DetailsViewModel: DetailsViewModelType {
 
     private func viewModels(from details: [Detailable]) -> [AnyHashable] {
         details.map {[unowned self] detail in
-            DetailViewModelFactory.viewModel(from: detail, imageLoader: {[unowned self] detail in self.useCase.fetchImage(for: detail)})
+            DetailViewModelFactory.viewModel(from: detail, imageLoader: {[unowned self] detail in self.useCase.loadImage(for: detail)})
         }
     }
     

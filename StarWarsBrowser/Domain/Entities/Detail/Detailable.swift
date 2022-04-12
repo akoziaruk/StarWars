@@ -11,3 +11,8 @@ protocol Detailable: Decodable {
     var imagePath: String { get }
     var name: String { get }
 }
+
+struct DefaultDetail: Detailable {
+    var imagePath: String { name } // FIXME: 
+    var name: String
+}

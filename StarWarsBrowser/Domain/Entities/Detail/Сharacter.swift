@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Сharacter: Detailable {
-    var imagePath: String { "people/" + name }
-    let name: String
-}
+//struct Сharacter: Detailable {
+//    var imagePath: String { "people/" + name }
+//    let name: String
+//}

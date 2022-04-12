@@ -16,8 +16,7 @@ final class DetailsUseCase: DetailsUseCaseType {
     }
     
     func loadDetails(url: URL, page: Int, category: Category.T) -> AnyPublisher<Result<[Detailable], Error>, Never> {
-        repository
-            .fetchDetails(url: url, page: page, category: category)
+        fetch(url: url, page: page, category: category)
             .map { .success($0) }
             .catch { error -> AnyPublisher<Result<[Detailable], Error>, Never> in .just(.failure(error)) }
             .subscribe(on: Scheduler.backgroundWorkScheduler)
@@ -25,72 +24,27 @@ final class DetailsUseCase: DetailsUseCaseType {
             .eraseToAnyPublisher()
     }
     
+    private func fetch(url: URL, page: Int, category: Category.T) -> AnyPublisher<[Detailable], Error> {
+        switch category {
+            case .films:
+                return repository.fetchFilms(url: url, page: page)
+            default:
+                return repository.fetchDefaultDetails(url: url, page: page)
+        }
+    }
+    
     func loadImage(for detail: Detailable) -> AnyPublisher<UIImage?, Never> {
+        //TODO:
         .just(UIImage(named: "test"))
     }
+    //    public func loadImage(for detail: Detailable) -> AnyPublisher<UIImage?, Never> {
+    //        return Deferred { return Just(detail.bucketImagePath) }
+    //            .flatMap({ [unowned self] path  -> AnyPublisher<UIImage?, Never> in
+    //                return self.imageLoaderService.loadImage(for: path)
+    //            })
+    //            .subscribe(on: Scheduler.backgroundWorkScheduler)
+    //            .receive(on: Scheduler.mainScheduler)
+    //            .share()
+    //            .eraseToAnyPublisher()
+    //    }
 }
-
-//enum UseCaseError: LocalizedError {
-//    case unknownType
-//
-//    var description: String? {
-//        switch self {
-//        case .unknownType:            return "Unknown type"
-//        }
-//    }
-//}
-////
-//final class MainUseCase: MainUseCaseType {
-//    private let repository = DefaultNetworkService()
-//    private let imageLoaderService = ImageLoaderService()
-//
-//    public func loadCategories() -> AnyPublisher<Result<[Category], Error>, Never> {
-//        repository
-//            .load(Resource<Categories>.categories())
-//            .map { .success($0.items) }
-//            .catch { error -> AnyPublisher<Result<[Category], Error>, Never> in .just(.failure(error)) }
-//            .subscribe(on: Scheduler.backgroundWorkScheduler)
-//            .receive(on: Scheduler.mainScheduler)
-//            .eraseToAnyPublisher()
-//    }
-//
-//    public func loadDetails(url: URL, page: Int, category: Category.T) -> AnyPublisher<Result<[Detailable], Error>, Never> {
-//        switch category {
-//        case .film:
-//            return loadDetails(url: url, page: page, type: Film.self)
-//        case .people:
-//            return loadDetails(url: url, page: page, type: Сharacter.self)
-//        case .planet:
-//            return loadDetails(url: url, page: page, type: Planet.self)
-//        case .species:
-//            return loadDetails(url: url, page: page, type: Species.self)
-//        case .starship:
-//            return loadDetails(url: url, page: page, type: Starship.self)
-//        case .vehicle:
-//            return loadDetails(url: url, page: page, type: Vehicle.self)
-//        case .unknown:
-//            return .just(.failure(UseCaseError.unknownType))
-//        }
-//    }
-//
-//    private func loadDetails<T: Detailable>(url: URL, page: Int, type: T.Type) -> AnyPublisher<Result<[Detailable], Error>, Never> {
-//        repository
-//            //.load(Resource<Details<T>>.details(for: url, page: page, type: type))
-//            //.map { .success($0.items) }
-//            .catch { error -> AnyPublisher<Result<[Detailable], Error>, Never> in .just(.failure(error)) }
-//            .subscribe(on: Scheduler.backgroundWorkScheduler)
-//            .receive(on: Scheduler.mainScheduler)
-//            .eraseToAnyPublisher()
-//    }
-//
-//    public func loadImage(for detail: Detailable) -> AnyPublisher<UIImage?, Never> {
-//        return Deferred { return Just(detail.bucketImagePath) }
-//            .flatMap({ [unowned self] path  -> AnyPublisher<UIImage?, Never> in
-//                return self.imageLoaderService.loadImage(for: path)
-//            })
-//            .subscribe(on: Scheduler.backgroundWorkScheduler)
-//            .receive(on: Scheduler.mainScheduler)
-//            .share()
-//            .eraseToAnyPublisher()
-//    }
-//}

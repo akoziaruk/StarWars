@@ -6,8 +6,8 @@
 //
 
 import Foundation
-
-struct Starship: Detailable {
-    var imagePath: String { "starships/" + name }
-    let name: String
-}
+//
+//struct Starship: Detailable {
+//    var imagePath: String { "starships/" + name }
+//    let name: String
+//}

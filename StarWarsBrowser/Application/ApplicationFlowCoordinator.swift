@@ -10,6 +10,7 @@ import UIKit
 class ApplicationFlowCoordinator {
     private let window: UIWindow
     private let dependencyProvider: AppDependenciesContainer
+    private var flowCoordinator: MainFlowCoordinator!
     
     init(window: UIWindow, dependencyProvider: AppDependenciesContainer) {
         self.window = window
@@ -18,7 +19,7 @@ class ApplicationFlowCoordinator {
     
     func start() {
         let dependenciesContainer = dependencyProvider.mainSceneDependenciesContainer()
-        let flowCoordinator = dependenciesContainer.mainFlowCoordinator(window: window)
+        flowCoordinator = dependenciesContainer.mainFlowCoordinator(window: window)
         flowCoordinator.start()
     }
 }

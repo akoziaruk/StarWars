@@ -6,8 +6,8 @@
 //
 
 import Foundation
-
-struct Vehicle: Detailable {
-    var imagePath: String { "vehicles/" + name }
-    let name: String
-}
+//
+//struct Vehicle: Detailable {
+//    var imagePath: String { "vehicles/" + name }
+//    let name: String
+//}

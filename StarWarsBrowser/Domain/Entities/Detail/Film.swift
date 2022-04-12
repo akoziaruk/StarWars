@@ -7,15 +7,9 @@
 
 import Foundation
 
-struct Film {
+struct Film: Detailable {
     var imagePath: String { "films/" + name }
     var name: String
     let openingCrawl: String
     let director: String
-    
-    enum CodingKeys: String, CodingKey {
-        case name = "title"
-        case openingCrawl = "opening_crawl"
-        case director
-    }
 }

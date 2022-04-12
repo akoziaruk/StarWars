@@ -15,18 +15,11 @@ struct DefaultDetailsDTO: Decodable {
     }
 }
 
-struct FilmDetailsDTO: Decodable {
-    var results: [FilmDTO]
+struct DefaultDetailsRequestDTO {
+    let url: URL
+    let page: Int
     
-    struct FilmDTO: Decodable {
-        var name: String
-        let openingCrawl: String
-        let director: String
-        
-        enum CodingKeys: String, CodingKey {
-            case name = "title"
-            case openingCrawl = "opening_crawl"
-            case director
-        }
+    var resource: Resource<DefaultDetailsDTO> {
+        return Resource<DefaultDetailsDTO>(url: url, parameters: ["page": page])
     }
 }

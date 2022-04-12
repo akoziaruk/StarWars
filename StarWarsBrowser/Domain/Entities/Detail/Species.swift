@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Species: Detailable {
-    var imagePath: String { "spiecies/" + name }
-    let name: String
-}
+//struct Species: Detailable {
+//    var imagePath: String { "spiecies/" + name }
+//    let name: String
+//}

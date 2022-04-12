@@ -11,7 +11,7 @@ class DetailsDependencies {
     private let network: NetworkService
     private let imageLoader: ImageLoaderServiceType
     
-    private var storage: DetailsStorage = CoreDataDetailsStorage()
+    private var storage: DetailsDefaultStorage & FilmsDefaultStorage = CoreDataDetailsStorage()
 
     private var repository: DetailsRepositoryType {
         DetailsRepository(network: network, storage: storage)

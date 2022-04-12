@@ -9,5 +9,6 @@ import Foundation
 import Combine
 
 protocol DetailsRepositoryType: AnyObject {
-    func fetchDetails(url: URL, page: Int, category: Category.T) -> AnyPublisher<[Detailable], Error>
+    func fetchDefaultDetails(url: URL, page: Int) -> AnyPublisher<[Detailable], Error>
+    func fetchFilms(url: URL, page: Int) -> AnyPublisher<[Detailable], Error>
 }

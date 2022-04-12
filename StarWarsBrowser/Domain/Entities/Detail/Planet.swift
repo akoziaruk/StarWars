@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Planet: Detailable {
-    var imagePath: String { "planets/" + name }
-    let name: String
-}
+//struct Planet: Detailable {
+//    var imagePath: String { "planets/" + name }
+//    let name: String
+//}

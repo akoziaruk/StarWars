@@ -11,61 +11,42 @@ import CoreData
 
 final class DetailsRepository: DetailsRepositoryType {
     private let network: NetworkService
-    private let storage: DetailsStorage
+    private let storage: DetailsDefaultStorage & FilmsDefaultStorage
     
-    init(network: NetworkService, storage: DetailsStorage) {
+    init(network: NetworkService, storage: DetailsDefaultStorage & FilmsDefaultStorage) {
         self.network = network
         self.storage = storage
     }
     
-    func fetchDetails(url: URL, page: Int, category: Category.T) -> AnyPublisher<[Detailable], Error> {
+    //MARK: - Default Details
+    
+    func fetchDefaultDetails(url: URL, page: Int) -> AnyPublisher<[Detailable], Error> {
+        let requestDTO = DefaultDetailsRequestDTO(url: url, page: page)
         
-        //Film or Default
-        let requestDTO = DetailsRequestDTO(url: url, page: page, category: category.rawValue)
-        
-//        Resource<FilmsDTO>.defaultDetails(for: url, page: page)
-//        Resource<DefaultDetailsDTO>.films(for: url, page: page)
-
-        return storage
-                    .request(for: requestDTO)
-                    .eraseToAnyPublisher()
-        
-//        return Publishers.Merge(storage.requestAll()
-//                                        .map { $0.toDomain() },
-//                                network.load(Resource<CategoriesDTO>.categories())
-//                                        .handleEvents(receiveOutput: { [unowned self] categories in
-//                                            storage.save(categories)
-//                                        })
-//                                        .map { $0.toDomain() }
-//                                ).eraseToAnyPublisher()
-        
+        return Publishers.Merge(storage.request(for: requestDTO)
+                                        .compactMap { $0?.toDomain() },
+                                
+                                network.load(requestDTO.resource)
+                                        .handleEvents(receiveOutput: { [unowned self] detailsDTO in
+                                            storage.save(responseDTO: detailsDTO, requestDTO: requestDTO)
+                                        })
+                                        .map { $0.toDomain() }
+                                ).eraseToAnyPublisher()
     }
-    
-//    func fetchDetails() -> AnyPublisher<[Detailable], Error> {
-//        storage
-//            .getDetails()
-//            .eraseToAnyPublisher()
 
-            
-        // get from repository
-        // if failed get from network
-        // save to repository
-//    }
-}
-
-struct DetailsRequestDTO {
-    let url: URL
-    let page: Int
-    let category: String
+    //MARK: - Films
     
-    var type: DetailableDTO.Type {
-        if category == "films" {
-            return DefaultDetailsDTO.self
-        }
-        return FilmDetailsDTO.self
+    func fetchFilms(url: URL, page: Int) -> AnyPublisher<[Detailable], Error> {
+        let requestDTO = FilmDetailsRequestDTO(url: url, page: page)
+        
+        return Publishers.Merge(storage.request(for: requestDTO)
+                                        .compactMap { $0?.toDomain() },
+                                
+                                network.load(requestDTO.resource)
+                                        .handleEvents(receiveOutput: { [unowned self] filmsDTO in
+                                            storage.save(responseDTO: filmsDTO, requestDTO: requestDTO)
+                                        })
+                                        .map { $0.toDomain() }
+                                ).eraseToAnyPublisher()
     }
 }
-//
-//protocol DetailInitable {
-//    init(detail: PersistentDetail)
-//}

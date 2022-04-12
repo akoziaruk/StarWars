@@ -10,7 +10,7 @@ import Foundation
 
 class CategoriesViewModel: CategoriesViewModelType {
     private struct Default {
-        static let category = Category.T.film
+        static let category = Category.T.films
     }
     
     private let useCase: CategoriesUseCaseType

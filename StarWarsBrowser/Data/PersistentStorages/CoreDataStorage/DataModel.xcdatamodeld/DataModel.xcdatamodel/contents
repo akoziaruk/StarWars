@@ -3,16 +3,25 @@
     <entity name="PersistentCategory" representedClassName=".PersistentCategory" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="URI"/>
-        <relationship name="details" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PersistentDetail" inverseName="category" inverseEntity="PersistentDetail"/>
     </entity>
-    <entity name="PersistentDetail" representedClassName=".PersistentDetail" syncable="YES">
+    <entity name="PersistentDefaultDetail" representedClassName=".PersistentDefaultDetail" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="PersistentDefaultDetailRequest" representedClassName=".PersistentDefaultDetailRequest" syncable="YES">
+        <attribute name="page" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="url" optional="YES" attributeType="URI"/>
+        <relationship name="details" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PersistentDefaultDetail"/>
+    </entity>
+    <entity name="PersistentFilmDetail" representedClassName=".PersistentFilmDetail" syncable="YES">
         <attribute name="director" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="openingCrawl" optional="YES" attributeType="String"/>
-        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PersistentCategory" inverseName="details" inverseEntity="PersistentCategory"/>
+        <attribute name="page" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="PersistentCategory" positionX="189.77734375" positionY="-142.41015625" width="128" height="74"/>
-        <element name="PersistentDetail" positionX="-18" positionY="9" width="128" height="89"/>
+        <element name="PersistentCategory" positionX="189.77734375" positionY="-142.41015625" width="128" height="59"/>
+        <element name="PersistentDefaultDetail" positionX="-18" positionY="9" width="128" height="44"/>
+        <element name="PersistentFilmDetail" positionX="90" positionY="-27" width="128" height="89"/>
+        <element name="PersistentDefaultDetailRequest" positionX="90" positionY="-45" width="128" height="74"/>
     </elements>
 </model>
