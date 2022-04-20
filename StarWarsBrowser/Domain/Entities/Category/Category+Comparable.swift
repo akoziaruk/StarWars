@@ -7,12 +7,12 @@
 
 import Foundation
 
-extension Category: Comparable {
-    static func < (lhs: Category, rhs: Category) -> Bool {
-        lhs.name < rhs.name
-    }
-    
-    static func == (lhs: Category, rhs: Category) -> Bool {
-        lhs.name == rhs.name
-    }
-}
+//extension Category: Comparable {
+//    static func < (lhs: Category, rhs: Category) -> Bool {
+//        lhs.name < rhs.name
+//    }
+//    
+//    static func == (lhs: Category, rhs: Category) -> Bool {
+//        lhs.name == rhs.name
+//    }
+//}

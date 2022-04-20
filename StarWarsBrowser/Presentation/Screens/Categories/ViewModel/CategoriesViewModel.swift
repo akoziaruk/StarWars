@@ -33,7 +33,7 @@ class CategoriesViewModel: CategoriesViewModelType {
             .map({ result -> CategoriesLoadingState in
                 switch result {
                 case .success(let categories) where categories.isEmpty: return .noResult
-                case .success(let categories): return .success(self.viewModels(from: categories.sorted()))
+                case .success(let categories): return .success(self.viewModels(from: categories))
                 case .failure(let error): return .failure(error)
                 }
             })

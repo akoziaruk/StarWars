@@ -17,7 +17,9 @@ class CoreDataCategoriesStorage {
     }
     
     private func fetchRequest() -> NSFetchRequest<PersistentCategory> {
-        return PersistentCategory.fetchRequest()
+        let request = PersistentCategory.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(PersistentCategory.name), ascending: true)]
+        return request
     }
     
     private func deleteAll(in context: NSManagedObjectContext) {

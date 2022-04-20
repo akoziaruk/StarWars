@@ -8,7 +8,7 @@
 import Foundation
 
 extension Resource {
-    static func categories() -> Resource<CategoriesDTO> {
+    static func categories() -> Resource<CategoriesDTO> {        
         return Resource<CategoriesDTO>(url: APIConstants.baseURL)
     }
 }

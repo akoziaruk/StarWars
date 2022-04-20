@@ -24,10 +24,10 @@ struct FilmViewModel {
 }
 
 extension FilmViewModel: Hashable {
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(title)
-    }
     static func == (lhs: FilmViewModel, rhs: FilmViewModel) -> Bool {
         lhs.title == rhs.title
+    }
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(title)
     }
 }

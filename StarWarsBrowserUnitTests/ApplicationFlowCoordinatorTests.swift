@@ -9,9 +9,10 @@ import XCTest
 @testable import StarWarsBrowser
 
 class ApplicationFlowCoordinatorTests: XCTestCase {
-    private lazy var flowCoordinator = ApplicationFlowCoordinator(window: window, dependencyProvider: dependencyProvider)
-    private let window = UIWindow()
     private let dependencyProvider = ApplicationFlowCoordinatorDependencyProviderMock()
+    private let window = UIWindow()
+
+    private lazy var flowCoordinator = ApplicationFlowCoordinator(window: window, dependencyProvider: dependencyProvider)
 
     // Test that application flow is started correctly
     func test_startsApplicationsFlow() {

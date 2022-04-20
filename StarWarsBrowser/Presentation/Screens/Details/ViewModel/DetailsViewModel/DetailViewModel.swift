@@ -10,7 +10,6 @@ import UIKit.UIImage
 import Combine
 
 struct DetailViewModel {
-    let uuid = UUID()
     let name: String!
     let image: AnyPublisher<UIImage?, Never>
 
@@ -22,10 +21,10 @@ struct DetailViewModel {
 
 extension DetailViewModel: Hashable {
     func hash(into hasher: inout Hasher) {
-        hasher.combine(uuid)
+        hasher.combine(name)
     }
     static func == (lhs: DetailViewModel, rhs: DetailViewModel) -> Bool {
-        lhs.uuid == rhs.uuid
+        lhs.name == rhs.name
     }
 }
 

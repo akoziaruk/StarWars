@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Detailable: Decodable {
+protocol Detailable {
     var imagePath: String { get }
     var name: String { get }
 }

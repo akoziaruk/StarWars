@@ -35,6 +35,7 @@ class MainViewController: UIViewController {
         detailsViewController.delegate = self
     }
     
+    
     private func addConstraints() {
         categoriesViewController.view.translatesAutoresizingMaskIntoConstraints = false
         detailsViewController.view.translatesAutoresizingMaskIntoConstraints = false
