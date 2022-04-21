@@ -25,10 +25,7 @@ extension DetailsLoadingState: Equatable {
         switch (lhs, rhs) {
         case (.idle, .idle): return true
         case (.loading, .loading): return true
-        case (.success(let lhs), .success(let rhs)):
-            let result = lhs == rhs
-            print(result)
-            return result
+        case (.success(let lhs), .success(let rhs)): return lhs == rhs
         case (.noResult, .noResult): return true
         case (.failure, .failure): return true
         default: return false

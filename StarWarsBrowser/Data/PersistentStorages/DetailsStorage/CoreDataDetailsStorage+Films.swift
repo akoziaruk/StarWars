@@ -13,6 +13,7 @@ extension CoreDataDetailsStorage {
     private func fetchRequest(for requestDTO: FilmDetailsRequestDTO) -> NSFetchRequest<PersistentFilmDetail> {
         let request: NSFetchRequest = PersistentFilmDetail.fetchRequest()
         request.predicate = NSPredicate(format: "%K = %d", #keyPath(PersistentFilmDetail.page), requestDTO.page)
+        request.sortDescriptors = [NSSortDescriptor(key: "releaseDate", ascending: true)]
         return request
     }
 
@@ -45,7 +46,7 @@ extension CoreDataDetailsStorage: FilmsDefaultStorage {
                 self.delete(for: requestDTO, in: context)
 
                 responseDTO.results.forEach {
-                    let _ = $0.toEntity(in: context, with: requestDTO)
+                    let _ = $0.toEntity(in: context, requestDTO: requestDTO)
                 }
 
                 try context.save()

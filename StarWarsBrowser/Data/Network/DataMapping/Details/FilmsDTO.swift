@@ -14,11 +14,13 @@ struct FilmDetailsDTO: Decodable {
         var name: String
         let openingCrawl: String
         let director: String
+        let releaseDate: Date
         
         enum CodingKeys: String, CodingKey {
             case name = "title"
             case openingCrawl = "opening_crawl"
             case director
+            case releaseDate = "release_date"
         }
     }
 }

@@ -31,7 +31,8 @@ final class DetailsRepository: DetailsRepositoryType {
                                             storage.save(responseDTO: detailsDTO, requestDTO: requestDTO)
                                         })
                                         .map { $0.toDomain() }
-                                ).eraseToAnyPublisher()
+                )
+                .eraseToAnyPublisher()
     }
 
     //MARK: - Films
@@ -42,7 +43,7 @@ final class DetailsRepository: DetailsRepositoryType {
         return Publishers.Merge(storage.request(for: requestDTO)
                                         .compactMap { $0?.toDomain() },
                                 
-                                network.load(requestDTO.resource)
+                                network.load(requestDTO.resource, jsonDecoder: FilmsDecoder())
                                         .handleEvents(receiveOutput: { [unowned self] filmsDTO in
                                             storage.save(responseDTO: filmsDTO, requestDTO: requestDTO)
                                         })

@@ -11,6 +11,7 @@ import Foundation
 protocol NetworkService: AnyObject {
 
     @discardableResult
+    func load<T>(_ resource: Resource<T>, jsonDecoder: JSONDecoder) -> AnyPublisher<T, Error>
     func load<T>(_ resource: Resource<T>) -> AnyPublisher<T, Error>
 }
 

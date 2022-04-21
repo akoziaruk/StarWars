@@ -15,7 +15,11 @@ final class DefaultNetworkService: NetworkService {
         self.session = session
     }
 
-    func load<T>(_ resource: Resource<T>) -> AnyPublisher<T, Error> {
+    func load<T>(_ resource: Resource<T>) -> AnyPublisher<T, Error> where T : Decodable {
+        load(resource, jsonDecoder: JSONDecoder())
+    }
+    
+    func load<T>(_ resource: Resource<T>, jsonDecoder: JSONDecoder) -> AnyPublisher<T, Error> {
         guard let request = resource.request else {
             return .fail(NetworkError.invalidRequest)
         }
@@ -31,7 +35,7 @@ final class DefaultNetworkService: NetworkService {
                 }
                 return .just(data)
             }
-            .decode(type: T.self, decoder: JSONDecoder())
+            .decode(type: T.self, decoder: jsonDecoder)
         .eraseToAnyPublisher()
     }
 }

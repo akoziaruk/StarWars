@@ -2,7 +2,7 @@
 //  PersistentFilmDetail+CoreDataProperties.swift
 //  StarWarsBrowser
 //
-//  Created by Alexander Koziaruk on 11.04.2022.
+//  Created by Alexander Koziaruk on 21.04.2022.
 //
 //
 
@@ -19,6 +19,7 @@ extension PersistentFilmDetail {
     @NSManaged public var director: String!
     @NSManaged public var name: String!
     @NSManaged public var openingCrawl: String!
+    @NSManaged public var releaseDate: Date!
     @NSManaged public var page: Int32
 
 }

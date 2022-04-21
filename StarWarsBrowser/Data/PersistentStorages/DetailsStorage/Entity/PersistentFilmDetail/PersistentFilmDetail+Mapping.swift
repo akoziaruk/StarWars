@@ -29,15 +29,17 @@ extension FilmDetailsDTO {
 extension FilmDetailsDTO.FilmDTO {
     init(film: PersistentFilmDetail) {
         name = film.name
-        openingCrawl = film.openingCrawl ?? ""
-        director = film.director ?? ""
+        openingCrawl = film.openingCrawl
+        director = film.director
+        releaseDate = film.releaseDate
     }
     
-    func toEntity(in context: NSManagedObjectContext, with requestDTO: FilmDetailsRequestDTO) -> PersistentFilmDetail {
+    func toEntity(in context: NSManagedObjectContext, requestDTO: FilmDetailsRequestDTO) -> PersistentFilmDetail {
         let detail = PersistentFilmDetail(context: context)
         detail.name = name
         detail.openingCrawl = openingCrawl
         detail.director = director
+        detail.releaseDate = releaseDate
         detail.page = Int32(requestDTO.page)
         return detail
     }

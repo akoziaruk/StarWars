@@ -18,7 +18,7 @@ extension PersistentDefaultDetailRequest {
 
     @NSManaged public var page: Int32
     @NSManaged public var url: URL
-    @NSManaged public var details: Set<PersistentDefaultDetail>
+    @NSManaged public var details: NSOrderedSet
 
 }
 

@@ -21,7 +21,6 @@
 		8A9B1C4B2804697200B22798 /* PersistentDefaultDetail+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B1C492804697200B22798 /* PersistentDefaultDetail+CoreDataClass.swift */; };
 		8A9B1C4C2804697200B22798 /* PersistentDefaultDetail+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B1C4A2804697200B22798 /* PersistentDefaultDetail+CoreDataProperties.swift */; };
 		8A9B1C5028046A9700B22798 /* PersistentFilmDetail+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B1C4F28046A9700B22798 /* PersistentFilmDetail+Mapping.swift */; };
-		8A9B1C5428046B0D00B22798 /* PersistentFilmDetail+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B1C5328046B0D00B22798 /* PersistentFilmDetail+CoreDataProperties.swift */; };
 		8A9B1C5F28046FA300B22798 /* PersistentDefaultDetailRequest+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B1C5D28046FA300B22798 /* PersistentDefaultDetailRequest+CoreDataProperties.swift */; };
 		8A9B1C6028046FA300B22798 /* PersistentDefaultDetailRequest+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B1C5E28046FA300B22798 /* PersistentDefaultDetailRequest+CoreDataClass.swift */; };
 		8A9B1C622804734500B22798 /* PersistentDefaultDetailRequest+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B1C612804734500B22798 /* PersistentDefaultDetailRequest+Mapping.swift */; };
@@ -35,6 +34,8 @@
 		8ABA5D3C27A14AF3004D5C6F /* DetailsViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA5D3B27A14AF3004D5C6F /* DetailsViewControllerType.swift */; };
 		8ABB296C26828A6B009963FF /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB296B26828A6A009963FF /* Film.swift */; };
 		8ABB296F26828BA3009963FF /* DetailsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB296E26828BA3009963FF /* DetailsDTO.swift */; };
+		8AC42AD12811721F000AA5B3 /* PersistentFilmDetail+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC42AD02811721F000AA5B3 /* PersistentFilmDetail+CoreDataProperties.swift */; };
+		8AC42AD3281182F5000AA5B3 /* FilmsDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC42AD2281182F5000AA5B3 /* FilmsDecoder.swift */; };
 		8AC5678E27F9C07E00B08F92 /* DetailsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5678D27F9C07E00B08F92 /* DetailsUseCase.swift */; };
 		8AC5679327F9C36700B08F92 /* PersistentCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5678F27F9C36700B08F92 /* PersistentCategory+CoreDataClass.swift */; };
 		8AC5679827FAE53900B08F92 /* CategoriesUseCaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5679727FAE53900B08F92 /* CategoriesUseCaseType.swift */; };
@@ -147,7 +148,6 @@
 		8A9B1C492804697200B22798 /* PersistentDefaultDetail+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentDefaultDetail+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8A9B1C4A2804697200B22798 /* PersistentDefaultDetail+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentDefaultDetail+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8A9B1C4F28046A9700B22798 /* PersistentFilmDetail+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentFilmDetail+Mapping.swift"; sourceTree = "<group>"; };
-		8A9B1C5328046B0D00B22798 /* PersistentFilmDetail+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentFilmDetail+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8A9B1C5D28046FA300B22798 /* PersistentDefaultDetailRequest+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PersistentDefaultDetailRequest+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8A9B1C5E28046FA300B22798 /* PersistentDefaultDetailRequest+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PersistentDefaultDetailRequest+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8A9B1C612804734500B22798 /* PersistentDefaultDetailRequest+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentDefaultDetailRequest+Mapping.swift"; sourceTree = "<group>"; };
@@ -163,6 +163,8 @@
 		8ABA5D3B27A14AF3004D5C6F /* DetailsViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewControllerType.swift; sourceTree = "<group>"; };
 		8ABB296B26828A6A009963FF /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		8ABB296E26828BA3009963FF /* DetailsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDTO.swift; sourceTree = "<group>"; };
+		8AC42AD02811721F000AA5B3 /* PersistentFilmDetail+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentFilmDetail+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8AC42AD2281182F5000AA5B3 /* FilmsDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsDecoder.swift; sourceTree = "<group>"; };
 		8AC5678D27F9C07E00B08F92 /* DetailsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsUseCase.swift; sourceTree = "<group>"; };
 		8AC5678F27F9C36700B08F92 /* PersistentCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8AC5679727FAE53900B08F92 /* CategoriesUseCaseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesUseCaseType.swift; sourceTree = "<group>"; };
@@ -332,8 +334,8 @@
 		8A9B1C4E2804699F00B22798 /* PersistentFilmDetail */ = {
 			isa = PBXGroup;
 			children = (
+				8AC42AD02811721F000AA5B3 /* PersistentFilmDetail+CoreDataProperties.swift */,
 				8A9B1C44280468D700B22798 /* PersistentFilmDetail+CoreDataClass.swift */,
-				8A9B1C5328046B0D00B22798 /* PersistentFilmDetail+CoreDataProperties.swift */,
 				8A9B1C4F28046A9700B22798 /* PersistentFilmDetail+Mapping.swift */,
 			);
 			path = PersistentFilmDetail;
@@ -372,6 +374,7 @@
 			children = (
 				8ABB296E26828BA3009963FF /* DetailsDTO.swift */,
 				8A9B1C632804798E00B22798 /* FilmsDTO.swift */,
+				8AC42AD2281182F5000AA5B3 /* FilmsDecoder.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -989,14 +992,15 @@
 				8AF1DC6928048366000C1C72 /* CoreDataDetailsStorage+Films.swift in Sources */,
 				8A9B1C622804734500B22798 /* PersistentDefaultDetailRequest+Mapping.swift in Sources */,
 				8AC5679A27FAE54C00B08F92 /* CategoriesUseCase.swift in Sources */,
-				8A9B1C5428046B0D00B22798 /* PersistentFilmDetail+CoreDataProperties.swift in Sources */,
 				8AB647C1265D0A0D00B2F498 /* SceneDelegate.swift in Sources */,
 				8AEEFA5727FC3DBE005D7FA4 /* MainSceneDependenciesContainer.swift in Sources */,
 				FA527AF6271ED57F00C56600 /* CategoriesViewModel.swift in Sources */,
+				8AC42AD3281182F5000AA5B3 /* FilmsDecoder.swift in Sources */,
 				FA527AE5271ED57F00C56600 /* DetailViewModel.swift in Sources */,
 				FA7E8902272BD33800220980 /* ImageLoaderService.swift in Sources */,
 				8AF8C9B827FB2FA600FB1994 /* CoreDataStorage+Combine.swift in Sources */,
 				FA527AE9271ED57F00C56600 /* DetailsViewModelType.swift in Sources */,
+				8AC42AD12811721F000AA5B3 /* PersistentFilmDetail+CoreDataProperties.swift in Sources */,
 				FA11622D27158DB3004A3D2D /* UIImageView+Utils.swift in Sources */,
 				8A9B1C5028046A9700B22798 /* PersistentFilmDetail+Mapping.swift in Sources */,
 				FA527AEC271ED57F00C56600 /* FilmCollectionViewCell.swift in Sources */,

@@ -15,7 +15,6 @@ extension CoreDataDetailsStorage {
         request.predicate = NSPredicate(format: "%K = %@ AND %K = %d",
                                         #keyPath(PersistentDefaultDetailRequest.url), requestDTO.url as NSURL,
                                         #keyPath(PersistentDefaultDetailRequest.page), requestDTO.page)
-        
         return request
     }
     
@@ -48,7 +47,7 @@ extension CoreDataDetailsStorage: DetailsDefaultStorage {
                 let request = requestDTO.toEntity(in: context)
                 let details = responseDTO.results.map { $0.toEntity(in: context) }
                 
-                request.details = Set(details)
+                request.details = NSOrderedSet(array: details)
                 
                 try context.save()
             } catch {

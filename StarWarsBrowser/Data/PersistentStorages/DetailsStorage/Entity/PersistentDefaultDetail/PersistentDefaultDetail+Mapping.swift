@@ -8,15 +8,15 @@
 import Foundation
 import CoreData
 
-extension Set where Element == PersistentDefaultDetail {
+extension NSOrderedSet {
     func toDTO() -> DefaultDetailsDTO {
         return DefaultDetailsDTO(details: self)
     }
 }
 
 extension DefaultDetailsDTO {
-    init(details: Set<PersistentDefaultDetail>) {
-        results = details.map { DefaultDetailsDTO.DetailDTO(detail: $0) }
+    init(details: NSOrderedSet) {
+        results = details.map { DefaultDetailsDTO.DetailDTO(detail: $0 as! PersistentDefaultDetail) }
     }
 
     func toDomain() -> [DefaultDetail] {
