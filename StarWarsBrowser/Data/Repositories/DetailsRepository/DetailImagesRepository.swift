@@ -34,8 +34,4 @@ class DetailImagesRepository: DetailImagesRepositoryType {
             })
             .eraseToAnyPublisher()
     }
-    
-    struct Constants {
-        static let maxSize = 1 * 1024 * 1024 as Int64
-    }
 }
