@@ -18,10 +18,6 @@ extension DefaultDetailsDTO {
     init(details: NSOrderedSet) {
         results = details.map { DefaultDetailsDTO.DetailDTO(detail: $0 as! PersistentDefaultDetail) }
     }
-
-    func toDomain() -> [DefaultDetail] {
-        return results.map { DefaultDetail(name: $0.name) }
-    }
 }
 
 extension DefaultDetailsDTO.DetailDTO {

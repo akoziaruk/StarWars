@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import CoreData
 
-extension CoreDataDetailsStorage {
+fileprivate extension CoreDataDetailsStorage {
     private func fetchRequest(for requestDTO: FilmDetailsRequestDTO) -> NSFetchRequest<PersistentFilmDetail> {
         let request: NSFetchRequest = PersistentFilmDetail.fetchRequest()
         request.predicate = NSPredicate(format: "%K = %d", #keyPath(PersistentFilmDetail.page), requestDTO.page)
@@ -31,8 +31,7 @@ extension CoreDataDetailsStorage {
     }
 }
 
-
-extension CoreDataDetailsStorage: FilmsDefaultStorage {
+extension CoreDataDetailsStorage: FilmsStorageType {
     func request(for requestDTO: FilmDetailsRequestDTO) -> AnyPublisher<FilmDetailsDTO?, Error> {
         coreDataStorage
             .fetch(request: fetchRequest(for: requestDTO))

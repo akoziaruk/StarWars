@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 final class DetailsUseCase: DetailsUseCaseType {
-    private let repository: DetailsRepositoryType
+    let repository: DetailsRepositoryType
     
     init(repository: DetailsRepositoryType) {
         self.repository = repository

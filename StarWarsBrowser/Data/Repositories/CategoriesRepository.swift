@@ -8,15 +8,17 @@
 import Foundation
 import Combine
 
-final class CategoriesRepository: CategoriesRepositoryType {
-    private let network: NetworkService
-    private let storage: CategoriesStorage
+final class CategoriesRepository {
+    let network: NetworkServiceType
+    let storage: CategoriesStorageType
     
-    init(network: NetworkService, storage: CategoriesStorage) {
+    init(network: NetworkServiceType, storage: CategoriesStorageType) {
         self.network = network
         self.storage = storage
     }
-        
+}
+
+extension CategoriesRepository: CategoriesRepositoryType {
     func fetchCategories() -> AnyPublisher<[Category], Error> {
         return Publishers.Merge(storage.requestAll()
                                         .map { $0.toDomain() },

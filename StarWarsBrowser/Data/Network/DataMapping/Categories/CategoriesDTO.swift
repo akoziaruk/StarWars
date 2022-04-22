@@ -20,6 +20,11 @@ struct CategoriesDTO: Decodable {
         }
     }
     
+    struct CategoryDTO {
+        let name: String
+        let url: URL
+    }
+    
     enum CodingKeys: String, CodingKey, CaseIterable {
         case films = "films"
         case people = "people"
@@ -28,11 +33,6 @@ struct CategoriesDTO: Decodable {
         case starships = "starships"
         case vehicles = "vehicles"
     }
-}
-
-struct CategoryDTO {
-    let name: String
-    let url: URL
 }
 
 extension CategoriesDTO {

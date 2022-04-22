@@ -1,15 +1,15 @@
 //
-//  CoreDataDetailsStorage+Default.swift
+//  CoreDataDetailsStorage.swift
 //  StarWarsBrowser
 //
-//  Created by Alexander Koziaruk on 11.04.2022.
+//  Created by Alexander Koziaruk on 05.04.2022.
 //
 
 import Foundation
-import Combine
 import CoreData
+import Combine
 
-extension CoreDataDetailsStorage {
+fileprivate extension CoreDataDetailsStorage {
     private func fetchRequest(for requestDTO: DefaultDetailsRequestDTO) -> NSFetchRequest<PersistentDefaultDetailRequest> {
         let request: NSFetchRequest = PersistentDefaultDetailRequest.fetchRequest()
         request.predicate = NSPredicate(format: "%K = %@ AND %K = %d",
@@ -31,7 +31,7 @@ extension CoreDataDetailsStorage {
     }
 }
 
-extension CoreDataDetailsStorage: DetailsDefaultStorage {
+extension CoreDataDetailsStorage: DefaultDetailsStorageType {
     func request(for requestDTO: DefaultDetailsRequestDTO) -> AnyPublisher<DefaultDetailsDTO?, Error> {
             coreDataStorage
                 .fetch(request: fetchRequest(for: requestDTO))

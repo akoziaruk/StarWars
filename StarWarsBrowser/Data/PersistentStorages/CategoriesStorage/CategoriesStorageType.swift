@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-protocol CategoriesStorage {
+protocol CategoriesStorageType {
     func requestAll() -> AnyPublisher<CategoriesDTO, Error>
     func save(_ categories: CategoriesDTO)
 }

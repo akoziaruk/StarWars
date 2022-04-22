@@ -15,12 +15,6 @@ extension Array where Element == PersistentFilmDetail {
 }
 
 extension FilmDetailsDTO {
-    func toDomain() -> [Film] {
-        return results.map {
-            Film(name: $0.name, openingCrawl: $0.openingCrawl, director: $0.director)
-        }
-    }
-    
     init(details: [PersistentFilmDetail]) {
         results = details.map { FilmDetailsDTO.FilmDTO(film: $0) }
     }

@@ -20,7 +20,7 @@ extension CategoriesDTO {
     }
 }
 
-extension CategoryDTO {
+extension CategoriesDTO.CategoryDTO {
     func toEntity(in context: NSManagedObjectContext) -> PersistentCategory {
         let category = PersistentCategory(context: context)
         category.name = name

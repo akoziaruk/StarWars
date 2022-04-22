@@ -1,13 +1,11 @@
 //
-//  CoreDataDetailsStorage.swift
+//  DetailsStorage.swift
 //  StarWarsBrowser
 //
-//  Created by Alexander Koziaruk on 05.04.2022.
+//  Created by Alexander Koziaruk on 22.04.2022.
 //
 
 import Foundation
-import CoreData
-import Combine
 
 class CoreDataDetailsStorage {
     var coreDataStorage: CoreDataStorage

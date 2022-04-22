@@ -40,10 +40,10 @@ class CategoriesViewModel: CategoriesViewModelType {
             .handleEvents(receiveOutput: { state in
                 // on start show first category details
                 guard case .success(let categories) = state,
-                      let first = categories.filter({ $0.type == Default.category }).first,
+                      let category = categories.filter({ $0.type == Default.category }).first,
                       self.selectedCategory == nil else { return }
                     
-                self.selectCategory(with: first.type, url: first.url)
+                self.selectCategory(with: category.type, url: category.url)
             })
             .eraseToAnyPublisher()
 

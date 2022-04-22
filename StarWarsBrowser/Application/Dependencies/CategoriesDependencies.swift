@@ -8,9 +8,12 @@
 import Foundation
 
 class CategoriesDependencies {
-    private let network: NetworkService
-    private let storage: CategoriesStorage = CoreDataCategoriesStorage()
+    private let network: NetworkServiceType
 
+    private var storage: CategoriesStorageType {
+        CoreDataCategoriesStorage()
+    }
+    
     private var repository: CategoriesRepositoryType {
         CategoriesRepository(network: network, storage: storage)
     }
@@ -19,7 +22,7 @@ class CategoriesDependencies {
         CategoriesUseCase(repository: repository)
     }
     
-    init(network: NetworkService) {
+    init(network: NetworkServiceType) {
         self.network = network
     }
 }

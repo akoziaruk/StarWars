@@ -68,7 +68,6 @@ class CategoriesViewController: UIViewController, CategoriesViewControllerType {
         case .noResult:
             activityIndicator.stopAnimating()
             // TODO: Show no result state
-            
         }
     }
     

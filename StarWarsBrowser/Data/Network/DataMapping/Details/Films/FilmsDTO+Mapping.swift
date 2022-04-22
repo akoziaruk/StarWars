@@ -25,11 +25,10 @@ struct FilmDetailsDTO: Decodable {
     }
 }
 
-struct FilmDetailsRequestDTO {
-    let url: URL
-    let page: Int
-    
-    var resource: Resource<FilmDetailsDTO> {
-        return Resource<FilmDetailsDTO>(url: url, parameters: ["page": page])
+extension FilmDetailsDTO {
+    func toDomain() -> [Film] {
+        return results.map {
+            Film(name: $0.name, openingCrawl: $0.openingCrawl, director: $0.director)
+        }
     }
 }

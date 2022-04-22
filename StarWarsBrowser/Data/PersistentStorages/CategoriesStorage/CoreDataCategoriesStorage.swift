@@ -35,7 +35,7 @@ class CoreDataCategoriesStorage {
     }
 }
 
-extension CoreDataCategoriesStorage: CategoriesStorage {
+extension CoreDataCategoriesStorage: CategoriesStorageType {
     func requestAll() -> AnyPublisher<CategoriesDTO, Error> {
         coreDataStorage
             .fetch(request: fetchRequest())

@@ -25,9 +25,9 @@ final class MainSceneDependenciesContainer {
 extension MainSceneDependenciesContainer: MainFlowCoordinatorDependencyProvider {
     func mainNavigationController(navigator: MainNavigator) -> UINavigationController {
         let categoriesViewModel = CategoriesViewModel(useCase: categoriesDependencies.useCase, navigator: navigator)
-        let detailsViewModel = DetailsViewModel(category: .unknown, useCase: detailsDependencies.useCase)
-
         let categoriesViewController = CategoriesViewController(viewModel: categoriesViewModel)
+        
+        let detailsViewModel = DetailsViewModel(category: .unknown, useCase: detailsDependencies.useCase)
         let detailsViewController = DetailsViewController(viewModel: detailsViewModel)
         
         let mainViewController = MainViewController(categoriesViewController, detailsViewController)
