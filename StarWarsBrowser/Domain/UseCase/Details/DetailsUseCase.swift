@@ -10,9 +10,11 @@ import Combine
 
 final class DetailsUseCase: DetailsUseCaseType {
     let repository: DetailsRepositoryType
+    let imagesRepository: DetailImagesRepositoryType
     
-    init(repository: DetailsRepositoryType) {
+    init(repository: DetailsRepositoryType, imagesRepository: DetailImagesRepositoryType) {
         self.repository = repository
+        self.imagesRepository = imagesRepository
     }
     
     func loadDetails(url: URL, page: Int, category: Category.T) -> AnyPublisher<Result<[Detailable], Error>, Never> {
@@ -33,18 +35,12 @@ final class DetailsUseCase: DetailsUseCaseType {
         }
     }
     
-    func loadImage(for detail: Detailable) -> AnyPublisher<UIImage?, Never> {
-        //TODO:
-        .just(UIImage(named: "test"))
+    func loadImage(for detail: Detailable, category: Category.T) -> AnyPublisher<UIImage?, Never> {
+        imagesRepository
+            .loadImage(for: detail, category: category)
+            .subscribe(on: Scheduler.backgroundWorkScheduler)
+            .receive(on: Scheduler.mainScheduler)
+            .share()
+            .eraseToAnyPublisher()
     }
-    //    public func loadImage(for detail: Detailable) -> AnyPublisher<UIImage?, Never> {
-    //        return Deferred { return Just(detail.bucketImagePath) }
-    //            .flatMap({ [unowned self] path  -> AnyPublisher<UIImage?, Never> in
-    //                return self.imageLoaderService.loadImage(for: path)
-    //            })
-    //            .subscribe(on: Scheduler.backgroundWorkScheduler)
-    //            .receive(on: Scheduler.mainScheduler)
-    //            .share()
-    //            .eraseToAnyPublisher()
-    //    }
 }

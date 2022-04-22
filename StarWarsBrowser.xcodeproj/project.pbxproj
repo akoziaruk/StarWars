@@ -21,6 +21,13 @@
 		8A88616B281294B0000E271B /* DetailsRepository+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A88616A281294B0000E271B /* DetailsRepository+Default.swift */; };
 		8A88616F2812976B000E271B /* DefaultDetailsRequestDTO+Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A88616E2812976B000E271B /* DefaultDetailsRequestDTO+Resource.swift */; };
 		8A886172281297FF000E271B /* FilmDetailsRequestDTO+Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A886171281297FF000E271B /* FilmDetailsRequestDTO+Resource.swift */; };
+		8A8861742812A421000E271B /* FirebaseStorage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8861732812A421000E271B /* FirebaseStorage+Utils.swift */; };
+		8A8861772812A839000E271B /* StorageFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8861762812A839000E271B /* StorageFolder.swift */; };
+		8A8861792812AB0E000E271B /* DataStorageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8861782812AB0E000E271B /* DataStorageConstants.swift */; };
+		8A88617B2812B1EC000E271B /* DetailImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A88617A2812B1EC000E271B /* DetailImagesRepository.swift */; };
+		8A88617D2812B22D000E271B /* DetailImagesRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A88617C2812B22D000E271B /* DetailImagesRepositoryType.swift */; };
+		8A88617F2812DC00000E271B /* DataStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A88617E2812DC00000E271B /* DataStorageType.swift */; };
+		8A8861832812E1FE000E271B /* FirebaseDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8861822812E1FE000E271B /* FirebaseDataStorage.swift */; };
 		8A9B1C47280468D700B22798 /* PersistentFilmDetail+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B1C44280468D700B22798 /* PersistentFilmDetail+CoreDataClass.swift */; };
 		8A9B1C4B2804697200B22798 /* PersistentDefaultDetail+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B1C492804697200B22798 /* PersistentDefaultDetail+CoreDataClass.swift */; };
 		8A9B1C4C2804697200B22798 /* PersistentDefaultDetail+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B1C4A2804697200B22798 /* PersistentDefaultDetail+CoreDataProperties.swift */; };
@@ -50,9 +57,6 @@
 		8AEEFA5727FC3DBE005D7FA4 /* MainSceneDependenciesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEEFA5627FC3DBE005D7FA4 /* MainSceneDependenciesContainer.swift */; };
 		8AEEFA5927FC3F73005D7FA4 /* AppDependenciesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEEFA5827FC3F73005D7FA4 /* AppDependenciesContainer.swift */; };
 		8AF1DC6928048366000C1C72 /* CoreDataDetailsStorage+Films.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1DC6828048366000C1C72 /* CoreDataDetailsStorage+Films.swift */; };
-		8AF607B627946A38003494BE /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF607B527946A38003494BE /* Species.swift */; };
-		8AF607B827946DE6003494BE /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF607B727946DE6003494BE /* Vehicle.swift */; };
-		8AF607BA27946E36003494BE /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF607B927946E36003494BE /* Starship.swift */; };
 		8AF607BC279479DD003494BE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF607BB279479DD003494BE /* GradientView.swift */; };
 		8AF8C9B427FB2E1E00FB1994 /* CategoriesRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF8C9B327FB2E1E00FB1994 /* CategoriesRepositoryType.swift */; };
 		8AF8C9B627FB2E2500FB1994 /* CategoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF8C9B527FB2E2500FB1994 /* CategoriesRepository.swift */; };
@@ -64,7 +68,7 @@
 		FA077AA9273D2E3E0034634D /* MainUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA077AA8273D2E3E0034634D /* MainUseCaseTests.swift */; };
 		FA077AB1273D55720034634D /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA077AB0273D55720034634D /* NetworkServiceTests.swift */; };
 		FA077AB4273D55AB0034634D /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA077AB3273D55AB0034634D /* URLProtocolMock.swift */; };
-		FA0D5565272D3DDD005CBFDB /* Detail+Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D5564272D3DDD005CBFDB /* Detail+Bucket.swift */; };
+		FA0D5565272D3DDD005CBFDB /* Detailable+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D5564272D3DDD005CBFDB /* Detailable+Storage.swift */; };
 		FA11622D27158DB3004A3D2D /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11622C27158DB3004A3D2D /* UIImageView+Utils.swift */; };
 		FA1162312715907E004A3D2D /* CategoryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1162302715907E004A3D2D /* CategoryImageView.swift */; };
 		FA1162332716D5FD004A3D2D /* CategoryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1162322716D5FD004A3D2D /* CategoryLabel.swift */; };
@@ -96,13 +100,10 @@
 		FA527B06271ED5B800C56600 /* NetworkServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527B01271ED5B800C56600 /* NetworkServiceType.swift */; };
 		FA527B07271ED5B800C56600 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527B02271ED5B800C56600 /* NetworkService.swift */; };
 		FA527B08271ED5B800C56600 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527B03271ED5B800C56600 /* Resource.swift */; };
-		FA527B0D271F11A300C56600 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA527B0C271F11A300C56600 /* Planet.swift */; };
 		FA7E8900272BD2D900220980 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = FA7E88FF272BD2D900220980 /* FirebaseStorageCombine-Community */; };
-		FA7E8902272BD33800220980 /* ImageLoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E8901272BD33800220980 /* ImageLoaderService.swift */; };
-		FA7E8904272BD3BD00220980 /* ImageLoaderServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E8903272BD3BC00220980 /* ImageLoaderServiceType.swift */; };
 		FA7E8907272BE1CF00220980 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA7E8906272BE1CF00220980 /* GoogleService-Info.plist */; };
 		FA7E8909272BEFC500220980 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E8908272BEFC500220980 /* ImageCache.swift */; };
-		FA84F8D526F8F5C8000DB2F1 /* Сharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84F8D426F8F5C8000DB2F1 /* Сharacter.swift */; };
+		FA84F8D526F8F5C8000DB2F1 /* DefaultDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84F8D426F8F5C8000DB2F1 /* DefaultDetail.swift */; };
 		FA9E499B26EF669A00D20BA0 /* Detailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E499A26EF669A00D20BA0 /* Detailable.swift */; };
 		FA9E49A426EF8C5A00D20BA0 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E49A326EF8C5A00D20BA0 /* Scheduler.swift */; };
 		FAAABB58271049140029C6CE /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAABB57271049140029C6CE /* StarsView.swift */; };
@@ -152,6 +153,13 @@
 		8A88616A281294B0000E271B /* DetailsRepository+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsRepository+Default.swift"; sourceTree = "<group>"; };
 		8A88616E2812976B000E271B /* DefaultDetailsRequestDTO+Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultDetailsRequestDTO+Resource.swift"; sourceTree = "<group>"; };
 		8A886171281297FF000E271B /* FilmDetailsRequestDTO+Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilmDetailsRequestDTO+Resource.swift"; sourceTree = "<group>"; };
+		8A8861732812A421000E271B /* FirebaseStorage+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseStorage+Utils.swift"; sourceTree = "<group>"; };
+		8A8861762812A839000E271B /* StorageFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFolder.swift; sourceTree = "<group>"; };
+		8A8861782812AB0E000E271B /* DataStorageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageConstants.swift; sourceTree = "<group>"; };
+		8A88617A2812B1EC000E271B /* DetailImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImagesRepository.swift; sourceTree = "<group>"; };
+		8A88617C2812B22D000E271B /* DetailImagesRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImagesRepositoryType.swift; sourceTree = "<group>"; };
+		8A88617E2812DC00000E271B /* DataStorageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageType.swift; sourceTree = "<group>"; };
+		8A8861822812E1FE000E271B /* FirebaseDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataStorage.swift; sourceTree = "<group>"; };
 		8A9B1C44280468D700B22798 /* PersistentFilmDetail+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentFilmDetail+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8A9B1C492804697200B22798 /* PersistentDefaultDetail+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentDefaultDetail+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8A9B1C4A2804697200B22798 /* PersistentDefaultDetail+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentDefaultDetail+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -183,9 +191,6 @@
 		8AEEFA5627FC3DBE005D7FA4 /* MainSceneDependenciesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneDependenciesContainer.swift; sourceTree = "<group>"; };
 		8AEEFA5827FC3F73005D7FA4 /* AppDependenciesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependenciesContainer.swift; sourceTree = "<group>"; };
 		8AF1DC6828048366000C1C72 /* CoreDataDetailsStorage+Films.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataDetailsStorage+Films.swift"; sourceTree = "<group>"; };
-		8AF607B527946A38003494BE /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
-		8AF607B727946DE6003494BE /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
-		8AF607B927946E36003494BE /* Starship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
 		8AF607BB279479DD003494BE /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		8AF8C9B327FB2E1E00FB1994 /* CategoriesRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepositoryType.swift; sourceTree = "<group>"; };
 		8AF8C9B527FB2E2500FB1994 /* CategoriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepository.swift; sourceTree = "<group>"; };
@@ -197,7 +202,7 @@
 		FA077AA8273D2E3E0034634D /* MainUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUseCaseTests.swift; sourceTree = "<group>"; };
 		FA077AB0273D55720034634D /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 		FA077AB3273D55AB0034634D /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
-		FA0D5564272D3DDD005CBFDB /* Detail+Bucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detail+Bucket.swift"; sourceTree = "<group>"; };
+		FA0D5564272D3DDD005CBFDB /* Detailable+Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detailable+Storage.swift"; sourceTree = "<group>"; };
 		FA11622C27158DB3004A3D2D /* UIImageView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utils.swift"; sourceTree = "<group>"; };
 		FA1162302715907E004A3D2D /* CategoryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryImageView.swift; sourceTree = "<group>"; };
 		FA1162322716D5FD004A3D2D /* CategoryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryLabel.swift; sourceTree = "<group>"; };
@@ -229,12 +234,9 @@
 		FA527B01271ED5B800C56600 /* NetworkServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceType.swift; sourceTree = "<group>"; };
 		FA527B02271ED5B800C56600 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		FA527B03271ED5B800C56600 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
-		FA527B0C271F11A300C56600 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
-		FA7E8901272BD33800220980 /* ImageLoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderService.swift; sourceTree = "<group>"; };
-		FA7E8903272BD3BC00220980 /* ImageLoaderServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderServiceType.swift; sourceTree = "<group>"; };
 		FA7E8906272BE1CF00220980 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA7E8908272BEFC500220980 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
-		FA84F8D426F8F5C8000DB2F1 /* Сharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Сharacter.swift"; sourceTree = "<group>"; };
+		FA84F8D426F8F5C8000DB2F1 /* DefaultDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDetail.swift; sourceTree = "<group>"; };
 		FA9E499A26EF669A00D20BA0 /* Detailable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detailable.swift; sourceTree = "<group>"; };
 		FA9E49A326EF8C5A00D20BA0 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		FAAABB57271049140029C6CE /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 				8A72C65727F73421004C6A4E /* DetailsRepository.swift */,
 				8A88616A281294B0000E271B /* DetailsRepository+Default.swift */,
 				8AC42AD82811A757000AA5B3 /* DetailsRepository+Films.swift */,
+				8A88617A2812B1EC000E271B /* DetailImagesRepository.swift */,
 			);
 			path = DetailsRepository;
 			sourceTree = "<group>";
@@ -363,6 +366,32 @@
 				8A88616C28129637000E271B /* Utils */,
 			);
 			path = Films;
+			sourceTree = "<group>";
+		};
+		8A8861752812A425000E271B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8A8861732812A421000E271B /* FirebaseStorage+Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8A8861812812E1C9000E271B /* Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				FA0D5564272D3DDD005CBFDB /* Detailable+Storage.swift */,
+				8A8861762812A839000E271B /* StorageFolder.swift */,
+			);
+			path = Mapping;
+			sourceTree = "<group>";
+		};
+		8A8861842812E332000E271B /* FirebaseDataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				8A8861822812E1FE000E271B /* FirebaseDataStorage.swift */,
+				8A8861752812A425000E271B /* Utils */,
+			);
+			path = FirebaseDataStorage;
 			sourceTree = "<group>";
 		};
 		8A9B1C4D2804699300B22798 /* PersistentDefaultDetail */ = {
@@ -444,12 +473,15 @@
 			path = StarWarsBrowser;
 			sourceTree = "<group>";
 		};
-		8ABD60B927FB507E00A911DC /* DataMapping */ = {
+		8ABD60B927FB507E00A911DC /* DataStorage */ = {
 			isa = PBXGroup;
 			children = (
-				FA0D5564272D3DDD005CBFDB /* Detail+Bucket.swift */,
+				8A8861782812AB0E000E271B /* DataStorageConstants.swift */,
+				8A88617E2812DC00000E271B /* DataStorageType.swift */,
+				8A8861812812E1C9000E271B /* Mapping */,
+				8A8861842812E332000E271B /* FirebaseDataStorage */,
 			);
-			path = DataMapping;
+			path = DataStorage;
 			sourceTree = "<group>";
 		};
 		8ABDA0C42680E44600477D3D /* Entities */ = {
@@ -550,6 +582,7 @@
 			children = (
 				8AF8C9B327FB2E1E00FB1994 /* CategoriesRepositoryType.swift */,
 				8A72C65427F7340A004C6A4E /* DetailsRepositoryType.swift */,
+				8A88617C2812B22D000E271B /* DetailImagesRepositoryType.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -567,8 +600,8 @@
 			children = (
 				8A72C65627F73410004C6A4E /* Repositories */,
 				8A0F10D427FC634600F860A0 /* Network */,
+				8ABD60B927FB507E00A911DC /* DataStorage */,
 				8ADFA44827F7166700EEC74B /* PersistentStorages */,
-				8ABD60B927FB507E00A911DC /* DataMapping */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -764,7 +797,7 @@
 		FA527AFE271ED5B700C56600 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				FA7E8905272BD3C300220980 /* Image Loader Service */,
+				FA7E8905272BD3C300220980 /* ImageCache */,
 				FA527B00271ED5B800C56600 /* Network */,
 			);
 			path = Infrastructure;
@@ -798,14 +831,12 @@
 			path = DetailsViewModel;
 			sourceTree = "<group>";
 		};
-		FA7E8905272BD3C300220980 /* Image Loader Service */ = {
+		FA7E8905272BD3C300220980 /* ImageCache */ = {
 			isa = PBXGroup;
 			children = (
-				FA7E8901272BD33800220980 /* ImageLoaderService.swift */,
-				FA7E8903272BD3BC00220980 /* ImageLoaderServiceType.swift */,
 				FA7E8908272BEFC500220980 /* ImageCache.swift */,
 			);
-			path = "Image Loader Service";
+			path = ImageCache;
 			sourceTree = "<group>";
 		};
 		FA84F8D826F9B383000DB2F1 /* Detail */ = {
@@ -813,11 +844,7 @@
 			children = (
 				FA9E499A26EF669A00D20BA0 /* Detailable.swift */,
 				8ABB296B26828A6A009963FF /* Film.swift */,
-				FA84F8D426F8F5C8000DB2F1 /* Сharacter.swift */,
-				FA527B0C271F11A300C56600 /* Planet.swift */,
-				8AF607B527946A38003494BE /* Species.swift */,
-				8AF607B927946E36003494BE /* Starship.swift */,
-				8AF607B727946DE6003494BE /* Vehicle.swift */,
+				FA84F8D426F8F5C8000DB2F1 /* DefaultDetail.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -991,10 +1018,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A8861792812AB0E000E271B /* DataStorageConstants.swift in Sources */,
 				FAB114DF26DE51E800ECE682 /* CategoryDTO+Resource.swift in Sources */,
 				8ABA5D3C27A14AF3004D5C6F /* DetailsViewControllerType.swift in Sources */,
 				8AF8C9B627FB2E2500FB1994 /* CategoriesRepository.swift in Sources */,
-				FA527B0D271F11A300C56600 /* Planet.swift in Sources */,
 				FA527AE7271ED57F00C56600 /* DetailViewModelFactory.swift in Sources */,
 				FA527AF8271ED57F00C56600 /* CategoriesViewModelType.swift in Sources */,
 				FA9E49A426EF8C5A00D20BA0 /* Scheduler.swift in Sources */,
@@ -1005,7 +1032,9 @@
 				8AEEFA5927FC3F73005D7FA4 /* AppDependenciesContainer.swift in Sources */,
 				FA527AFB271ED57F00C56600 /* CategoryCollectionViewCell.swift in Sources */,
 				FABCD178271DC955002BFEFC /* String+Utils.swift in Sources */,
+				8A8861742812A421000E271B /* FirebaseStorage+Utils.swift in Sources */,
 				FA527AF1271ED57F00C56600 /* DetailsViewController.swift in Sources */,
+				8A88617B2812B1EC000E271B /* DetailImagesRepository.swift in Sources */,
 				FA527AF2271ED57F00C56600 /* MainNavigator.swift in Sources */,
 				8A9B1C642804798E00B22798 /* FilmsDTO+Mapping.swift in Sources */,
 				FAB114BC26DE123700ECE682 /* ApplicationFlowCoordinator.swift in Sources */,
@@ -1038,29 +1067,30 @@
 				FA527B07271ED5B800C56600 /* NetworkService.swift in Sources */,
 				FA4742882714619B00C700BD /* Category+Assets.swift in Sources */,
 				FA1162312715907E004A3D2D /* CategoryImageView.swift in Sources */,
-				8AF607BA27946E36003494BE /* Starship.swift in Sources */,
 				8A88616B281294B0000E271B /* DetailsRepository+Default.swift in Sources */,
 				8A9B1C6028046FA300B22798 /* PersistentDefaultDetailRequest+CoreDataClass.swift in Sources */,
 				8A8861662812922D000E271B /* DetailsStorageType.swift in Sources */,
-				FA7E8904272BD3BD00220980 /* ImageLoaderServiceType.swift in Sources */,
 				FABCD171271D7316002BFEFC /* PagingCollectionViewLayout.swift in Sources */,
 				8AB647BF265D0A0D00B2F498 /* AppDelegate.swift in Sources */,
 				8ABA5D3A27A14AAE004D5C6F /* CategoriesViewControllerType.swift in Sources */,
 				8AF8C9C327FB39BA00FB1994 /* CoreDataCategoriesStorage.swift in Sources */,
 				8A9B1C5F28046FA300B22798 /* PersistentDefaultDetailRequest+CoreDataProperties.swift in Sources */,
-				FA0D5565272D3DDD005CBFDB /* Detail+Bucket.swift in Sources */,
+				8A8861832812E1FE000E271B /* FirebaseDataStorage.swift in Sources */,
+				FA0D5565272D3DDD005CBFDB /* Detailable+Storage.swift in Sources */,
 				8A0F10DF27FC751100F860A0 /* PersistentCategory+Mapping.swift in Sources */,
 				8ABB296F26828BA3009963FF /* DefaultDetailsDTO+Mapping.swift in Sources */,
+				8A88617D2812B22D000E271B /* DetailImagesRepositoryType.swift in Sources */,
 				FA527B08271ED5B800C56600 /* Resource.swift in Sources */,
 				8AF1DC6928048366000C1C72 /* CoreDataDetailsStorage+Films.swift in Sources */,
 				8A9B1C622804734500B22798 /* PersistentDefaultDetailRequest+Mapping.swift in Sources */,
+				8A88617F2812DC00000E271B /* DataStorageType.swift in Sources */,
+				8A8861772812A839000E271B /* StorageFolder.swift in Sources */,
 				8AC5679A27FAE54C00B08F92 /* CategoriesUseCase.swift in Sources */,
 				8AB647C1265D0A0D00B2F498 /* SceneDelegate.swift in Sources */,
 				8AEEFA5727FC3DBE005D7FA4 /* MainSceneDependenciesContainer.swift in Sources */,
 				FA527AF6271ED57F00C56600 /* CategoriesViewModel.swift in Sources */,
 				8AC42AD3281182F5000AA5B3 /* FilmsDecoder.swift in Sources */,
 				FA527AE5271ED57F00C56600 /* DetailViewModel.swift in Sources */,
-				FA7E8902272BD33800220980 /* ImageLoaderService.swift in Sources */,
 				8AF8C9B827FB2FA600FB1994 /* CoreDataStorage+Combine.swift in Sources */,
 				FA527AE9271ED57F00C56600 /* DetailsViewModelType.swift in Sources */,
 				8AC42AD12811721F000AA5B3 /* PersistentFilmDetail+CoreDataProperties.swift in Sources */,
@@ -1075,9 +1105,8 @@
 				8AF607BC279479DD003494BE /* GradientView.swift in Sources */,
 				FA527AF4271ED57F00C56600 /* MainFlowCoordinator.swift in Sources */,
 				8ADFA45727F7166700EEC74B /* DataModel.xcdatamodeld in Sources */,
-				8AF607B827946DE6003494BE /* Vehicle.swift in Sources */,
 				FAAABB5B271062BC0029C6CE /* StarsParalaxView.swift in Sources */,
-				FA84F8D526F8F5C8000DB2F1 /* Сharacter.swift in Sources */,
+				FA84F8D526F8F5C8000DB2F1 /* DefaultDetail.swift in Sources */,
 				8A0F10D927FC68DA00F860A0 /* CoreDataDetailsStorage+DefaultDetails.swift in Sources */,
 				8A72C65827F73421004C6A4E /* DetailsRepository.swift in Sources */,
 				8AF8C9C127FB39A700FB1994 /* CategoriesStorageType.swift in Sources */,
@@ -1085,7 +1114,6 @@
 				FA527AF7271ED57F00C56600 /* CategoryViewModel.swift in Sources */,
 				FAD99EB72729358200297AC7 /* DetailsViewController+CollectionViewDelegate.swift in Sources */,
 				FA527AFA271ED57F00C56600 /* CategoriesViewController.swift in Sources */,
-				8AF607B627946A38003494BE /* Species.swift in Sources */,
 				8A72C65C27F83B00004C6A4E /* Category.swift in Sources */,
 				8A19F69E27FD8DFB0043669B /* PersistentCategory+CoreDataProperties.swift in Sources */,
 				8AB5BC1527FF2F7A003510A1 /* PersistentDefaultDetail+Mapping.swift in Sources */,

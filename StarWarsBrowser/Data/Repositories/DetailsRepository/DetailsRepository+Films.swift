@@ -14,7 +14,6 @@ extension DetailsRepository: FilmsRepositoryType {
 
         return Publishers.Merge(storage.request(for: requestDTO)
                                         .compactMap { $0?.toDomain() },
-
                                 network.load(requestDTO.resource, jsonDecoder: FilmsDecoder())
                                         .handleEvents(receiveOutput: { [unowned self] filmsDTO in
                                             storage.save(responseDTO: filmsDTO, requestDTO: requestDTO)

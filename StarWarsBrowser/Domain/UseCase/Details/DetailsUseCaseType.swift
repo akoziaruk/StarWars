@@ -11,5 +11,5 @@ import UIKit
 
 protocol DetailsUseCaseType {
     func loadDetails(url: URL, page: Int, category: Category.T) -> AnyPublisher<Result<[Detailable], Error>, Never>
-    func loadImage(for detail: Detailable) -> AnyPublisher<UIImage?, Never>
+    func loadImage(for detail: Detailable, category: Category.T) -> AnyPublisher<UIImage?, Never>
 }

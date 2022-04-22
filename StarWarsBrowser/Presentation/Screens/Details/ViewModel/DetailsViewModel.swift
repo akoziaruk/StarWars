@@ -37,6 +37,7 @@ class DetailsViewModel: DetailsViewModelType {
                 case .failure(let error): return .failure(error)
                 }
             })
+            .removeDuplicates()
             .handleEvents(receiveOutput: { state in
                 if case .success(_) = state {
                     self.page = self.page + 1
@@ -46,12 +47,12 @@ class DetailsViewModel: DetailsViewModelType {
 
         let initialState: DetailsViewModelOutput = .just(.idle)
         
-        return Publishers.Merge(initialState, details).removeDuplicates().eraseToAnyPublisher()
+        return Publishers.Merge(initialState, details).eraseToAnyPublisher()
     }
 
     private func viewModels(from details: [Detailable]) -> [AnyHashable] {
         details.map {[unowned self] detail in
-            DetailViewModelFactory.viewModel(from: detail, imageLoader: {[unowned self] detail in self.useCase.loadImage(for: detail)})
+            DetailViewModelFactory.viewModel(from: detail, imageLoader: {[unowned self] detail in self.useCase.loadImage(for: detail, category: category)})
         }
     }
     

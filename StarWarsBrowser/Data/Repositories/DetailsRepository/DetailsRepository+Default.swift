@@ -14,13 +14,11 @@ extension DetailsRepository: DefaultDetailsRepositoryType {
         
         return Publishers.Merge(storage.request(for: requestDTO)
                                         .compactMap { $0?.toDomain() },
-                                
                                 network.load(requestDTO.resource)
                                         .handleEvents(receiveOutput: { [unowned self] detailsDTO in
                                             storage.save(responseDTO: detailsDTO, requestDTO: requestDTO)
                                         })
                                         .map { $0.toDomain() }
-                )
-                .eraseToAnyPublisher()
+                                ).eraseToAnyPublisher()
     }
 }

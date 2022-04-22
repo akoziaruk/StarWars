@@ -8,7 +8,6 @@
 import Foundation
 
 struct Film: Detailable {
-    var imagePath: String { "films/" + name }
     var name: String
     let openingCrawl: String
     let director: String

@@ -1,17 +1,11 @@
 //
-//  Detail+Path.swift
+//  FirebaseStorage+Utils.swift
 //  StarWarsBrowser
 //
-//  Created by Olexander Koziaruk on 10/30/21.
+//  Created by Alexander Koziaruk on 22.04.2022.
 //
 
 import Foundation
-
-extension Detailable {
-    var bucketImagePath: String {
-        return APIConstants.firebaseBucketPath + imagePath.storageFormatted + ".jpg"
-    }
-}
 
 /** Preparing Firebase Bucket filename.
     Converting to snake case.
@@ -22,7 +16,7 @@ extension Detailable {
     Note: Can be optimized with changing multiple usage of replacingOccurrences function
 */
 
-fileprivate extension String {
+extension String {
     var storageFormatted: String {
         let name = filename
                     .snakeCase

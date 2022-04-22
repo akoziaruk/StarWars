@@ -9,10 +9,13 @@ import Foundation
 
 class DetailsDependencies {
     private let network: NetworkServiceType
-    private let imageLoader: ImageLoaderServiceType
     
-    private var storage: DetailsStorageType {
-        CoreDataDetailsStorage()
+    private var storage: DetailsStorageType = CoreDataDetailsStorage()
+    private var imageCache: ImageCacheType = ImageCache()
+    private var imageStorage: DataStorageType = DataStorage()
+    
+    private var imagesRepository: DetailImagesRepositoryType {
+        DetailImagesRepository(cache: imageCache, storage: imageStorage)
     }
     
     private var repository: DetailsRepositoryType {
@@ -20,11 +23,10 @@ class DetailsDependencies {
     }
     
     var useCase: DetailsUseCaseType {
-        DetailsUseCase(repository: repository)
+        DetailsUseCase(repository: repository, imagesRepository: imagesRepository)
     }
     
-    init(network: NetworkServiceType, imageLoader: ImageLoaderServiceType) {
+    init(network: NetworkServiceType) {
         self.network = network
-        self.imageLoader = imageLoader
     }
 }

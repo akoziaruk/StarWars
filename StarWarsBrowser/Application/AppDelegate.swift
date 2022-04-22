@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var appCoordinator: ApplicationFlowCoordinator!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        FirebaseApp.configure()
 
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.appCoordinator = ApplicationFlowCoordinator(window: window, dependencyProvider: AppDependenciesContainer())
@@ -22,8 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.window = window
         self.window?.makeKeyAndVisible()
-        
-        FirebaseApp.configure()
         
         return true
     }
