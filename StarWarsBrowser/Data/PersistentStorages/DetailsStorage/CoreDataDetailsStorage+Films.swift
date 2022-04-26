@@ -35,7 +35,7 @@ extension CoreDataDetailsStorage: FilmsStorageType {
     func request(for requestDTO: FilmDetailsRequestDTO) -> AnyPublisher<FilmDetailsDTO?, Error> {
         coreDataStorage
             .fetch(request: fetchRequest(for: requestDTO))
-            .map { $0.toDTO() }
+            .map { $0.isEmpty ? nil: $0.toDTO() }
             .eraseToAnyPublisher()
     }
     

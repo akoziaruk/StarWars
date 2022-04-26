@@ -33,10 +33,10 @@ fileprivate extension CoreDataDetailsStorage {
 
 extension CoreDataDetailsStorage: DefaultDetailsStorageType {
     func request(for requestDTO: DefaultDetailsRequestDTO) -> AnyPublisher<DefaultDetailsDTO?, Error> {
-            coreDataStorage
-                .fetch(request: fetchRequest(for: requestDTO))
-                .map { $0.first?.details.toDTO() }
-                .eraseToAnyPublisher()
+        coreDataStorage
+            .fetch(request: fetchRequest(for: requestDTO))
+            .map { $0.first?.details.toDTO() }
+            .eraseToAnyPublisher()
     }
     
     func save(responseDTO: DefaultDetailsDTO, requestDTO: DefaultDetailsRequestDTO) {
