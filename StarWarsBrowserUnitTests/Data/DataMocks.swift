@@ -9,20 +9,29 @@ import Foundation
 import Combine
 @testable import StarWarsBrowser
 
+class CategoriesStorageMock: CategoriesStorageType {
+    var requestAllReturnValue: AnyPublisher<CategoriesDTO, Error>!
+    func requestAll() -> AnyPublisher<CategoriesDTO, Error> {
+        requestAllReturnValue
+    }
+    
+    func save(_ categories: CategoriesDTO) { }
+}
+
 class DetailsStorageMock: DetailsStorageType {
     var requestDefaultDetailsReturnValue: AnyPublisher<DefaultDetailsDTO?, Error>!
     func request(for requestDTO: DefaultDetailsRequestDTO) -> AnyPublisher<DefaultDetailsDTO?, Error> {
         requestDefaultDetailsReturnValue
     }
     
-    func save(responseDTO: DefaultDetailsDTO, requestDTO: DefaultDetailsRequestDTO) { }
+    func save(responseDTO: DefaultDetailsDTO, requestDTO: DefaultDetailsRequestDTO) {}
     
     var requestFilmDetailsReturnValue: AnyPublisher<FilmDetailsDTO?, Error>!
     func request(for requestDTO: FilmDetailsRequestDTO) -> AnyPublisher<FilmDetailsDTO?, Error> {
         requestFilmDetailsReturnValue
     }
     
-    func save(responseDTO: FilmDetailsDTO, requestDTO: FilmDetailsRequestDTO) { }
+    func save(responseDTO: FilmDetailsDTO, requestDTO: FilmDetailsRequestDTO) {}
 }
 
 

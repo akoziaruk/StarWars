@@ -24,7 +24,7 @@ class CategoriesViewModelTests: XCTestCase {
         viewModel = CategoriesViewModel(useCase: useCase, navigator: navigator)
     }
     
-    func test_loadData_onStart() {
+    func test_load_succeeds() {
         // Given
         let load = PassthroughSubject<Void, Never>()
         let input = CategoriesViewModelInput(load: load.eraseToAnyPublisher(), select: .empty())
@@ -48,7 +48,7 @@ class CategoriesViewModelTests: XCTestCase {
         XCTAssertEqual(state!, .success(expectedViewModels))
     }
     
-    func test_hasErrorState_whenDataLoadingIsFailed() {
+    func test_load_fails() {
         // Given
         let load = PassthroughSubject<Void, Never>()
         let input = CategoriesViewModelInput(load: load.eraseToAnyPublisher(), select: .empty())

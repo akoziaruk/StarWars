@@ -24,7 +24,7 @@ class DetailsViewModelTests: XCTestCase {
         viewModel = DetailsViewModel(category: .people, url: url, useCase: useCase)
     }
     
-    func test_loadData_onSelection() {
+    func test_load_succeeds() {
         // Given
         let load = PassthroughSubject<Void, Never>()
         let input = DetailsViewModelInput(loadNextPage: load.eraseToAnyPublisher())
@@ -50,7 +50,7 @@ class DetailsViewModelTests: XCTestCase {
     }
     
 
-    func test_hasErrorState_whenDataLoadingIsFailed() {
+    func test_load_fails() {
         // Given
         let load = PassthroughSubject<Void, Never>()
         let input = DetailsViewModelInput(loadNextPage: load.eraseToAnyPublisher())

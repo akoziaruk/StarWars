@@ -31,7 +31,7 @@ class NetworkServiceTests: XCTestCase {
         URLProtocol.registerClass(URLProtocolMock.self)
     }
     
-    func test_loadFinishedSuccessfully() {
+    func test_load_succeeds() {
         // Given
         var result: Result<CategoriesDTO, Error>?
         let expectation = self.expectation(description: "networkServiceExpectation")
@@ -58,7 +58,7 @@ class NetworkServiceTests: XCTestCase {
         XCTAssertEqual(categories.items.count, 6)
     }
     
-    func test_loadFailedWithInternalError() {
+    func test_load_fails_withInternalError() {
         // Given
         var result: Result<CategoriesDTO, Error>?
         let expectation = self.expectation(description: "networkServiceExpectation")
@@ -86,7 +86,7 @@ class NetworkServiceTests: XCTestCase {
         }
     }
     
-    func test_loadFailedWithJsonParsingError() {
+    func test_load_fails_withJsonParsingError() {
         // Given
         var result: Result<CategoriesDTO, Error>?
         let expectation = self.expectation(description: "networkServiceExpectation")

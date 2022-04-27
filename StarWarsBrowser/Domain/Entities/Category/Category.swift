@@ -10,13 +10,13 @@ import Foundation
 struct Category {
     var name: String!
     var url: URL!
-    
-    var type: T {
-        return T(rawValue: name) ?? .unknown
-    }
 }
 
 extension Category {
+    var type: T {
+        return T(rawValue: name) ?? .unknown
+    }
+    
     enum T: String {
         case films
         case people
@@ -27,3 +27,10 @@ extension Category {
         case unknown
     }
 }
+
+extension Category: Equatable {
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.name == rhs.name
+    }
+}
+

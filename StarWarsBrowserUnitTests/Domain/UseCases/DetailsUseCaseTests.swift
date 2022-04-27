@@ -26,7 +26,7 @@ class DetailsUseCaseTests: XCTestCase {
         useCase = DetailsUseCase(repository: dataRepository, imagesRepository: imagesRepository)
     }
     
-    func test_load_succeeds() {
+    func test_loadDetails_succeeds() {
         // Given
         var result: Result<[Detailable], Error>!
         let expectation = self.expectation(description: "details")
@@ -46,7 +46,7 @@ class DetailsUseCaseTests: XCTestCase {
         }
     }
     
-    func test_load_onNetworkError() {
+    func test_loadDetails_fails() {
         // Given
         var result: Result<[Detailable], Error>!
         let expectation = self.expectation(description: "details")
@@ -66,7 +66,7 @@ class DetailsUseCaseTests: XCTestCase {
         }
     }
 
-    func test_load_imageFromNetwork() {
+    func test_loadImage_succeeds() {
         // Given
         let detail = details.first!
         var result: UIImage?

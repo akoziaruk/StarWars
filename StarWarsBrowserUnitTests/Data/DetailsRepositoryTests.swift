@@ -22,7 +22,7 @@ class DetailsRepositoryTests: XCTestCase {
         repository = DetailsRepository(network: network, storage: storage)
     }
     
-    func test_loadDefaultDetails_succeeds() {
+    func test_fetchDefaultDetails_succeeds() {
         //Given
         var result: [DefaultDetail]!
         
@@ -50,7 +50,7 @@ class DetailsRepositoryTests: XCTestCase {
         XCTAssertEqual(result!, expectedDetails)
     }
 
-    func test_loadDefaultDetails_failed() {
+    func test_fetchDefaultDetails_fails() {
         var error: ErrorMock!
         let expectation = self.expectation(description: "people")
         let url = APIConstants.baseURL.appendingPathComponent("people")
@@ -71,7 +71,7 @@ class DetailsRepositoryTests: XCTestCase {
         XCTAssertNotNil(error)
     }
         
-    func test_loadFilmDetails_succeeds() {
+    func test_fetchFilms_succeeds() {
         //Given
         var result: [Film]!
         
@@ -99,7 +99,7 @@ class DetailsRepositoryTests: XCTestCase {
         XCTAssertEqual(result!, expectedDetails)
     }
         
-    func test_loadFilmDetails_failed() {
+    func test_fetchFilms_fails() {
         var error: ErrorMock!
         let expectation = self.expectation(description: "films")
         let url = APIConstants.baseURL.appendingPathComponent("films")

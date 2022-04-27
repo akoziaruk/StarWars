@@ -23,7 +23,7 @@ class CategoriesUseCaseTests: XCTestCase {
         useCase = CategoriesUseCase(repository: repository)
     }
     
-    func test_load_succeeds() {
+    func test_loadCategories_succeeds() {
         // Given
         var result: Result<[Category], Error>!
         let expectation = self.expectation(description: "categories")
@@ -43,7 +43,7 @@ class CategoriesUseCaseTests: XCTestCase {
         }
     }
     
-    func test_load_onNetworkError() {
+    func test_loadCategories_fails() {
         // Given
         var result: Result<[Category], Error>!
         let expectation = self.expectation(description: "categories")

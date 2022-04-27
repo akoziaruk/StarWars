@@ -77,6 +77,10 @@
 		8A75C7632819460600C7A49C /* DataStorageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8861782812AB0E000E271B /* DataStorageConstants.swift */; };
 		8A75C7642819463300C7A49C /* FirebaseStorage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8861732812A421000E271B /* FirebaseStorage+Utils.swift */; };
 		8A75C766281957FB00C7A49C /* People.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A75C765281957FB00C7A49C /* People.json */; };
+		8A75C7682819911B00C7A49C /* CategoriesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A75C7672819911B00C7A49C /* CategoriesRepositoryTests.swift */; };
+		8A75C76A2819913C00C7A49C /* DetailImagesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A75C7692819913C00C7A49C /* DetailImagesRepositoryTests.swift */; };
+		8A75C76B2819922E00C7A49C /* CategoriesStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF8C9C027FB39A700FB1994 /* CategoriesStorageType.swift */; };
+		8A75C76C2819924000C7A49C /* CategoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF8C9B527FB2E2500FB1994 /* CategoriesRepository.swift */; };
 		8A8861662812922D000E271B /* DetailsStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8861652812922D000E271B /* DetailsStorageType.swift */; };
 		8A88616828129297000E271B /* CoreDataDetailsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A88616728129297000E271B /* CoreDataDetailsStorage.swift */; };
 		8A88616B281294B0000E271B /* DetailsRepository+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A88616A281294B0000E271B /* DetailsRepository+Default.swift */; };
@@ -213,6 +217,8 @@
 		8A75C758281942B200C7A49C /* Decodable+LoadFromFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+LoadFromFile.swift"; sourceTree = "<group>"; };
 		8A75C75A2819434A00C7A49C /* Films.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Films.json; sourceTree = "<group>"; };
 		8A75C765281957FB00C7A49C /* People.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = People.json; sourceTree = "<group>"; };
+		8A75C7672819911B00C7A49C /* CategoriesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepositoryTests.swift; sourceTree = "<group>"; };
+		8A75C7692819913C00C7A49C /* DetailImagesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImagesRepositoryTests.swift; sourceTree = "<group>"; };
 		8A8861652812922D000E271B /* DetailsStorageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsStorageType.swift; sourceTree = "<group>"; };
 		8A88616728129297000E271B /* CoreDataDetailsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDetailsStorage.swift; sourceTree = "<group>"; };
 		8A88616A281294B0000E271B /* DetailsRepository+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsRepository+Default.swift"; sourceTree = "<group>"; };
@@ -403,8 +409,8 @@
 		8A75C70C28183B6C00C7A49C /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				8A75C72528192DC300C7A49C /* Categories */,
-				8A75C72828192E0300C7A49C /* Details */,
+				8A75C70D28183BA800C7A49C /* CategoriesUseCaseTests.swift */,
+				8A75C71A2819244700C7A49C /* DetailsUseCaseTests.swift */,
 			);
 			name = UseCases;
 			sourceTree = "<group>";
@@ -417,22 +423,6 @@
 				8A75C72B28192E8B00C7A49C /* PresentationMocks.swift */,
 			);
 			path = Presentation;
-			sourceTree = "<group>";
-		};
-		8A75C72528192DC300C7A49C /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				8A75C70D28183BA800C7A49C /* CategoriesUseCaseTests.swift */,
-			);
-			name = Categories;
-			sourceTree = "<group>";
-		};
-		8A75C72828192E0300C7A49C /* Details */ = {
-			isa = PBXGroup;
-			children = (
-				8A75C71A2819244700C7A49C /* DetailsUseCaseTests.swift */,
-			);
-			name = Details;
 			sourceTree = "<group>";
 		};
 		8A75C7452819382E00C7A49C /* Infrastructure */ = {
@@ -457,7 +447,9 @@
 		8A75C74E28193D7700C7A49C /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				8A75C7672819911B00C7A49C /* CategoriesRepositoryTests.swift */,
 				8A75C74C28193D7000C7A49C /* DetailsRepositoryTests.swift */,
+				8A75C7692819913C00C7A49C /* DetailImagesRepositoryTests.swift */,
 				8A75C74F28193E5E00C7A49C /* DataMocks.swift */,
 			);
 			path = Data;
@@ -1264,6 +1256,7 @@
 				8A75C75228193FFA00C7A49C /* DefaultDetailsDTO+Mapping.swift in Sources */,
 				8A75C71F281927CA00C7A49C /* DetailsUseCase.swift in Sources */,
 				FAB3450F273BD922000EEDC9 /* CategoriesViewModelTests.swift in Sources */,
+				8A75C76B2819922E00C7A49C /* CategoriesStorageType.swift in Sources */,
 				8A75C713281840BC00C7A49C /* CategoriesUseCaseType.swift in Sources */,
 				8A75C7302819304400C7A49C /* CategoriesViewModelType.swift in Sources */,
 				8A75C75E281945C600C7A49C /* ImageCache.swift in Sources */,
@@ -1279,6 +1272,8 @@
 				8A75C7172818451A00C7A49C /* Resource.swift in Sources */,
 				8A75C7642819463300C7A49C /* FirebaseStorage+Utils.swift in Sources */,
 				8A75C760281945EB00C7A49C /* Detail+Storable.swift in Sources */,
+				8A75C76C2819924000C7A49C /* CategoriesRepository.swift in Sources */,
+				8A75C76A2819913C00C7A49C /* DetailImagesRepositoryTests.swift in Sources */,
 				8A75C7572819411200C7A49C /* DetailImagesRepository.swift in Sources */,
 				8A75C735281930CE00C7A49C /* CategoryGradientView.swift in Sources */,
 				8A75C75F281945D700C7A49C /* FilmDetailsRequestDTO+Resource.swift in Sources */,
@@ -1300,6 +1295,7 @@
 				8A75C7542819400A00C7A49C /* DetailsRepository.swift in Sources */,
 				8A75C71C2819253300C7A49C /* DetailsRepositoryType.swift in Sources */,
 				8A75C7462819389500C7A49C /* CategoryDTO+Resource.swift in Sources */,
+				8A75C7682819911B00C7A49C /* CategoriesRepositoryTests.swift in Sources */,
 				8A75C71E281926AA00C7A49C /* DetailImagesRepositoryType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
