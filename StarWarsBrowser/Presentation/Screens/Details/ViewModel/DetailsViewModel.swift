@@ -41,7 +41,6 @@ class DetailsViewModel: DetailsViewModelType {
             .handleEvents(receiveOutput: { state in
                 if case .success(_) = state {
                     self.page = self.page + 1
-                    print("debug: \(self.page)")
                 }
             })
             .eraseToAnyPublisher()

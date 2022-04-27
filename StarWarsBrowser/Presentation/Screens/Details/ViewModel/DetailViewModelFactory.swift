@@ -18,9 +18,10 @@ class DetailViewModelFactory {
                                  openingCrawl: film.openingCrawl,
                                  image: imageLoader(film))
         } else {
+            let detail = detail as! DefaultDetail
             return DetailViewModel(name: detail.name,
                                    image: imageLoader(detail))
-        }
         
+        }
     }
 }

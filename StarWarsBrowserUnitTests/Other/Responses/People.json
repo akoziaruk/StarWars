@@ -1,0 +1,19 @@
+{
+    "count": 4,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "name": "Leia Organa"
+        },
+        {
+            "name": "Luke SkyWalker"
+        },
+        {
+            "name": "Darth Vader"
+        },
+        {
+            "name": "Ja Ja Binks",
+        }
+    ]
+}

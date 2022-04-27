@@ -26,7 +26,7 @@ class DetailsUseCaseTests: XCTestCase {
         useCase = DetailsUseCase(repository: dataRepository, imagesRepository: imagesRepository)
     }
     
-    func test_load_Succeeds() {
+    func test_load_succeeds() {
         // Given
         var result: Result<[Detailable], Error>!
         let expectation = self.expectation(description: "details")

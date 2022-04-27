@@ -7,8 +7,14 @@
 
 import Foundation
 
-struct Film: Detailable {
+struct Film: Detailable {    
     var name: String
     let openingCrawl: String
     let director: String
+}
+
+extension Film: Equatable {
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.name == rhs.name
+    }
 }
