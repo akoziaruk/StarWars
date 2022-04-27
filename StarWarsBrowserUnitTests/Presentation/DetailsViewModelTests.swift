@@ -6,18 +6,22 @@
 //
 
 import XCTest
-@testable import StarWarsBrowser
 import Combine
+@testable import StarWarsBrowser
 
 class DetailsViewModelTests: XCTestCase {
-    private let useCase = MainUseCaseTypeMock()
-    private let navigator = MainNavigatorMock()
+    private let useCase = DetailsUseCaseMock()
     private var viewModel: DetailsViewModel!
     private var cancellables: [AnyCancellable] = []
+    private let details = [DefaultDetail(name: "Luke Skywalker"),
+                           DefaultDetail(name: "Darth Vader"),
+                           DefaultDetail(name: "Leia Organa")]
 
     override func setUp() {
-        let url = APIConstants.baseURL.appendingPathComponent("films")
-        viewModel = DetailsViewModel(category: Category.T.film, url: url, useCase: useCase)
+        super.setUp()
+        
+        let url = APIConstants.baseURL.appendingPathComponent("people")
+        viewModel = DetailsViewModel(category: .people, url: url, useCase: useCase)
     }
     
     func test_loadData_onSelection() {
@@ -25,19 +29,18 @@ class DetailsViewModelTests: XCTestCase {
         let load = PassthroughSubject<Void, Never>()
         let input = DetailsViewModelInput(loadNextPage: load.eraseToAnyPublisher())
         var state: DetailsLoadingState?
-        
-        let expectation = self.expectation(description: "films")
-        let films = Details<Film>.loadFromFile("Films.json", target: Self.self)
-        let expectedViewModels = films.items.map { DetailViewModelFactory.viewModel(from: $0, imageLoader: { _ in .just(UIImage()) })}
-        
-        useCase.loadDetailsReturnValue = .just(.success(films.items))
+
+        let expectation = self.expectation(description: "details")
+        let expectedViewModels = details.map { DetailViewModelFactory.viewModel(from: $0, imageLoader: { _ in .just(UIImage()) })}
+
+        useCase.loadDetailsReturnValue = .just(.success(details))
         useCase.loadImageReturnValue = .just(UIImage())
         viewModel.transform(input: input).sink { value in
             guard case DetailsLoadingState.success = value else { return }
             state = value
             expectation.fulfill()
         }.store(in: &cancellables)
-            
+
         // When
         load.send()
 
@@ -46,26 +49,28 @@ class DetailsViewModelTests: XCTestCase {
         XCTAssertEqual(state!, .success(expectedViewModels))
     }
     
+
     func test_hasErrorState_whenDataLoadingIsFailed() {
         // Given
         let load = PassthroughSubject<Void, Never>()
         let input = DetailsViewModelInput(loadNextPage: load.eraseToAnyPublisher())
         var state: DetailsLoadingState?
-        let expectation = self.expectation(description: "films")
+        let expectation = self.expectation(description: "details")
+        let error = ErrorMock()
         
-        useCase.loadDetailsReturnValue = .just(.failure(NetworkError.invalidResponse))
+        useCase.loadDetailsReturnValue = .just(.failure(error))
         viewModel.transform(input: input).sink { value in
             guard case .failure = value else { return }
             state = value
             expectation.fulfill()
         }.store(in: &cancellables)
-        
+
         // When
         load.send()
-        
+
         // Then
         waitForExpectations(timeout: 1.0, handler: nil)
-        XCTAssertEqual(state!, .failure(NetworkError.invalidResponse))
+        XCTAssertEqual(state!, .failure(error))
     }
 
 }

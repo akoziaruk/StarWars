@@ -16,7 +16,7 @@ class NetworkServiceTests: XCTestCase {
         return URLSession(configuration: config)
     }()
     private lazy var networkService = NetworkService(session: session)
-    private let resource = Resource<Categories>.categories()
+    private let resource = Resource<CategoriesDTO>.categories()
     private lazy var categoriesJsonData: Data = {
         let url = Bundle(for: NetworkServiceTests.self).url(forResource: "Categories", withExtension: "json")
         guard let resourceUrl = url, let data = try? Data(contentsOf: resourceUrl) else {
@@ -33,7 +33,7 @@ class NetworkServiceTests: XCTestCase {
     
     func test_loadFinishedSuccessfully() {
         // Given
-        var result: Result<Categories, Error>?
+        var result: Result<CategoriesDTO, Error>?
         let expectation = self.expectation(description: "networkServiceExpectation")
         URLProtocolMock.requestHandler = { request in
             let response = HTTPURLResponse(url: self.resource.url, statusCode: 200, httpVersion: nil, headerFields: nil)!
@@ -42,8 +42,8 @@ class NetworkServiceTests: XCTestCase {
         
         // When
         networkService.load(resource)
-            .map({ categories -> Result<Categories, Error> in Result.success(categories) })
-            .catch({ error -> AnyPublisher<Result<Categories, Error>, Never> in .just(.failure(error)) })
+            .map({ categories -> Result<CategoriesDTO, Error> in Result.success(categories) })
+            .catch({ error -> AnyPublisher<Result<CategoriesDTO, Error>, Never> in .just(.failure(error)) })
             .sink(receiveValue: { value in
                 result = value
                 expectation.fulfill()
@@ -60,7 +60,7 @@ class NetworkServiceTests: XCTestCase {
     
     func test_loadFailedWithInternalError() {
         // Given
-        var result: Result<Categories, Error>?
+        var result: Result<CategoriesDTO, Error>?
         let expectation = self.expectation(description: "networkServiceExpectation")
         URLProtocolMock.requestHandler = { request in
             let response = HTTPURLResponse(url: self.resource.url, statusCode: 500, httpVersion: nil, headerFields: nil)!
@@ -69,8 +69,8 @@ class NetworkServiceTests: XCTestCase {
         
         // When
         networkService.load(resource)
-            .map({ categories -> Result<Categories, Error> in Result.success(categories) })
-            .catch({ error -> AnyPublisher<Result<Categories, Error>, Never> in .just(.failure(error)) })
+            .map({ categories -> Result<CategoriesDTO, Error> in Result.success(categories) })
+            .catch({ error -> AnyPublisher<Result<CategoriesDTO, Error>, Never> in .just(.failure(error)) })
             .sink(receiveValue: { value in
                 result = value
                 expectation.fulfill()
@@ -88,7 +88,7 @@ class NetworkServiceTests: XCTestCase {
     
     func test_loadFailedWithJsonParsingError() {
         // Given
-        var result: Result<Categories, Error>?
+        var result: Result<CategoriesDTO, Error>?
         let expectation = self.expectation(description: "networkServiceExpectation")
         URLProtocolMock.requestHandler = { request in
             let response = HTTPURLResponse(url: self.resource.url, statusCode: 500, httpVersion: nil, headerFields: nil)!
@@ -97,8 +97,8 @@ class NetworkServiceTests: XCTestCase {
         
         // When
         networkService.load(resource)
-            .map({ categories -> Result<Categories, Error> in Result.success(categories) })
-            .catch({ error -> AnyPublisher<Result<Categories, Error>, Never> in .just(.failure(error)) })
+            .map({ categories -> Result<CategoriesDTO, Error> in Result.success(categories) })
+            .catch({ error -> AnyPublisher<Result<CategoriesDTO, Error>, Never> in .just(.failure(error)) })
             .sink(receiveValue: { value in
                 result = value
                 expectation.fulfill()
