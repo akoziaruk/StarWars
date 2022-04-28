@@ -74,6 +74,10 @@ class CategoriesDisplayDataManager: NSObject {
         dataSource.apply(snapshot, animatingDifferences: true)
     }
     
+    func isEmpty() -> Bool {
+        return collectionView.numberOfItems(inSection: 0) == 0
+    }
+    
     struct Constants {
         struct ReuseCellIdentifier {
             static let category = "categoryCell"

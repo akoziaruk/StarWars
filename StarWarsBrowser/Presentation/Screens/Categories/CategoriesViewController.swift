@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import SwiftUI
 
 class CategoriesViewController: UIViewController, CategoriesViewControllerType {
     private let viewModel: CategoriesViewModelType
@@ -63,11 +64,17 @@ class CategoriesViewController: UIViewController, CategoriesViewControllerType {
             
         case .failure(_):
             activityIndicator.stopAnimating()
-            presentErrorWith(message: Constants.loadingErrorTitle)
+            presentErrorIfNeeded()
             
         case .noResult:
             activityIndicator.stopAnimating()
             // TODO: Show no result state
+        }
+    }
+    
+    private func presentErrorIfNeeded() {
+        if dataManager.isEmpty() {
+            presentErrorWith(message: Constants.loadingErrorTitle)
         }
     }
     
