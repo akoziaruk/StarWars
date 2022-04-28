@@ -51,12 +51,14 @@ class DetailsRepositoryTests: XCTestCase {
     }
 
     func test_fetchDefaultDetails_fails() {
+        //Given
         var error: ErrorMock!
         let expectation = self.expectation(description: "people")
         let url = APIConstants.baseURL.appendingPathComponent("people")
 
         storage.requestDefaultDetailsReturnValue = .fail(ErrorMock())
 
+        //When
         repository
             .fetchDefaultDetails(url: url, page: 1)
             .sink(receiveCompletion: { completion in
@@ -100,12 +102,15 @@ class DetailsRepositoryTests: XCTestCase {
     }
         
     func test_fetchFilms_fails() {
+        //Given
         var error: ErrorMock!
+        
         let expectation = self.expectation(description: "films")
         let url = APIConstants.baseURL.appendingPathComponent("films")
-
+        
         storage.requestFilmDetailsReturnValue = .fail(ErrorMock())
-
+        
+        // When
         repository
             .fetchFilms(url: url, page: 1)
             .sink(receiveCompletion: { completion in
