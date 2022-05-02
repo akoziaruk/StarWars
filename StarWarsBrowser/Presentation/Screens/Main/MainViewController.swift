@@ -11,9 +11,9 @@ class MainViewController: UIViewController {
     var categoriesViewController: CategoriesViewControllerType!
     var detailsViewController: DetailsViewControllerType!
     
-    @IBOutlet weak var paralaxView: StarsParalaxView!
+    @IBOutlet weak var paralaxView: StarsParalaxGroupView!
     @IBOutlet weak var logoView: UIView!
-
+    
     init(_ categoriesViewController: CategoriesViewControllerType,
          _ detailsViewController: DetailsViewControllerType) {
         self.categoriesViewController = categoriesViewController

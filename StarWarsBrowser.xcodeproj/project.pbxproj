@@ -118,6 +118,10 @@
 		8AC5679327F9C36700B08F92 /* PersistentCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5678F27F9C36700B08F92 /* PersistentCategory+CoreDataClass.swift */; };
 		8AC5679827FAE53900B08F92 /* CategoriesUseCaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5679727FAE53900B08F92 /* CategoriesUseCaseType.swift */; };
 		8AC5679A27FAE54C00B08F92 /* CategoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5679927FAE54C00B08F92 /* CategoriesUseCase.swift */; };
+		8AC9A5D9281AC7130075495F /* StarsInfiniteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9A5D8281AC7130075495F /* StarsInfiniteView.swift */; };
+		8AC9A5DB281BF14D0075495F /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9A5DA281BF14D0075495F /* UIView+Utils.swift */; };
+		8AC9A5DD281BF2F50075495F /* StarsInfiniteViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9A5DC281BF2F50075495F /* StarsInfiniteViewCell.swift */; };
+		8AC9A5DF281BF35A0075495F /* StarsInfiniteViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9A5DE281BF35A0075495F /* StarsInfiniteViewFlowLayout.swift */; };
 		8ADFA45427F7166700EEC74B /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFA44B27F7166700EEC74B /* CoreDataStorage.swift */; };
 		8ADFA45727F7166700EEC74B /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFA44F27F7166700EEC74B /* DataModel.xcdatamodeld */; };
 		8AEEFA5727FC3DBE005D7FA4 /* MainSceneDependenciesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEEFA5627FC3DBE005D7FA4 /* MainSceneDependenciesContainer.swift */; };
@@ -171,7 +175,7 @@
 		FA9E499B26EF669A00D20BA0 /* Detailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E499A26EF669A00D20BA0 /* Detailable.swift */; };
 		FA9E49A426EF8C5A00D20BA0 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E49A326EF8C5A00D20BA0 /* Scheduler.swift */; };
 		FAAABB58271049140029C6CE /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAABB57271049140029C6CE /* StarsView.swift */; };
-		FAAABB5B271062BC0029C6CE /* StarsParalaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAABB5A271062BC0029C6CE /* StarsParalaxView.swift */; };
+		FAAABB5B271062BC0029C6CE /* StarsParalaxGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAABB5A271062BC0029C6CE /* StarsParalaxGroupView.swift */; };
 		FAAABB5D27108C130029C6CE /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAABB5C27108C130029C6CE /* UIViewController+Utils.swift */; };
 		FAB114BA26DE0FAA00ECE682 /* DetailsUseCaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB114B926DE0FAA00ECE682 /* DetailsUseCaseType.swift */; };
 		FAB114BC26DE123700ECE682 /* ApplicationFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB114BB26DE123700ECE682 /* ApplicationFlowCoordinator.swift */; };
@@ -258,6 +262,10 @@
 		8AC5678F27F9C36700B08F92 /* PersistentCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8AC5679727FAE53900B08F92 /* CategoriesUseCaseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesUseCaseType.swift; sourceTree = "<group>"; };
 		8AC5679927FAE54C00B08F92 /* CategoriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesUseCase.swift; sourceTree = "<group>"; };
+		8AC9A5D8281AC7130075495F /* StarsInfiniteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsInfiniteView.swift; sourceTree = "<group>"; };
+		8AC9A5DA281BF14D0075495F /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
+		8AC9A5DC281BF2F50075495F /* StarsInfiniteViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsInfiniteViewCell.swift; sourceTree = "<group>"; };
+		8AC9A5DE281BF35A0075495F /* StarsInfiniteViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsInfiniteViewFlowLayout.swift; sourceTree = "<group>"; };
 		8ADFA44B27F7166700EEC74B /* CoreDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		8ADFA45027F7166700EEC74B /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		8AEEFA5627FC3DBE005D7FA4 /* MainSceneDependenciesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneDependenciesContainer.swift; sourceTree = "<group>"; };
@@ -310,7 +318,7 @@
 		FA9E499A26EF669A00D20BA0 /* Detailable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detailable.swift; sourceTree = "<group>"; };
 		FA9E49A326EF8C5A00D20BA0 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		FAAABB57271049140029C6CE /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
-		FAAABB5A271062BC0029C6CE /* StarsParalaxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsParalaxView.swift; sourceTree = "<group>"; };
+		FAAABB5A271062BC0029C6CE /* StarsParalaxGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsParalaxGroupView.swift; sourceTree = "<group>"; };
 		FAAABB5C27108C130029C6CE /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		FAB114B926DE0FAA00ECE682 /* DetailsUseCaseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsUseCaseType.swift; sourceTree = "<group>"; };
 		FAB114BB26DE123700ECE682 /* ApplicationFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -775,8 +783,11 @@
 		FA11622E27159062004A3D2D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FAAABB5A271062BC0029C6CE /* StarsParalaxGroupView.swift */,
+				8AC9A5D8281AC7130075495F /* StarsInfiniteView.swift */,
+				8AC9A5DC281BF2F50075495F /* StarsInfiniteViewCell.swift */,
 				FAAABB57271049140029C6CE /* StarsView.swift */,
-				FAAABB5A271062BC0029C6CE /* StarsParalaxView.swift */,
+				8AC9A5DE281BF35A0075495F /* StarsInfiniteViewFlowLayout.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -977,6 +988,7 @@
 				FABCD177271DC955002BFEFC /* String+Utils.swift */,
 				FADF79F926BE558700D8F126 /* AlertController+Utils.swift */,
 				8AF607BB279479DD003494BE /* GradientView.swift */,
+				8AC9A5DA281BF14D0075495F /* UIView+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1120,6 +1132,7 @@
 			files = (
 				8A8861792812AB0E000E271B /* DataStorageConstants.swift in Sources */,
 				FAB114DF26DE51E800ECE682 /* CategoryDTO+Resource.swift in Sources */,
+				8AC9A5DB281BF14D0075495F /* UIView+Utils.swift in Sources */,
 				8ABA5D3C27A14AF3004D5C6F /* DetailsViewControllerType.swift in Sources */,
 				8AF8C9B627FB2E2500FB1994 /* CategoriesRepository.swift in Sources */,
 				FA527AE7271ED57F00C56600 /* DetailViewModelFactory.swift in Sources */,
@@ -1177,10 +1190,13 @@
 				8A8861832812E1FE000E271B /* FirebaseDataStorage.swift in Sources */,
 				FA0D5565272D3DDD005CBFDB /* Detail+Storable.swift in Sources */,
 				8A0F10DF27FC751100F860A0 /* PersistentCategory+Mapping.swift in Sources */,
+				8AC9A5DD281BF2F50075495F /* StarsInfiniteViewCell.swift in Sources */,
 				8ABB296F26828BA3009963FF /* DefaultDetailsDTO+Mapping.swift in Sources */,
+				8AC9A5D9281AC7130075495F /* StarsInfiniteView.swift in Sources */,
 				8A88617D2812B22D000E271B /* DetailImagesRepositoryType.swift in Sources */,
 				FA527B08271ED5B800C56600 /* Resource.swift in Sources */,
 				8AF1DC6928048366000C1C72 /* CoreDataDetailsStorage+Films.swift in Sources */,
+				8AC9A5DF281BF35A0075495F /* StarsInfiniteViewFlowLayout.swift in Sources */,
 				8A9B1C622804734500B22798 /* PersistentDefaultDetailRequest+Mapping.swift in Sources */,
 				8A88617F2812DC00000E271B /* DataStorageType.swift in Sources */,
 				8A8861772812A839000E271B /* StorageFolder.swift in Sources */,
@@ -1204,7 +1220,7 @@
 				8AF607BC279479DD003494BE /* GradientView.swift in Sources */,
 				FA527AF4271ED57F00C56600 /* MainFlowCoordinator.swift in Sources */,
 				8ADFA45727F7166700EEC74B /* DataModel.xcdatamodeld in Sources */,
-				FAAABB5B271062BC0029C6CE /* StarsParalaxView.swift in Sources */,
+				FAAABB5B271062BC0029C6CE /* StarsParalaxGroupView.swift in Sources */,
 				FA84F8D526F8F5C8000DB2F1 /* DefaultDetail.swift in Sources */,
 				8A0F10D927FC68DA00F860A0 /* CoreDataDetailsStorage+DefaultDetails.swift in Sources */,
 				8A72C65827F73421004C6A4E /* DetailsRepository.swift in Sources */,
