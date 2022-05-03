@@ -189,7 +189,6 @@
 		FABCD171271D7316002BFEFC /* PagingCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCD170271D7316002BFEFC /* PagingCollectionViewLayout.swift */; };
 		FABCD174271DB594002BFEFC /* DetailsBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCD173271DB594002BFEFC /* DetailsBackgroundView.swift */; };
 		FABCD178271DC955002BFEFC /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCD177271DC955002BFEFC /* String+Utils.swift */; };
-		FAD99EB72729358200297AC7 /* DetailsViewController+CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD99EB62729358200297AC7 /* DetailsViewController+CollectionViewDelegate.swift */; };
 		FADF79FA26BE558700D8F126 /* AlertController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF79F926BE558700D8F126 /* AlertController+Utils.swift */; };
 /* End PBXBuildFile section */
 
@@ -333,7 +332,6 @@
 		FABCD170271D7316002BFEFC /* PagingCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingCollectionViewLayout.swift; sourceTree = "<group>"; };
 		FABCD173271DB594002BFEFC /* DetailsBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsBackgroundView.swift; sourceTree = "<group>"; };
 		FABCD177271DC955002BFEFC /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
-		FAD99EB62729358200297AC7 /* DetailsViewController+CollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsViewController+CollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		FADF79F926BE558700D8F126 /* AlertController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertController+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -838,7 +836,6 @@
 				FA527AC6271ED57F00C56600 /* ViewModel */,
 				FA527ACD271ED57F00C56600 /* DetailsViewController.xib */,
 				FA527AD4271ED57F00C56600 /* DetailsViewController.swift */,
-				FAD99EB62729358200297AC7 /* DetailsViewController+CollectionViewDelegate.swift */,
 				8ABA5D3B27A14AF3004D5C6F /* DetailsViewControllerType.swift */,
 				FA527AD3271ED57F00C56600 /* DetailsDisplayDataManager.swift */,
 				FABCD170271D7316002BFEFC /* PagingCollectionViewLayout.swift */,
@@ -1227,7 +1224,6 @@
 				8AF8C9C127FB39A700FB1994 /* CategoriesStorageType.swift in Sources */,
 				8A886172281297FF000E271B /* FilmDetailsRequestDTO+Resource.swift in Sources */,
 				FA527AF7271ED57F00C56600 /* CategoryViewModel.swift in Sources */,
-				FAD99EB72729358200297AC7 /* DetailsViewController+CollectionViewDelegate.swift in Sources */,
 				FA527AFA271ED57F00C56600 /* CategoriesViewController.swift in Sources */,
 				8A72C65C27F83B00004C6A4E /* Category.swift in Sources */,
 				8A19F69E27FD8DFB0043669B /* PersistentCategory+CoreDataProperties.swift in Sources */,

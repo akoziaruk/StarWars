@@ -55,7 +55,7 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: DetailsViewControllerDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        paralaxView.doParalax(with: scrollView.contentOffset.x)
+    func didScroll(with offset: CGFloat) {
+        paralaxView.doParalax(with: offset)
     }
 }

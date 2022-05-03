@@ -19,6 +19,8 @@ class DetailsViewController: UIViewController, DetailsViewControllerType {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    private var lastOffset = 0.0
+
     init(viewModel: DetailsViewModel) {
         self.viewModel = viewModel
         
@@ -32,6 +34,7 @@ class DetailsViewController: UIViewController, DetailsViewControllerType {
     public func updateWith(_ viewModel: DetailsViewModelType) {
         self.viewModel = viewModel
         
+        lastOffset = 0
         dataManager.prepareForReuse()
         bind(to: viewModel)
         loadNextPage.send()
@@ -71,4 +74,19 @@ class DetailsViewController: UIViewController, DetailsViewControllerType {
         }
     }
     
+}
+
+extension DetailsViewController: UICollectionViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        delegate?.didScroll(with: scrollView.contentOffset.x - lastOffset)
+        lastOffset = scrollView.contentOffset.x
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        // if last cell load next page
+        let numberOfItems = collectionView.numberOfItems(inSection: indexPath.section)
+        if indexPath.row + 1 >= numberOfItems {
+            loadNextPageData()
+        }
+    }
 }

@@ -13,5 +13,5 @@ protocol DetailsViewControllerType: UIViewController {
 }
 
 protocol DetailsViewControllerDelegate: NSObjectProtocol {
-    func scrollViewDidScroll(_ scrollView: UIScrollView)
+    func didScroll(with offset: CGFloat)
 }

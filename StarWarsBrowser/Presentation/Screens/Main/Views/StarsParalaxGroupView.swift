@@ -14,9 +14,7 @@ class StarsParalaxGroupView: UIView {
         static let layersCount = 3
         static let starsCount = 160
     }
-    
-    private var lastOffset = 0.0
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
               
@@ -36,9 +34,8 @@ class StarsParalaxGroupView: UIView {
     public func doParalax(with offset: CGFloat) {
         for (index, view) in subviews.enumerated() {
             let k = CGFloat(subviews.count-index)
-            let delta = (offset-lastOffset) / (Constants.velocity*k)
+            let delta = offset/(Constants.velocity*k)
             (view as! StarsInfiniteView).move(by: delta)
         }
-        lastOffset = offset
     }
 }
