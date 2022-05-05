@@ -30,7 +30,7 @@ class CategoriesViewModelTests: XCTestCase {
         let input = CategoriesViewModelInput(load: load.eraseToAnyPublisher(), select: .empty())
         
         var state: CategoriesLoadingState?
-        let expectedViewModels = categories.map({ CategoryViewModel($0, selected: viewModel.selectedCategory == $0.type) })
+        let expectedViewModels = categories.map({ CategoryViewModel($0, selected: false) })
         let expectation = self.expectation(description: "categories")
         
         useCase.loadCategoriesReturnValue = .just(.success(categories))

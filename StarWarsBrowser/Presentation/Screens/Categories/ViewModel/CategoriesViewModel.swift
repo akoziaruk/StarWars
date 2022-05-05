@@ -12,12 +12,10 @@ class CategoriesViewModel: CategoriesViewModelType {
     private struct Default {
         static let category = Category.T.films
     }
-    
     private let useCase: CategoriesUseCaseType
     private var subscriptions = Set<AnyCancellable>()
     private weak var navigator: MainNavigator?
-
-    var selectedCategory: Category.T?
+    private var selected: Category.T?
     
     init(useCase: CategoriesUseCaseType, navigator: MainNavigator) {
         self.useCase = useCase
@@ -41,15 +39,15 @@ class CategoriesViewModel: CategoriesViewModelType {
                 // on start show first category details
                 guard case .success(let categories) = state,
                       let category = categories.filter({ $0.type == Default.category }).first,
-                      self.selectedCategory == nil else { return }
+                      self.selected == nil else { return }
                     
-                self.selectCategory(with: category.type, url: category.url)
+                self.select(SelectedCategory(type: category.type, url: category.url))
             })
             .eraseToAnyPublisher()
 
         input.select
-            .sink(receiveValue: { [unowned self] item in
-                self.selectCategory(with: item.type, url: item.url)
+            .sink(receiveValue: { [unowned self] category in
+                self.select(category)
             })
             .store(in: &subscriptions)
 
@@ -58,12 +56,12 @@ class CategoriesViewModel: CategoriesViewModelType {
         return Publishers.Merge(initialState, categories).removeDuplicates().eraseToAnyPublisher()
     }
 
-    private func selectCategory(with type: Category.T, url: URL) {
-        self.selectedCategory = type
-        self.navigator?.showCategory(for: type, url: url)
+    private func select(_ category: SelectedCategory) {
+        self.selected = category.type
+        self.navigator?.show(category)
     }
     
     private func viewModels(from categories: [Category]) -> [CategoryViewModel] {
-        categories.map { CategoryViewModel($0, selected: (selectedCategory ?? Default.category) == $0.type) }
+        categories.map { CategoryViewModel($0, selected: (selected ?? Default.category) == $0.type) }
     }
 }

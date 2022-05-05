@@ -9,7 +9,7 @@ import UIKit
 
 protocol MainFlowCoordinatorDependencyProvider: AnyObject {
     func mainNavigationController(navigator: MainNavigator) -> UINavigationController
-    func detailsViewModel(for category: Category.T, url: URL) -> DetailsViewModel
+    func showDetails(for category: SelectedCategory)
 }
  
 class MainFlowCoordinator {
@@ -29,9 +29,7 @@ class MainFlowCoordinator {
 }
 
 extension MainFlowCoordinator: MainNavigator {
-    func showCategory(for type: Category.T, url: URL) {
-        let mainViewController = navigationController?.viewControllers.first as! MainViewController
-        let viewModel = dependencyProvider.detailsViewModel(for: type, url: url)
-        mainViewController.detailsViewController.updateWith(viewModel)
+    func show(_ category: SelectedCategory) {
+        dependencyProvider.showDetails(for: category)
     }
 }

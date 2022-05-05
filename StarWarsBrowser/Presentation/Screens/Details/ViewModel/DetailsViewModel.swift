@@ -9,26 +9,29 @@ import Combine
 import Foundation
 
 class DetailsViewModel: DetailsViewModelType {
-    private let category: Category.T
-    private let url: URL?
     private let useCase: DetailsUseCaseType
     private var subscriptions = Set<AnyCancellable>()
+    private var categoryPublisher = CurrentValueSubject<SelectedCategory?, Never>(nil)
     private var page = 1
-        
-    init(category: Category.T, url: URL? = nil, useCase: DetailsUseCaseType) {
-        self.category = category
-        self.url = url
+
+    init(useCase: DetailsUseCaseType) {
         self.useCase = useCase
+    }
+    
+    func set(_ category: SelectedCategory) {
+        page = 1
+        categoryPublisher.send(category)
     }
 
     func transform(input: DetailsViewModelInput) -> DetailsViewModelOutput {
         subscriptions.forEach { $0.cancel() }
         subscriptions.removeAll()
-                
-        let details = input.loadNextPage
-            .compactMap({ self.url })
+
+        let loadDetails = categoryPublisher
+            .combineLatest(input.loadNextPage)
+            .compactMap { $0.0 }
             .flatMapLatest({ [unowned self] in
-                self.useCase.loadDetails(url: $0, page: page, category: category)
+                self.useCase.loadDetails(url: $0.url, page: page, category: $0.type)
             })
             .map({ result -> DetailsLoadingState in
                 switch result {
@@ -44,15 +47,19 @@ class DetailsViewModel: DetailsViewModelType {
                 }
             })
             .eraseToAnyPublisher()
-
-        let initialState: DetailsViewModelOutput = .just(.idle)
         
-        return Publishers.Merge(initialState, details).eraseToAnyPublisher()
+        let newCategoryDetails = categoryPublisher
+            .map { _ in  DetailsLoadingState.prepareForReuse }
+            .eraseToAnyPublisher()
+                
+        return Publishers.Merge(loadDetails, newCategoryDetails).eraseToAnyPublisher()
     }
 
     private func viewModels(from details: [Detailable]) -> [AnyHashable] {
+        guard let type = categoryPublisher.value?.type else { return [] }
+        
         return details.map {[unowned self] detail in
-            DetailViewModelFactory.viewModel(from: detail, imageLoader: {[unowned self] detail in self.useCase.loadImage(for: detail, category: category)})
+            DetailViewModelFactory.viewModel(from: detail, imageLoader: {[unowned self] detail in self.useCase.loadImage(for: detail, category: type)})
         }
     }
     

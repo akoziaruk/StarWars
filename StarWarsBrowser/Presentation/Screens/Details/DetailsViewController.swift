@@ -9,8 +9,8 @@ import UIKit
 import Combine
 
 class DetailsViewController: UIViewController, DetailsViewControllerType {
-    private var viewModel: DetailsViewModelType!
-    private let loadNextPage = PassthroughSubject<Void, Never>()
+    private weak var viewModel: DetailsViewModel!
+    private let loadNextPage = CurrentValueSubject<Void, Never>(())
     private var subscriptions: [AnyCancellable] = []
     private lazy var dataManager = { DetailsDisplayDataManager(collectionView) }()
     
@@ -31,17 +31,15 @@ class DetailsViewController: UIViewController, DetailsViewControllerType {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func updateWith(_ viewModel: DetailsViewModelType) {
-        self.viewModel = viewModel
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        lastOffset = 0
-        dataManager.prepareForReuse()
         bind(to: viewModel)
-        loadNextPage.send()
     }
     
-    public func loadNextPageData() {
-        loadNextPage.send()
+    func prepareForReuse() {
+        lastOffset = 0
+        dataManager.prepareForReuse()
     }
     
     private func bind(to: DetailsViewModelType) {
@@ -58,7 +56,10 @@ class DetailsViewController: UIViewController, DetailsViewControllerType {
     
     private func render(state: DetailsLoadingState) {
         switch state {
-        case .idle, .loading:
+        case .prepareForReuse:
+            prepareForReuse()
+            
+        case .loading:
             activityIndicator.startAnimating()
             
         case .success(let details):
@@ -70,7 +71,6 @@ class DetailsViewController: UIViewController, DetailsViewControllerType {
             
         case .noResult:
             activityIndicator.stopAnimating()
-            
         }
     }
     
@@ -86,7 +86,7 @@ extension DetailsViewController: UICollectionViewDelegate {
         // if last cell load next page
         let numberOfItems = collectionView.numberOfItems(inSection: indexPath.section)
         if indexPath.row + 1 >= numberOfItems {
-            loadNextPageData()
+            loadNextPage.send()
         }
     }
 }

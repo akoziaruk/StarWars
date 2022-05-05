@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A0E84AA2823B2F9004FFD14 /* SelectedCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E84A92823B2F9004FFD14 /* SelectedCategory.swift */; };
 		8A0F10D927FC68DA00F860A0 /* CoreDataDetailsStorage+DefaultDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F10D827FC68DA00F860A0 /* CoreDataDetailsStorage+DefaultDetails.swift */; };
 		8A0F10DB27FC6B6A00F860A0 /* CategoriesDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F10DA27FC6B6A00F860A0 /* CategoriesDependencies.swift */; };
 		8A0F10DD27FC6B7D00F860A0 /* DetailsDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F10DC27FC6B7D00F860A0 /* DetailsDependencies.swift */; };
@@ -128,6 +129,7 @@
 		8AEEFA5927FC3F73005D7FA4 /* AppDependenciesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEEFA5827FC3F73005D7FA4 /* AppDependenciesContainer.swift */; };
 		8AF1DC6928048366000C1C72 /* CoreDataDetailsStorage+Films.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1DC6828048366000C1C72 /* CoreDataDetailsStorage+Films.swift */; };
 		8AF607BC279479DD003494BE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF607BB279479DD003494BE /* GradientView.swift */; };
+		8AF7A6412823D74F00A68D64 /* SelectedCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E84A92823B2F9004FFD14 /* SelectedCategory.swift */; };
 		8AF8C9B427FB2E1E00FB1994 /* CategoriesRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF8C9B327FB2E1E00FB1994 /* CategoriesRepositoryType.swift */; };
 		8AF8C9B627FB2E2500FB1994 /* CategoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF8C9B527FB2E2500FB1994 /* CategoriesRepository.swift */; };
 		8AF8C9B827FB2FA600FB1994 /* CoreDataStorage+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF8C9B727FB2FA600FB1994 /* CoreDataStorage+Combine.swift */; };
@@ -203,6 +205,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A0E84A92823B2F9004FFD14 /* SelectedCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCategory.swift; sourceTree = "<group>"; };
 		8A0F10D827FC68DA00F860A0 /* CoreDataDetailsStorage+DefaultDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataDetailsStorage+DefaultDetails.swift"; sourceTree = "<group>"; };
 		8A0F10DA27FC6B6A00F860A0 /* CategoriesDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesDependencies.swift; sourceTree = "<group>"; };
 		8A0F10DC27FC6B7D00F860A0 /* DetailsDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDependencies.swift; sourceTree = "<group>"; };
@@ -935,6 +938,7 @@
 			isa = PBXGroup;
 			children = (
 				8A72C65B27F83B00004C6A4E /* Category.swift */,
+				8A0E84A92823B2F9004FFD14 /* SelectedCategory.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1167,6 +1171,7 @@
 				FADF79FA26BE558700D8F126 /* AlertController+Utils.swift in Sources */,
 				FAB114E126DE537100ECE682 /* APIConstants.swift in Sources */,
 				8A9B1C4B2804697200B22798 /* PersistentDefaultDetail+CoreDataClass.swift in Sources */,
+				8A0E84AA2823B2F9004FFD14 /* SelectedCategory.swift in Sources */,
 				FA527AE6271ED57F00C56600 /* FilmViewModel.swift in Sources */,
 				FA7E8909272BEFC500220980 /* ImageCache.swift in Sources */,
 				8AC42AD92811A757000AA5B3 /* DetailsRepository+Films.swift in Sources */,
@@ -1239,6 +1244,7 @@
 				8A75C75128193FF400C7A49C /* DetailsStorageType.swift in Sources */,
 				8A75C74D28193D7000C7A49C /* DetailsRepositoryTests.swift in Sources */,
 				8A75C71D281925CD00C7A49C /* Detailable.swift in Sources */,
+				8AF7A6412823D74F00A68D64 /* SelectedCategory.swift in Sources */,
 				8A75C73F281936C200C7A49C /* FilmViewModel.swift in Sources */,
 				8A75C7472819390300C7A49C /* APIConstants.swift in Sources */,
 				FAB3450D273BD4BD000EEDC9 /* DetailsViewModelTests.swift in Sources */,

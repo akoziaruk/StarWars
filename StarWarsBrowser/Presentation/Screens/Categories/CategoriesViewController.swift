@@ -12,7 +12,7 @@ import SwiftUI
 class CategoriesViewController: UIViewController, CategoriesViewControllerType {
     private let viewModel: CategoriesViewModelType
     private let load = PassthroughSubject<Void, Never>()
-    private let select = PassthroughSubject<SelectedItem, Never>()
+    private let select = PassthroughSubject<SelectedCategory, Never>()
     private var subscriptions: [AnyCancellable] = []
     private lazy var dataManager = { CategoriesDisplayDataManager(collectionView,
                                                                   delegate: self) }()
@@ -84,7 +84,7 @@ class CategoriesViewController: UIViewController, CategoriesViewControllerType {
 }
 
 extension CategoriesViewController: CategoriesDisplayDataManagerDelegate {
-    func didSelectedCategory(with item: SelectedItem) {
+    func didSelectedCategory(with item: SelectedCategory) {
         select.send(item)
     }
 }

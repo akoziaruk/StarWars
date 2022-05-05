@@ -11,7 +11,7 @@ import UIKit
 @testable import StarWarsBrowser
 
 class MainNavigatorMock: MainNavigator {
-    func showCategory(for type: Category.T, url: URL) { }
+    func show(_ category: SelectedCategory) {}
 }
 
 class CategoriesUseCaseMock: CategoriesUseCaseType {

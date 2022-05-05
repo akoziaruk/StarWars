@@ -20,8 +20,10 @@ class DetailsViewModelTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        let url = APIConstants.baseURL.appendingPathComponent("people")
-        viewModel = DetailsViewModel(category: .people, url: url, useCase: useCase)
+//        let url = APIConstants.baseURL.appendingPathComponent("people")
+        viewModel = DetailsViewModel(useCase: useCase)
+        
+        viewModel.set(SelectedCategory(type: .people, url: URL(string: "https://swapi.dev/api/people")))
     }
     
     func test_load_succeeds() {
@@ -52,7 +54,7 @@ class DetailsViewModelTests: XCTestCase {
 
     func test_load_fails() {
         // Given
-        let load = PassthroughSubject<Void, Never>()
+        let load = CurrentValueSubject<Void, Never>(())
         let input = DetailsViewModelInput(loadNextPage: load.eraseToAnyPublisher())
         var state: DetailsLoadingState?
         let expectation = self.expectation(description: "details")

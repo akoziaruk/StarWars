@@ -13,7 +13,7 @@ struct DetailsViewModelInput {
 }
 
 enum DetailsLoadingState {
-    case idle
+    case prepareForReuse
     case loading
     case success([AnyHashable])
     case failure(Error)
@@ -23,7 +23,7 @@ enum DetailsLoadingState {
 extension DetailsLoadingState: Equatable {
     static func == (lhs: DetailsLoadingState, rhs: DetailsLoadingState) -> Bool {
         switch (lhs, rhs) {
-        case (.idle, .idle): return true
+        case (.prepareForReuse, .prepareForReuse): return true
         case (.loading, .loading): return true
         case (.success(let lhs), .success(let rhs)): return lhs == rhs
         case (.noResult, .noResult): return true
@@ -37,4 +37,5 @@ typealias DetailsViewModelOutput = AnyPublisher<DetailsLoadingState, Never>
 
 protocol DetailsViewModelType {
     func transform(input: DetailsViewModelInput) -> DetailsViewModelOutput
+    func set(_ category: SelectedCategory)
 }

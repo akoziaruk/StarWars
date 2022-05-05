@@ -7,13 +7,8 @@
 
 import UIKit
 
-struct SelectedItem {
-    let type: Category.T!
-    let url: URL!
-}
-
 protocol CategoriesDisplayDataManagerDelegate: NSObjectProtocol {
-    func didSelectedCategory(with item: SelectedItem)
+    func didSelectedCategory(with item: SelectedCategory)
 }
 
 private typealias CategoryDataSource = UICollectionViewDiffableDataSource<Section,CategoryViewModel>
@@ -96,7 +91,7 @@ extension CategoriesDisplayDataManager: UICollectionViewDelegate {
         updateSelectionWith(newIndex: newIndex, currentIndex: currentIndex)
         
         let item = snapshot.itemIdentifiers[newIndex]
-        delegate?.didSelectedCategory(with: SelectedItem(type: item.type, url: item.url))
+        delegate?.didSelectedCategory(with: SelectedCategory(type: item.type, url: item.url))
     }
 }
 
